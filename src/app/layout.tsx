@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import { cn } from "@/lib/utils";
 
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const quicksand = Quicksand({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"], // Select the weights you need
+  variable: "--font-quicksand", // Defines the CSS variable
 });
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(poppins.variable, "font-sans")}
+      className={cn(quicksand.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${quicksand.className} min-h-full flex flex-col`}>
         <Navbar />
         {children}
       </body>

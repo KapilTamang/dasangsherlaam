@@ -6,6 +6,7 @@
 @import "tailwindcss";
 
 
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -195,8 +196,5 @@
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
-  }
-  html {
-    @apply font-sans;
   }
 }
