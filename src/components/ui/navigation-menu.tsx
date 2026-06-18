@@ -52,14 +52,14 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("relative", className)}
+      className={cn("relative font-semibold opacity-70 hover:opacity-100 duration-300", className)}
       {...props}
     />
   )
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center px-2.5 py-1.5 text-md font-medium transition-all outline-none"
+  "group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center px-2.5 py-1.5 text-md font-semibold transition-all outline-none"
 )
 
 function NavigationMenuTrigger({

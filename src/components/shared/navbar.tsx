@@ -49,11 +49,11 @@ export default function Navbar() {
     }
 
   return (
-    <header className="navbar-wrapper flex justify-between items-center md:px-[15%] px-[8%] py-5 shadow-sm sticky top-0 z-50">
+    <header className="navbar-wrapper flex justify-between items-center md:px-[15%] px-[8%] py-5 shadow-xs sticky top-0 z-50">
         <Link href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
         <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList className="space-x-6">
+            <NavigationMenuList className="space-x-10">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
@@ -105,9 +105,9 @@ export default function Navbar() {
                          </span>
                          <Dropdown items={categories} isOpen={isDropdownOpen} icon={categoryIcon}/>
                     </span>
-                    <Link href="/about">About Me</Link>
-                    <Link href="/contact">Contact</Link>
-                    <Link href="/login">Login</Link>
+                        <Link href="/about">About Me</Link>
+                        <Link href="/contact">Contact</Link>
+                        <Link href="/login">Login</Link>
                 </nav>
             </SheetContent>
         </Sheet>
