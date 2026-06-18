@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown} from "lucide-react";
+import {Rss, Menu, ChevronDown, Search} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -38,6 +38,21 @@ export default function Navbar() {
         }
     ];
 
+    const pages = [
+        {
+            title: 'About Me',
+            href: '/about'
+        },
+        {
+            title: 'Contact',
+            href: '/contact',
+        },
+        {
+            title: 'Search',
+            href: '/search'
+        }
+    ]
+
     const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
 
     React.useEffect(() => {
@@ -50,10 +65,10 @@ export default function Navbar() {
 
   return (
     <header className="navbar-wrapper flex justify-between items-center md:px-[15%] px-[8%] py-5 shadow-xs sticky top-0 z-50">
-        <Link href="/">Dasangsherlaam</Link>
+        <Link className="font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
         <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList className="space-x-10">
+            <NavigationMenuList className="space-x-6">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
@@ -83,10 +98,15 @@ export default function Navbar() {
                         Contact
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/login">
-                        Login
+                 <NavigationMenuItem>
+                    <Link href="/search">
+                        <Search className="inline" size={20}/>
                     </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="hover:opacity-100">
+                    <Button className="px-4 py-4">
+                        Login
+                    </Button>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
@@ -99,15 +119,19 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="left">
                 <nav className="flex flex-col px-6 font-semibold py-10 gap-4">
+                    <header className="font-bold mb-2 text-primary py-3 rounded">Dasangsherlaam</header>
                     <span>
                          <span className="relative mb-1 block" onClick={(toggleDropdown)}>
                             Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
                          <Dropdown items={categories} isOpen={isDropdownOpen} icon={categoryIcon}/>
                     </span>
-                        <Link href="/about">About Me</Link>
-                        <Link href="/contact">Contact</Link>
-                        <Link href="/login">Login</Link>
+                    {
+                        pages.map((page, index) => (
+                            <Link key={index} href={page.href}>{page.title}</Link>
+                        ))
+                    }
+                    <Button className="px-4 py-5 mt-2">Login</Button>
                 </nav>
             </SheetContent>
         </Sheet>
