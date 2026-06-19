@@ -19,22 +19,26 @@ export default function Navbar() {
 
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
-    const categories = [
+    const categoryPages = [
         {
             title: "Science & Technology",
-            href: "/science-technology",        
+            href: "/science-technology",
+            description: " Latest news and articles on science and technology."        
         },
         {
             title: "Amazing Facts",
             href: "/amazing-facts",
+            description: "Interesting and amazing facts on different topics."
         },
         {
             title: "History & Culture",
             href: "/history-culture",
+            description: "Discover the rich history and culture of different countries and civilizations."
         },
         {
             title: "Travel & Tourism",
             href: "/travel-tourism",
+            description: "Explore the world through travel and tourism articles, guides, and tips."
         }
     ];
 
@@ -73,36 +77,26 @@ export default function Navbar() {
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
                         <ul className="w-96">
-                            <ListItem href="/docs" title="Science & Technology">
-                               Latest news and articles on science and technology.
-                            </ListItem>
-                            <ListItem href="/docs/installation" title="Amazing Facts">
-                                Interesting and amazing facts on different topics.
-                            </ListItem>
-                            <ListItem href="/docs/primitives/typography" title="History & Culture">
-                                Discover the rich history and culture of different countries and civilizations.
-                            </ListItem>
-                            <ListItem href="/docs/primitives/typography" title="Travel & Tourism">
-                                Explore the world through travel and tourism articles, guides, and tips.
-                            </ListItem>
+                            {
+                                categoryPages && categoryPages.map((categoryPage, index) => (
+                                    <ListItem key={index} href={categoryPage.href} title={categoryPage.title}>
+                                        {categoryPage.description}
+                                    </ListItem>
+                                ))
+                            }
+    
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/about">
-                        About Me
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/contact">
-                        Contact
-                    </Link>
-                </NavigationMenuItem>
-                 <NavigationMenuItem>
-                    <Link href="/search">
-                        <Search className="inline" size={20}/>
-                    </Link>
-                </NavigationMenuItem>
+                {
+                    pages && pages.map((page, index) => (
+                        <NavigationMenuItem key={index}>
+                            <Link href={page.href}>
+                            { page.title === "Search" ? (<Search className="inline" size={20}/>) : (page.title) }
+                            </Link>
+                        </NavigationMenuItem>
+                    ))
+                }
                 <NavigationMenuItem className="hover:opacity-100">
                     <Button className="px-4 py-4">
                         Login
@@ -124,10 +118,10 @@ export default function Navbar() {
                          <span className="relative mb-1 block" onClick={(toggleDropdown)}>
                             Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
-                         <Dropdown items={categories} isOpen={isDropdownOpen} icon={categoryIcon}/>
+                         <Dropdown items={categoryPages} isOpen={isDropdownOpen} icon={categoryIcon}/>
                     </span>
                     {
-                        pages.map((page, index) => (
+                        pages && pages.map((page, index) => (
                             <Link key={index} href={page.href}>{page.title}</Link>
                         ))
                     }
@@ -160,6 +154,6 @@ function ListItem({
           </div>
             </Link>
         </NavigationMenuLink>
-        </li>
+    </li>
   )
 }
