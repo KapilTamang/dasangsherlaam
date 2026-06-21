@@ -175,10 +175,10 @@ function ListItem({
           <div className="flex gap-1">
             <Rss className="text-primary mr-1 shrink-0" size={12}/> 
             <div className="flex flex-col gap-1">
-                <div className="leading-none font-bold">
+                <div className="text-[1rem] leading-none font-bold">
                     {title}
                 </div>
-                <div className="line-clamp-2 text-muted-foreground">{children}</div>
+                <div className="text-[1rem] line-clamp-2 text-muted-foreground">{children}</div>
             </div>
           </div>
             </Link>
