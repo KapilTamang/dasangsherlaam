@@ -15,8 +15,8 @@ export default function Dropdown({ items, isOpen, icon }: itemListProps) {
     return (
         <div>
             {
-                isOpen && (
-                    <ul className={`flex flex-col gap-4 bg-muted font-normal py-2 pl-2 rounded ${isOpen ? 'block' : 'hidden'}`}>
+                (
+                    <ul className={`flex flex-col gap-4 font-normal pl-2 overflow-hidden transition-all duration-300 ease ${isOpen ? 'max-h-[300px] py-2' : 'h-0'}`}>
                         {items.map((item, index) => (
                             <li key={index}>
                                 <Link className="py-2" href={item.href}> {icon ? icon : ''} {item.title}</Link>

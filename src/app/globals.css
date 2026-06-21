@@ -195,6 +195,6 @@
   }
 
   p {
-    @apply text-[1rem] md:text-[1.125rem] leading-7 md:leading-8 text-justify;
+    @apply text-[1rem] md:text-[1.125rem] leading-7 md:leading-8 text-left;
   }
 }
