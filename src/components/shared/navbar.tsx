@@ -17,9 +17,14 @@ import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
 
 export default function Navbar() {
 
+    //Set state  to track page scrolling
     const [isScrolled, setIsScrolled] = React.useState(false);
 
+    //Set state to trigger dropdown menu
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+
+    //Set state to track sheet visibility
+    const [isSheetOpen, setIsSheetOPen] = React.useState(false);
 
     const categoryPages = [
         {
@@ -62,6 +67,13 @@ export default function Navbar() {
     const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
 
     React.useEffect(() => {
+        //Close dropdown sub menu on sheet close
+        if(!isSheetOpen) {
+           setTimeout(() => {
+            setIsDropdownOpen(false);
+           }, 500);
+        }
+        
         //Catch page scrolling
         const handleScroll = () => {
             if(window.scrollY > 50) {
@@ -71,11 +83,13 @@ export default function Navbar() {
                 setIsScrolled(false);
             }
         }
+
         //Listen for scroll events
         window.addEventListener("scroll", handleScroll);
+
         //Clean up the event listener
         return() => window.removeEventListener("scroll", handleScroll);
-    }, [isDropdownOpen]);
+    }, [isSheetOpen, isDropdownOpen]);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -118,7 +132,7 @@ export default function Navbar() {
             </NavigationMenuList>
         </NavigationMenu>
          {/* Mobile: Sheet (hidden on desktop) */}
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOPen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                     <Menu className="h-6 w-6"/>
@@ -126,7 +140,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="left">
                 <nav className="flex flex-col px-6 text-[1rem] font-semibold mt-2 gap-4">
-                    <header className="text-[1.125rem] font-bold mb-2 py-3 rounded">Dasangsherlaam</header>
+                    <header className="text-[1.125rem] font-bold py-3 rounded">Dasangsherlaam</header>
                     <span>
                          <span className="relative mb-1 block" onClick={(toggleDropdown)}>
                             Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
@@ -138,7 +152,7 @@ export default function Navbar() {
                             <Link key={index} href={page.href}>{page.title}</Link>
                         ))
                     }
-                    <Link href="/login" className={`px-4 py-5 ${buttonVariants()}`}>
+                    <Link href="/login" className={`px-4 py-5 mt-2 ${buttonVariants()}`}>
                          <LogIn data-icon="inline-start" /> Login / Signup
                     </Link>
                 </nav>
