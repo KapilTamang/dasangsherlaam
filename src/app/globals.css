@@ -180,12 +180,21 @@
   --color-destructive-foreground: var(--destructive-foreground);
 }
 
+:root {
+  font-size: 100%;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
+  }
+
+  p {
+    @apply text-[1rem] md:text-[1.125rem] leading-7 md:leading-8 text-justify;
   }
 }
