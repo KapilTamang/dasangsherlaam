@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown, Search, LogIn} from "lucide-react";
+import {Rss, Menu, ChevronDown, Search, LogIn, Send, Info, Library} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -53,15 +53,18 @@ export default function Navbar() {
     const pages = [
         {
             title: 'About',
-            href: '/about'
+            href: '/about',
+            icon: Info
         },
         {
             title: 'Contact',
             href: '/contact',
+            icon: Send
         },
         {
             title: 'Search',
-            href: '/search'
+            href: '/search',
+            icon: Search
         }
     ]
 
@@ -146,20 +149,25 @@ export default function Navbar() {
                 <nav className="flex flex-col px-6 text-[1rem] font-semibold mt-2 gap-4">
                     <header className="text-[1.125rem] font-bold py-3 rounded">Dasangsherlaam</header>
                     <span>
-                         <span className="relative mb-1 block" onClick={(toggleDropdown)}>
-                            Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
+                         <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
+                            <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
                          <Dropdown items={categoryPages} isOpen={isDropdownOpen} icon={categoryIcon}/>
                     </span>
                     {
                         pages && pages.map((page, index) => (
-                            <Link key={index} href={page.href}>{page.title}</Link>
+                            <Link key={index} href={page.href}>
+                                <span className="flex items-center gap-2 mb-2">
+                                    <page.icon className="text-primary" size={18} />
+                                    {page.title}
+                                </span>
+                            </Link>
                         ))
                     }
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
                     </span>
-                    <Link href="/login" className={`px-4 py-5 mt-2 ${buttonVariants()}`}>
+                    <Link href="/login" className={`px-4 py-5 ${buttonVariants()}`}>
                          <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </nav>
