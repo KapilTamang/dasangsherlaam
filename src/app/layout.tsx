@@ -26,7 +26,7 @@ export default function RootLayout({
       lang="en"
       className={cn(quicksand.variable)}
     >
-      <body className={`${quicksand.className} min-h-full flex flex-col`}>
+      <body className={`${quicksand.className} antialiased min-h-full flex flex-col`}>
         <Navbar />
         {children}
       </body>

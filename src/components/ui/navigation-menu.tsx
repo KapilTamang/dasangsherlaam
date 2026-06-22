@@ -52,7 +52,7 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("relative font-semibold opacity-70 last-of-type:opacity-100 hover:opacity-100 duration-300", className)}
+      className={cn("relative font-semibold opacity-75 last-of-type:opacity-100 hover:opacity-100 duration-300", className)}
       {...props}
     />
   )
