@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import {Button, buttonVariants} from "@/components/ui/button"
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
+import {Sheet, SheetContent, SheetTrigger, SheetClose} from "@/components/ui/sheet"
 import { ModeToggle } from "./theme-toggle";
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
     //Set state to track sheet visibility
-    const [isSheetOpen, setIsSheetOPen] = React.useState(false);
+    const [isSheetOpen, setIsSheetOpen] = React.useState(false);
 
     const categoryPages = [
         {
@@ -144,7 +144,7 @@ export default function Navbar() {
             </NavigationMenuList>
         </NavigationMenu>
          {/* Mobile: Sheet (hidden on desktop) */}
-        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOPen}>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                     <Menu className="h-6 w-6"/>
@@ -157,17 +157,20 @@ export default function Navbar() {
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
-                         <Dropdown items={categoryPages} isOpen={isDropdownOpen} icon={categoryIcon}/>
+                        <Dropdown items={categoryPages} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
                     </span>
                     {
                         pages && pages.map((page, index) => (
-                            <Link key={index} href={page.href}>
-                                <span className="flex items-center gap-2 mb-2">
-                                    <page.icon className="text-primary" size={18} />
-                                    {page.title}
-                                </span>
-                            </Link>
+                        
+                                <Link key={index} href={page.href} onClick={() => setIsSheetOpen(false)}>
+                                    <span className="flex items-center gap-2 mb-2">
+                                        <page.icon className="text-primary" size={18} />
+                                        {page.title}
+                                    </span>
+                                </Link>
+                            
                         ))
+                
                     }
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
