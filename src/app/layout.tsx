@@ -3,6 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 
 const quicksand = Quicksand({
@@ -25,10 +26,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(quicksand.variable)}
+      suppressHydrationWarning
     >
       <body className={`${quicksand.className} antialiased min-h-full flex flex-col`}>
-        <Navbar />
-        {children}
+        <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem
+        disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

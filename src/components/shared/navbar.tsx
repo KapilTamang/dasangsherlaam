@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import {Button, buttonVariants} from "@/components/ui/button"
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
+import { ModeToggle } from "./theme-toggle";
 
 export default function Navbar() {
 
@@ -51,7 +52,7 @@ export default function Navbar() {
 
     const pages = [
         {
-            title: 'About Me',
+            title: 'About',
             href: '/about'
         },
         {
@@ -124,9 +125,12 @@ export default function Navbar() {
                         </NavigationMenuItem>
                     ))
                 }
+                <NavigationMenuItem>
+                    <ModeToggle/>
+                </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
                     <Link href="/login" className={`px-4 py-5 ${buttonVariants()}`}>
-                        <LogIn data-icon="inline-start" /> Login / Signup
+                        <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -152,8 +156,11 @@ export default function Navbar() {
                             <Link key={index} href={page.href}>{page.title}</Link>
                         ))
                     }
+                    <span className="absolute top-3 right-[18%]">
+                        <ModeToggle/>
+                    </span>
                     <Link href="/login" className={`px-4 py-5 mt-2 ${buttonVariants()}`}>
-                         <LogIn data-icon="inline-start" /> Login / Signup
+                         <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </nav>
             </SheetContent>
