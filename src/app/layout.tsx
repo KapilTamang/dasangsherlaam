@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(quicksand.variable)}
+      className={`${cn(quicksand.variable)} no-scrollbar`}
       suppressHydrationWarning
     >
       <body className={`${quicksand.className} antialiased min-h-full flex flex-col`}>

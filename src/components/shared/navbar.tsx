@@ -29,23 +29,28 @@ export default function Navbar() {
 
     const categoryPages = [
         {
+            title: "Featured",
+            href: "/categories/featured",
+            description: "Exciting articles from author."        
+        },
+        {
             title: "Science & Technology",
-            href: "/science-technology",
+            href: "/categories/science-technology",
             description: " Latest news and articles on science and technology."        
         },
         {
             title: "Amazing Facts",
-            href: "/amazing-facts",
+            href: "/categories/amazing-facts",
             description: "Interesting and amazing facts on different topics."
         },
         {
             title: "History & Culture",
-            href: "/history-culture",
+            href: "/categories/history-culture",
             description: "Discover the rich history and culture of different countries and civilizations."
         },
         {
             title: "Travel & Tourism",
-            href: "/travel-tourism",
+            href: "/categories/travel-tourism",
             description: "Explore the world through travel and tourism articles, guides, and tips."
         }
     ];
@@ -132,7 +137,7 @@ export default function Navbar() {
                     <ModeToggle/>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
-                    <Link href="/login" className={`px-4 py-5 ${buttonVariants()}`}>
+                    <Link href="/auth/login" className={`px-4 py-5 ${buttonVariants()}`}>
                         <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </NavigationMenuItem>
@@ -167,7 +172,7 @@ export default function Navbar() {
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
                     </span>
-                    <Link href="/login" className={`px-4 py-5 ${buttonVariants()}`}>
+                    <Link href="/auth/login" className={`px-4 py-5 ${buttonVariants()}`}>
                          <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </nav>
