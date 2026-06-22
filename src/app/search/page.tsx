@@ -1,6 +1,6 @@
 export default function Search() {
     return (
-        <div className="px-[8%] md:px-[10%] lg:px-[15%] py-[20px] md:py-[40px]">
+        <div className="global-padding">
             <main>
                 This is Search Page.
             </main>
