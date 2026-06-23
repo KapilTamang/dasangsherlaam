@@ -152,7 +152,9 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="left">
                 <nav className="flex flex-col px-6 text-[1rem] font-semibold mt-2 gap-4">
-                    <header className="text-[1.125rem] font-bold py-3 rounded">Dasangsherlaam</header>
+                    <header className="text-[1.125rem] font-bold py-3 rounded">
+                        <Link href="/" onClick={() => setIsSheetOpen(false)}> Dasangsherlaam</Link>
+                    </header>
                     <span>
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
