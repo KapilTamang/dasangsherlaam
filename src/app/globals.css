@@ -196,5 +196,5 @@
 
 
 @utility global-padding {
-   @apply px-[8%] md:px-[10%] lg:px-[15%] py-[20px] md:py-[40px];
+   @apply px-[8%] md:px-[3%] lg:px-[8%] py-[20px] md:py-[40px];
 }

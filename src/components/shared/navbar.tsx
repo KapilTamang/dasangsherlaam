@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown, Search, LogIn, Send, Info, Library} from "lucide-react";
+import {Rss, Menu, ChevronDown, Search, LogIn, Send, Info, Library, CalendarCheck} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -105,7 +105,7 @@ export default function Navbar() {
     }
 
   return (
-    <header className={`navbar-wrapper flex justify-between items-center px-[8%] md:px-[10%] lg:px-[15%] py-5 sticky top-0 z-50 ${isScrolled ? "bg-secondary shadow-xs" : "bg-transparent shadow-none"}`}>
+    <header className={`navbar-wrapper flex justify-between items-center px-[3%] py-5 md:py-6 sticky top-0 z-50 ${isScrolled ? "bg-secondary shadow-xs" : "bg-transparent shadow-none"}`}>
         <Link className="text-xl font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
         <NavigationMenu className="hidden md:flex text-[1.1rem]">
@@ -137,8 +137,8 @@ export default function Navbar() {
                     <ModeToggle/>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
-                    <Link href="/auth/login" className={`px-4 py-5 ${buttonVariants()}`}>
-                        <LogIn data-icon="inline-start" /> Login
+                    <Link href="/" className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
+                        <CalendarCheck data-icon="inline-start" /> Subscribe
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -172,13 +172,12 @@ export default function Navbar() {
                                 </Link>
                             
                         ))
-                
                     }
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
                     </span>
-                    <Link href="/auth/login" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 ${buttonVariants()}`}>
-                         <LogIn data-icon="inline-start" /> Login
+                    <Link href="" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
+                         <CalendarCheck data-icon="inline-start" /> Subscribe
                     </Link>
                 </nav>
             </SheetContent>
