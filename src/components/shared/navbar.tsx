@@ -147,7 +147,7 @@ export default function Navbar() {
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
-                    <Menu className="h-6 w-6"/>
+                    <Menu className="size-6!"/>
                 </Button>
             </SheetTrigger>
             <SheetContent side="left">
@@ -175,7 +175,7 @@ export default function Navbar() {
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
                     </span>
-                    <Link href="/auth/login" className={`px-4 py-5 ${buttonVariants()}`}>
+                    <Link href="/auth/login" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 ${buttonVariants()}`}>
                          <LogIn data-icon="inline-start" /> Login
                     </Link>
                 </nav>
