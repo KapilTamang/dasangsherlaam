@@ -105,7 +105,7 @@ export default function Navbar() {
     }
 
   return (
-    <header className={`navbar-wrapper flex justify-between items-center md:px-[3%] px-[8%] py-5 md:py-6 sticky top-0 z-50 ${isScrolled ? "bg-secondary shadow-xs" : "bg-transparent shadow-none"}`}>
+    <header className={`navbar-wrapper flex justify-between items-center px-[5%] md:px-[3%] py-4 md:py-5 sticky top-0 z-50 ${isScrolled ? "bg-secondary shadow-xs" : "bg-transparent shadow-none"}`}>
         <Link className="text-xl font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
         <NavigationMenu className="hidden md:flex text-[1.1rem]">

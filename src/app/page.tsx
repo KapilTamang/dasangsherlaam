@@ -1,65 +1,29 @@
+import FeaturedCard from '@/components/shared/featured-card';
+import SectionTitle from '@/components/shared/section-title';
+import ThumbnailCard from '@/components/shared/thumbnail-card';
 
 export default function Home() {
   return (
-    <main className="">
-        <div className="section-banner global-padding h-[100vh] bg-primary text-secondary">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat repudiandae omnis in modi 
-          velit sed delectus iure assumenda nobis veniam cum consequatur asperiores dicta debitis
-           temporibus animi et eveniet quidem, consequuntur beatae! Qui explicabo omnis debitis quia
-            nihil odio officia dolorem quibusdam! Corrupti ab at animi? Aliquam illum ut pariatur. Ea nesciunt nulla 
-            consectetur vel? Non laboriosam eaque culpa ad dignissimos sunt rem, alias nisi ut officiis ea quidem quasi 
-            consequatur accusamus saepe, ipsum quos veniam? Quam, laborum? Nulla quasi labore, assumenda enim sequi, reiciendis,
-             ducimus impedit dignissimos architecto repellendus exercitationem praesentium esse atque alias. Ducimus doloremque quod voluptatibus dolore.
-        </div>
+    <main>
+        <section className="section-banner section-base-style bg-accent">
+			<div className="banner-conatiner container-base-style">
+				<div className="banner-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+					<div className="banner-featured cold-span-1 lg:col-span-2 flex flex-col gap-3 md:gap-4">
+						<SectionTitle title="featured"/>
+						<FeaturedCard/>
+					</div>
+					<div className="banner-trending col-span-1 flex flex-col gap-3 md:gap-4">
+						<SectionTitle title="trending"/>
+						<div className="banner-trending-content flex flex-col gap-3">
+							<ThumbnailCard/>
+						</div>
+					</div>
+				</div>
+			</div>
+        </section>
+		<section className="category">
+			sdfsafsdf
+		</section>
     </main>
   );
 }

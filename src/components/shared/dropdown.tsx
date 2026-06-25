@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { SheetClose } from "../ui/sheet";
 
 interface itemList {
     title: string;

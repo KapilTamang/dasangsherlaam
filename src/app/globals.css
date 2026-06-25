@@ -11,6 +11,9 @@
   --foreground: oklch(0.3211 0 0);
   --card: oklch(1.0000 0 0);
   --card-foreground: oklch(0.3211 0 0);
+  --card-featured-background: oklch(0.2046 0 0);
+  --card-featured-foreground: oklch(0.9670 0.0029 264.5419);
+  --card-thumbnail-foreground: oklch(0.2046 0 0);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.3211 0 0);
   --primary-foreground: oklch(1.0000 0 0);
@@ -64,6 +67,9 @@
   --secondary: oklch(0.2686 0 0);
   --card: oklch(0.2686 0 0);
   --card-foreground: oklch(0.9219 0 0);
+  --card-featured-background: oklch(0.2046 0 0);
+  --card-featured-foreground: oklch(0.9670 0.0029 264.5419);
+  --card-thumbnail-foreground: oklch(0.9670 0.0029 264.5419);
   --popover: oklch(0.2686 0 0);
   --popover-foreground: oklch(0.9219 0 0);
   --primary-foreground: oklch(1.0000 0 0);
@@ -142,6 +148,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-featured-background: var(--card-featured-background);
+  --color-card-featured-foreground: var(--card-featured-foreground);
+  --color-card-thumbnail-foreground: var(--card-thumbnail-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -195,6 +204,11 @@
 }
 
 
-@utility global-padding {
-   @apply px-[8%] md:px-[3%] lg:px-[8%] py-[20px] md:py-[40px];
+@utility section-base-style {
+   @apply lg:max-h-screen flex flex-col justify-start py-[30px] md:py-[70px];
+} 
+
+/* To prevent content to stop stretching endlessly in larger devices */
+@utility container-base-style {
+  @apply w-full container max-w-[1500px] mx-auto px-[5%] md:px-[3%] overflow-hidden; 
 }
