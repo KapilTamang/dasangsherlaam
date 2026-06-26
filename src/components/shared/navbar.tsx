@@ -15,6 +15,8 @@ import {
 import {Button, buttonVariants} from "@/components/ui/button"
 import {Sheet, SheetContent, SheetTrigger, SheetClose} from "@/components/ui/sheet"
 import { ModeToggle } from "./theme-toggle";
+import categories from "@/data/category";
+import navlinks from "@/data/navlinks";
 
 export default function Navbar() {
 
@@ -27,51 +29,9 @@ export default function Navbar() {
     //Set state to track sheet visibility
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
 
-    const categoryPages = [
-        {
-            title: "Featured",
-            href: "/categories/featured",
-            description: "Exciting articles from author."        
-        },
-        {
-            title: "Science & Technology",
-            href: "/categories/science-technology",
-            description: " Latest news and articles on science and technology."        
-        },
-        {
-            title: "Amazing Facts",
-            href: "/categories/amazing-facts",
-            description: "Interesting and amazing facts on different topics."
-        },
-        {
-            title: "History & Culture",
-            href: "/categories/history-culture",
-            description: "Discover the rich history and culture of different countries and civilizations."
-        },
-        {
-            title: "Travel & Tourism",
-            href: "/categories/travel-tourism",
-            description: "Explore the world through travel and tourism articles, guides, and tips."
-        }
-    ];
-
-    const pages = [
-        {
-            title: 'About',
-            href: '/about',
-            icon: Info
-        },
-        {
-            title: 'Contact',
-            href: '/contact',
-            icon: Send
-        },
-        {
-            title: 'Search',
-            href: '/search',
-            icon: Search
-        }
-    ]
+    const dummyCategories = categories;
+    
+    const navbarlinks = navlinks;
 
     const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
 
@@ -115,9 +75,9 @@ export default function Navbar() {
                     <NavigationMenuContent className="pt-2 pb-2">
                         <ul className="w-96">
                             {
-                                categoryPages && categoryPages.map((categoryPage, index) => (
-                                    <ListItem key={index} href={categoryPage.href} title={categoryPage.title}>
-                                        {categoryPage.description}
+                                dummyCategories && dummyCategories.map((category, index) => (
+                                    <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
+                                        {category.description}
                                     </ListItem>
                                 ))
                             }
@@ -125,10 +85,10 @@ export default function Navbar() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 {
-                    pages && pages.map((page, index) => (
+                    navbarlinks && navbarlinks.map((link, index) => (
                         <NavigationMenuItem key={index}>
-                            <Link href={page.href}>
-                            { page.title === "Search" ? (<Search className="inline" size={20}/>) : (page.title) }
+                            <Link href={`/${link.slug}`}>
+                            { link.title === "search" ? (<Search className="inline" size={20}/>) : (link.title) }
                             </Link>
                         </NavigationMenuItem>
                     ))
@@ -159,15 +119,15 @@ export default function Navbar() {
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
-                        <Dropdown items={categoryPages} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
+                        <Dropdown items={dummyCategories} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
                     </span>
                     {
-                        pages && pages.map((page, index) => (
+                        navbarlinks && navbarlinks.map((link, index) => (
                         
-                                <Link key={index} href={page.href} onClick={() => setIsSheetOpen(false)}>
+                                <Link key={index} href={`/${link.slug}`} onClick={() => setIsSheetOpen(false)}>
                                     <span className="flex items-center gap-2 mb-2">
-                                        <page.icon className="text-primary" size={18} />
-                                        {page.title}
+                                        <link.icon className="text-primary" size={18} />
+                                        {link.title}
                                     </span>
                                 </Link>
                             
