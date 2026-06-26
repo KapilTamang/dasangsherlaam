@@ -19,7 +19,7 @@ export default function Home() {
 					<div className="banner-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
 						<div className="banner-featured cold-span-1 lg:col-span-2 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="featured"/>
-							<FeaturedCard/>
+						{featured && <FeaturedCard data={featured}/>}
 						</div>
 						<div className="banner-trending col-span-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="trending"/>
