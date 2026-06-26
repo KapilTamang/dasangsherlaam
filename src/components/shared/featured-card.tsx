@@ -20,10 +20,10 @@ export default function FeaturedCard() {
                         />
                     </div>
                     {/* Card text content */}
-                    <div className="card-body flex flex-col gap-1 w-full md:absolute bottom-0 left-0 bg-primary md:bg-card-featured-background/70 md:group-hover:bg-card-featured-background/90 duration-500 text-card-featured-foreground p-4 md:p-6">
-                        <div className="card-header">
+                    <div className="card-body flex flex-col gap-1 md:gap-2 w-full md:absolute bottom-0 left-0 bg-primary md:bg-card-featured-background/70 md:group-hover:bg-card-featured-background/90 duration-500 text-card-featured-foreground p-4 md:p-6">
+                        <div className="card-header flex flex-col gap-0 md:gap-2">
                             <CategoryTag title="featured" />
-                            <h1 className="capitalize text-[1.4rem] md:text-[2rem] font-bold group-hover:underline">{featured.title}</h1>
+                            <h5 className="md:line-clamp-1 capitalize text-[1.4rem] md:text-[2rem] font-bold underline md:no-underline group-hover:underline">{featured.title}</h5>
                         </div>
                         <div className="card-footer flex gap-8 mt-2 text-[1rem] md:text-[1.1rem]">
                             <div className="card-footer-date flex items-center gap-1">

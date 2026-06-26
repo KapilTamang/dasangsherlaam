@@ -14,7 +14,7 @@ export default function Home() {
 					</div>
 					<div className="banner-trending col-span-1 flex flex-col gap-3 md:gap-4">
 						<SectionTitle title="trending"/>
-						<div className="banner-trending-content flex flex-col gap-3">
+						<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
 							<ThumbnailCard/>
 						</div>
 					</div>
