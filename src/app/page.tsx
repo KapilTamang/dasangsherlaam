@@ -25,6 +25,7 @@ export default function Home() {
 			<div className="todays-pick-container container-base-style">
 				<div className="todays-pick-content flex flex-col gap-3 md:gap-4">
 					<SectionTitle title="today's pick"/>
+					sadfasdf
 				</div>
 			</div>
 		</section>

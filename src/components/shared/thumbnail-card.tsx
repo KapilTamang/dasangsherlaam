@@ -15,7 +15,7 @@ export default function ThumbnailCard() {
                             <div className="card-image bg-primary flex-1">
                                 <img className="md:w-full md:h-full object-cover group-hover:scale-110 duration-500 ease-in-out" src={blog?.imageURL ?? ''} alt="thumbnail-image" />
                             </div>
-                            <div className="card-body flex flex-2 md:flex-3 flex-col items-start gap-2 bg-primary md:bg-transparent text-card-featured-foreground md:text-card-thumbnail-foreground px-2 pb-2 md:p-0">
+                            <div className="card-body flex flex-2 md:flex-3 flex-col items-start gap-2 md:gap-0 bg-primary md:bg-transparent text-card-featured-foreground md:text-card-thumbnail-foreground px-2 pb-2 md:p-0">
                                 <div className="card-header text-xl font-bold">
                                     <div className="category-tag block md:hidden">
                                         <CategoryTag title={blog.category}/>
@@ -24,7 +24,7 @@ export default function ThumbnailCard() {
                                        {blog.title}
                                     </h5>
                                 </div>
-                                <div className="card-footer flex flex-col gap-1.5 md:text-muted-foreground text-[1rem]">
+                                <div className="card-footer flex flex-col gap-1 md:text-muted-foreground text-[1rem]">
                                      <div className="card-footer-date">
                                         {blog.author}
                                     </div>
