@@ -23,10 +23,9 @@ interface EmblaCarouselProps {
 export default function EmblaCarousel({ data }: EmblaCarouselProps) {
   // Initialize the carousel hook with basic loop behavior
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    slidesToScroll: 'auto',
+    slidesToScroll: 1,
     breakpoints: {
-      '(min-width: 1024px)': { slidesToScroll: 3 },
-      '(min-width: 768px)': { slidesToScroll: 2 }
+      '(min-width: 768px)': { slidesToScroll: 'auto' }
     }
   })
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -72,7 +71,7 @@ export default function EmblaCarousel({ data }: EmblaCarouselProps) {
                 </div>
             {/* Viewport wrapper: must have overflow-hidden */}
             <div className="embla__viewport overflow-hidden" ref={emblaRef}>
-                <div className="embla__container flex gap-8 md:gap-3 touch-pan touch-pinch-zoom">
+                <div className="embla__container flex gap-8 md:gap-3">
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
