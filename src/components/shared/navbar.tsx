@@ -68,7 +68,7 @@ export default function Navbar() {
     <header className={`navbar-wrapper flex justify-between items-center px-[5%] md:px-[3%] py-4 md:py-5 sticky top-0 z-50 ${isScrolled ? "bg-secondary shadow-xs" : "bg-transparent shadow-none"}`}>
         <Link className="text-xl font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
-        <NavigationMenu className="hidden md:flex text-[1.1rem]">
+        <NavigationMenu className="hidden md:flex text-[1rem]">
             <NavigationMenuList className="space-x-6">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
@@ -97,7 +97,7 @@ export default function Navbar() {
                     <ModeToggle/>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
-                    <Link href="/" className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
+                    <Link href="/" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
                         <CalendarCheck data-icon="inline-start" /> Subscribe
                     </Link>
                 </NavigationMenuItem>

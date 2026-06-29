@@ -1,8 +1,8 @@
-import Card from '@/components/shared/card';
 import EmblaCarousel from '@/components/shared/embla-carousel';
 import FeaturedCard from '@/components/shared/featured-card';
 import SectionTitle from '@/components/shared/section-title';
-import ThumbnailCard from '@/components/shared/thumbnail-card';
+import CardRow from '@/components/shared/card-row';
+import CardText from '@/components/shared/card-text'
 import blogs from '@/data/blogs';
 
 export default function Home() {
@@ -17,17 +17,27 @@ export default function Home() {
 		<main>
 			<section className="section-banner section-base-style bg-accent">
 				<div className="banner-conatiner container-base-style">
-					<div className="banner-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
-						<div className="banner-featured cold-span-1 lg:col-span-2 flex flex-col gap-3 md:gap-4">
-							<SectionTitle title="featured"/>
-						{featured && <FeaturedCard data={featured}/>}
-						</div>
-						<div className="banner-trending col-span-1 flex flex-col gap-3 md:gap-4">
+					<div className="banner-content grid grid-cols-1 lg:grid-cols-4  gap-8">
+						<div className="banner-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="trending"/>
 							<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
-										<ThumbnailCard key={blog.id} data={blog}/>
+										<CardRow key={blog.id} data={blog}/>
+									))
+								}
+							</div>
+						</div>
+						<div className="banner-featured cold-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
+							<SectionTitle title="featured"/>
+							{featured && <FeaturedCard data={featured}/>}
+						</div>
+						<div className="banner-trending col-span-1 order-3 flex flex-col gap-3 md:gap-4">
+							<SectionTitle title="author's pick"/>
+							<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
+								{
+									trending && trending.map((blog) =>(
+										<CardText key={blog.id} data={blog}/>
 									))
 								}
 							</div>

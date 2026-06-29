@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {SquareChevronLeft, SquareChevronRight } from "lucide-react";
-import Card from "./card";
+import CardColumn from "./card-column";
 
 interface carouselProps {
     id: number;
@@ -75,7 +75,7 @@ export default function EmblaCarousel({ data }: EmblaCarouselProps) {
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
-                            <Card key={blog.id} data={blog}/>
+                            <CardColumn key={blog.id} data={blog}/>
                         ))
                     }
                 </div>
