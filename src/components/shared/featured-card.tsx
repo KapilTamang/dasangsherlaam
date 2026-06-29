@@ -20,10 +20,10 @@ interface cardItemProps {
 export default function FeaturedCard({data}: cardItemProps) {
   
     return (
-        <Link href="/contact" className="group">
-            <article className="card relative overflow-hidden">
+        <Link href={`/blog/${data.slug}`}>
+            <article className="card group relative">
                     {/* Card image */}
-                    <div className="card-image">
+                    <div className="card-image overflow-hidden">
                         <img
                             className="transition-transform duration-500 ease-in-out group-hover:scale-110"
                             src={data.imageURL}
@@ -31,12 +31,12 @@ export default function FeaturedCard({data}: cardItemProps) {
                         />
                     </div>
                     {/* Card text content */}
-                    <div className="card-body flex flex-col gap-1 md:gap-2 w-full md:absolute bottom-0 left-0 bg-primary md:bg-card-featured-background/70 md:group-hover:bg-card-featured-background/90 duration-500 text-card-featured-foreground p-4 md:p-6">
+                    <div className="card-content flex flex-col gap-1 md:gap-2 w-full md:absolute bottom-0 left-0 bg-primary md:bg-card-featured-background/70 md:group-hover:bg-card-featured-background/90 duration-500 text-card-featured-foreground p-4 md:p-6">
                         <div className="card-header flex flex-col gap-0 md:gap-2">
                             <CategoryTag title="featured" />
-                            <h5 className="md:line-clamp-1 capitalize text-[1.4rem] md:text-[2rem] font-bold underline md:no-underline group-hover:underline">{data.title}</h5>
+                            <h1 className="md:line-clamp-1 capitalize text-[1.4rem] md:text-[2rem] font-bold underline md:no-underline group-hover:underline">{data.title}</h1>
                         </div>
-                        <div className="card-footer flex gap-8 mt-2 text-[1rem] md:text-[1.1rem]">
+                        <div className="card-footer flex gap-8 mt-2 text-[0.9rem] md:text-[1rem]">
                             <div className="card-footer-date flex items-center gap-1">
                                 <CalendarClock size={20}/>
                                 {data.date}

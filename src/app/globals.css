@@ -199,11 +199,11 @@
   }
 
   p {
-    @apply text-[1rem] md:text-[1.125rem] leading-7 md:leading-8 text-left;
+    @apply text-[1rem] md:text-[1.1rem] leading-6 md:leading-7 text-left;
   }
 
   h1, h2, h3, h4, h5, h6{
-    @apply leading-6 md:leading-9;
+    @apply leading-7 md:leading-8;
   }
 }
 

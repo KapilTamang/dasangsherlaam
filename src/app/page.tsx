@@ -25,7 +25,7 @@ export default function Home() {
 							<SectionTitle title="trending"/>
 							<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
 								{
-									trending.map((blog) =>(
+									trending && trending.map((blog) =>(
 										<ThumbnailCard key={blog.id} data={blog}/>
 									))
 								}
@@ -38,8 +38,12 @@ export default function Home() {
 				<div className="todays-pick-container container-base-style">
 					<div className="todays-pick-content flex flex-col gap-3 md:gap-4">
 						<SectionTitle title="today's pick"/>
-						<div className="todays-pick-card-conatiner">
-							<Card/>
+						<div className="todays-pick-card-conatiner flex flex-col md:flex-row gap-8 md:gap-4 overflow-hidden">
+							{
+								dummyBlogs.map((blog) => (
+									<Card key={blog.id} data={blog}/>
+								))
+							}
 						</div>
 					</div>
 				</div>
