@@ -1,4 +1,5 @@
 import Card from '@/components/shared/card';
+import EmblaCarousel from '@/components/shared/embla-carousel';
 import FeaturedCard from '@/components/shared/featured-card';
 import SectionTitle from '@/components/shared/section-title';
 import ThumbnailCard from '@/components/shared/thumbnail-card';
@@ -38,12 +39,8 @@ export default function Home() {
 				<div className="todays-pick-container container-base-style">
 					<div className="todays-pick-content flex flex-col gap-3 md:gap-4">
 						<SectionTitle title="today's pick"/>
-						<div className="todays-pick-card-conatiner flex flex-col md:flex-row gap-8 md:gap-4 overflow-hidden">
-							{
-								dummyBlogs.map((blog) => (
-									<Card key={blog.id} data={blog}/>
-								))
-							}
+						<div className="todays-pick-card-conatiner">
+							<EmblaCarousel data={dummyBlogs}/>
 						</div>
 					</div>
 				</div>
