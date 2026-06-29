@@ -1,5 +1,6 @@
 import Link  from 'next/link';
 import CategoryTag from './category-tag';
+import { BookOpenCheckIcon } from 'lucide-react';
 
 interface cardItem {
     id: number;
@@ -26,6 +27,7 @@ export default function ThumbnailCard({data} : cardItemProps) {
                             <CategoryTag title={data.category}/>
                         </div>
                         <h1 className="md:line-clamp-1 underline md:no-underline md:group-hover:underline text-[1.2rem] md:text-[1rem] capitalize duration-300">
+                             <BookOpenCheckIcon className="inline mr-2 text-foreground" size={18} />
                             {data.title}
                         </h1>
                     </div>

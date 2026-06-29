@@ -98,7 +98,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
                     <Link href="/" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
-                        <CalendarCheck data-icon="inline-start" /> Subscribe
+                        <CalendarCheck data-icon="inline" /> Subscribe
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>

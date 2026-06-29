@@ -71,7 +71,7 @@ export default function EmblaCarousel({ data }: EmblaCarouselProps) {
                 </div>
             {/* Viewport wrapper: must have overflow-hidden */}
             <div className="embla__viewport overflow-hidden" ref={emblaRef}>
-                <div className="embla__container flex gap-8 md:gap-3">
+                <div className="embla__container flex gap-8 md:gap-4">
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
