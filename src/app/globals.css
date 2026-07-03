@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --primary: oklch(0.6231 0.1880 259.8145);
+  --primary: oklch(62.55% 0.18669 259.706);
   --secondary: oklch(0.9670 0.0029 264.5419);
   --background: oklch(1.0000 0 0);
   --foreground: oklch(0.3211 0 0);
@@ -203,7 +203,7 @@
   }
 
   h1, h2, h3, h4, h5, h6{
-    @apply leading-7 md:leading-8;
+    @apply leading-8 md:leading-7;
   }
 }
 
