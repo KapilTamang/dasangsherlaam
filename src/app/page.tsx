@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
 import CardFeatured from '@/components/shared/card-featured';
-import SectionTitle from '@/components/shared/section-title';
+import Newsletter from '@/components/shared/newsletter';
+import SectionTitle from '@/components/ui/section-title';
 import CardRow from '@/components/shared/card-row';
 import CardText from '@/components/shared/card-text'
 import blogs from '@/data/blogs';
@@ -24,7 +25,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<section className="section-banner section-base-style bg-accent">
+			<section id="section-banner" className="section-base-style bg-accent">
 				<div className="section-banner-conatiner container-base-style">
 					<div className="section-banner-content grid grid-cols-1 lg:grid-cols-4  gap-8">
 						<div className="section-banner-content-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
@@ -57,7 +58,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="section-exclusive section-base-style">
+			<section id="section-exclusive" className="section-base-style">
 				<div className="section-exclusive-container container-base-style flex flex-col gap-3 md:gap-4">
 					<div className="section-exclusive-title">
 						<SectionTitle title="exclusive"/>
@@ -79,7 +80,7 @@ export default function Home() {
 			{/* Home page section for diffrerent categories */}
 			{
 				categories && categories.map((category) => (
-					<section key={category.id} className="section-category section-base-style">
+					<section key={category.id} id="section-category" className="section-base-style">
 						<div className="section-category-container container-base-style">
 							<div className="section-category-content flex flex-col gap-2 md:gap-6">
 								<SectionTitle title={category.title}/>
@@ -94,19 +95,10 @@ export default function Home() {
 					</section>
 				))
 			}
-			<section className="section-newsletter section-base-style">
+			<section id="section-newsletter" className="section-base-style">
 				<div className="section-newsletter-container container-base-style flex flex-col gap-6 md:gap-8">
 					<SectionTitle title="newsletter"/>
-					<div className="section-newsletter-content flex flex-col md:flex-row gap-6 md:gap-8">
-						<div className="section-newsletter-content-img flex flex-1">
-							<img src="/images/newsletter.svg" alt="" />
-						</div>
-						<div className="section-newsletter-content-form flex flex-1 justify-center items-center p-4">
-							<p>
-								lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-							</p>
-						</div>
-					</div>
+					<Newsletter/>
 				</div>
 			</section>
 		</main>

@@ -93,9 +93,10 @@ export default function Navbar() {
                     <ModeToggle/>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
-                    <Link href="/" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
+                    {/* Using anchor tag to navigate to section ID */}
+                    <a href="#section-newsletter" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
                         <CalendarCheck data-icon="inline" /> Subscribe
-                    </Link>
+                    </a>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
