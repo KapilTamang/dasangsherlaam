@@ -30,7 +30,7 @@ export default function Card({data}: cardItemProps) {
                         <CategoryTag title={data.category}/>
                     </div>
                     <div className="card-header text-[1.4rem] lg:text-[1.3rem] font-extrabold capitalize">
-                        <h1 className="underline md:no-underline group-hover:underline duration-300">{data.title}</h1>
+                        <h1 className="line-clamp-3 underline md:no-underline group-hover:underline duration-300">{data.title}</h1>
                     </div>
                     <div className="card-body">
                         <p className="line-clamp-2">

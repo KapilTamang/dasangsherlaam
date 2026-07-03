@@ -1,20 +1,26 @@
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
-import FeaturedCard from '@/components/shared/featured-card';
+import CardFeatured from '@/components/shared/card-featured';
 import SectionTitle from '@/components/shared/section-title';
 import CardRow from '@/components/shared/card-row';
 import CardText from '@/components/shared/card-text'
 import blogs from '@/data/blogs';
 import categories from '@/data/category';
+import CardRowLarge from '@/components/shared/card-row-large';
 
 export default function Home() {
 
 	//Fetching dummy data..
-	const dummyBlogs = blogs;
-	const trending = dummyBlogs.filter((blog) => blog.category !== 'featured').slice(0,6);
+	const trending = blogs.filter((blog) => blog.category !== 'featured').slice(0,5);
+	//Fetching author's pick blogs
+	const authorsPick = blogs.filter((blog) => blog.category !== 'featured').slice(0,6);
 	//Finding featured blog
-	const featured = dummyBlogs.find((blog) => blog.category == 'featured');
+	const featured = blogs.find((blog) => blog.category == 'featured');
+	//Finding most recent exclusive blog
+	const exclusiveMain = blogs.find((blog) => blog.category == 'exclusive')
+	//Finding all exclusive bolgs
+	const exclusiveCard = blogs.filter((blog) => blog.category == 'exclusive').slice(0,3)
 
 	return (
 		<main>
@@ -26,14 +32,14 @@ export default function Home() {
 							<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
-										<CardRow key={blog.id} data={blog}/>
+										<CardRow key={blog.id} data={blog} type="trending"/>
 									))
 								}
 							</div>
 						</div>
 						<div className="banner-featured cold-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="featured"/>
-							{featured && <FeaturedCard data={featured}/>}
+							{featured && <CardFeatured data={featured}/>}
 							 <Link href="/categories/featured" className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
 								read more...
 							</Link>
@@ -42,7 +48,7 @@ export default function Home() {
 							<SectionTitle title="author's pick..."/>
 							<div className="banner-trending-content flex flex-col gap-8 md:gap-3">
 								{
-									trending && trending.map((blog) =>(
+									authorsPick && authorsPick.map((blog) =>(
 										<CardText key={blog.id} data={blog}/>
 									))
 								}
@@ -51,17 +57,37 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+			<section className="section-exclusive section-base-style">
+				<div className="exclusive-container container-base-style flex flex-col gap-3 md:gap-4">
+					<div className="exclusive-title">
+						<SectionTitle title="exclusive"/>
+					</div>
+					<div className="exclusive-content flex flex-col gap-8">
+						<div className="exclusive-content-main">
+							{exclusiveMain && <CardRowLarge data={exclusiveMain} />}
+						</div>
+						<div className="exclusive-content-cards flex-col flex md:flex-row gap-8 md:gap-3">
+							{
+								exclusiveCard && exclusiveCard.map((blog) => (
+									<CardRow key={blog.id} data={blog} type="exclusive"/>
+								))
+							}
+						</div>				
+					</div>
+				</div>
+			</section>
 			{/* Home page section for diffrerent categories */}
 			{
 				categories && categories.map((category) => (
 					<section key={category.id} className="section-base-style">
 						<div className="container-base-style">
-							<div className="flex flex-col gap-3 md:gap-4">
+							<div className=" relative flex flex-col gap-1 md:gap-4">
 								<SectionTitle title={category.title}/>
-								<div className="todays-pick-card-conatiner">
-									<EmblaCarousel data={dummyBlogs}/>
+								<div className="
+								card-conatiner">
+									<EmblaCarousel data={blogs}/>
 								</div>
-								<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+								<Link href={`/categories/${category.slug}`} className={`absolute bottom-0 right-0 self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
 									{category.title}...
 								</Link>
 							</div>

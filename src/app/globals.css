@@ -209,7 +209,7 @@
 
 
 @utility section-base-style {
-   @apply max-h-fit flex flex-col justify-start py-[30px] md:py-[50px] lg:py-[70px];
+   @apply max-h-fit flex flex-col justify-start py-[25px] md:py-[20px] lg:py-[25px] first-of-type:py-[30px] md:first-of-type:py-[40px] lg:first-of-type:py-[60px];
 } 
 
 /* To prevent content to stop stretching endlessly in larger devices */

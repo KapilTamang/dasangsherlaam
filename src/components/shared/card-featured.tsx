@@ -17,7 +17,7 @@ interface cardItemProps {
     data: cardItem
 }
 
-export default function CardFeatured({data}: cardItemProps) {
+export default function FeaturedCard({data}: cardItemProps) {
   
     return (
         <Link href={`/blog/${data.slug}`}>

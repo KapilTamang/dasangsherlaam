@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Select the weights you need
-  variable: "--font-quicksand", // Defines the CSS variable
-});
 
 const inter = Inter({
   subsets: ["latin"],

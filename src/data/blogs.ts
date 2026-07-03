@@ -115,7 +115,7 @@ const blogs: Blog[] = [
     {
         id: 7,
         title: 'modern teaching methods in schools',
-        slug: 'new-findings-in-modern-biomedica-reasearch',
+        slug: 'modern-teaching-methods-in-schools',
         description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
         that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
         It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
@@ -127,6 +127,74 @@ const blogs: Blog[] = [
         category: 'amazing facts',
         imageURL: '/images/blog6.jpg',
         date: 'Sept 05, 2026',
+        author: 'Dasang'
+    },
+    {
+        id: 8,
+        title: 'mapping our cosmic neighborhood: a deep dive into the milky way',
+        slug: 'mapping-our-cosmic-neighborhood-a-deep-dive-into-the-milky-way',
+        description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.
+        An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
+        category: 'exclusive',
+        imageURL: '/images/exclusive.jpg',
+        date: 'Sept 05, 2026',
+        author: 'Dasang'
+    },
+    {
+        id: 9,
+        title: 'Rocket Lab Spends $8 Billion to Acquire Iridium to Accelerate Vertical Integration',
+        slug: 'Rocket-Lab-Spends-$8-Billion-to-Acquire-Iridium-to-Accelerate-Vertical-Integration',
+        description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.
+        An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
+        category: 'exclusive',
+        imageURL: '/images/exclusive1.jpg',
+        date: 'Oct 05, 2026',
+        author: 'Dasang'
+    },
+    {
+        id: 10,
+        title: 'Lionel Messi Ranked No. 2, Cristiano Ronaldo Falls to 79th in FIFA World Cup 2026 Power Rankings',
+        slug: 'Lionel-Messi-Ranked-No-2-Cristiano-Ronaldo-Falls-to-79th-in-FIFA-World-Cup-2026-Power-Rankings',
+        description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.
+        An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
+        category: 'exclusive',
+        imageURL: '/images/exclusive2.jpg',
+        date: 'Jan 05, 2025',
+        author: 'Dasang'
+    },
+    {
+        id: 11,
+        title: 'The Future of Medical Technology: Transforming Healthcare Delivery',
+        slug: 'The-Future-of-Medical-Technology-Transforming-Healthcare-Delivery',
+        description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.
+        An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
+        that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
+        It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
+        animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
+        category: 'exclusive',
+        imageURL: '/images/exclusive3.jpg',
+        date: 'Aug 05, 2025',
         author: 'Dasang'
     },
     
