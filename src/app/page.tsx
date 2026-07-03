@@ -81,13 +81,12 @@ export default function Home() {
 				categories && categories.map((category) => (
 					<section key={category.id} className="section-base-style">
 						<div className="container-base-style">
-							<div className=" relative flex flex-col gap-1 md:gap-4">
+							<div className="flex flex-col gap-2 md:gap-6">
 								<SectionTitle title={category.title}/>
-								<div className="
-								card-conatiner">
+								<div className="card-container">
 									<EmblaCarousel data={blogs}/>
 								</div>
-								<Link href={`/categories/${category.slug}`} className={`absolute bottom-0 right-0 self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+								<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
 									{category.title}...
 								</Link>
 							</div>

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown, Search, LogIn, Send, Info, Library, CalendarCheck} from "lucide-react";
+import {Rss, Menu, ChevronDown, Search, Library, CalendarCheck} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -28,10 +28,6 @@ export default function Navbar() {
 
     //Set state to track sheet visibility
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
-
-    const dummyCategories = categories;
-    
-    const navbarlinks = navlinks;
 
     const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
 
@@ -75,7 +71,7 @@ export default function Navbar() {
                     <NavigationMenuContent className="pt-2 pb-2">
                         <ul className="w-96">
                             {
-                                dummyCategories && dummyCategories.map((category, index) => (
+                                categories && categories.map((category, index) => (
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
                                         {category.description}
                                     </ListItem>
@@ -85,7 +81,7 @@ export default function Navbar() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 {
-                    navbarlinks && navbarlinks.map((link, index) => (
+                    navlinks && navlinks.map((link, index) => (
                         <NavigationMenuItem key={index}>
                             <Link href={`/${link.slug}`}>
                             { link.title === "search" ? (<Search className="inline" size={20}/>) : (link.title) }
@@ -119,10 +115,10 @@ export default function Navbar() {
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
-                        <Dropdown items={dummyCategories} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
+                        <Dropdown items={ categories} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
                     </span>
                     {
-                        navbarlinks && navbarlinks.map((link, index) => (
+                        navlinks && navlinks.map((link, index) => (
                         
                                 <Link key={index} href={`/${link.slug}`} onClick={() => setIsSheetOpen(false)}>
                                     <span className="flex items-center gap-2 mb-2">
