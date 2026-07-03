@@ -20,7 +20,7 @@ interface cardItemProps {
 export default function CardRow({data, type} : cardItemProps) {
     return(
         <Link className={`flex-1 py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>
-            <article className="card group flex gap-0 md:gap-3 bg-primary md:bg-transparent">
+            <article className="card group flex gap-0 md:gap-3 px-4 md:px-0 bg-primary md:bg-transparent">
                 <div className="card-image flex flex-1 md:w-full md:h-full overflow-hidden bg-primary">
                     <img className="object-contain group-hover:scale-110 duration-500 ease-in-out" src={data.imageURL ?? ''} alt={data.title} />
                 </div>
