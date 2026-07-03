@@ -133,9 +133,10 @@ export default function Navbar() {
                     <span className="absolute top-3 right-[18%]">
                         <ModeToggle/>
                     </span>
-                    <Link href="" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
+                    {/* Using anchor tag to navigate to section ID */}
+                    <a href="#section-newsletter" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
                          <CalendarCheck data-icon="inline-start" /> Subscribe
-                    </Link>
+                    </a>
                 </nav>
             </SheetContent>
         </Sheet>
