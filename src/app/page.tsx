@@ -25,12 +25,12 @@ export default function Home() {
 
 	return (
 		<main>
-			<section id="section-banner" className="section-base-style bg-accent">
-				<div className="section-banner-conatiner container-base-style">
-					<div className="section-banner-content grid grid-cols-1 lg:grid-cols-4  gap-8">
-						<div className="section-banner-content-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
+			<section id="banner-section" className="section-base-style bg-accent">
+				<div className="banner-section-conatiner container-base-style">
+					<div className="banner-section-content grid grid-cols-1 lg:grid-cols-4  gap-8">
+						<div className="banner-section-content-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="trending..."/>
-							<div className="section-banner-content-trending-cards flex flex-col gap-8 md:gap-3">
+							<div className="banner-section-content-trending-cards flex flex-col gap-8 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
 										<CardRow key={blog.id} data={blog} type="trending"/>
@@ -38,16 +38,16 @@ export default function Home() {
 								}
 							</div>
 						</div>
-						<div className="section-banner-content-featured col-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
+						<div className="banner-section-content-featured col-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="featured"/>
 							{featured && <CardFeatured data={featured}/>}
 							 <Link href="/categories/featured" className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
 								read more...
 							</Link>
 						</div>
-						<div className="section-banner-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
+						<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="author's pick..."/>
-							<div className="section-banner-content-authors-pick-cards flex flex-col gap-8 md:gap-3">
+							<div className="banner-section-content-authors-pick-cards flex flex-col gap-8 md:gap-3">
 								{
 									authorsPick && authorsPick.map((blog) =>(
 										<CardText key={blog.id} data={blog}/>
@@ -58,16 +58,16 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="section-exclusive" className="section-base-style">
-				<div className="section-exclusive-container container-base-style flex flex-col gap-3 md:gap-4">
-					<div className="section-exclusive-title">
+			<section id="exclusive-section" className="section-base-style">
+				<div className="exclusive-section-container container-base-style flex flex-col gap-3 md:gap-4">
+					<div className="exclusive-section-title">
 						<SectionTitle title="exclusive"/>
 					</div>
-					<div className="section-exclusive-content flex flex-col gap-8">
-						<div className="section-exclusive-content-main">
+					<div className="exclusive-section-content flex flex-col gap-8">
+						<div className="exclusive-section-content-main">
 							{exclusiveMain && <CardRowLarge data={exclusiveMain} />}
 						</div>
-						<div className="section-exclusive-content-cards flex-col flex md:flex-row gap-8 md:gap-3">
+						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-8 md:gap-3">
 							{
 								exclusiveCard && exclusiveCard.map((blog) => (
 									<CardRow key={blog.id} data={blog} type="exclusive"/>
@@ -80,11 +80,11 @@ export default function Home() {
 			{/* Home page section for diffrerent categories */}
 			{
 				categories && categories.map((category) => (
-					<section key={category.id} id="section-category" className="section-base-style">
-						<div className="section-category-container container-base-style">
-							<div className="section-category-content flex flex-col gap-2 md:gap-6">
+					<section key={category.id} id="category-section" className="section-base-style">
+						<div className="category-section-container container-base-style">
+							<div className="category-section-content flex flex-col gap-2 md:gap-6">
 								<SectionTitle title={category.title}/>
-								<div className="section-category-content-card">
+								<div className="category-section-content-card">
 									<EmblaCarousel data={blogs}/>
 								</div>
 								<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
@@ -95,8 +95,8 @@ export default function Home() {
 					</section>
 				))
 			}
-			<section id="section-newsletter" className="section-base-style">
-				<div className="section-newsletter-container container-base-style flex flex-col gap-6 md:gap-8">
+			<section id="newsletter-section" className="section-base-style">
+				<div className="newsletter-section-container container-base-style flex flex-col gap-6 md:gap-8">
 					<SectionTitle title="newsletter"/>
 					<Newsletter/>
 				</div>
