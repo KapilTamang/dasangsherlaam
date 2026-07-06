@@ -10,7 +10,7 @@ export type ActionResponse = {
 export async function submitNewsletterForm(data: NewsletterFormValues): Promise<ActionResponse> {
     //Re-validate the incoming client payloads on the server
     const validatedFields = newsletterSchema.safeParse(data);
-
+    
     if (!validatedFields.success) {
         return {
             success: false,
