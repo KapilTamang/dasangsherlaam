@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
 import CardFeatured from '@/components/shared/card-featured';
-import Newsletter from '@/components/shared/newsletter';
+import NewsletterForm from '@/components/features/newsletter/newsletter-form';
 import SectionTitle from '@/components/ui/section-title';
 import CardRow from '@/components/shared/card-row';
 import CardText from '@/components/shared/card-text'
@@ -98,7 +98,23 @@ export default function Home() {
 			<section id="newsletter-section" className="section-base-style">
 				<div className="newsletter-section-container container-base-style flex flex-col gap-6 md:gap-8">
 					<SectionTitle title="newsletter"/>
-					<Newsletter/>
+					<div className="newsletter-section-content flex flex-col md:flex-row gap-6 md:gap-8">
+						<figure className="newsletter-section-content-img flex flex-1">
+							<img className="w-full h-full object-cover" src="/images/newsletter.svg" alt="" />
+						</figure>
+						<div className="newsletter-section-content-text flex flex-1 flex-col gap-8 justify-center items-center p-4">
+							<div className="newsletter-section-content-text-subscribe flex flex-col gap-6 justify-center items-center">
+								<p className="text-[1.3rem] capitalize font-medium">subscribe to our</p>
+								<div className="newsletter-section-content-text-newsletter -skew-x-12">
+									<span className="text-[2rem] text-card-featured-foreground font-bold uppercase px-4 py-2 bg-primary">newsletter</span>
+								</div>
+								<p className="text-[1.1rem] capitalize font-normal">for latest blogs and updates</p>
+							</div>
+							<div className="newsletter-section-content-form flex flex-col gap-4">
+								<NewsletterForm/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
