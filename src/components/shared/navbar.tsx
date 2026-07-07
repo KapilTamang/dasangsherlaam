@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown, Search, Library, CalendarCheck} from "lucide-react";
+import {Rss, Menu, ChevronDown, Search, Library, CalendarCheck, ArrowUpToLine} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -20,14 +20,17 @@ import navlinks from "@/data/navlinks";
 
 export default function Navbar() {
 
-    //Set state  to track page scrolling
+    //Define state  to track page scrolling
     const [isScrolled, setIsScrolled] = React.useState(false);
 
-    //Set state to trigger dropdown menu
+    //Define state to trigger dropdown menu
     const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
-    //Set state to track sheet visibility
+    //Define state to track sheet visibility
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+
+    //Define state to toggle scroll top
+    const [isScrollTop, setIsScrollTop] = React.useState(false);
 
     const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
 
@@ -43,9 +46,11 @@ export default function Navbar() {
         const handleScroll = () => {
             if(window.scrollY > 0) {
                 setIsScrolled(true);
+                setIsScrollTop(true);
             }
             else{
                 setIsScrolled(false);
+                setIsScrollTop(false);
             }
         }
 
@@ -58,6 +63,11 @@ export default function Navbar() {
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
+    }
+
+    //Callback function for scroll top
+    const scrollTop = () => {
+        window.scrollTo(0, 0)
     }
 
   return (
@@ -140,6 +150,8 @@ export default function Navbar() {
                 </nav>
             </SheetContent>
         </Sheet>
+        {/* Scroll to top Icon */}
+        <span onClick={scrollTop} className={`fixed ${isScrollTop ? 'bottom-5 right-5' : '-bottom-20 right-5'}  bg-foreground p-4 rounded-full text-background duration-700 ease-in-out shadow-3xl`}><ArrowUpToLine className="animate-bounce" size={26}/></span>
     </header>
   )
 }
