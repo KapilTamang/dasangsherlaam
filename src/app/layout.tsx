@@ -27,6 +27,7 @@ export default function RootLayout({
       lang="en"
       className={`${cn(inter.variable)} no-scrollbar`}
       suppressHydrationWarning
+       data-scroll-behavior="smooth"
     >
       <body className={`${inter.className} antialiased min-h-full flex flex-col`}>
         <ThemeProvider
