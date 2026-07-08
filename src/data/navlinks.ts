@@ -21,7 +21,7 @@ const navlinks: Navlink [] = [
         icon: Send
     },
     {
-        id: 1,
+        id: 3,
         title: 'search',
         slug: 'search',
         icon: Search

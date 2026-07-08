@@ -21,7 +21,7 @@ interface cardItemProps {
 export default function Card({data}: cardItemProps) {
     return (
         <Link href={`/blog/${data.slug}`}>
-            <article className="card group min-w-[360px] relative bg-primary md:bg-transparent flex flex-col transition-shadow duration:500 ease-in-out">
+            <article className="card group min-w-[360px] relative bg-primary md:bg-transparent flex flex-col gap-0 md:gap-2 transition-shadow duration:500 ease-in-out">
                 <figure className="card-image overflow-hidden">
                     <img className="group-hover:scale-110 transition-transform duration-500 ease-in-out" src={data.imageURL} alt={data.title}/>
                 </figure>

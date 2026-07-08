@@ -3,6 +3,7 @@ import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
 import CardFeatured from '@/components/shared/card-featured';
 import NewsletterForm from '@/components/features/newsletter/newsletter-form';
+import Footer from '@/components/shared/footer'
 import SectionTitle from '@/components/ui/section-title';
 import CardRow from '@/components/shared/card-row';
 import CardText from '@/components/shared/card-text'
@@ -98,7 +99,7 @@ export default function Home() {
 			<section id="newsletter-section" className="section-base-style">
 				<div className="newsletter-section-container container-base-style flex flex-col gap-6 md:gap-8">
 					<SectionTitle title="newsletter"/>
-					<div className="newsletter-section-content flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-8">
+					<div className="newsletter-section-content flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-10">
 						<figure className="newsletter-section-content-img flex flex-1">
 							<img className="w-full h-full object-cover" src="/images/newsletter.svg" alt="" />
 						</figure>
@@ -122,6 +123,11 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section id="footer-section" className="section-base-style bg-accent">
+				<div className="footer-section-container container-base-style">
+					<Footer/>
 				</div>
 			</section>
 		</main>
