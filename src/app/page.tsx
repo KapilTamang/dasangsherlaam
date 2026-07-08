@@ -103,7 +103,7 @@ export default function Home() {
 						<figure className="newsletter-section-content-img flex flex-1">
 							<img className="w-full h-full object-cover" src="/images/newsletter.svg" alt="" />
 						</figure>
-						<div className="newsletter-section-content-text bg-accent flex flex-1 lg:flex-2 flex-col gap-6 justify-center items-center px-4 py-10 md:p-8 lg:p-10 rounded-lg">
+						<div className="newsletter-section-content-text bg-accent flex flex-1 lg:flex-2 flex-col gap-6 justify-center items-center px-4 pt-6 pb-2 md:pt-8 md:pb-4 md:px-6 lg:pt-12 lg:pb-6 rounded-lg">
 							<div className="newsletter-section-content-text-subscribe flex flex-col gap-7 md:gap-10 justify-center items-center">
 								<h1 className="text-[1.3rem] lg:text-[1.6rem] uppercase font-bold">join the community !</h1>
 								<div className="newsletter-section-content-text-newsletter -skew-x-12">
