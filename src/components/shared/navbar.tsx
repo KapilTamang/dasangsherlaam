@@ -151,7 +151,7 @@ export default function Navbar() {
             </SheetContent>
         </Sheet>
         {/* Scroll to top Icon */}
-        <span onClick={scrollTop} className={`fixed ${isScrollTop ? 'bottom-5 right-5' : '-bottom-20 right-5'}  bg-foreground p-3 rounded-xl text-background duration-700 ease-in-out shadow-3xl`}><ArrowUpToLine className="animate-bounce" size={26}/></span>
+        <span onClick={scrollTop} className={`fixed ${isScrollTop ? 'bottom-5 right-5' : '-bottom-20 right-5'}  bg-foreground p-2.5 md:p-3 rounded-xl text-background duration-700 ease-in-out shadow-3xl`}><ArrowUpToLine className="animate-bounce" size={20}/></span>
     </header>
   )
 }
