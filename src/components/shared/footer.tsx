@@ -10,9 +10,9 @@ import navlinks from "@/data/navlinks";
 
 export default function Footer() {
     return (
-       <div className="footer-section-content flex flex-col gap-10 text-foreground">
-            <div className="footer-section-content-top flex flex-col md:flex-row justify-between gap-10 md:gap-12 lg:gap-10">
-                <div className="footer-section-content-info flex flex-1 flex-col gap-6 md:gap-8">
+       <footer className="footer-section-content flex flex-col gap-10 text-foreground">
+            <section className="footer-section-content-top flex flex-col md:flex-row justify-between gap-10 md:gap-12 lg:gap-10">
+                <section className="footer-section-content-info flex flex-1 flex-col gap-6 md:gap-8">
                     <div className="footer-section-content-info-company flex flex-col gap-6 items-center md:items-start">
                         <div className="footer-section-content-info-company-name text-[1.2rem] md:text-[1.5rem] uppercase font-bold">
                             <span className="bg-primary text-card-featured-foreground px-2 py-2 rounded-md">dasang blogs</span>
@@ -21,7 +21,7 @@ export default function Footer() {
                            Websites that provides you the most interesting & educational blogs.
                         </div>
                     </div>
-                    <div className="footer-section-content-info-sociallinks flex flex-col gap-3 items-center md:items-start">
+                    <nav className="footer-section-content-info-sociallinks flex flex-col gap-3 items-center md:items-start">
                         <div className="footer-section-content-info-sociallinks-title text-[1.125rem] md:text-[1.1rem] font-bold uppercase">
                             social links
                         </div>
@@ -30,10 +30,10 @@ export default function Footer() {
                            <Link className="text-[2rem] text-foreground hover:text-primary duration-300" href="https://www.instragram.com" target="_blank" rel="noopener noreferrer"><RiInstagramLine/></Link>
                            <Link className="text-[2rem] text-foreground hover:text-primary duration-300" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><RiLinkedinBoxLine/></Link>
                         </div>
-                    </div>
-                </div>
-                <div className="footer-section-content-links flex flex-1 md:flex-2 flex-col md:flex-row gap-8 lg:gap-16 xl:gap-20">
-                    <div className="footer-section-content-links-categories flex flex-col gap-3 md:gap-4 items-center md:items-start">
+                    </nav>
+                </section>
+                <section className="footer-section-content-links flex flex-1 md:flex-2 flex-col md:flex-row gap-8 lg:gap-16 xl:gap-20">
+                    <nav className="footer-section-content-links-categories flex flex-col gap-3 md:gap-4 items-center md:items-start">
                         <div className="footer-section-content-links-categories-title text-[1.1rem] uppercase font-bold">
                             categories
                         </div>
@@ -46,8 +46,8 @@ export default function Footer() {
                                 ))
                             }
                         </div>
-                    </div>
-                    <div className="footer-section-content-links-quicklinks flex flex-col gap-3 md:gap-4 items-center md:items-start">
+                    </nav>
+                    <nav className="footer-section-content-links-quicklinks flex flex-col gap-3 md:gap-4 items-center md:items-start">
                         <div className="footer-section-content-links-quicklinks-title text-[1.1rem] uppercase font-bold">
                             quick links
                         </div>
@@ -60,8 +60,8 @@ export default function Footer() {
                                 ))
                             }
                         </div>
-                    </div>
-                    <div className="footer-section-content-links-legalinfo flex flex-col gap-3 md:gap-4 items-center md:items-start">
+                    </nav>
+                    <nav className="footer-section-content-links-legalinfo flex flex-col gap-3 md:gap-4 items-center md:items-start">
                         <div className="footer-section-content-links-legalinfo-title text-[1.1rem] uppercase font-bold">
                             legal informations
                         </div>
@@ -70,10 +70,10 @@ export default function Footer() {
                            <Link href="/cookie-policy" className="hover:text-primary duration-300">cookie policy</Link>
                            <Link href="/terms-condition" className="hover:text-primary duration-300">terms & condition</Link>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className="footer-section-content-botton">
+                    </nav>
+                </section>
+            </section>
+            <section className="footer-section-content-botton">
                 <div className="footer-section-content-additional-info flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-0 justify-start md:justify-between text-[1rem] text-center md:text-left">
                     <div className="footer-section-content-additional-info-copyright text-muted-foreground">
                         Copyright&copy; 2026 dasangsherlaam.com. All Rights Reserved.
@@ -82,7 +82,7 @@ export default function Footer() {
                         Developed By <Link href="https://kapiltamang.com.np" className="text-primary font-semibold hover:opacity-70 duration-300">Kapil Tamang</Link>
                     </div>
                 </div>
-            </div>
-       </div>
+            </section>
+       </footer>
     )
 }
