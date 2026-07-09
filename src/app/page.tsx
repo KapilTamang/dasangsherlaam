@@ -1,3 +1,6 @@
+"use client";
+
+import React from 'react';
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
@@ -13,6 +16,8 @@ import CardRowLarge from '@/components/shared/card-row-large';
 
 export default function Home() {
 
+	const [isLoading, setIsLoading] = React.useState(true);
+
 	//Fetching dummy data..
 	const trending = blogs.filter((blog) => blog.category !== 'featured').slice(0,5);
 	//Fetching author's pick blogs
@@ -24,6 +29,12 @@ export default function Home() {
 	//Finding all exclusive bolgs
 	const exclusiveCard = blogs.filter((blog) => blog.category == 'exclusive').slice(0,3)
 
+	React.useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 3000);
+	})
+
 	return (
 		<main>
 			<section id="banner-section" className="section-base-style bg-accent">
@@ -34,24 +45,29 @@ export default function Home() {
 							<div className="banner-section-content-trending-cards flex flex-col gap-8 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
-										<CardRow key={blog.id} data={blog} type="trending"/>
+										<CardRow key={blog.id} data={blog} type="trending" isLoading={isLoading}/>
 									))
 								}
 							</div>
 						</div>
 						<div className="banner-section-content-featured col-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="featured"/>
-							{featured && <CardFeatured data={featured}/>}
-							 <Link href="/categories/featured" className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-								read more...
-							</Link>
+							{ 
+								featured && <CardFeatured data={featured} isLoading={isLoading}/>
+							}
+							{
+								!isLoading && 
+								<Link href="/categories/featured" className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+									read more...
+								</Link>
+							}
 						</div>
 						<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="author's pick..."/>
 							<div className="banner-section-content-authors-pick-cards flex flex-col gap-8 md:gap-3">
 								{
 									authorsPick && authorsPick.map((blog) =>(
-										<CardText key={blog.id} data={blog}/>
+										<CardText key={blog.id} data={blog} isLoading={isLoading}/>
 									))
 								}
 							</div>
@@ -66,12 +82,12 @@ export default function Home() {
 					</div>
 					<div className="exclusive-section-content flex flex-col gap-8">
 						<div className="exclusive-section-content-main">
-							{exclusiveMain && <CardRowLarge data={exclusiveMain} />}
+							{exclusiveMain && <CardRowLarge data={exclusiveMain} isLoading={isLoading}/>}
 						</div>
 						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-8 md:gap-3">
 							{
 								exclusiveCard && exclusiveCard.map((blog) => (
-									<CardRow key={blog.id} data={blog} type="exclusive"/>
+									<CardRow key={blog.id} data={blog} type="exclusive" isLoading={isLoading}/>
 								))
 							}
 						</div>				
@@ -86,11 +102,14 @@ export default function Home() {
 							<div className="category-section-content flex flex-col gap-2 md:gap-6">
 								<SectionTitle title={category.title}/>
 								<div className="category-section-content-card">
-									<EmblaCarousel data={blogs}/>
+									<EmblaCarousel data={blogs} isLoading={isLoading}/>
 								</div>
-								<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-									{category.title}...
-								</Link>
+								{
+									!isLoading && 
+									<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+										{category.title}...
+									</Link>
+								}
 							</div>
 						</div>
 					</section>

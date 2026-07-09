@@ -17,10 +17,11 @@ interface carouselProps {
 }
 
 interface EmblaCarouselProps {
-    data: carouselProps[];
+    data: carouselProps[],
+    isLoading: boolean
 }
 
-export default function EmblaCarousel({ data }: EmblaCarouselProps) {
+export default function EmblaCarousel({ data, isLoading }: EmblaCarouselProps) {
   // Initialize the carousel hook with basic loop behavior
   const [emblaRef, emblaApi] = useEmblaCarousel({
     slidesToScroll: 1,
@@ -75,7 +76,7 @@ export default function EmblaCarousel({ data }: EmblaCarouselProps) {
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
-                            <CardColumn key={blog.id} data={blog}/>
+                            <CardColumn key={blog.id} data={blog} isLoading={isLoading}/>
                         ))
                     }
                 </div>
