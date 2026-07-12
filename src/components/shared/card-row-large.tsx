@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image";
 import { CardRowLargeSkeleton } from "./skeletons";
 interface cardItem {
     id: number;
@@ -27,7 +28,13 @@ export default function CardRowLarge ({data, isLoading}: cardItemProps){
             <Link href={`/blog/${data.slug}`}>
                 <article className="card group flex flex-col md:flex-row md:min-h-[55vh]">
                     <figure className="card-image flex flex-1 overflow-hidden">
-                        <img className="object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" src={data.imageURL} alt={data.title} />
+                        <Image className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" 
+                            src={data.imageURL} 
+                            alt={data.title}
+                            width={1200}
+                            height={1000}
+                            priority
+                        />
                     </figure>
                     <div className="card-content flex flex-1 flex-col gap-4 justify-center items-center text-center bg-accent text-foreground capitalize p-4 md:p-6">
                         <header className="card-header">

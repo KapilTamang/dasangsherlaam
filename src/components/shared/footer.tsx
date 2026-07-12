@@ -79,7 +79,7 @@ export default function Footer() {
                         Copyright&copy; 2026 dasangsherlaam.com. All Rights Reserved.
                     </div>
                     <div className="footer-section-content-additional-info-developer">
-                        Developed By <Link href="https://kapiltamang.com.np" className="text-primary font-semibold hover:opacity-70 duration-300">Kapil Tamang</Link>
+                        Developed By <Link href="https://kapiltamang.com.np" target="__blank" rel="noreferrer" className="text-primary font-semibold hover:opacity-70 duration-300">Kapil Tamang</Link>
                     </div>
                 </div>
             </div>

@@ -210,7 +210,7 @@
 
 @utility section-base-style {
   @apply max-h-fit flex flex-col justify-start py-[25px] md:py-[20px] lg:py-[25px] 
-  first-of-type:py-[30px] md:first-of-type:py-[40px] lg:first-of-type:mt-[60px]
+  first-of-type:py-[30px] md:first-of-type:py-[40px] lg:first-of-type:py-[60px]
   last-of-type:mt-[15px] md:last-of-type:mt-[20px] lg:last-of-type:mt-[30px]
   last-of-type:pt-[40px] lg:last-of-type:pt-[60px]
 } 

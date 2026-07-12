@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { CalendarClock, UserPen } from 'lucide-react';
 import CategoryTag from './category-tag';
 import { CardFeaturedSkeleton } from './skeletons';
@@ -30,10 +31,13 @@ export default function FeaturedCard({data, isLoading}: cardItemProps) {
                 <article className="card group relative">
                         {/* Card image */}
                         <figure className="card-image overflow-hidden">
-                            <img
-                                className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+                            <Image
+                                className="w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110"
                                 src={data.imageURL}
                                 alt={data.title || 'featured-image'}
+                                width={700}
+                                height={600}
+                                priority
                             />
                         </figure>
                         {/* Card text content */}

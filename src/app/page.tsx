@@ -1,7 +1,8 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image'
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
 import CardFeatured from '@/components/shared/card-featured';
@@ -120,7 +121,13 @@ export default function Home() {
 					<SectionTitle title="newsletter"/>
 					<div className="newsletter-section-content flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-10">
 						<figure className="newsletter-section-content-img flex flex-1">
-							<img className="w-full h-full object-cover" src="/images/newsletter.svg" alt="" />
+							<Image 
+								className="w-full h-auto object-cover"
+								src="/images/newsletter.svg" 
+								alt="newsletter img"
+								width={600}
+								height={500} 
+								priority />
 						</figure>
 						<div className="newsletter-section-content-text bg-accent flex flex-1 lg:flex-2 flex-col gap-6 justify-center items-center px-4 pt-6 pb-2 md:pt-8 md:pb-4 md:px-6 lg:pt-12 lg:pb-6 rounded-lg">
 							<div className="newsletter-section-content-text-subscribe flex flex-col gap-7 md:gap-10 justify-center items-center">

@@ -1,4 +1,5 @@
 import Link  from 'next/link';
+import Image from 'next/image';
 import CategoryTag from './category-tag';
 import { CardRowSkeleton } from './skeletons';
 
@@ -29,7 +30,13 @@ export default function CardRow({data, type, isLoading} : cardItemProps) {
             <Link className={`flex-1 py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>
                 <article className="card group flex gap-0 md:gap-3 px-4 md:px-0 bg-primary md:bg-transparent">
                     <figure className="card-image flex flex-1 md:w-full md:h-full overflow-hidden bg-primary">
-                        <img className="object-contain group-hover:scale-110 duration-500 ease-in-out" src={data.imageURL ?? ''} alt={data.title} />
+                        <Image className="w-full h-auto object-contain group-hover:scale-110 duration-500 ease-in-out" 
+                            src={data.imageURL ?? ''} 
+                            alt={data.title}
+                            width={110}
+                            height={60}
+                            priority
+                        />
                     </figure>
                     <div className="card-content flex flex-2 flex-col items-start gap-3 text-card-featured-foreground md:text-card-thumbnail-foreground p-4 md:p-0">
                         <header className="card-header text-xl font-bold">
