@@ -1,4 +1,6 @@
 import blogs from "@/data/blogs";
+import Newsletter from "@/components/shared/newsletter";
+import Footer from '@/components/shared/footer';
 
 export default async function Blog({params,} : {params: Promise<{slug: string}>}) {
     const {slug} = await params;
@@ -21,6 +23,8 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                         </div>
                     </section>)
             }
+            <Newsletter/>
+            <Footer/>
         </main>
     )
 }
