@@ -20,7 +20,7 @@ export default function Dropdown({ items, isOpen, setIsSheetOpen }: itemListProp
         <div>
             {
                 (
-                    <ul className={`flex flex-col gap-6 capitalize font-normal pl-2 overflow-hidden transition-all duration-300 ease ${isOpen ? 'max-h-[300px] py-2' : 'h-0'}`}>
+                    <ul className={`flex flex-col gap-6 capitalize font-normal pl-4 mt-2 overflow-hidden bg-accent rounded-sm transition-all duration-300 ease ${isOpen ? 'max-h-[300px] py-4' : 'h-0'}`}>
                         {items.map((item, index) => (
                             <li key={index} onClick={() => setIsSheetOpen?.(false)}>
                                 <Link className="py-2" href={`/categories/${item.slug}`}> 
