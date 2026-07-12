@@ -151,10 +151,8 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section id="footer-section" className="section-base-style bg-accent">
-				<div className="footer-section-container container-base-style">
-					<Footer/>
-				</div>
+			<section id="footer-section">
+				<Footer/>
 			</section>
 		</main>
 	);
