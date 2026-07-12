@@ -35,7 +35,7 @@ export default function Footer() {
                             </nav>
                         </section>
                         <section className="footer-section-content-links flex flex-1 md:flex-2 flex-col md:flex-row gap-8 lg:gap-16 xl:gap-20">
-                            <nav className="footer-section-content-links-categories flex flex-col gap-3 md:gap-4 items-center md:items-start">
+                            <nav className="footer-section-content-links-categories flex flex-col gap-3 md:gap-4 items-center md:items-start"> 
                                 <div className="footer-section-content-links-categories-title text-[1.1rem] uppercase font-bold">
                                     categories
                                 </div>
