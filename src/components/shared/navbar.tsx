@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import {Button, buttonVariants} from "@/components/ui/button"
-import {Sheet, SheetContent, SheetTrigger, SheetClose} from "@/components/ui/sheet"
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
 import { ModeToggle } from "./theme-toggle";
 import categories from "@/data/category";
 import navlinks from "@/data/navlinks";
@@ -79,11 +79,19 @@ export default function Navbar() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
-                        <ul className="w-96">
+                        <ul className="grid gap-2 md:w-[500px] md:grid-cols-2 lg:w-[520px]">
                             {
                                 categories && categories.map((category, index) => (
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
-                                        {category.description}
+                                        <div className="list-item-content flex gap-1">
+                                            <div className="list-item-header flex items-start">
+                                                <category.icon className="text-primary mr-1 shrink-0"style={{width: '20px', height: '20px'}}/>
+                                            </div>
+                                            <div className="list-item-body flex flex-col gap-2">
+                                               <span className="text-[1rem] leading-none font-bold">{category.title}</span>
+                                               <span className="text-[1rem] line-clamp-2 text-muted-foreground">{category.description}</span>
+                                            </div>
+                                        </div>
                                     </ListItem>
                                 ))
                             }
@@ -126,7 +134,7 @@ export default function Navbar() {
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
                          </span>
-                        <Dropdown items={ categories} isOpen={isDropdownOpen} icon={categoryIcon} setIsSheetOpen={setIsSheetOpen}/>
+                        <Dropdown items={ categories} isOpen={isDropdownOpen} setIsSheetOpen={setIsSheetOpen}/>
                     </span>
                     {
                         navlinks && navlinks.map((link, index) => (
@@ -166,15 +174,9 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link className="mb-1 first-of-type:mt-1 hover:bg-muted" href={href}>
-          <div className="flex gap-1">
-            <Rss className="text-primary mr-1 shrink-0" size={12}/> 
             <div className="flex flex-col gap-1">
-                <div className="text-[1rem] leading-none font-bold">
-                    {title}
-                </div>
-                <div className="text-[1rem] line-clamp-2 text-muted-foreground">{children}</div>
+                <div>{children}</div>
             </div>
-          </div>
             </Link>
         </NavigationMenuLink>
     </li>
