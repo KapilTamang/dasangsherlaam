@@ -40,10 +40,10 @@ export default function Card({data, isLoading}: cardItemProps) {
                         />
                     </figure>
                     <div className="card-content flex flex-col gap-2 p-4 md:p-4 text-card-featured-foreground md:text-foreground">
-                        <div className="card-category-tag absolute left-2 top-2">
+                        <div className="card-category-tag absolute left-2 top-3">
                             <CategoryTag title={data.category}/>
                         </div>
-                        <header className="card-header text-[1.4rem] lg:text-[1.3rem] font-extrabold capitalize">
+                        <header className="card-header text-[1.3rem] lg:text-[1.2rem] font-extrabold capitalize">
                             <h1 className="line-clamp-3 underline md:no-underline group-hover:underline duration-300">{data.title}</h1>
                         </header>
                         <div className="card-body">

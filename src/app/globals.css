@@ -217,5 +217,5 @@
 
 /* To prevent content to stop stretching endlessly in larger devices */
 @utility container-base-style {
-  @apply w-full container max-w-[1500px] mx-auto px-[5%] md:px-[3%]; 
+  @apply w-full container max-w-[1400px] mx-auto px-[5%] md:px-[3%]; 
 }

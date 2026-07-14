@@ -33,7 +33,7 @@ export default function CardText({data, isLoading} : cardItemProps) {
                             <div className="category-tag block md:hidden">
                                 <CategoryTag title={data.category}/>
                             </div>
-                            <h1 className="md:line-clamp-2 underline md:no-underline md:group-hover:underline text-[1.2rem] md:text-[1rem] leading-7 md:leading-6 capitalize duration-300">
+                            <h1 className="underline md:no-underline md:group-hover:underline text-[1.2rem] md:text-[1rem] leading-7 md:leading-6 capitalize duration-300">
                                 {data.title}
                             </h1>
                         </header>

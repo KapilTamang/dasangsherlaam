@@ -12,8 +12,8 @@
 const blogs: Blog[] = [
     {
         id: 1,
-        title: 'artificial intelligence & robotics',
-        slug: 'artificial-intelligence-&-robotics',
+        title: 'artificial intelligence and robotics',
+        slug: 'artificial-intelligence-and-robotics',
         description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
         that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
         It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
@@ -149,7 +149,7 @@ const blogs: Blog[] = [
     {
         id: 9,
         title: 'Rocket Lab Spends $8 Billion to Acquire Iridium to Accelerate Vertical Integration',
-        slug: 'Rocket-Lab-Spends-$8-Billion-to-Acquire-Iridium-to-Accelerate-Vertical-Integration',
+        slug: 'rocket-lab-spends-8-billion-to-acquire-iridium-to-accelerate-vertical-integration',
         description: `An obsessive compulsion can be traced through our culture: to run down human beings, talk us down from the traditional idea
         that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
         It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
