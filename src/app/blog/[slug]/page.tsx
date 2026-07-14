@@ -7,8 +7,8 @@ import CategoryTag from "@/components/shared/category-tag";
 import { CalendarClock, UserPen } from 'lucide-react';
 import SectionTitle from "@/components/ui/section-title";
 import CardRow from "@/components/shared/card-row";
-import CardText from "@/components/shared/card-text";
-
+import NewsletterPromoCard from "@/components/shared/card-newsletter-promo"
+1
 export default async function Blog({params,} : {params: Promise<{slug: string}>}) {
     const {slug} = await params;
 
@@ -39,7 +39,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="single-blog-content-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.4rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary/50 bg-accent">
+                                    <div className="single-blog-content-title text-[1.3rem] md:text-[1.2rem] lg:text-[1.4rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary/50 bg-accent">
                                         {currentBlog.title}
                                     </div>
                                     <div className="single-blog-content-description order-4 mt-1 md:mt-2 lg:mt-4">
@@ -73,9 +73,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                                             <CardRow key={blog.id} data={blog} isLoading={false} type="trending"/>
                                         ))
                                     }
-                                     <div className="newsletter-promotion">
-                                        sadfasdf
-                                    </div>
+                                    <NewsletterPromoCard/>
                                 </div>
                             </div>
                         </div>
