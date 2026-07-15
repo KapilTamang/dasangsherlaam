@@ -1,7 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
 import blogs from "@/data/blogs";
-import Newsletter from "@/components/shared/newsletter";
 import Footer from '@/components/shared/footer';
 import CategoryTag from "@/components/shared/category-tag";
 import { CalendarClock, UserPen } from 'lucide-react';
@@ -101,7 +99,9 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                         </div>
                     </section>)
             }
-            <Footer/>
+            <section className="footer-section">
+                <Footer/>
+            </section>
         </main>
     )
 }

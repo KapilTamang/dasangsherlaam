@@ -10,11 +10,11 @@ import navlinks from "@/data/navlinks";
 
 export default function Footer() {
     return (
-        <div className="section-base-style bg-accent">
-            <div className="container-base-style">
-                <footer className="footer-section-content flex flex-col gap-10 text-foreground">
+        <footer className="footer-section section-base-style bg-accent">
+            <div className="footer-section-container container-base-style">
+                <div className="footer-section-content flex flex-col gap-10 text-foreground">
                     <div className="footer-section-content-top flex flex-col md:flex-row justify-between gap-10 md:gap-12 lg:gap-10">
-                        <section className="footer-section-content-info flex flex-1 flex-col gap-6 md:gap-8">
+                        <div className="footer-section-content-info flex flex-1 flex-col gap-6 md:gap-8">
                             <div className="footer-section-content-info-company flex flex-col gap-6 items-center md:items-start">
                                 <div className="footer-section-content-info-company-name text-[1.2rem] md:text-[1.5rem] uppercase font-bold">
                                     <span className="bg-primary text-card-featured-foreground px-2 py-2 rounded-md">dasang blogs</span>
@@ -33,7 +33,7 @@ export default function Footer() {
                                 <Link className="text-[2rem] text-foreground hover:text-primary duration-300" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><RiLinkedinBoxLine/></Link>
                                 </div>
                             </nav>
-                        </section>
+                        </div>
                         <section className="footer-section-content-links flex flex-1 md:flex-2 flex-col md:flex-row gap-8 lg:gap-16 xl:gap-20">
                             <nav className="footer-section-content-links-categories flex flex-col gap-3 md:gap-4 items-center md:items-start"> 
                                 <div className="footer-section-content-links-categories-title text-[1.1rem] uppercase font-bold">
@@ -85,8 +85,8 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                </footer>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }

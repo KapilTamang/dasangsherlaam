@@ -5,7 +5,7 @@ import SectionTitle from "../ui/section-title";
 
 export default function Newsletter() {
     return (
-        <div className="section-base-style">
+        <div className="newsletter-section section-base-style">
             <div className="newsletter-section-container container-base-style flex flex-col gap-6 md:gap-8">
                 <SectionTitle title="newsletter"/>
                 <div className="newsletter-section-content flex flex-col md:flex-row gap-2 md:gap-4 lg:gap-10">
