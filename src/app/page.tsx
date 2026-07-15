@@ -41,7 +41,7 @@ export default function Home() {
 				<div className="banner-section-conatiner container-base-style">
 					<div className="banner-section-content grid grid-cols-1 lg:grid-cols-4  gap-8">
 						<div className="banner-section-content-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
-							<SectionTitle title="trending..."/>
+							<SectionTitle title="trending now"/>
 							<div className="banner-section-content-trending-cards flex flex-col gap-8 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
@@ -63,7 +63,7 @@ export default function Home() {
 							}
 						</div>
 						<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
-							<SectionTitle title="author's pick..."/>
+							<SectionTitle title="author's pick"/>
 							<div className="banner-section-content-authors-pick-cards flex flex-col gap-8 md:gap-3">
 								{
 									authorsPick && authorsPick.map((blog) =>(
