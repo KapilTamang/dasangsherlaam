@@ -1,4 +1,4 @@
-import {type LucideIcon, Award, Atom, Lightbulb, History, Plane} from 'lucide-react';
+import {type LucideIcon, Award, Atom, Lightbulb, History, Plane, Crown} from 'lucide-react';
 
 interface Category {
     id: number;
@@ -20,9 +20,9 @@ const categories: Category[] = [
     },
     {
         id: 2,
-        title: 'science & technology',
-        slug: 'science-&-technology',
-        abbreviation: 's&t',
+        title: 'science and technology',
+        slug: 'science-and-technology',
+        abbreviation: 'st',
         description: 'Latest news and article on science and technology.',
         icon: Atom
     },
@@ -36,19 +36,27 @@ const categories: Category[] = [
     },
     {
         id: 4,
-        title: 'history & culture',
-        slug: 'history-&-culture',
-        abbreviation: 'h&c',
+        title: 'history and culture',
+        slug: 'history-and-culture',
+        abbreviation: 'hc',
         description: 'Discover the rich history and culture of different countires and civilizations.',
         icon: History
     },
     {
         id: 5,
-        title: 'travel & tourism',
-        slug: 'travel-&-tourism',
-        abbreviation: 't&t',
+        title: 'travel and tourism',
+        slug: 'travel-and-tourism',
+        abbreviation: 'tt',
         description: 'Explore the world through travel and tourism articles, guides and tips.',
         icon: Plane
+    },
+    {
+        id: 6,
+        title: 'exclusive',
+        slug: 'exclusive',
+        abbreviation: 'ex',
+        description: 'Discover specialized tailored content in this section.',
+        icon: Crown
     },
 ]
 
