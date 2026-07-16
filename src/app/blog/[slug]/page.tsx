@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import  Card from '@/components/shared/card-column';
 import NewsletterPromoCard from "@/components/shared/card-newsletter-promo"
 1
 export default async function Blog({params,} : {params: Promise<{slug: string}>}) {
+    //Retrieve slug from URL
     const {slug} = await params;
 
     const currentBlog = blogs.find((blog) => blog.slug === slug);
@@ -91,7 +93,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                                         <CategoryTag title={currentBlog.category}/>
                                         </div>
                                     </div>
-                                    <div className="single-blog-content-recommendation w-full flex flex-col gap-8 md:gap-2">
+                                    <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
                                         <SectionTitle title="trending now"/>
                                         {
                                             trending.map((blog) => (
@@ -116,7 +118,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                     <div className="section-similar-title">
                         <SectionTitle title="similar blogs"/>
                     </div>
-                    <div className="section-similar-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-x-4 md:gap-y-10">
+                    <div className="section-similar-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-4 md:gap-y-10">
                         {
                             recommendation && recommendation.map((blog) => (
                                 <Card key={blog.id} data={blog} isLoading={false} width={0} height={0}/>

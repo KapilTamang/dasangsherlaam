@@ -38,7 +38,7 @@ export default function CardRow({data, type, isLoading} : cardItemProps) {
                             priority
                         />
                     </figure>
-                    <div className="card-content flex flex-2 flex-col items-start gap-3 text-card-featured-foreground md:text-card-thumbnail-foreground p-4 md:p-0">
+                    <div className="card-content flex flex-2 flex-col items-start gap-2 md:gap-3 text-card-featured-foreground md:text-card-thumbnail-foreground p-4 md:p-0">
                         <header className="card-header text-xl font-bold">
                             <div className="category-tag block md:hidden">
                                 <CategoryTag title={data.category}/>

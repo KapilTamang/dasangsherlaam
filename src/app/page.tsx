@@ -30,19 +30,21 @@ export default function Home() {
 	const exclusiveCard = blogs.filter((blog) => blog.category == 'exclusive').slice(0,3)
 
 	React.useEffect(() => {
-		setTimeout(() => {
+		const timer = setTimeout(() => {
 			setIsLoading(false);
-		}, 3000);
-	})
+		}, 2000);
+		//Clear timer
+		return() => clearTimeout(timer);
+	},[isLoading])
 
 	return (
 		<main>
 			<section id="banner-section" className="section-base-style bg-accent">
 				<div className="banner-section-conatiner container-base-style">
-					<div className="banner-section-content grid grid-cols-1 lg:grid-cols-4  gap-8">
+					<div className="banner-section-content grid grid-cols-1 lg:grid-cols-4 gap-8">
 						<div className="banner-section-content-trending col-span-1 md:col-span-1 order-2 md:order-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="trending now"/>
-							<div className="banner-section-content-trending-cards flex flex-col gap-8 md:gap-3">
+							<div className="banner-section-content-trending-cards flex flex-col gap-4 md:gap-3">
 								{
 									trending && trending.map((blog) =>(
 										<CardRow key={blog.id} data={blog} type="trending" isLoading={isLoading}/>
@@ -64,7 +66,7 @@ export default function Home() {
 						</div>
 						<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="author's pick"/>
-							<div className="banner-section-content-authors-pick-cards flex flex-col gap-8 md:gap-3">
+							<div className="banner-section-content-authors-pick-cards flex flex-col gap-4 md:gap-3">
 								{
 									authorsPick && authorsPick.map((blog) =>(
 										<CardText key={blog.id} data={blog} isLoading={isLoading}/>
@@ -80,11 +82,11 @@ export default function Home() {
 					<div className="exclusive-section-title">
 						<SectionTitle title="exclusive"/>
 					</div>
-					<div className="exclusive-section-content flex flex-col gap-8">
+					<div className="exclusive-section-content flex flex-col gap-4 md:gap-8">
 						<div className="exclusive-section-content-main">
 							{exclusiveMain && <CardRowLarge data={exclusiveMain} isLoading={isLoading}/>}
 						</div>
-						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-8 md:gap-3">
+						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-4 md:gap-3">
 							{
 								exclusiveCard && exclusiveCard.map((blog) => (
 									<CardRow key={blog.id} data={blog} type="exclusive" isLoading={isLoading}/>
