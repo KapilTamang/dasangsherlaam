@@ -23,11 +23,11 @@ export default function Blog() {
 
     const currentBlog = blogs.find((blog) => blog.slug === slug);
     //Fetching dummy data..
-	const trending = blogs.filter((blog) => blog.category !== 'featured').slice(0,5);
+	const trending = blogs.filter((blog) => blog.category !== 'featured' && blog.id != currentBlog?.id).slice(0,8);
     //Category of current blog
     const currentCategory = categories.find((category) => category.title === currentBlog?.category)
     //Blogs from same category
-    const recommendation = blogs.filter((blog) => blog.category === currentCategory?.title).slice(0,8);
+    const recommendation = blogs.filter((blog) => blog.category === currentCategory?.title && blog.id != currentBlog?.id).slice(0,8);
 
     const [isLoading, setIsLoading] = React.useState(true);
 
