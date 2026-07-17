@@ -59,7 +59,7 @@ export default function Home() {
 							}
 							{
 								!isLoading && 
-								<Link href="/categories/featured" className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+								<Link href="/categories/featured" className={`self-end capitalize px-2 text-[0.9rem] ${buttonVariants()}`}>
 									read more...
 								</Link>
 							}
@@ -101,17 +101,21 @@ export default function Home() {
 				categories && categories.map((category) => (
 					<section key={category.id} id="category-section" className="section-base-style">
 						<div className="category-section-container container-base-style">
-							<div className="category-section-content flex flex-col gap-2 md:gap-6">
-								<SectionTitle title={category.title}/>
-								<div className="category-section-content-card">
-									<EmblaCarousel data={blogs} isLoading={isLoading}/>
+							<div className="category-section-content flex flex-col gap-0">
+								<div className="category-section-content-title">
+									<SectionTitle title={category.title}/>
 								</div>
-								{
-									!isLoading && 
-									<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-										{category.title}...
-									</Link>
-								}
+								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
+									<div className="category-section-content-carousel-card">
+										<EmblaCarousel data={blogs} isLoading={isLoading}/>
+									</div>
+									{
+										!isLoading && 
+										<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+											{category.title}...
+										</Link>
+									}
+								</div>
 							</div>
 						</div>
 					</section>

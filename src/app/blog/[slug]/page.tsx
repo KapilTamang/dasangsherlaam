@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Link from "next/link";
+import { useParams } from 'next/navigation';
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import blogs from "@/data/blogs";
@@ -12,9 +15,10 @@ import CardRow from "@/components/shared/card-row";
 import  Card from '@/components/shared/card-column';
 import NewsletterPromoCard from "@/components/shared/card-newsletter-promo"
 1
-export default async function Blog({params,} : {params: Promise<{slug: string}>}) {
+export default function Blog() {
     //Retrieve slug from URL
-    const {slug} = await params;
+    const params = useParams();
+    const slug = params.slug;
 
     const currentBlog = blogs.find((blog) => blog.slug === slug);
     //Fetching dummy data..
@@ -23,6 +27,16 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
     const currentCategory = categories.find((category) => category.title === currentBlog?.category)
     //Blogs from same category
     const recommendation = blogs.filter((blog) => blog.category === currentCategory?.title).slice(0,8);
+
+    const [isLoading, setIsLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const timer = setTimeout(()=> {
+            setIsLoading(false);
+        }, 3000)
+
+        return() => clearTimeout(timer);
+    });
 
     return (
         <main>
@@ -97,7 +111,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                                         <SectionTitle title="trending now"/>
                                         {
                                             trending.map((blog) => (
-                                                <CardRow key={blog.id} data={blog} isLoading={false} type="trending"/>
+                                                <CardRow key={blog.id} data={blog} isLoading={isLoading} type="trending"/>
                                             ))
                                         }
                                         <NewsletterPromoCard/>
@@ -121,7 +135,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                     <div className="section-similar-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-4 md:gap-y-10">
                         {
                             recommendation && recommendation.map((blog) => (
-                                <Card key={blog.id} data={blog} isLoading={false} width=""/>
+                                <Card key={blog.id} data={blog} isLoading={isLoading} width=""/>
                                 )
                             )
                         }

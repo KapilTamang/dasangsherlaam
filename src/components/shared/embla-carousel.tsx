@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./card-column";
@@ -29,22 +29,22 @@ export default function EmblaCarousel({ data, isLoading }: EmblaCarouselProps) {
       '(min-width: 768px)': { slidesToScroll: 'auto' }
     }
   })
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [prevBtnDisabled, setPrevBtnDisabled] = React.useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = React.useState(true);
 
 
   // Navigation handlers
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   // Track state changes to disable navigation buttons at bounds (if loop: false)
-  const onSelect = useCallback(() => {
+  const onSelect = React.useCallback(() => {
     if (!emblaApi) return;
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, [emblaApi]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
@@ -76,7 +76,7 @@ export default function EmblaCarousel({ data, isLoading }: EmblaCarouselProps) {
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
-                            <Card key={blog.id} data={blog} isLoading={isLoading} width="400"/>
+                            <Card key={blog.id} data={blog} isLoading={isLoading} width="360"/>
                         ))
                     }
                 </div>
