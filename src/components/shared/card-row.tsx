@@ -24,12 +24,12 @@ export default function CardRow({data, type, isLoading} : cardItemProps) {
     return(
         isLoading ? 
         (
-            <CardRowSkeleton type={type}/>
+            <CardRowSkeleton type={type} width=""/>
         ):
         (
             <Link className={`py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>
-                <article className="card group flex gap-0 md:gap-3 px-4 md:px-0 bg-primary md:bg-transparent">
-                    <figure className="card-image flex flex-1 md:w-full md:h-full overflow-hidden bg-primary">
+                <article className="card group flex gap-0 md:gap-3 px-2 md:px-0 bg-primary md:bg-transparent">
+                    <figure className="card-image flex flex-1 md:w-full md:h-full overflow-hidden bg-primary items-start my-4 md:my-0 mt-6 md:mt-1">
                         <Image className="w-full h-auto object-contain group-hover:scale-110 duration-500 ease-in-out" 
                             src={data.imageURL ?? ''} 
                             alt={data.title}
@@ -43,7 +43,7 @@ export default function CardRow({data, type, isLoading} : cardItemProps) {
                             <div className="category-tag block md:hidden">
                                 <CategoryTag title={data.category}/>
                             </div>
-                            <h1 className="underline md:no-underline md:group-hover:underline text-[1.2rem] md:text-[1rem] leading-7 md:leading-6 capitalize duration-300">
+                            <h1 className="underline md:no-underline md:group-hover:underline text-[1.1rem] md:text-[1rem] leading-7 md:leading-6 capitalize duration-300">
                                 {data.title}
                             </h1>
                         </header>

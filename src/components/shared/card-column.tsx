@@ -17,27 +17,26 @@ interface cardItem {
 
 interface cardItemProps {
     data: cardItem,
-    width: number,
-    height: number,
+    width: string,
     isLoading: boolean
 }
 
 
-export default function Card({data, isLoading, width, height}: cardItemProps) {
+export default function Card({data, isLoading, width}: cardItemProps) {
     return (
         isLoading ? 
         (
-            <CardColumnSkeleton/>
+            <CardColumnSkeleton type="" width={width}/>
         ):
         (
              <Link href={`/blog/${data.slug}`}>
-                <article className={`card group relative min-w-[${width}px] h-auto bg-primary md:bg-accent flex flex-col shrink-0 snap-start gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`}>
+                <article className={`card group relative min-w-[${width}px] max-h-full bg-primary md:bg-accent flex flex-col shrink-0 snap-start gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`}>
                     <figure className="card-image overflow-hidden">
-                        <Image className={`w-full h-[${height}px] object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out`}
+                        <Image className={`w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out`}
                             src={data.imageURL} 
                             alt={data.title}
-                            width={360}
-                            height={250}
+                            width={1000}
+                            height={800}
                             priority
                         />
                     </figure>

@@ -76,7 +76,7 @@ export default function EmblaCarousel({ data, isLoading }: EmblaCarouselProps) {
                     {/* Container wrapper: holds all the slides together */}
                     {
                         data.map((blog) => (
-                            <Card key={blog.id} data={blog} isLoading={isLoading} width={360} height={250}/>
+                            <Card key={blog.id} data={blog} isLoading={isLoading} width="400"/>
                         ))
                     }
                 </div>

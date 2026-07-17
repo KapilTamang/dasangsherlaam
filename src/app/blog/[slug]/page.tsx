@@ -61,7 +61,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="single-blog-content-left-title text-[1.3rem] md:text-[1.2rem] lg:text-[1.4rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary/50 bg-accent sticky top-15 md:top-20">
+                                    <div className="single-blog-content-left-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.2rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary/50 bg-accent sticky top-15 md:top-20">
                                         {currentBlog.title}
                                     </div>
                                     <div className="single-blog-content-left-description order-4 mt-0 md:mt-2 lg:mt-4">
@@ -121,7 +121,7 @@ export default async function Blog({params,} : {params: Promise<{slug: string}>}
                     <div className="section-similar-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-4 md:gap-y-10">
                         {
                             recommendation && recommendation.map((blog) => (
-                                <Card key={blog.id} data={blog} isLoading={false} width={0} height={0}/>
+                                <Card key={blog.id} data={blog} isLoading={false} width=""/>
                                 )
                             )
                         }

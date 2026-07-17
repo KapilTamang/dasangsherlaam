@@ -1,8 +1,9 @@
 import {Skeleton} from '@/components/ui/skeleton'
 import {Card, CardContent, CardDescription} from '@/components/ui/card'
 
-interface cardType {
+interface cardProps {
     type: string
+    width: string
 }
 //Card featured skeleton
 export function CardFeaturedSkeleton() {
@@ -14,7 +15,7 @@ export function CardFeaturedSkeleton() {
 }
 
 //Card row skeleton
-export function CardRowSkeleton({type} : cardType) {
+export function CardRowSkeleton({type} : cardProps) {
     return (
         <CardContent className={`flex gap-2 w-full h-[110px] py-0 md:py-2 first-of-type:border-t-0 last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`}>
             <Skeleton className="flex-1 h-[80%] rounded-none"/>
@@ -53,9 +54,9 @@ export function CardRowLargeSkeleton() {
 }
 
 //Card column skeleton\
-export function CardColumnSkeleton() {
+export function CardColumnSkeleton({width}: cardProps) {
     return (
-        <Card className="min-w-[360px] rounded-none">
+        <Card className={`min-w-[${width}px] rounded-none`}>
             <CardContent className="h-[430px] md:h-[400px] flex flex-col gap-6">
                 <Skeleton className="flex-4 md:flex-3 rounded-none"/>
                 <CardDescription className="w-full flex flex-col flex-1 gap-2">
