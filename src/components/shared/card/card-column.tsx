@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import CategoryTag from "./category-tag";
+import CategoryTag from "../category-tag";
 import { CalendarClock, UserPen } from "lucide-react";
-import { CardColumnSkeleton } from "./skeletons";
+import { CardColumnSkeleton } from "../skeletons";
 
 interface cardItem {
     id: number;
@@ -17,22 +17,21 @@ interface cardItem {
 
 interface cardItemProps {
     data: cardItem,
-    width: string,
     isLoading: boolean
 }
 
 
-export default function Card({data, isLoading, width}: cardItemProps) {
+export default function Card({data, isLoading}: cardItemProps) {
     return (
         isLoading ? 
         (
-            <CardColumnSkeleton type="" width={width}/>
+            <CardColumnSkeleton/>
         ):
         (
              <Link href={`/blog/${data.slug}`}>
-                <article className={`card group relative min-w-[${width}px] max-h-full bg-primary md:bg-accent flex flex-col shrink-0 snap-start gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`}>
+                <article className={`card group relative min-w-[360px] md:min-w-xs bg-primary md:bg-accent flex flex-col shrink-0 snap-start gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`}>
                     <figure className="card-image overflow-hidden">
-                        <Image className={`w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out`}
+                        <Image className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out`}
                             src={data.imageURL} 
                             alt={data.title}
                             width={1000}

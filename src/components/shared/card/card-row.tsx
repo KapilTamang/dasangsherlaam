@@ -1,7 +1,7 @@
 import Link  from 'next/link';
 import Image from 'next/image';
-import CategoryTag from './category-tag';
-import { CardRowSkeleton } from './skeletons';
+import CategoryTag from '../category-tag';
+import { CardRowSkeleton } from '../skeletons';
 
 interface cardItem {
     id: number;
@@ -24,7 +24,7 @@ export default function CardRow({data, type, isLoading} : cardItemProps) {
     return(
         isLoading ? 
         (
-            <CardRowSkeleton type={type} width=""/>
+            <CardRowSkeleton type={type}/>
         ):
         (
             <Link className={`py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>

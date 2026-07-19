@@ -4,14 +4,14 @@ import React from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import EmblaCarousel from '@/components/shared/embla-carousel';
-import CardFeatured from '@/components/shared/card-featured';
+import CardFeatured from '@/components/shared/card/card-featured';
 import Footer from '@/components/shared/footer'
 import SectionTitle from '@/components/ui/section-title';
-import CardRow from '@/components/shared/card-row';
-import CardText from '@/components/shared/card-text'
+import CardRow from '@/components/shared/card/card-row';
+import CardText from '@/components/shared/card/card-text'
 import blogs from '@/data/blogs';
 import categories from '@/data/category';
-import CardRowLarge from '@/components/shared/card-row-large';
+import CardRowLarge from '@/components/shared/card/card-row-large';
 import Newsletter from'@/components/shared/newsletter';
 
 export default function Home() {

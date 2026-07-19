@@ -11,9 +11,9 @@ import Footer from '@/components/shared/footer';
 import CategoryTag from "@/components/shared/category-tag";
 import { CalendarClock, UserPen } from 'lucide-react';
 import SectionTitle from "@/components/ui/section-title";
-import CardRow from "@/components/shared/card-row";
-import  Card from '@/components/shared/card-column';
-import NewsletterPromoCard from "@/components/shared/card-newsletter-promo";
+import CardRow from "@/components/shared/card/card-row";
+import  Card from '@/components/shared/card/card-column';
+import NewsletterPromoCard from "@/components/shared/card/card-newsletter-promo";
 import { ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
 1
 export default function Blog() {
@@ -125,6 +125,9 @@ export default function Blog() {
                                             )
                                         }
                                     </div>
+                                    <div className="single-blog-content-engagement">
+                                        
+                                    </div>
                                     <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
                                         <SectionTitle title="trending now"/>
                                         {
@@ -145,15 +148,15 @@ export default function Blog() {
                         </div>
                     </section>)
             }
-            <section className="section-similar section-base-style">
-                <div className="section-similar-container container-base-style flex flex-col gap-4 md:gap-6">
-                    <div className="section-similar-title">
-                        <SectionTitle title="similar blogs"/>
+            <section className="section-related-blogs section-base-style">
+                <div className="section-related-blogs-container container-base-style flex flex-col gap-4 md:gap-6">
+                    <div className="section-related-blogs-title">
+                        <SectionTitle title="realted blogs"/>
                     </div>
-                    <div className="section-similar-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-4 md:gap-y-10">
+                    <div className="section-related-blogs-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-12 md:gap-y-10">
                         {
                             recommendation && recommendation.map((blog) => (
-                                <Card key={blog.id} data={blog} isLoading={isLoading} width=""/>
+                                <Card key={blog.id} data={blog} isLoading={isLoading}/>
                                 )
                             )
                         }

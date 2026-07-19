@@ -3,7 +3,6 @@ import {Card, CardContent, CardDescription} from '@/components/ui/card'
 
 interface cardProps {
     type: string
-    width: string
 }
 //Card featured skeleton
 export function CardFeaturedSkeleton() {
@@ -54,9 +53,9 @@ export function CardRowLargeSkeleton() {
 }
 
 //Card column skeleton\
-export function CardColumnSkeleton({width}: cardProps) {
+export function CardColumnSkeleton() {
     return (
-        <Card className={`min-w-[${width}px] rounded-none`}>
+        <Card className="min-w-[360px] md:min-w-xs rounded-none">
             <CardContent className="h-[430px] md:h-[400px] flex flex-col gap-6">
                 <Skeleton className="flex-4 md:flex-3 rounded-none"/>
                 <CardDescription className="w-full flex flex-col flex-1 gap-2">

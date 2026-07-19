@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarClock, UserPen } from 'lucide-react';
-import CategoryTag from './category-tag';
-import { CardFeaturedSkeleton } from './skeletons';
+import CategoryTag from '../category-tag';
+import { CardFeaturedSkeleton } from '../skeletons';
 
 interface cardItem {
     id: number;

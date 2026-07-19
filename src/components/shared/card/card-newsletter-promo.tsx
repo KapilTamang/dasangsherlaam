@@ -1,5 +1,5 @@
 import { CalendarCheck } from 'lucide-react';
-import { buttonVariants } from '../ui/button';
+import { buttonVariants } from '../../ui/button';
 
 export default function NewsletterPromo () {
     return(

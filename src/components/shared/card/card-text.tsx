@@ -1,6 +1,6 @@
 import Link  from 'next/link';
-import CategoryTag from './category-tag';
-import {CardTextSkeleton} from '@/components/shared/skeletons';
+import CategoryTag from '../category-tag';
+import {CardTextSkeleton} from '../skeletons';
 
 interface cardItem {
     id: number;

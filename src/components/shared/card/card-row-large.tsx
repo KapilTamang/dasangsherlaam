@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
-import { CardRowLargeSkeleton } from "./skeletons";
+import { CardRowLargeSkeleton } from "../skeletons";
 interface cardItem {
     id: number;
     title: string;
