@@ -1,13 +1,32 @@
+"use client"
+
+import React from 'react';
 import { Skeleton } from '@/components/ui/skeleton'
 import {ThumbsUp} from 'lucide-react'
+import {toast} from 'sonner'
 
 interface LikeButtonProps {
     isLoading: Boolean
 }
 
 export default function LikeButton({isLoading}: LikeButtonProps) {
+
+    const [isLiked, setIsLiked] = React.useState<boolean>(false);
+
+    const handleClick = () => {
+        //Check liked state to change it and initiate the toast message
+       if(!isLiked) {
+            setIsLiked(true);
+            toast.success("Thank you for the post like");
+       }
+       else {
+            setIsLiked(false);
+            toast.warning("Post uliked")
+       }
+    }
+
     return(
-        <div className="like-button group flex gap-2 items-center bg-accent px-4 py-2 border-l border-l-primary cursor-pointer">
+        <div className="like-button flex gap-2 items-center bg-accent px-4 py-2 border-l border-l-primary cursor-pointer">
             {
                 isLoading ? 
                 (
@@ -15,7 +34,7 @@ export default function LikeButton({isLoading}: LikeButtonProps) {
                 ) :
                 (
                     <>
-                        <ThumbsUp className="text-primary fill-transparent group-hover:fill-primary duration-300" size={20}/>
+                        <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'}`} size={20} onClick={handleClick}/>
                         <span className="like-button-count text-[1rem] text-foreground">(234)</span>
                     </>
                 )
