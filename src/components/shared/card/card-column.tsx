@@ -17,11 +17,12 @@ interface cardItem {
 
 interface cardItemProps {
     data: cardItem,
-    isLoading: boolean
+    isLoading: boolean,
+    width: string
 }
 
 
-export default function Card({data, isLoading}: cardItemProps) {
+export default function Card({data, isLoading, width}: cardItemProps) {
     return (
         isLoading ? 
         (
@@ -29,7 +30,8 @@ export default function Card({data, isLoading}: cardItemProps) {
         ):
         (
              <Link href={`/blog/${data.slug}`}>
-                <article className={`card group relative min-w-[360px] md:min-w-xs bg-primary md:bg-accent flex flex-col shrink-0 snap-start gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`}>
+                {/* Using inline style for dynamic width */}
+                <article className={`card group relative bg-primary md:bg-accent flex flex-col gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`} style={{width: `${width}`}}>
                     <figure className="card-image overflow-hidden">
                         <Image className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out`}
                             src={data.imageURL} 

@@ -15,6 +15,8 @@ import CardRow from "@/components/shared/card/card-row";
 import  Card from '@/components/shared/card/card-column';
 import NewsletterPromoCard from "@/components/shared/card/card-newsletter-promo";
 import { ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
+import LikeButton from '@/components/shared/blog-engagement/like-button';
+import SocialShare from '@/components/shared/blog-engagement/social-share';
 1
 export default function Blog() {
     //Retrieve slug from URL
@@ -81,7 +83,7 @@ export default function Blog() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="single-blog-content-left-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.2rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary/50 bg-accent sticky top-15 md:top-20">
+                                            <div className="single-blog-content-left-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.2rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary bg-accent sticky top-15 md:top-20">
                                                 {currentBlog.title}
                                             </div>
                                             <div className="single-blog-content-left-description order-4 mt-0 md:mt-2 lg:mt-4">
@@ -119,14 +121,15 @@ export default function Blog() {
                                                         />
                                                     </div>
                                                     <div className="single-blog-content-img-tag absolute top-3 left-2 block md:hidden">
-                                                    <CategoryTag title={currentBlog.category}/>
+                                                        <CategoryTag title={currentBlog.category}/>
                                                     </div>
                                                 </>
                                             )
                                         }
                                     </div>
-                                    <div className="single-blog-content-engagement">
-                                        
+                                    <div className="single-blog-content-engagement flex items-center text-muted-foreground gap-2 md:gap-3 mt-0 md:-mt-4">
+                                        <LikeButton isLoading={isLoading}/>
+                                        <SocialShare isLoading={isLoading}/>
                                     </div>
                                     <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
                                         <SectionTitle title="trending now"/>
@@ -153,10 +156,10 @@ export default function Blog() {
                     <div className="section-related-blogs-title">
                         <SectionTitle title="realted blogs"/>
                     </div>
-                    <div className="section-related-blogs-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-12 md:gap-y-10">
+                    <div className="section-related-blogs-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
                         {
                             recommendation && recommendation.map((blog) => (
-                                <Card key={blog.id} data={blog} isLoading={isLoading}/>
+                                <Card key={blog.id} data={blog} isLoading={isLoading} width="auto"/>
                                 )
                             )
                         }
