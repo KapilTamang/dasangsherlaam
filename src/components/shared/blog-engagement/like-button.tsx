@@ -26,7 +26,7 @@ export default function LikeButton({isLoading}: LikeButtonProps) {
     }
 
     return(
-        <div className="like-button flex gap-2 items-center bg-accent px-4 py-2 border-l border-l-primary cursor-pointer">
+        <div className="like-button flex gap-2 items-center bg-accent px-4 py-2 border-l border-l-primary">
             {
                 isLoading ? 
                 (
@@ -34,7 +34,7 @@ export default function LikeButton({isLoading}: LikeButtonProps) {
                 ) :
                 (
                     <>
-                        <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'}`} size={20} onClick={handleClick}/>
+                        <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'} cursor-pointer`} size={20} onClick={handleClick}/>
                         <span className="like-button-count text-[1rem] text-foreground">(234)</span>
                     </>
                 )
