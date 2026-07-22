@@ -85,11 +85,11 @@ export default function Navbar() {
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
                                         <div className="list-item-content flex gap-1">
                                             <div className="list-item-header flex items-start">
-                                                <category.icon className="text-primary mr-1 shrink-0"style={{width: '20px', height: '20px'}}/>
+                                                <category.icon className="text-primary shrink-0 mt-2" style={{width: '18px', height: '18px'}}/>
                                             </div>
                                             <div className="list-item-body flex flex-col gap-2">
-                                               <span className="text-[1rem] leading-none font-bold">{category.title}</span>
-                                               <span className="text-[1rem] line-clamp-2 text-muted-foreground">{category.description}</span>
+                                               <span className="text-[0.95rem] leading-none font-bold bg-accent px-3 py-2 rounded-md">{category.title}</span>
+                                               <span className="text-[0.9rem] line-clamp-2 text-muted-foreground px-3">{category.description}</span>
                                             </div>
                                         </div>
                                     </ListItem>
