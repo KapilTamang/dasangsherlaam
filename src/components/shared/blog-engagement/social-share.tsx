@@ -35,7 +35,7 @@ export default function SocialShare({isLoading}: SocialShareProps) {
                             <TooltipTrigger>
                                 <Share2 className="text-primary fill-primary cursor-pointer" size={20} onClick={() => setIsDialogOpen(prev => !prev)}/>
                             </TooltipTrigger>
-                            <TooltipContent>Share</TooltipContent>
+                            <TooltipContent className="hidden md:block">Share</TooltipContent>
                         </Tooltip>
                         <span className="social-share-count text-[1rem] text-foreground">(3456)</span>
                     </>

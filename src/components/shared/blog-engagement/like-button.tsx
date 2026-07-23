@@ -39,7 +39,7 @@ export default function LikeButton({isLoading}: LikeButtonProps) {
                             <TooltipTrigger>
                                 <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'} cursor-pointer`} size={20} onClick={handleClick}/>
                             </TooltipTrigger>
-                            <TooltipContent>Like</TooltipContent>
+                            <TooltipContent className="hidden md:block">Like</TooltipContent>
                         </Tooltip>
                         <span className="like-button-count text-[1rem] text-foreground">(234)</span>
                     </>
