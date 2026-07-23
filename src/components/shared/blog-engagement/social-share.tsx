@@ -38,7 +38,7 @@ export default function SocialShare({isLoading}: SocialShareProps) {
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogContent className="sm:max-w-md text-[2rem]">
                     <DialogHeader>
-                        <DialogTitle className="capitalize font-bold">Share blog via</DialogTitle>
+                        <DialogTitle className="capitalize font-bold">Share via</DialogTitle>
                         <DialogDescription>
                            Your effort will help me reach more audiences. Thank you!
                         </DialogDescription>
