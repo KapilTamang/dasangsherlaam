@@ -4,6 +4,7 @@ import React from 'react';
 import { Share2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip';
 import { Button } from "@/components/ui/button";
 import {FaFacebook, FaWhatsapp} from "react-icons/fa6"
 import {toast} from "sonner";
@@ -30,7 +31,12 @@ export default function SocialShare({isLoading}: SocialShareProps) {
                 ):
                 (
                     <>
-                        <Share2 className="text-primary fill-primary cursor-pointer" size={20} onClick={() => setIsDialogOpen(prev => !prev)}/>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <Share2 className="text-primary fill-primary cursor-pointer" size={20} onClick={() => setIsDialogOpen(prev => !prev)}/>
+                            </TooltipTrigger>
+                            <TooltipContent>Share</TooltipContent>
+                        </Tooltip>
                         <span className="social-share-count text-[1rem] text-foreground">(3456)</span>
                     </>
                 )

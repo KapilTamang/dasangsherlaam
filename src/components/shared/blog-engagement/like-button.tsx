@@ -4,6 +4,7 @@ import React from 'react';
 import { Skeleton } from '@/components/ui/skeleton'
 import {ThumbsUp} from 'lucide-react'
 import {toast} from 'sonner'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip';
 
 interface LikeButtonProps {
     isLoading: Boolean
@@ -34,7 +35,12 @@ export default function LikeButton({isLoading}: LikeButtonProps) {
                 ) :
                 (
                     <>
-                        <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'} cursor-pointer`} size={20} onClick={handleClick}/>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <ThumbsUp className={`text-primary ${isLiked ? 'fill-primary' : 'fill-transparent'} cursor-pointer`} size={20} onClick={handleClick}/>
+                            </TooltipTrigger>
+                            <TooltipContent>Like</TooltipContent>
+                        </Tooltip>
                         <span className="like-button-count text-[1rem] text-foreground">(234)</span>
                     </>
                 )
