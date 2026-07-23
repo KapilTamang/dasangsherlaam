@@ -13,11 +13,12 @@ import { CalendarClock, UserPen } from 'lucide-react';
 import SectionTitle from "@/components/ui/section-title";
 import CardRow from "@/components/shared/card/card-row";
 import  Card from '@/components/shared/card/card-column';
+import NoData from '@/components/ui/no-data';
 import NewsletterPromoCard from "@/components/shared/card/card-newsletter-promo";
-import { ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
+import { CardColumnSkeleton, ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
 import LikeButton from '@/components/shared/blog-engagement/like-button';
 import SocialShare from '@/components/shared/blog-engagement/social-share';
-1
+
 export default function Blog() {
     //Retrieve slug from URL
     const params = useParams();
@@ -156,21 +157,26 @@ export default function Blog() {
                     <div className="section-related-blogs-title">
                         <SectionTitle title="realted blogs"/>
                     </div>
-                    <div className="section-related-blogs-content w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
-                        {
-                            recommendation && recommendation.map((blog) => (
-                                <Card key={blog.id} data={blog} isLoading={isLoading} width="auto"/>
+                    <div className="section-related-blogs-content flex flex-col gap-4">
+                        <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                            {
+                                recommendation && recommendation.map((blog) => (
+                                    <Card key={blog.id} data={blog} isLoading={isLoading} width="auto"/>
+                                    )
                                 )
-                            )
-                        }
+                            }
+                        </div>
+                        <div className="section-related-blogs-content-button flex justify-end">
+                            {
+                                currentCategory && (
+                                    <Link href={`/categories/${currentCategory.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+                                        {currentCategory.title}...
+                                    </Link>
+                                )
+                            }
+                        </div>
                     </div>
-                    {
-                        currentCategory && (
-                            <Link href={`/categories/${currentCategory.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-                                {currentCategory.title}...
-                            </Link>
-                        )
-                    }
+                    
                 </div>
             </section>
             <section className="footer-section">
