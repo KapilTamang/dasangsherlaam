@@ -103,9 +103,16 @@ export default function Home() {
 						</div>
 						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-4 md:gap-3">
 							{
-								exclusiveCard && exclusiveCard.map((blog) => (
-									<CardRow key={blog.id} data={blog} type="exclusive"/>
-								))
+								isLoading ? 
+								(
+									<CardRowSkeleton type="exclusive" cardNumber={3}/>
+								)
+								:
+								(
+									exclusiveCard && exclusiveCard.map((blog) => (
+										<CardRow key={blog.id} data={blog} type="exclusive"/>
+									))
+								)
 							}
 						</div>				
 					</div>
