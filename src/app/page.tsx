@@ -28,6 +28,8 @@ export default function Home() {
 	const exclusiveMain = blogs.find((blog) => blog.category == 'exclusive')
 	//Finding all exclusive bolgs
 	const exclusiveCard = blogs.filter((blog) => blog.category == 'exclusive').slice(0,3)
+	//Assingning static number of categories
+	const total_categories = 5;
 
 	React.useEffect(() => {
 		const timer = setTimeout(() => {
@@ -98,8 +100,10 @@ export default function Home() {
 			</section>
 			{/* Home page section for diffrerent categories */}
 			{
-				isLoading &&
-				<section id="category-section" className="section-base-style">
+				isLoading && 
+				//Mapping total no of categories to render skeleton for actual no of categories
+				[...Array(total_categories)].map((_, index) => (
+					<section key={index} id="category-section" className="section-base-style">
 						<div className="category-section-container container-base-style">
 							<div className="category-section-content flex flex-col gap-0">
 								<div className="category-section-content-title">
@@ -113,6 +117,7 @@ export default function Home() {
 							</div>
 						</div>
 					</section>
+				))
 			}
 			{	
 				!isLoading && categories && categories.map((category) => (
