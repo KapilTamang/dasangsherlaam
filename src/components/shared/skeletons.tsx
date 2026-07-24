@@ -2,7 +2,8 @@ import {Skeleton} from '@/components/ui/skeleton'
 import {Card, CardContent, CardDescription} from '@/components/ui/card'
 
 interface cardProps {
-    type: string
+    type: string,
+    cards: number
 }
 //Card featured skeleton
 export function CardFeaturedSkeleton() {
