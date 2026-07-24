@@ -13,7 +13,8 @@ import blogs from '@/data/blogs';
 import categories from '@/data/category';
 import CardRowLarge from '@/components/shared/card/card-row-large';
 import Newsletter from'@/components/shared/newsletter';
-import SectionTitleSkeleton from './../components/shared/skeleton/section-title-skeleton';
+import SectionTitleSkeleton from '@/components/shared/skeleton/section-title-skeleton';
+import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
 
 export default function Home() {
 
@@ -49,9 +50,14 @@ export default function Home() {
 							<SectionTitle title="trending now"/>
 							<div className="banner-section-content-trending-cards flex flex-col gap-4 md:gap-3">
 								{
-									trending && trending.map((blog) =>(
-										<CardRow key={blog.id} data={blog} type="trending" isLoading={isLoading}/>
+									isLoading ? (
+										<CardRowSkeleton type="trending" cardNumber={5} />
+									) :
+									(
+										trending && trending.map((blog) =>(
+										<CardRow key={blog.id} data={blog} type="trending"/>
 									))
+									)
 								}
 							</div>
 						</div>
@@ -92,7 +98,7 @@ export default function Home() {
 						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-4 md:gap-3">
 							{
 								exclusiveCard && exclusiveCard.map((blog) => (
-									<CardRow key={blog.id} data={blog} type="exclusive" isLoading={isLoading}/>
+									<CardRow key={blog.id} data={blog} type="exclusive"/>
 								))
 							}
 						</div>				
