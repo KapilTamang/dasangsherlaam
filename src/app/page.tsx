@@ -13,6 +13,7 @@ import blogs from '@/data/blogs';
 import categories from '@/data/category';
 import CardRowLarge from '@/components/shared/card/card-row-large';
 import Newsletter from'@/components/shared/newsletter';
+import SectionTitleSkeleton from './../components/shared/skeleton/section-title-skeleton';
 
 export default function Home() {
 
@@ -107,7 +108,7 @@ export default function Home() {
 						<div className="category-section-container container-base-style">
 							<div className="category-section-content flex flex-col gap-0">
 								<div className="category-section-content-title">
-									
+									<SectionTitleSkeleton/>
 								</div>
 								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
 									<div className="category-section-content-carousel-card">

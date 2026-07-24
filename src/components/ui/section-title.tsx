@@ -1,12 +1,12 @@
 
-interface sectionTitle{
-    title: string
+interface sectionTitleProps{
+    title: string,
 }
 
-export default function SectionTitle({title}: sectionTitle) {
+export default function SectionTitle({title}: sectionTitleProps) {
     return (
         <div className="border-t-2 border-primary capitalize text-card-featured-foreground text-[1rem] font-bold">
             <span className="bg-primary capitalize px-4 py-1">{title}</span>
-        </div>
+        </div>  
     )
 }
