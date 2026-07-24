@@ -4,6 +4,7 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./card/card-column";
+import CardColumnSkeleton from '@/components/shared/skeletons/card-column-skeleton';
 
 interface carouselProps {
     id: number;
@@ -74,10 +75,15 @@ export default function EmblaCarousel({ data, isLoading }: EmblaCarouselProps) {
             <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex gap-8 md:gap-4">
                     {/* Container wrapper: holds all the slides together */}
+                    
                     {
-                        data.map((blog) => (
-                            <Card key={blog.id} data={blog} width="350px"/>
-                        ))
+                        isLoading ? (
+                            <CardColumnSkeleton cardNumber={4} cardType="carousel"/>
+                        ):(
+                            data.map((blog) => (
+                                <Card key={blog.id} data={blog} width="350px"/>
+                            ))
+                        )
                     }
                 </div>
             </div>

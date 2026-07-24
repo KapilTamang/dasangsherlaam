@@ -15,7 +15,8 @@ import CardRow from "@/components/shared/card/card-row";
 import  Card from '@/components/shared/card/card-column';
 import NoData from '@/components/ui/no-data';
 import NewsletterPromoCard from "@/components/shared/card/card-newsletter-promo";
-import { CardColumnSkeleton, ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
+import {ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
+import CardColumnSkeleton from '@/components/shared/skeletons/card-column-skeleton';
 import LikeButton from '@/components/shared/blog-engagement/like-button';
 import SocialShare from '@/components/shared/blog-engagement/social-share';
 
@@ -160,15 +161,21 @@ export default function Blog() {
                     <div className="section-related-blogs-content flex flex-col gap-4">
                         <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
                             {
-                                recommendation && recommendation.map((blog) => (
-                                    <Card key={blog.id} data={blog} isLoading={isLoading} width="auto"/>
+                                isLoading ? 
+                                (
+                                    <CardColumnSkeleton cardNumber={4} cardType="grid"/>
+                                ):
+                                (
+                                    !isLoading && recommendation && recommendation.map((blog) => (
+                                    <Card key={blog.id} data={blog} width="auto"/>
+                                        )
                                     )
                                 )
                             }
                         </div>
                         <div className="section-related-blogs-content-button flex justify-end">
                             {
-                                currentCategory && (
+                                !isLoading && currentCategory && (
                                     <Link href={`/categories/${currentCategory.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
                                         {currentCategory.title}...
                                     </Link>
@@ -176,7 +183,6 @@ export default function Blog() {
                             }
                         </div>
                     </div>
-                    
                 </div>
             </section>
             <section className="footer-section">

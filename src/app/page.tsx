@@ -97,31 +97,47 @@ export default function Home() {
 				</div>
 			</section>
 			{/* Home page section for diffrerent categories */}
-			
-					{	
-						!isLoading && categories && categories.map((category) => (
-							<section key={category.id} id="category-section" className="section-base-style">
-								<div className="category-section-container container-base-style">
-									<div key={category.id} className="category-section-content flex flex-col gap-0">
-										<div className="category-section-content-title">
-											<SectionTitle title={category.title}/>
-										</div>
-										<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
-											<div className="category-section-content-carousel-card">
-												<EmblaCarousel data={blogs} isLoading={isLoading}/>
-											</div>
-											{
-												!isLoading && 
-												<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-													{category.title}...
-												</Link>
-											}
-										</div>
+			{
+				isLoading &&
+				<section id="category-section" className="section-base-style">
+						<div className="category-section-container container-base-style">
+							<div className="category-section-content flex flex-col gap-0">
+								<div className="category-section-content-title">
+									
+								</div>
+								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
+									<div className="category-section-content-carousel-card">
+										<EmblaCarousel data={blogs} isLoading={isLoading}/>
 									</div>
 								</div>
-							</section>
-							))
-						}		
+							</div>
+						</div>
+					</section>
+			}
+			{	
+				!isLoading && categories && categories.map((category) => (
+					<section key={category.id} id="category-section" className="section-base-style">
+						<div className="category-section-container container-base-style">
+							<div key={category.id} className="category-section-content flex flex-col gap-0">
+								<div className="category-section-content-title">
+									<SectionTitle title={category.title}/>
+								</div>
+								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
+									<div className="category-section-content-carousel-card">
+										<EmblaCarousel data={blogs} isLoading={isLoading}/>
+									</div>
+									{
+										!isLoading && 
+										<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+											{category.title}...
+										</Link>
+									}
+								</div>
+							</div>
+						</div>
+					</section>
+					))
+				}		
 			<section id="newsletter-section">
 				<Newsletter/>
 			</section>
