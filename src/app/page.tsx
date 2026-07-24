@@ -107,27 +107,28 @@ export default function Home() {
 			</section>
 			{/* Home page section for diffrerent categories */}
 			{
-				isLoading && 
-				//Mapping total no of categories to render skeleton for actual no of categories
-				[...Array(total_categories)].map((_, index) => (
-					<section key={index} id="category-section" className="section-base-style">
-						<div className="category-section-container container-base-style">
-							<div className="category-section-content flex flex-col gap-0">
-								<div className="category-section-content-title">
-									<SectionTitleSkeleton/>
-								</div>
-								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
-									<div className="category-section-content-carousel-card">
-										<EmblaCarousel data={blogs} isLoading={isLoading}/>
+				isLoading ?
+				(
+					//Mapping total no of categories to render skeleton for actual no of categories
+					[...Array(total_categories)].map((_, index) => (
+						<section key={index} id="category-section" className="section-base-style">
+							<div className="category-section-container container-base-style">
+								<div className="category-section-content flex flex-col gap-0">
+									<div className="category-section-content-title">
+										<SectionTitleSkeleton/>
+									</div>
+									<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
+										<div className="category-section-content-carousel-card">
+											<EmblaCarousel data={blogs} isLoading={isLoading}/>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
-				))
-			}
-			{	
-				!isLoading && categories && categories.map((category) => (
+						</section>
+					))
+				):
+				(
+					categories && categories.map((category) => (
 					<section key={category.id} id="category-section" className="section-base-style">
 						<div className="category-section-container container-base-style">
 							<div key={category.id} className="category-section-content flex flex-col gap-0">
@@ -149,7 +150,8 @@ export default function Home() {
 						</div>
 					</section>
 					))
-				}		
+				)
+			}
 			<section id="newsletter-section">
 				<Newsletter/>
 			</section>
