@@ -5,14 +5,7 @@ interface cardProps {
     type: string,
     cards: number
 }
-//Card featured skeleton
-export function CardFeaturedSkeleton() {
-    return (
-        <CardContent className="flex flex-col w-full h-[430px] md:h-[500px]">
-            <Skeleton className="aspect-video h-full rounded-none"/>
-        </CardContent>
-    )
-}
+
 
 //Card row skeleton
 export function CardRowSkeleton({type} : cardProps) {

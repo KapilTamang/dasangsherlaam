@@ -15,6 +15,7 @@ import CardRowLarge from '@/components/shared/card/card-row-large';
 import Newsletter from'@/components/shared/newsletter';
 import SectionTitleSkeleton from '@/components/shared/skeleton/section-title-skeleton';
 import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
+import { CardFeaturedSkeleton } from '@/components/shared/skeleton/card-featured-skeleton';
 
 export default function Home() {
 
@@ -55,22 +56,27 @@ export default function Home() {
 									) :
 									(
 										trending && trending.map((blog) =>(
-										<CardRow key={blog.id} data={blog} type="trending"/>
-									))
+											<CardRow key={blog.id} data={blog} type="trending"/>
+										))
 									)
 								}
 							</div>
 						</div>
 						<div className="banner-section-content-featured col-span-1 order-1 md:order-2 lg:col-span-2 col-start-1 flex flex-col gap-3 md:gap-4">
 							<SectionTitle title="featured"/>
-							{ 
-								featured && <CardFeatured data={featured} isLoading={isLoading}/>
-							}
 							{
-								!isLoading && 
-								<Link href="/categories/featured" className={`self-end capitalize px-2 text-[0.9rem] ${buttonVariants()}`}>
-									read more...
-								</Link>
+								isLoading ? (
+									<CardFeaturedSkeleton/>
+								):
+								(
+									<>
+										{featured && <CardFeatured data={featured} />}
+										<Link href="/categories/featured" className={`self-end capitalize px-2 text-[0.9rem] ${buttonVariants()}`}>
+											read more...
+										</Link>
+									</>
+								
+								)
 							}
 						</div>
 						<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
