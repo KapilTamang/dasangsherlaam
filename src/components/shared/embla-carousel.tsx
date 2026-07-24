@@ -4,7 +4,7 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {ChevronLeft, ChevronRight } from "lucide-react";
 import Card from "./card/card-column";
-import CardColumnSkeleton from '@/components/shared/skeletons/card-column-skeleton';
+import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleton';
 
 interface carouselProps {
     id: number;

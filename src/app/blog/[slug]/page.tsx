@@ -16,7 +16,7 @@ import  Card from '@/components/shared/card/card-column';
 import NoData from '@/components/ui/no-data';
 import NewsletterPromoCard from "@/components/shared/card/card-newsletter-promo";
 import {ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
-import CardColumnSkeleton from '@/components/shared/skeletons/card-column-skeleton';
+import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleton';
 import LikeButton from '@/components/shared/blog-engagement/like-button';
 import SocialShare from '@/components/shared/blog-engagement/social-share';
 
