@@ -46,120 +46,112 @@ export default function Blog() {
 
     return (
         <main>
-            {
-                currentBlog ?  
-                    (<section className="section-single-blog section-base-style relative">
-                        <div className="section-single-blog-container container-base-style">
-                            <div className="single-blog-content flex flex-col md:flex-row gap-4 lg:gap-6">
+            <section className="section-single-blog section-base-style relative">
+                <div className="section-single-blog-container container-base-style">
+                    <div className="single-blog-content flex flex-col md:flex-row gap-4 lg:gap-6">
+                        {
+                            isLoading ? (
+                                <SingleBlogSkeleton/>
+                            ): 
+                            ( currentBlog &&
+                                <article className="sinlge-blog-content-left flex flex-col flex-3 gap-4 md:gap-2 relative">
+                                    <div className="single-blog-content-left-info flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-12 items-start md:items-center justify-between">
+                                        <div className="single-blog-content-left-info-img w-full relative block md:hidden">
+                                            <div className="single-blog-content-left-img-conatiner">
+                                                <Image
+                                                className="shadow-lg" 
+                                                src={currentBlog.imageURL} 
+                                                alt={currentBlog.title}
+                                                width={1200}
+                                                height={1000}
+                                                priority
+                                                />
+                                            </div>
+                                            <div className="single-blog-content-left-img-tag absolute top-3 left-2">
+                                                <CategoryTag title={currentBlog.category}/>
+                                            </div>
+                                        </div>
+                                        <div className="single-blog-content-left-info-category hidden md:block">
+                                            <CategoryTag title={currentBlog.category}/>
+                                        </div>
+                                        <div className="single-blog-content-left-info-author-date w-full md:w-auto flex gap-6 lg:gap-12 justify-between text-[0.9rem] md:text-[1rem] text-muted-foreground">
+                                            <div className="flex gap-2 items-center">
+                                                <UserPen className="inline" size={20}/>
+                                                {currentBlog.author}
+                                            </div>
+                                            <div className="flex gap-2 items-center">
+                                                <CalendarClock className="inline" size={20}/>
+                                                {currentBlog.date}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="single-blog-content-left-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.2rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary bg-accent sticky top-15 md:top-20">
+                                        {currentBlog.title}
+                                    </div>
+                                    <div className="single-blog-content-left-description order-4 mt-0 md:mt-2 lg:mt-4">
+                                        <p>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                            {currentBlog.description}<br></br><br></br>
+                                        </p>
+                                    </div>
+                                </article>
+                            )
+                        }
+                        <div className="single-blog-content-right flex flex-col flex-2 gap-6 sticky top-25 h-full">
+                            <div className="single-blog-content-img w-full relative hidden md:block">
                                 {
                                     isLoading ? (
-                                        <SingleBlogSkeleton/>
-                                    ): (
-                                        <article className="sinlge-blog-content-left flex flex-col flex-3 gap-4 md:gap-2 relative">
-                                            <div className="single-blog-content-left-info flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-12 items-start md:items-center justify-between">
-                                                <div className="single-blog-content-left-info-img w-full relative block md:hidden">
-                                                    <div className="single-blog-content-left-img-conatiner">
-                                                        <Image
-                                                        className="shadow-lg" 
-                                                        src={currentBlog.imageURL} 
-                                                        alt={currentBlog.title}
-                                                        width={1200}
-                                                        height={1000}
-                                                        priority
-                                                        />
-                                                    </div>
-                                                    <div className="single-blog-content-left-img-tag absolute top-3 left-2">
-                                                        <CategoryTag title={currentBlog.category}/>
-                                                    </div>
-                                                </div>
-                                                <div className="single-blog-content-left-info-category hidden md:block">
-                                                    <CategoryTag title={currentBlog.category}/>
-                                                </div>
-                                                <div className="single-blog-content-left-info-author-date w-full md:w-auto flex gap-6 lg:gap-12 justify-between text-[0.9rem] md:text-[1rem] text-muted-foreground">
-                                                    <div className="flex gap-2 items-center">
-                                                        <UserPen className="inline" size={20}/>
-                                                        {currentBlog.author}
-                                                    </div>
-                                                    <div className="flex gap-2 items-center">
-                                                        <CalendarClock className="inline" size={20}/>
-                                                        {currentBlog.date}
-                                                    </div>
-                                                </div>
+                                        <ImageSkeleton/>
+                                    ): 
+                                    (currentBlog &&
+                                        <>
+                                            <div className="single-blog-content-img-conatiner">
+                                                <Image
+                                                className="shadow-lg" 
+                                                src={currentBlog.imageURL} 
+                                                alt={currentBlog.title}
+                                                width={1200}
+                                                height={1000}
+                                                priority
+                                                />
                                             </div>
-                                            <div className="single-blog-content-left-title text-[1.1rem] md:text-[1.2rem] lg:text-[1.2rem] font-bold capitalize px-4 py-3 border-l-2 border-l-primary bg-accent sticky top-15 md:top-20">
-                                                {currentBlog.title}
+                                            <div className="single-blog-content-img-tag absolute top-3 left-2 block md:hidden">
+                                                <CategoryTag title={currentBlog.category}/>
                                             </div>
-                                            <div className="single-blog-content-left-description order-4 mt-0 md:mt-2 lg:mt-4">
-                                                <p>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                    {currentBlog.description}<br></br><br></br>
-                                                </p>
-                                            </div>
-                                        </article>
+                                        </>
                                     )
                                 }
-        
-                                <div className="single-blog-content-right flex flex-col flex-2 gap-6 sticky top-25 h-full">
-                                    <div className="single-blog-content-img w-full relative hidden md:block">
-                                        {
-                                            isLoading ? (
-                                                <ImageSkeleton/>
-                                            ): (
-                                                <>
-                                                    <div className="single-blog-content-img-conatiner">
-                                                        <Image
-                                                        className="shadow-lg" 
-                                                        src={currentBlog.imageURL} 
-                                                        alt={currentBlog.title}
-                                                        width={1200}
-                                                        height={1000}
-                                                        priority
-                                                        />
-                                                    </div>
-                                                    <div className="single-blog-content-img-tag absolute top-3 left-2 block md:hidden">
-                                                        <CategoryTag title={currentBlog.category}/>
-                                                    </div>
-                                                </>
-                                            )
-                                        }
-                                    </div>
-                                    <div className="single-blog-content-engagement flex items-center text-muted-foreground gap-2 md:gap-3 mt-0 md:-mt-4">
-                                        <LikeButton isLoading={isLoading}/>
-                                        <SocialShare isLoading={isLoading}/>
-                                    </div>
-                                    <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
-                                        <SectionTitle title="trending now"/>
-                                        {
-                                            isLoading ? 
-                                            (
-                                                <CardRowSkeleton type="trending" cardNumber={8} cardHeight={120}/>
-                                            ):
-                                            (
-                                                trending && trending.map((blog) => (
-                                                    <CardRow key={blog.id} data={blog} type="trending"/>
-                                                ))
-                                            )
-                                        }
-                                        <NewsletterPromoCard/>
-                                    </div>
-                                </div>
+                            </div>
+                            <div className="single-blog-content-engagement flex items-center text-muted-foreground gap-2 md:gap-3 mt-0 md:-mt-4">
+                                <LikeButton isLoading={isLoading}/>
+                                <SocialShare isLoading={isLoading}/>
+                            </div>
+                            <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
+                                <SectionTitle title="trending now"/>
+                                {
+                                    isLoading ? 
+                                    (
+                                        <CardRowSkeleton type="trending" cardNumber={8} cardHeight={120}/>
+                                    ):
+                                    (
+                                        trending && trending.map((blog) => (
+                                            <CardRow key={blog.id} data={blog} type="trending"/>
+                                        ))
+                                    )
+                                }
+                                <NewsletterPromoCard/>
                             </div>
                         </div>
-                    </section>)
-                : (
-                    <section className="section-blog section-base-style">
-                        <div className="section-blog-container container-base-style">
-                            <h1>Resource Not Found.</h1>
-                        </div>
-                    </section>)
-            }
+                    </div>
+                </div>
+            </section>)
             <section className="section-related-blogs section-base-style">
                 <div className="section-related-blogs-container container-base-style flex flex-col gap-4 md:gap-6">
                     <div className="section-related-blogs-title">

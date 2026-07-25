@@ -1,5 +1,4 @@
 import {Skeleton} from '@/components/ui/skeleton'
-import {CardContent, CardDescription} from '@/components/ui/card'
 
 interface cardProps {
     type: string,
