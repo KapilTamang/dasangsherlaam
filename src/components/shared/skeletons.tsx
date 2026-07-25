@@ -7,33 +7,6 @@ interface cardProps {
 }
 
 
-//Card row skeleton
-export function CardRowSkeleton({type} : cardProps) {
-    return (
-        <CardContent className={`flex gap-2 w-full h-[110px] py-0 md:py-2 first-of-type:border-t-0 last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`}>
-            <Skeleton className="flex-1 h-full rounded-none"/>
-            <CardDescription className="w-full h-full flex flex-2 flex-col gap-2 justify-start pt-4">
-                <Skeleton className="w-full h-2 rounded-none"/>
-                <Skeleton className="w-2/3 h-2 rounded-none"/>
-                <Skeleton className="w-1/3 h-2 rounded-none"/>
-            </CardDescription>
-        </CardContent>
-    )
-}
-
-//Card text skeleton
-export function CardTextSkeleton() {
-    return (
-        // <Card className="w-full h-[80px] rounded-none">
-            <CardContent className="flex flex-col gap-2 w-full h-[80px] rounded-none py-0 md:py-2 first-of-type:border-t-0 last-of-type:border-b-0 md:border-b md:border-foreground/20">
-                <Skeleton className="w-full md:w-3/4 h-2 rounded-none"/>
-                <Skeleton className="w-2/3 h-2 rounded-none"/>
-                <Skeleton className="w-2/3 md:w-1/3 h-2 rounded-none"/>
-            </CardContent>
-        // </Card>
-    )
-}
-
 //Card row large skeleton
 export function CardRowLargeSkeleton() {
     return(

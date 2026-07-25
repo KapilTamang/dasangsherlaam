@@ -90,7 +90,7 @@ export default function Home() {
 									):
 									(
 										authorsPick && authorsPick.map((blog) =>(
-											<CardText key={blog.id} data={blog} isLoading={isLoading}/>
+											<CardText key={blog.id} data={blog}/>
 										))
 									)
 								}
