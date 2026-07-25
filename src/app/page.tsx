@@ -16,6 +16,7 @@ import Newsletter from'@/components/shared/newsletter';
 import SectionTitleSkeleton from '@/components/shared/skeleton/section-title-skeleton';
 import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
 import { CardFeaturedSkeleton } from '@/components/shared/skeleton/card-featured-skeleton';
+import { CardTextSkeleton } from '@/components/shared/skeleton/card-text-skeleton';
 
 export default function Home() {
 
@@ -83,9 +84,15 @@ export default function Home() {
 							<SectionTitle title="author's pick"/>
 							<div className="banner-section-content-authors-pick-cards flex flex-col gap-4 md:gap-3">
 								{
-									authorsPick && authorsPick.map((blog) =>(
-										<CardText key={blog.id} data={blog} isLoading={isLoading}/>
-									))
+									isLoading ?
+									(
+										<CardTextSkeleton cardNumber={6}/>
+									):
+									(
+										authorsPick && authorsPick.map((blog) =>(
+											<CardText key={blog.id} data={blog} isLoading={isLoading}/>
+										))
+									)
 								}
 							</div>
 						</div>
