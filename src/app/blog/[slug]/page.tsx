@@ -19,6 +19,7 @@ import {ImageSkeleton, SingleBlogSkeleton} from '@/components/shared/skeletons';
 import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleton';
 import LikeButton from '@/components/shared/blog-engagement/like-button';
 import SocialShare from '@/components/shared/blog-engagement/social-share';
+import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
 
 export default function Blog() {
     //Retrieve slug from URL
@@ -136,9 +137,15 @@ export default function Blog() {
                                     <div className="single-blog-content-recommendation w-full flex flex-col gap-4 md:gap-2">
                                         <SectionTitle title="trending now"/>
                                         {
-                                            trending.map((blog) => (
-                                                <CardRow key={blog.id} data={blog} isLoading={isLoading} type="trending"/>
-                                            ))
+                                            isLoading ? 
+                                            (
+                                                <CardRowSkeleton type="trending" cardNumber={8} cardHeight={120}/>
+                                            ):
+                                            (
+                                                trending && trending.map((blog) => (
+                                                    <CardRow key={blog.id} data={blog} type="trending"/>
+                                                ))
+                                            )
                                         }
                                         <NewsletterPromoCard/>
                                     </div>
@@ -166,7 +173,7 @@ export default function Blog() {
                                     <CardColumnSkeleton cardNumber={4} cardType="grid"/>
                                 ):
                                 (
-                                    !isLoading && recommendation && recommendation.map((blog) => (
+                                    recommendation && recommendation.map((blog) => (
                                     <Card key={blog.id} data={blog} width="auto"/>
                                         )
                                     )

@@ -52,7 +52,7 @@ export default function Home() {
 							<div className="banner-section-content-trending-cards flex flex-col gap-4 md:gap-3">
 								{
 									isLoading ? (
-										<CardRowSkeleton type="trending" cardNumber={5} />
+										<CardRowSkeleton type="trending" cardNumber={5} cardHeight={95}/>
 									) :
 									(
 										trending && trending.map((blog) =>(
@@ -105,7 +105,7 @@ export default function Home() {
 							{
 								isLoading ? 
 								(
-									<CardRowSkeleton type="exclusive" cardNumber={3}/>
+									<CardRowSkeleton type="exclusive" cardNumber={3} cardHeight={120}/>
 								)
 								:
 								(
