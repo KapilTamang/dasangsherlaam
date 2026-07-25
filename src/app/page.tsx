@@ -17,6 +17,7 @@ import SectionTitleSkeleton from '@/components/shared/skeleton/section-title-ske
 import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
 import { CardFeaturedSkeleton } from '@/components/shared/skeleton/card-featured-skeleton';
 import { CardTextSkeleton } from '@/components/shared/skeleton/card-text-skeleton';
+import { CardRowLargeSkeleton } from '@/components/shared/skeleton/card-row-large-skeleton';
 
 export default function Home() {
 
@@ -38,7 +39,7 @@ export default function Home() {
 	React.useEffect(() => {
 		const timer = setTimeout(() => {
 			setIsLoading(false);
-		}, 2000);
+		}, 3000);
 		//Clear timer
 		return() => clearTimeout(timer);
 	},[isLoading])
@@ -106,7 +107,15 @@ export default function Home() {
 					</div>
 					<div className="exclusive-section-content flex flex-col gap-4 md:gap-8">
 						<div className="exclusive-section-content-main">
-							{exclusiveMain && <CardRowLarge data={exclusiveMain} isLoading={isLoading}/>}
+							{
+								isLoading ? 
+								(
+									<CardRowLargeSkeleton />
+								):
+								(
+									exclusiveMain && <CardRowLarge data={exclusiveMain}/>
+								)
+							}
 						</div>
 						<div className="exclusive-section-content-cards flex-col flex md:flex-row gap-4 md:gap-3">
 							{

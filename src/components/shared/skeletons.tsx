@@ -7,18 +7,6 @@ interface cardProps {
 }
 
 
-//Card row large skeleton
-export function CardRowLargeSkeleton() {
-    return(
-        <CardContent className="w-full h-[300px] md:h-[500px] flex flex-col md:flex-row gap-4 rounded-none bg-accent">
-            <Skeleton className="flex-3 md:flex-1 w-full h-full rounded-none"/>
-            <div className="flex flex-1">
-                
-            </div>
-        </CardContent>
-    )
-}
-
 
 // Image Skeleton
 export function ImageSkeleton() {
