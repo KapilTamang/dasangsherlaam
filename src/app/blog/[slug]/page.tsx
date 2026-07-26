@@ -28,7 +28,7 @@ export default function Blog() {
 
     const currentBlog = blogs.find((blog) => blog.slug === slug);
     //Fetching dummy data..
-	const trending = blogs.filter((blog) => blog.category !== 'featured' && blog.id != currentBlog?.id).slice(0,8);
+	const trending = blogs.filter((blog) => blog.category !== 'featured' && blog.id != currentBlog?.id).slice(0,0);
     //Category of current blog
     const currentCategory = categories.find((category) => category.title === currentBlog?.category)
     //Blogs from same category
@@ -141,9 +141,19 @@ export default function Blog() {
                                         <CardRowSkeleton type="trending" cardNumber={8} cardHeight={120}/>
                                     ):
                                     (
-                                        trending && trending.map((blog) => (
-                                            <CardRow key={blog.id} data={blog} type="trending"/>
-                                        ))
+                                        trending && trending.length > 0 ? 
+                                        (
+                                            
+                                            trending.map((blog) => (
+                                                <CardRow key={blog.id} data={blog} type="trending"/>
+                                            ))
+                                            
+
+                                        ):
+                                        (
+                                            <NoData content="currently no blogs to show" orientation="vertical"/>
+                                        )
+                                        
                                     )
                                 }
                                 <NewsletterPromoCard/>
@@ -158,20 +168,30 @@ export default function Blog() {
                         <SectionTitle title="realted blogs"/>
                     </div>
                     <div className="section-related-blogs-content flex flex-col gap-4">
-                        <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                        
                             {
                                 isLoading ? 
                                 (
-                                    <CardColumnSkeleton cardNumber={4} cardType="grid"/>
+                                    <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                                        <CardColumnSkeleton cardNumber={4} cardType="grid"/>
+                                    </div>
                                 ):
                                 (
-                                    recommendation && recommendation.map((blog) => (
-                                    <Card key={blog.id} data={blog} width="auto"/>
-                                        )
+                                    
+                                    recommendation && recommendation.length > 0 ? (
+                                        <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                                            {
+                                                recommendation.map((blog) => (
+                                                    <Card key={blog.id} data={blog} width="auto"/>
+                                                ))
+                                            }
+                                         </div>
+                                    ):
+                                    (
+                                        <NoData content="currently no blogs to show" orientation="horizontal"/>
                                     )
                                 )
                             }
-                        </div>
                         <div className="section-related-blogs-content-button flex justify-end">
                             {
                                 !isLoading && currentCategory && (
