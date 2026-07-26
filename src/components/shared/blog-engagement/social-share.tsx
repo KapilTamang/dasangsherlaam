@@ -50,7 +50,7 @@ export default function SocialShare({isLoading}: SocialShareProps) {
                         </DialogDescription>
                     </DialogHeader>
                     <Button variant="outline" className="capitalize cursor-pointer" onClick={() => handleClick("facebook")}>
-                        <FaFacebook color="#1877f2" size={100}/>
+                        <FaFacebook color="#1877f2"/>
                         facebook 
                     </Button>
                     <Button variant="outline" className="capitalize cursor-pointer" onClick={() => handleClick("whatsapp")}>
