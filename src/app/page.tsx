@@ -18,6 +18,7 @@ import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton'
 import { CardFeaturedSkeleton } from '@/components/shared/skeleton/card-featured-skeleton';
 import { CardTextSkeleton } from '@/components/shared/skeleton/card-text-skeleton';
 import { CardRowLargeSkeleton } from '@/components/shared/skeleton/card-row-large-skeleton';
+import NoData from '@/components/ui/no-data';
 
 export default function Home() {
 
@@ -29,6 +30,8 @@ export default function Home() {
 	const authorsPick = blogs.filter((blog) => blog.category !== 'featured').slice(0,6);
 	//Finding featured blog
 	const featured = blogs.find((blog) => blog.category == 'featured');
+	//Fetching all exclusive blogs
+	const exclusive = blogs.filter((blogs) => blogs.category == 'exclusive');
 	//Finding most recent exclusive blog
 	const exclusiveMain = blogs.find((blog) => blog.category == 'exclusive')
 	//Finding all exclusive bolgs
@@ -43,6 +46,12 @@ export default function Home() {
 		//Clear timer
 		return() => clearTimeout(timer);
 	},[isLoading])
+
+	//Callback function to filter blogs of specific category
+	const getCategoryBlogs = (ctg: string) => {
+		// blogs.filter((blog) => blog.category == ctg)
+		return blogs;
+	}
 
 	return (
 		<main>
@@ -125,6 +134,7 @@ export default function Home() {
 								)
 								:
 								(
+									
 									exclusiveCard && exclusiveCard.map((blog) => (
 										<CardRow key={blog.id} data={blog} type="exclusive"/>
 									))
@@ -158,26 +168,39 @@ export default function Home() {
 				):
 				(
 					categories && categories.map((category) => (
-					<section key={category.id} id="category-section" className="section-base-style">
-						<div className="category-section-container container-base-style">
-							<div key={category.id} className="category-section-content flex flex-col gap-0">
-								<div className="category-section-content-title">
-									<SectionTitle title={category.title}/>
-								</div>
-								<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
-									<div className="category-section-content-carousel-card">
-										<EmblaCarousel data={blogs} isLoading={isLoading}/>
+						(
+							<section key={category.id} id="category-section" className="section-base-style">
+								<div className="category-section-container container-base-style">
+									<div key={category.id} className="category-section-content flex flex-col gap-0">
+										<div className="category-section-content-title">
+											<SectionTitle title={category.title}/>
+										</div>
+										{
+											getCategoryBlogs(category.title).length < 1 ?
+											(
+												<div className="category-section-content-no-data mt-10">
+													<NoData content="currently no blogs to show" orientation="horizontal"/>
+													</div>
+											):
+											(
+												<div className="category-section-content-carousel flex flex-col gap-3 md:gap-4">
+													<div className="category-section-content-carousel-card">
+														<EmblaCarousel data={getCategoryBlogs(category.title)} isLoading={isLoading}/>
+													</div>
+													{
+														!isLoading && 
+														<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+															{category.title}...
+														</Link>
+													}
+												</div>
+											)
+										}
+										
 									</div>
-									{
-										!isLoading && 
-										<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
-											{category.title}...
-										</Link>
-									}
 								</div>
-							</div>
-						</div>
-					</section>
+							</section>
+						)
 					))
 				)
 			}

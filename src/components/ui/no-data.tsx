@@ -11,7 +11,7 @@ export default function NoData({content, orientation}: noDataDescription) {
             {
                 orientation == "horizontal" ? 
                 (
-                    <div className="no-data flex flex-col md:flex-row w-full h-auto pb-[50px] md:pb-0 justify-center items-center text-[1rem] md:text-[1.2rem] text-muted-foreground font-medium capitalize italic bg-accent">
+                    <div className="no-data flex flex-col md:flex-row w-full h-auto px-4 md:px-0 pb-[50px] md:pb-0 justify-center items-center text-[1rem] md:text-[1.2rem] text-muted-foreground font-medium capitalize italic bg-accent">
                         <div className="no-data-image w-full h-auto flex flex-1 justify-center">
                             <Image 
                             src={`/images/nodata.png`}
@@ -26,7 +26,7 @@ export default function NoData({content, orientation}: noDataDescription) {
                 ):
                 (
                     orientation == "vertical" && 
-                    <div className="no-data flex flex-col w-full h-auto pb-[50px] justify-center items-center text-[1rem] md:text-[1.125rem] text-muted-foreground font-medium capitalize italic bg-accent">
+                    <div className="no-data flex flex-col w-full h-auto px-4 md:px-0 pb-[50px] justify-center items-center text-[1rem] md:text-[1.125rem] text-muted-foreground font-medium capitalize italic bg-accent">
                         <div className="no-data-image w-full h-auto flex flex-1 justify-center items-center">
                             <Image
                             src={`/images/nodata.png`}

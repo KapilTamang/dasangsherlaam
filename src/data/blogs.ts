@@ -73,7 +73,7 @@ const blogs: Blog[] = [
         that we occupy a special place in the cosmos, cared for and anticipated by an intelligence beyond ours. The compulsion takes various forms. 
         It includesthe denial of our biological design, and of cosmological design. It includes the moral and legal equation of nonhumans 
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
-        category: 'history and culture',
+        category: 'science and technology',
         imageURL: '/images/blog3.jpg',
         date: 'Aug 29, 2026',
         author: 'Dasang'
