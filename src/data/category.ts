@@ -7,6 +7,7 @@ interface Category {
     abbreviation: string;
     description: string;
     icon: LucideIcon;
+    imageURL: string;
 }
 
 const categories: Category[] = [
@@ -16,7 +17,8 @@ const categories: Category[] = [
         slug: 'featured',
         abbreviation: 'feat',
         description: 'Exciting articles from author.',
-        icon: Award
+        icon: Award,
+        imageURL: "/images/featured-category.png"
     },
     {
         id: 2,
@@ -24,7 +26,8 @@ const categories: Category[] = [
         slug: 'science-and-technology',
         abbreviation: 'st',
         description: 'Latest news and article on science and technology.',
-        icon: Atom
+        icon: Atom,
+        imageURL: "/images/science-and-technology-category.png"
     },
     {
         id: 3,
@@ -32,7 +35,8 @@ const categories: Category[] = [
         slug: 'amazing-facts',
         abbreviation: 'af',
         description: 'Interesting and amazing facts on different topics.',
-        icon: Lightbulb
+        icon: Lightbulb,
+        imageURL: "/images/amazing-facts-category.png"
     },
     {
         id: 4,
@@ -40,7 +44,8 @@ const categories: Category[] = [
         slug: 'history-and-culture',
         abbreviation: 'hc',
         description: 'Discover the rich history and culture of different countires and civilizations.',
-        icon: History
+        icon: History,
+        imageURL: "/images/history-and-culture-category.png"
     },
     {
         id: 5,
@@ -48,7 +53,8 @@ const categories: Category[] = [
         slug: 'travel-and-tourism',
         abbreviation: 'tt',
         description: 'Explore the world through travel and tourism articles, guides and tips.',
-        icon: Plane
+        icon: Plane,
+        imageURL: "/images/travel-and-tourism-category.png"
     },
     {
         id: 6,
@@ -56,7 +62,8 @@ const categories: Category[] = [
         slug: 'exclusive',
         abbreviation: 'ex',
         description: 'Discover specialized tailored content in this section.',
-        icon: Crown
+        icon: Crown,
+        imageURL: "/images/exclusive-category.png"
     },
 ]
 

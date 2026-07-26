@@ -10,6 +10,7 @@ import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleto
 import NoData from '@/components/ui/no-data';
 import Card from '@/components/shared/card/card-column';
 import { Button, buttonVariants } from '@/components/ui/button';
+import { ImageSkeleton } from '@/components/shared/skeletons';
 import Footer from '@/components/shared/footer';
 
 export default function Category() {
@@ -38,13 +39,13 @@ export default function Category() {
            <section id="category-page-banner-section" className="section-base-style bg-accent relative">
                 <div className="category-page-banner-section-container container-base-style flex flex-col-reverse md:flex-col gap-4 items-center">
                     <div className="category-page-banner-section-image w-full h-auto flex justify-center">
-                        <Image
-                        src={`/images/science-and-technology.png`}
-                        width={1300}
-                        height={1000}
-                        alt="banner-image"
-                        priority
-                        />
+                            <Image
+                            src={currentCategory?.imageURL ?? ''}
+                            width={1300}
+                            height={1000}
+                            alt={currentCategory?.title ?? ''}
+                            priority
+                            />
                     </div>
                     <div className="category-page-banner-section-details bg-background static md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full md:w-auto max-w-[600px] md:min-w-[450px] lg:min-w-[550px] md:max-w-[500px] lg:max-w-[600px] flex flex-col gap-2 md:gap-8 px-4 md:px-10 py-4 md:py-6 rounded-sm shadow">
                         <div className="category-page-banner-section-details-title text-[1rem] lg:text-[1.2rem] font-medium capitalize">

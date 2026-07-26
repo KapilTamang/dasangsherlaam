@@ -83,7 +83,7 @@ export default function Home() {
 									<>
 										{featured && <CardFeatured data={featured} />}
 										<Link href="/categories/featured" className={`self-end capitalize px-2 text-[0.9rem] ${buttonVariants()}`}>
-											read more...
+											featured...
 										</Link>
 									</>
 								

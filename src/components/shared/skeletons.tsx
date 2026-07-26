@@ -10,7 +10,7 @@ interface cardProps {
 // Image Skeleton
 export function ImageSkeleton() {
     return(
-        <Skeleton className="bg-primary h-[260px] sm:h-[400px] md:h-[260px] lg:h-[350px] rounded-none"/>
+        <Skeleton className="bg-primary w-full h-[260px] sm:h-[400px] md:h-[260px] lg:h-[350px] rounded-none"/>
     )
 }
 
