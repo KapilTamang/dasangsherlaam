@@ -26,7 +26,7 @@ export default function CardRowLarge ({data}: cardItemProps){
                         alt={data.title}
                         width={1200}
                         height={1000}
-                        priority
+                        preload
                     />
                 </figure>
                 <div className="card-content flex flex-1 flex-col gap-4 justify-center items-center text-center bg-accent text-foreground capitalize p-4 md:p-6">

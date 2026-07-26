@@ -1,7 +1,6 @@
 import Link  from 'next/link';
 import Image from 'next/image';
 import CategoryTag from '../category-tag';
-import { CardRowSkeleton } from '../skeletons';
 
 interface cardItem {
     id: number;
@@ -29,7 +28,7 @@ export default function CardRow({data, type} : cardItemProps) {
                         alt={data.title}
                         width={110}
                         height={60}
-                        priority
+                        preload
                     />
                 </figure>
                 <div className="card-content flex flex-2 flex-col items-start gap-2 md:gap-3 text-card-featured-foreground md:text-card-thumbnail-foreground p-4 md:p-0">

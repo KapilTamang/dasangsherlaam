@@ -64,7 +64,7 @@ export default function Blog() {
                                                 alt={currentBlog.title}
                                                 width={1200}
                                                 height={1000}
-                                                priority
+                                                preload
                                                 />
                                             </div>
                                             <div className="single-blog-content-left-img-tag absolute top-3 left-2">

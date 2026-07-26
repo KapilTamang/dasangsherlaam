@@ -31,7 +31,7 @@ export default function Card({data, width}: cardItemProps) {
                         alt={data.title}
                         width={1000}
                         height={800}
-                        priority
+                        preload
                     />
                 </figure>
                 <div className="card-content flex flex-col gap-2 p-4 md:p-4 text-card-featured-foreground md:text-foreground">

@@ -30,7 +30,7 @@ export default function FeaturedCard({data}: cardItemProps) {
                             alt={data.title || 'featured-image'}
                             width={700}
                             height={600}
-                            priority
+                            preload
                         />
                     </figure>
                     {/* Card text content */}
