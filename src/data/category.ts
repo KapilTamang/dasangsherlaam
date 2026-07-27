@@ -16,7 +16,7 @@ const categories: Category[] = [
         title: 'featured',
         slug: 'featured',
         abbreviation: 'ft',
-        description: 'Exciting articles from author.',
+        description: 'Exciting and latest articles by author from various fields.',
         icon: Award,
         imageURL: "/images/featured-category.png"
     },
@@ -25,7 +25,7 @@ const categories: Category[] = [
         title: 'science and technology',
         slug: 'science-and-technology',
         abbreviation: 'st',
-        description: 'Latest news and article on science and technology.',
+        description: 'Latest news and article on science and technology. It covers latest technologies, innovations and trends in science and technology sector around the world.',
         icon: Atom,
         imageURL: "/images/science-and-technology-category.png"
     },
@@ -34,7 +34,7 @@ const categories: Category[] = [
         title: 'amazing facts',
         slug: 'amazing-facts',
         abbreviation: 'af',
-        description: 'Interesting and amazing facts on different topics.',
+        description: 'Interesting and amazing facts on different topics. It covers undiscoverd facts to readers to entertain and provide general knowledge.',
         icon: Lightbulb,
         imageURL: "/images/amazing-facts-category.png"
     },
@@ -43,7 +43,7 @@ const categories: Category[] = [
         title: 'history and culture',
         slug: 'history-and-culture',
         abbreviation: 'hc',
-        description: 'Discover the rich history and culture of different countires and civilizations.',
+        description: 'Discover the rich history and culture of different countires and civilizations. Get ready to unfold amazing history and cultures around the globe.',
         icon: History,
         imageURL: "/images/history-and-culture-category.png"
     },
@@ -52,7 +52,7 @@ const categories: Category[] = [
         title: 'travel and tourism',
         slug: 'travel-and-tourism',
         abbreviation: 'tt',
-        description: 'Explore the world through travel and tourism articles, guides and tips.',
+        description: 'Explore the world through travel and tourism articles. The articles will provide guides and tips for exploring beautiful places around the world.',
         icon: Plane,
         imageURL: "/images/travel-and-tourism-category.png"
     },
@@ -61,7 +61,7 @@ const categories: Category[] = [
         title: 'exclusive',
         slug: 'exclusive',
         abbreviation: 'ex',
-        description: 'Discover specialized tailored content in this section.',
+        description: 'Discover specialized tailored content in this section. It covers articles from varous topics.',
         icon: Crown,
         imageURL: "/images/exclusive-category.png"
     },

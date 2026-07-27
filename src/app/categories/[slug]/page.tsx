@@ -47,16 +47,16 @@ export default function Category() {
                             preload
                             />
                     </div>
-                    <div className="category-page-banner-section-details bg-background static md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full md:w-auto max-w-[600px] md:min-w-[550px] lg:min-w-[600px] md:max-w-[550px] lg:max-w-[600px] flex flex-col gap-4 md:gap-6 px-4 md:px-10 py-4 md:py-6 rounded-sm shadow-2xl">
+                    <div className="category-page-banner-section-details bg-background static md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full md:min-w-[550px] lg:min-w-[650px] md:max-w-[580px] lg:max-w-[650px] flex flex-col gap-4 md:gap-6 px-4 md:px-10 py-4 md:py-6 rounded-sm shadow-2xl">
                         <div className="category-page-banner-section-details-title text-[1rem] lg:text-[1.1rem] font-medium capitalize">
-                            explore more...<h1 className="text-[1rem] md:text-[1.6rem] lg::text-[2rem] font-extrabold uppercase mt-3 md:mt-5 bg-accent p-2 md:p-4 lg:p-6  border-l-2 border-l-primary">
-                                <span className="text-card-featured-foreground uppercase text-[1rem] md:text-[1.3rem] lg::text-[1.6rem] font-extrabold bg-primary p-2 mr-2 md:mr-4 rounded">{currentCategory?.abbreviation}</span>
+                            explore more...
+                            <h1 className="flex items-center text-[1rem] md:text-[1.6rem] lg:text-[2rem] font-extrabold uppercase mt-3 md:mt-5 bg-accent p-2 md:p-4 lg:p-5  border-l-2 border-l-primary">
+                                <span className="text-card-featured-foreground uppercase text-[0.9rem] md:text-[1.3rem] lg::text-[1.6rem] font-extrabold bg-primary px-2 py-0 md:p-2 mr-2 md:mr-4 rounded">{currentCategory?.abbreviation}</span>
                                 {currentCategory?.title} 
                             </h1>
                         </div>
                         <div className="category-page-banner-section-details-description text-[0.9rem] md:text-[1rem] lg:text-[1.125rem]">
                             {currentCategory?.description} 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum reprehenderit dignissimos at! Similique excepturi reiciendis, doloremque quam dolorum molestiae.
                         </div>
                     </div>
                 </div>
