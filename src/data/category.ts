@@ -15,7 +15,7 @@ const categories: Category[] = [
         id: 1,
         title: 'featured',
         slug: 'featured',
-        abbreviation: 'feat',
+        abbreviation: 'ft',
         description: 'Exciting articles from author.',
         icon: Award,
         imageURL: "/images/featured-category.png"
