@@ -13,9 +13,6 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import Footer from '@/components/shared/footer';
 
 export default function Category() {
-    //Define the loading state
-    const [isLoading, setIsLoading] = React.useState(true);
-
     const params = useParams();
     const slug = params.slug;
 
@@ -25,6 +22,19 @@ export default function Category() {
     // const categoryBlogs = blogs.filter((blog) => blog.category == currentCategory ?.title);
     const categoryBlogs = blogs;
 
+    //Define the loading state
+    const [isLoading, setIsLoading] = React.useState(true);
+    const [isBlogLoading, setIsBlogLoading] = React.useState(false);
+
+    //Define the visible blog count
+    const [visibleBlogCount, setVisibleBlogCount] = React.useState(4)
+
+    //Set blogs to display
+    const visibleCategoryBlogs = categoryBlogs.slice(0, visibleBlogCount);
+
+    //const to track has more blogs to show after load more click
+    const hasMore = visibleBlogCount < categoryBlogs.length;
+
     React.useEffect(() => {
         //Simulating API call 
         const timer = setTimeout(() => {
@@ -33,6 +43,23 @@ export default function Category() {
 
         return() => clearTimeout(timer);
     }, [isLoading]);
+
+    //Callback function to handle load more blogs
+    const handleLoadMore = () => {
+        setIsBlogLoading(true);
+        //scroll down to 500 to display loading cards
+        window.scrollBy({
+            top: 500,
+            left: 0
+        });
+        //Simulating API call
+        const timer = setTimeout(() => {
+            setIsBlogLoading(false);
+            setVisibleBlogCount((prev) => Math.min(prev+visibleBlogCount, categoryBlogs.length));
+        }, 2000)
+
+        return () => clearTimeout(timer);
+    }
 
     return (
         <main>
@@ -79,9 +106,13 @@ export default function Category() {
                                     categoryBlogs && categoryBlogs.length > 0 ? (
                                         <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
                                             {
-                                                categoryBlogs.map((blog) => (
+                                                visibleCategoryBlogs.map((blog) => (
                                                     <Card key={blog.id} data={blog} width="auto"/>
                                                 ))
+                                            }
+                                            {
+                                                isBlogLoading &&
+                                                <CardColumnSkeleton cardType="grid" cardNumber={4}/> 
                                             }
                                          </div>
                                     ):
@@ -92,10 +123,10 @@ export default function Category() {
                             }
                         <div className="section-related-blogs-content-button flex justify-end">
                             {
-                                !isLoading && categoryBlogs && (
-                                    <Button className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+                                !isLoading && hasMore && (
+                                    <button className={`self-end capitalize px-3 py-5 text-[1rem] cursor-pointer ${isBlogLoading ? 'pointer-events-none opacity-50' : ''} ${buttonVariants()}`} onClick={handleLoadMore}>
                                         load more...
-                                    </Button>
+                                    </button>
                                 )
                             }
                         </div>
