@@ -9,7 +9,7 @@ export default function About() {
     return (
         <main>
             <div className="about-navigation fixed top-4 md:top-6 right-4 md:right-10 flex gap-6 items-center">
-                <Link href="/" className="flex gap-1 items-center text-[1.125rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={20}/> home</Link>
+                <Link href="/" className="flex gap-1 items-center text-[1rem] md:text-[1.1rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={18}/> home</Link>
                 <ModeToggle/>
             </div>
             <article className="about">

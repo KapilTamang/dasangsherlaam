@@ -207,10 +207,8 @@ export default function Blog() {
                         </div>
                     </div>
                 </section>
-                <section className="footer-section">
-                    <Footer/>
-                </section>
             </main>
+            <Footer/>
         </>
     )
 }

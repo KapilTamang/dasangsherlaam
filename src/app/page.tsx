@@ -210,10 +210,8 @@ export default function Home() {
 				<section id="newsletter-section">
 					<Newsletter/>
 				</section>
-				<section id="footer-section">
-					<Footer/>
-				</section>
 			</main>
+			<Footer/>
 		</>
 	);
 }
