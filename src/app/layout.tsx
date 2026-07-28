@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/navbar";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -38,7 +37,6 @@ export default function RootLayout({
         disableTransitionOnChange
         >
           <TooltipProvider>
-            <Navbar />
             {children}
             <Toaster/>
           </TooltipProvider>
