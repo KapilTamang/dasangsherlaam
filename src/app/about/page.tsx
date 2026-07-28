@@ -19,7 +19,7 @@ export default function About() {
                             <p className="text-[1.2rem] md:text-[1.4rem]">Hello! I'm <span className="border-l border-l-primary px-2 ml-1 md:ml-2 uppercase text-primary font-extrabold">{Author.name}</span></p> 
                         </div>
                         <div className="about-content-left-interoduction mt-2">
-                            <p className="text-[1.4rem] md:text-[1.8rem] capitalize">I'm a <span className="uppercase font-extrabold bg-accent px-4 py-2 ml-1 md:ml-2 rounded-md">{Author.title}</span></p>
+                            <p className="text-[1.3rem] md:text-[1.8rem] capitalize">I'm a <span className="uppercase font-extrabold bg-accent px-4 py-2 ml-1 md:ml-2 rounded-md">{Author.title}</span></p>
                         </div>
                         <div className="about-content-left-description">
                             <p>{Author.description}</p>
@@ -39,18 +39,18 @@ export default function About() {
                     </div>
                 </div>
             </article>
-            <div className="author-social-link fixed left-[50%] translate-x-[-50%] bottom-0 px-6 md:px-8 py-3 md:py-4 bg-accent flex gap-4 md:gap-5 rounded-full ">
+            <div className="author-social-link fixed left-[50%] translate-x-[-50%] bottom-0 px-5 md:px-6 py-3 md:py-4 bg-accent flex gap-4 rounded-full ">
                 <Link href={Author.facebookURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
-                    <FaSquareFacebook size={28}/>
+                    <FaSquareFacebook className="w-7 h-7"/>
                 </Link>
                 <Link href={Author.instagramURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
-                    <FaSquareInstagram size={28}/>
+                    <FaSquareInstagram className="w-7 h-7"/>
                 </Link>
                 <Link href={Author.linkedInURLL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
-                    <FaLinkedin size={28}/>
+                    <FaLinkedin className="w-7 h-7"/>
                 </Link>
                 <Link href={Author.xURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
-                    <FaXTwitter size={28}/>
+                    <FaXTwitter className="w-7 h-7"/>
                 </Link>
             </div>
         </main>
