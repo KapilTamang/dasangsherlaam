@@ -6,11 +6,14 @@ import Image from "next/image";
 import blogs from "@/data/blogs";
 import categories from '@/data/category';
 import SectionTitle from '@/components/ui/section-title';
-import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleton';
 import NoData from '@/components/ui/no-data';
 import Card from '@/components/shared/card/card-column';
 import { Button, buttonVariants } from '@/components/ui/button';
 import Footer from '@/components/shared/footer';
+import CardColumnSkeleton from '@/components/shared/skeleton/card-column-skeleton';
+import { CardRowSkeleton } from '@/components/shared/skeleton/card-row-skeleton';
+import CardRow from '@/components/shared/card/card-row';
+import NewsletterPromoCard from '@/components/shared/card/card-newsletter-promo';
 
 export default function Category() {
     const params = useParams();
@@ -21,6 +24,12 @@ export default function Category() {
     //Retrieving current category blogs
     // const categoryBlogs = blogs.filter((blog) => blog.category == currentCategory ?.title);
     const categoryBlogs = blogs;
+
+    //Retrieving trending blogs
+    const trending = blogs.slice(0, 0);
+
+    //Retrieving author's pick blogs
+    const authorsPick = blogs.slice(0,8);
 
     //Define the loading state
     const [isLoading, setIsLoading] = React.useState(true);
@@ -88,23 +97,23 @@ export default function Category() {
                     </div>
                 </div>
            </section>
-           <section className="category-page-blogs section-base-style">
-                <div className="category-page-blogs-container container-base-style flex flex-col gap-4 md:gap-6">
-                     <div className="section-related-blogs-title">
+           <section className="category-page-blogs-section section-base-style">
+                <div className="category-page-blogs-section-container container-base-style flex flex-col gap-4 md:gap-6">
+                     <div className="category-page-blogs-title">
                         <SectionTitle title={`${currentCategory?.title}`}/>
                     </div>
-                    <div className="section-related-blogs-content flex flex-col gap-4">
+                    <div className="category-page-blogs-content flex flex-col gap-4">
                             {
                                 isLoading ? 
                                 (
-                                    <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                                    <div className="category-page-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
                                         <CardColumnSkeleton cardNumber={4} cardType="grid"/>
                                     </div>
                                 ):
                                 (
                                     
                                     categoryBlogs && categoryBlogs.length > 0 ? (
-                                        <div className="section-related-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
+                                        <div className="category-page-blogs-content-card w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-y-10">
                                             {
                                                 visibleCategoryBlogs.map((blog) => (
                                                     <Card key={blog.id} data={blog} width="auto"/>
@@ -121,16 +130,42 @@ export default function Category() {
                                     )
                                 )
                             }
-                        <div className="section-related-blogs-content-button flex justify-end">
+                        <div className="category-page-blogs-content-button flex justify-end">
                             {
                                 !isLoading && hasMore && (
-                                    <button className={`self-end capitalize px-3 py-5 text-[1rem] cursor-pointer ${isBlogLoading ? 'pointer-events-none opacity-50' : ''} ${buttonVariants()}`} onClick={handleLoadMore}>
+                                    <Button className={`self-end capitalize px-3 py-5 text-[1rem] cursor-pointer ${isBlogLoading ? 'pointer-events-none opacity-50' : ''} ${buttonVariants()}`} onClick={handleLoadMore}>
                                         load more...
-                                    </button>
+                                    </Button>
                                 )
                             }
                         </div>
                     </div>
+                </div>
+           </section>
+           <section className="category-page-trending-newslettor-section section-base-style">
+                <div className="category-page-trending-newsletter-section-container container-base-style flex flex-col md:flex-row gap-4 lg:gap-6">
+                    <section className="category-page-trending w-full flex flex-1 flex-col gap-4 md:gap-2">
+                        <SectionTitle title="trending now"/>
+                        {
+                            isLoading ? 
+                            (
+                                <CardRowSkeleton type="trending" cardNumber={5} cardHeight={180}/>
+                            ):
+                            (
+                                trending && trending.length < 1 ? (
+                                    <NoData orientation="vertical" content="currently no blogs to show"/>
+                                ):
+                                (
+                                     trending.map((blog) => (
+                                        <CardRow key={blog.id} data={blog} type="trending"/>
+                                    ))
+                                )
+                            )
+                        }
+                    </section>
+                    <section className="category-page-newsletter flex flex-1 mt-2 sticky top-20 h-full">
+                        <NewsletterPromoCard/>
+                    </section>
                 </div>
            </section>
            <section className="footer-section">
