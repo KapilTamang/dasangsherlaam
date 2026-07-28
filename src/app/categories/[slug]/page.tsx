@@ -26,10 +26,7 @@ export default function Category() {
     const categoryBlogs = blogs;
 
     //Retrieving trending blogs
-    const trending = blogs.slice(0, 0);
-
-    //Retrieving author's pick blogs
-    const authorsPick = blogs.slice(0,8);
+    const trending = blogs.slice(0, 10);
 
     //Define the loading state
     const [isLoading, setIsLoading] = React.useState(true);
