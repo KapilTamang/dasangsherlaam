@@ -35,6 +35,7 @@ export default function Blog() {
     //Blogs from same category
     const recommendation = blogs.filter((blog) => blog.category === currentCategory?.title && blog.id != currentBlog?.id).slice(0,8);
 
+    //Define loading state
     const [isLoading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {

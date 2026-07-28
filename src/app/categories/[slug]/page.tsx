@@ -22,6 +22,7 @@ export default function Category() {
 
     //Retrieve the current category
     const currentCategory = categories.find((category) => category.slug == slug);
+    
     //Retrieving current category blogs
     // const categoryBlogs = blogs.filter((blog) => blog.category == currentCategory ?.title);
     const categoryBlogs = blogs;
