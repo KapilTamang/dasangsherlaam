@@ -40,16 +40,16 @@ export default function About() {
                 </div>
             </article>
             <div className="author-social-link fixed left-[50%] translate-x-[-50%] bottom-0 px-6 md:px-8 py-3 md:py-4 bg-accent flex gap-4 md:gap-5 rounded-full ">
-                <Link href="" className="hover:text-primary hover:scale-120 duration-300">
+                <Link href={Author.facebookURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
                     <FaSquareFacebook size={28}/>
                 </Link>
-                <Link href="" className="hover:text-primary hover:scale-120 duration-300">
+                <Link href={Author.instagramURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
                     <FaSquareInstagram size={28}/>
                 </Link>
-                <Link href="" className="hover:text-primary hover:scale-120 duration-300">
+                <Link href={Author.linkedInURLL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
                     <FaLinkedin size={28}/>
                 </Link>
-                <Link href="" className="hover:text-primary hover:scale-120 duration-300">
+                <Link href={Author.xURL} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-120 duration-300">
                     <FaXTwitter size={28}/>
                 </Link>
             </div>
