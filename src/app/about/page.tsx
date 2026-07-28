@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ModeToggle } from "@/components/shared/theme-toggle";
 import { House } from "lucide-react";
+import Author from '@/data/author';
 
 export default function About() {
     return (
@@ -15,17 +16,25 @@ export default function About() {
                     <div className="about-content flex flex-col-reverse md:flex-row gap-8 justify-center items-center">
                         <div className="about-content-left flex flex-2 flex-col gap-4">
                             <div className="about-content-left-greetings">
-                                Hello! I'm Dasang
+                                Hello! I'm {Author.name}
                             </div>
                             <div className="about-content-left-interoduction">
-                                I'm a content creator
+                                I'm a {Author.title}
                             </div>
                             <div className="about-content-left-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum sunt placeat ut repudiandae voluptas nesciunt velit quos numquam itaque iste fuga non, qui necessitatibus. Minus, praesentium qui. Aliquam, dolore fugiat.
+                                {Author.description}
                             </div>
                         </div>
-                        <div className="about-content-right flex flex-1">
-                            image
+                        <div className="about-content-right w-full flex flex-1 justify-center">
+                            <div className="about-content-right-image w-64 h-auto">
+                                <Image
+                                src={Author?.imageURL}
+                                width={1200}
+                                height={1000}
+                                alt={Author?.imageURL}
+                                preload
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
