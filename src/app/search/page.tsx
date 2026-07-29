@@ -148,7 +148,16 @@ export default function Search() {
                                         (
                                             <>
                                                 <div className="flex justify-end items-center gap-2 text-[1rem] lg:text-[1rem] capitalize">
-                                                    searched results: 
+                                                    {   
+                                                        formValues.query === "" && formValues.category === 'all' ?
+                                                        (
+                                                            'random blogs'
+                                                        ):
+                                                        (
+                                                            'searched results:'
+                                                        )
+                                                       
+                                                    } 
                                                     <span className="font-extrabold bg-accent px-2 py-0.5 rounded-sm">
                                                         {resultBlogs.length}
                                                     </span>
