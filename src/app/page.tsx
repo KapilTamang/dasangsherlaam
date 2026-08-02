@@ -31,9 +31,6 @@ export default function Home() {
 	const authorsPick = blogs.filter((blog) => blog.category !== 'featured').slice(0,6);
 	//Finding featured blog
 	const featured = blogs.find((blog) => blog.category == 'featured');
-	//Fetching all exclusive blogs
-	const exclusive = blogs.filter((blogs) => blogs.category == 'exclusive');
-	//Finding most recent exclusive blog
 	const exclusiveMain = blogs.find((blog) => blog.category == 'exclusive')
 	//Finding all exclusive bolgs
 	const exclusiveCard = blogs.filter((blog) => blog.category == 'exclusive').slice(0,3)

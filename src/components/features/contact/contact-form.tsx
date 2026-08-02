@@ -1,5 +1,116 @@
+"use client"
+
+import React from "react";
+import {z} from "zod";
+import {Controller, useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
+import { contactSchema, ContactFormValues } from "@/actions/contact/schema";
+import {Field,FieldGroup, FieldLabel, FieldError} from "@/components/ui/field";
+import {Button} from "@/components/ui/button";
+import {submitContactForm} from "@/actions/contact/action";
+import { toast } from "sonner";
+import { InputGroup, InputGroupInput, InputGroupTextarea } from "@/components/ui/input-group";
+import { Send} from "lucide-react";
+
 export default function ContactForm () {
-    return (
-        "This is contact form"
+    //Loading state
+    const [isLoading, setIsLoading] = React.useState<Boolean>(false);
+
+    const form = useForm<z.infer<typeof contactSchema>>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            message: ""
+        }
+    });
+
+    //callback function to handle form submit
+    const handleSubmit = async (data: ContactFormValues) => {
+        setIsLoading(true)
+        //Simulating API call by adding delay
+        setTimeout(() => {
+            React.startTransition(async () => {
+                const response = await submitContactForm(data);
+
+                if(response.success) {
+                    form.reset();
+                    toast.success(response.message);
+                }
+                else{
+                    toast.error(response.message);
+                }
+                setIsLoading(false);
+            });
+        }, 3000)
+    }
+
+    return(
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-xl">
+            <FieldGroup>
+                <Controller 
+                    name="name"
+                    control={form.control}
+                    render={({field, fieldState}) => (
+                        <Field>
+                           <FieldLabel htmlFor="name">Full Name</FieldLabel>
+                            <InputGroup className="h-auto">
+                                <InputGroupInput
+                                 {...field}
+                                    id={field.name}
+                                    name={field.name}
+                                    aria-invalid={fieldState.invalid}
+                                    placeholder="Enter your name"
+                                    />
+                            </InputGroup>
+                            <FieldError>{form.formState.errors.name?.message}</FieldError>
+                        </Field>
+                    )}
+                />
+                <Controller 
+                    name="email"
+                    control={form.control}
+                    render={({field, fieldState}) => (
+                        <Field>
+                            <FieldLabel htmlFor="email">Email</FieldLabel>
+                            <InputGroup className="h-auto">
+                                <InputGroupInput
+                                 {...field}
+                                    id={field.name}
+                                    name={field.name}
+                                    aria-invalid={fieldState.invalid}
+                                    placeholder="Enter your email"
+                                    />
+                            </InputGroup>
+                            <FieldError>{form.formState.errors.email?.message}</FieldError>
+                        </Field>
+                    )}
+                />
+                <Controller 
+                    name="message"
+                    control={form.control}
+                    render={({field, fieldState}) => (
+                        <Field>
+                            <FieldLabel htmlFor="message">Message</FieldLabel>
+                            <InputGroup>
+                                <InputGroupTextarea className="h-25"
+                                {...field}
+                                    id={field.name}
+                                    name={field.name}
+                                    aria-invalid={fieldState.invalid}
+                                    placeholder="Type your message here..."
+                                />
+                            </InputGroup>
+                            <FieldError>{form.formState.errors.message?.message}</FieldError>
+                        </Field>
+                    )}
+                />
+            </FieldGroup>
+            <FieldGroup className="items-end">
+                <Button variant="default" className="w-auto cursor-pointer" type="submit">
+                    <Send className="w-6 h-6 mr-0.5"/>Send
+                </Button>
+            </FieldGroup>
+        </form>
     )
 }

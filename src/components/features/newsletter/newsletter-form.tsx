@@ -93,7 +93,7 @@ export default function NewsLetterForm() {
                                     disabled={isLoading}
                                     className="border border-foreground/30"
                                 />
-                                <FieldLabel htmlFor={field.name} className="text-[0.9rem] md:text-[1rem] text-muted-foreground">
+                                <FieldLabel htmlFor={field.name} className="text-muted-foreground">
                                     I agree to the terms and conditions
                                 </FieldLabel>
                             </Field>

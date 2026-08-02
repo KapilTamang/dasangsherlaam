@@ -56,7 +56,7 @@ export default function Footer() {
                                 <div className="footer-section-content-links-quicklinks-links flex flex-col gap-3 items-center md:items-start text-[1rem] text-muted-foreground font-medium capitalize">
                                     {
                                         navlinks.map((navlink) => (
-                                            <Link key={navlink.id} href={`/categories/${navlink.slug}`} className="hover:text-primary duration-300">
+                                            <Link key={navlink.id} href={`/${navlink.slug}`} className="hover:text-primary duration-300">
                                                 {navlink.title}
                                             </Link>
                                         ))
