@@ -9,12 +9,7 @@ export default function Contact() {
         <>
             <Navbar/>
             <main>
-                <section className="contact-page-section-banner section-base-style bg-accent">
-                    <div className="contact-page-section-banner-container container-base-style">
-                      
-                    </div>
-                </section>
-                <section className="contact-page-section-form section-base-style">
+                <section className="contact-page-section-form section-base-style bg-accent">
                     <div className="contact-page-section-form-container container-base-style">
                         <div className="contact-page-section-form-content flex w-full flex-col md:flex-row gap-4 md:gap-8 justify-center items-center">
                             <div className="w-full h-auto content-page-section-form-content-image flex flex-1 justify-center items-center">
@@ -30,6 +25,11 @@ export default function Contact() {
                                 <ContactForm/>
                             </div>
                         </div>
+                    </div>
+                </section>
+                  <section className="contact-page-section-banner section-base-style">
+                    <div className="contact-page-section-banner-container container-base-style">
+                      fsfd
                     </div>
                 </section>
             </main>

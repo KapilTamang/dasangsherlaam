@@ -10,7 +10,7 @@ import {Button} from "@/components/ui/button";
 import {submitContactForm} from "@/actions/contact/action";
 import { toast } from "sonner";
 import { InputGroup, InputGroupInput, InputGroupTextarea } from "@/components/ui/input-group";
-import { Send} from "lucide-react";
+import { Send, Rocket} from "lucide-react";
 
 export default function ContactForm () {
     //Loading state
@@ -46,7 +46,11 @@ export default function ContactForm () {
     }
 
     return(
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-accent rounded-xl shadow-lg">
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
+            <span className="contact-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">contact</span>
+            <span className="flex gap-2 justify-center items-center text-[0.9rem] md:text-[1rem] text-muted-foreground font-normal italic">
+                <Rocket className="w-5 h-5 text-primary fill-primary"/> Please feel free to reach out!
+            </span>
             <FieldGroup>
                 <Controller 
                     name="name"
@@ -111,6 +115,7 @@ export default function ContactForm () {
                     <Send className="w-6 h-6 mr-0.5"/>Send
                 </Button>
             </FieldGroup>
+            {/* <span className="text-center text-[0.9rem] md:text-[1rem] text-muted-foreground font-light capitalize">I appreciate your feedback!</span> */}
         </form>
     )
 }
