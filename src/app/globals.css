@@ -161,13 +161,13 @@
 
 
 @utility section-base-style {
-  @apply max-h-fit flex flex-col justify-start py-[25px] md:py-[20px] lg:py-[25px] 
-  first-of-type:py-[30px] md:first-of-type:py-[40px] lg:first-of-type:py-[60px]
-  last-of-type:mt-[15px] md:last-of-type:mt-[20px] lg:last-of-type:mt-[30px]
-  last-of-type:pt-[40px] lg:last-of-type:pt-[60px]
+  @apply max-h-fit flex flex-col justify-start py-6.25 md:py-5 lg:py-6.25 
+  first-of-type:py-7.5 md:first-of-type:py-10 lg:first-of-type:py-15
+  last-of-type:mt-3.75 md:last-of-type:mt-5 lg:last-of-type:mt-7.5
+  last-of-type:pt-10 lg:last-of-type:pt-15
 } 
 
 /* To prevent content to stop stretching endlessly in larger devices */
 @utility container-base-style {
-  @apply w-full container max-w-[1400px] mx-auto px-[5%] md:px-[3%]; 
+  @apply w-full container max-w-350 mx-auto px-[5%] md:px-[3%]; 
 }

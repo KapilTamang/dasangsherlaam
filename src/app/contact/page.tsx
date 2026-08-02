@@ -11,7 +11,7 @@ export default function Contact() {
             <main>
                 <section className="contact-page-section-form section-base-style bg-accent">
                     <div className="contact-page-section-form-container container-base-style">
-                        <div className="contact-page-section-form-content flex w-full flex-col md:flex-row gap-4 md:gap-8 justify-center items-center">
+                        <div className="contact-page-section-form-content flex w-full flex-col md:flex-row gap-4 lg:gap-8 justify-center items-center">
                             <div className="w-full h-auto content-page-section-form-content-image flex flex-1 justify-center items-center">
                                 <Image
                                 className=""

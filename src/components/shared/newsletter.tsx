@@ -28,7 +28,7 @@ export default function Newsletter() {
                                 Get the latest updates, behind-the-scenes stories, and monthly roundups delivered directly to you.
                             </p>
                         </div>
-                        <div className="newsletter-section-content-form w-full xl:w-[60%] min-h-[180px] md:min-h-[200px] flex flex-col justify-center gap-4 md:gap-6">
+                        <div className="newsletter-section-content-form w-full xl:w-[60%] min-h-45 md:min-h-50 flex flex-col justify-center gap-4 md:gap-6">
                             <NewsletterForm/> 
                             <div>
                                 <Link href="/privacy-policy" className="text-[0.9rem] md:text-[1rem] text-foreground capitalize underline hover:text-primary duration-300">
