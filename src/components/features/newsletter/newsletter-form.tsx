@@ -52,12 +52,12 @@ export default function NewsLetterForm() {
                 isLoading && 
                     <span className="text-center">
                         <Button variant="ghost" size="lg">
-                            <Spinner data-icon="inline-start" />
+                            <Spinner data-icon="inline-start"/>
                             Processing...
                         </Button>
                     </span>         
             }
-            <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
                 <FieldGroup>
                     <Controller
                     name="email"

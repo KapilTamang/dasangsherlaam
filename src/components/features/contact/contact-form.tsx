@@ -46,7 +46,7 @@ export default function ContactForm () {
     }
 
     return(
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-xl">
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-accent rounded-xl shadow-lg">
             <FieldGroup>
                 <Controller 
                     name="name"
