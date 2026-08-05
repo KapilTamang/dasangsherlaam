@@ -8,6 +8,8 @@ export type ActionResponse = {
 export async function submitContactForm(data: ContactFormValues): Promise<ActionResponse> {
     //Re-validate the incoming client payloads on the server
     const validatedFields = contactSchema.safeParse(data);
+
+    console.log(data, "ContactFormValues");
     
     if (!validatedFields.success) {
         return {
@@ -22,7 +24,7 @@ export async function submitContactForm(data: ContactFormValues): Promise<Action
         //Process your database or API operations here
         return {
             success: true,
-            message: "Message has be sent successfully.",
+            message: "Thank You! Your Message has be sent successfully.",
         };
     } catch (error) {
         return {
