@@ -1,6 +1,7 @@
 import Link  from 'next/link';
 import Image from 'next/image';
 import CategoryTag from '../category-tag';
+import { StringDecoder } from 'string_decoder';
 
 interface cardItem {
     id: number;
@@ -20,9 +21,9 @@ interface cardItemProps {
 
 export default function CardRow({data, type} : cardItemProps) {
     return(
-        <Link className={`py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>
+        <Link className={`flex-1 py-0 md:py-2 md:last-of-type:border-b-0 md:border-b md:border-foreground/20 ${type === 'exclusive' ? 'border-none' : ''}`} href={`/blog/${data.slug}`}>
             <article className="card group flex gap-0 md:gap-3 px-2 md:px-0 bg-primary md:bg-transparent">
-                <figure className="card-image flex flex-1 md:w-full md:h-full overflow-hidden bg-primary items-start my-4 md:my-0 mt-6 md:mt-1">
+                <figure className="card-image flex flex-1 md:w-full md:h-full overflow-hidden items-start my-4 md:my-0 mt-6 md:mt-1">
                     <Image className="w-full h-auto object-contain group-hover:scale-110 duration-500 ease-in-out" 
                         src={data.imageURL ?? ''} 
                         alt={data.title}

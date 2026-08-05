@@ -144,8 +144,8 @@ export default function Category() {
                     </div>
                 </section>
                 <section className="category-page-trending-newslettor-section section-base-style">
-                    <div className="category-page-trending-newsletter-section-container container-base-style flex flex-col md:flex-row gap-4 lg:gap-6">
-                        <section className="category-page-trending w-full flex flex-1 flex-col gap-4 md:gap-2">
+                    <div className="category-page-trending-newsletter-section-container container-base-style flex flex-col md:flex-row gap-4 lg:gap-12">
+                        <section className="category-page-trending w-full flex flex-4 flex-col gap-4 md:gap-2">
                             <SectionTitle title="trending now"/>
                             {
                                 isLoading ? 
@@ -164,7 +164,7 @@ export default function Category() {
                                 )
                             }
                         </section>
-                        <section className="category-page-newsletter flex flex-1 mt-2 sticky top-20 h-full">
+                        <section className="category-page-newsletter flex flex-3 mt-2 sticky top-20 h-full">
                             <NewsletterPromoCard/>
                         </section>
                     </div>
