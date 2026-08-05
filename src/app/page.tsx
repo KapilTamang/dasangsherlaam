@@ -28,7 +28,7 @@ export default function Home() {
 	//Fetching dummy data..
 	const trending = blogs.filter((blog) => blog.category !== 'featured').slice(0,5);
 	//Fetching author's pick blogs
-	const authorsPick = blogs.filter((blog) => blog.category !== 'featured').slice(0,6);
+	const latest = blogs.filter((blog) => blog.category !== 'featured').slice(0,6);
 	//Finding featured blog
 	const featured = blogs.find((blog) => blog.category == 'featured');
 	const exclusiveMain = blogs.find((blog) => blog.category == 'exclusive')
@@ -90,16 +90,16 @@ export default function Home() {
 									)
 								}
 							</div>
-							<div className="banner-section-content-authors-pick col-span-1 order-3 flex flex-col gap-3 md:gap-4">
-								<SectionTitle title="author's pick"/>
-								<div className="banner-section-content-authors-pick-cards flex flex-col gap-4 md:gap-3">
+							<div className="banner-section-content-latest col-span-1 order-3 flex flex-col gap-3 md:gap-4">
+								<SectionTitle title="latest blogs"/>
+								<div className="banner-section-content-latest-cards flex flex-col gap-4 md:gap-3">
 									{
 										isLoading ?
 										(
 											<CardTextSkeleton cardNumber={6}/>
 										):
 										(
-											authorsPick && authorsPick.map((blog) =>(
+											latest && latest.map((blog) =>(
 												<CardText key={blog.id} data={blog}/>
 											))
 										)
