@@ -75,7 +75,7 @@ export default function NewsLetterForm() {
                 <Dialog open={isDialogOpen}>
                     <DialogContent className="sm:max-w-sm" showCloseButton={false}>
                         <DialogHeader>
-                            <DialogTitle className="flex items-center gap-2 font-bold uppercase"><MailPlus className="inline text-primary" size={22}/>Subscription request</DialogTitle>
+                            <DialogTitle className="flex items-center gap-2 font-bold uppercase"><MailPlus className="inline text-primary" size={20}/>Subscription request</DialogTitle>
                             <DialogDescription className="flex items-center gap-2 font-medium capitalize mt-1">
                                  <CircleDashed className="inline text-muted-foreground animate-spin" size={16}/>
                                 Processing your request...</DialogDescription>

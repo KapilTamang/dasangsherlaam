@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { InputGroup, InputGroupInput, InputGroupTextarea } from "@/components/ui/input-group";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
 import {Progress} from "@/components/ui/progress";
-import { Send, Rocket} from "lucide-react";
+import {Send, Rocket, CircleDashed, SendToBack} from "lucide-react";
 
 export default function ContactForm () {
     //Loading state
@@ -75,12 +75,15 @@ export default function ContactForm () {
 
     return(
         <>
-             <Dialog open={isDialogOpen}>
+            <Dialog open={isDialogOpen}>
                 <DialogContent className="sm:max-w-sm" showCloseButton={false}>
                     <DialogHeader>
-                        <DialogTitle className="capitalize">Submitting your message</DialogTitle>
-                        <Progress value={progress} className="w-full h-2 mt-4"/>
-                        <DialogDescription>
+                        <DialogTitle className="flex items-center gap-2 font-bold uppercase"><Send className="inline text-primary" size={20}/>Message request</DialogTitle>
+                        <DialogDescription className="flex items-center gap-2 font-medium capitalize mt-1">
+                                <CircleDashed className="inline text-muted-foreground animate-spin" size={16}/>
+                            Submitting your message...</DialogDescription>
+                        <Progress value={progress} className="w-full h-2 mt-2"/>
+                        <DialogDescription className="italic">
                             Please wait while we submit your message.
                         </DialogDescription>
                     </DialogHeader>
