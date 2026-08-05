@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { InputGroup, InputGroupInput, InputGroupTextarea } from "@/components/ui/input-group";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
 import {Progress} from "@/components/ui/progress";
-import {Send, Rocket, CircleDashed, SendToBack} from "lucide-react";
+import {Send, Rocket, CircleDashed} from "lucide-react";
 
 export default function ContactForm () {
     //Loading state
@@ -33,11 +33,11 @@ export default function ContactForm () {
 
     React.useEffect(() => {
         if (isLoading) {
-            const timer = setInterval(() => {
+            const interval = setInterval(() => {
                 setProgress((prev) => Math.min(prev + 20, 90));
             }, 500);
 
-            return () => clearInterval(timer);
+            return () => clearInterval(interval);
         } 
         else {
             const timer = setTimeout(() => {
