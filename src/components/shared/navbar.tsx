@@ -79,7 +79,7 @@ export default function Navbar() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
-                        <ul className="grid gap-2 md:w-[500px] md:grid-cols-2 lg:w-[520px]">
+                        <ul className="grid gap-2 md:w-125 md:grid-cols-2 lg:w-130">
                             {
                                 categories && categories.map((category, index) => (
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>

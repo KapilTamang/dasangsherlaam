@@ -3,7 +3,7 @@ import { buttonVariants } from '../../ui/button';
 
 export default function NewsletterPromo () {
     return(
-        <article className="newsletter-promo w-full h-[300px] lg:h-[350px] mt-0 md:mt-6 bg-accent flex flex-col gap-8 justify-center items-center shadow-sm">
+        <article className="newsletter-promo w-full h-75 lg:h-87.5 px-4 mt-0 md:mt-6 bg-accent flex flex-col gap-8 justify-center items-center shadow-sm">
            <div className="newsletter-promo-title text-[2.8rem] lg:text-[3.5rem] font-extrabold">
                 <h1>Newsletter</h1>
            </div>
