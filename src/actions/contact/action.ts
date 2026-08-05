@@ -1,4 +1,4 @@
-import {ContactFormValues, contactSchema} from "@/actions/contact/schema";
+import {ContactFormValues, contactSchema} from "./schema";
 
 export type ActionResponse = {
     success: boolean;
@@ -8,8 +8,6 @@ export type ActionResponse = {
 export async function submitContactForm(data: ContactFormValues): Promise<ActionResponse> {
     //Re-validate the incoming client payloads on the server
     const validatedFields = contactSchema.safeParse(data);
-
-    console.log(data, "ContactFormValues");
     
     if (!validatedFields.success) {
         return {
@@ -29,7 +27,7 @@ export async function submitContactForm(data: ContactFormValues): Promise<Action
     } catch (error) {
         return {
             success: false,
-            message: "An error occurred while processing the form",
+            message: "An error occurred while processing the form.",
         };
     }
 }
