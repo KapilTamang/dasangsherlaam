@@ -22,7 +22,7 @@ import { CardRowLargeSkeleton } from '@/components/shared/skeleton/card-row-larg
 import NoData from '@/components/ui/no-data';
 
 export default function Home() {
-
+	//Loading state for page loading
 	const [isLoading, setIsLoading] = React.useState(true);
 
 	//Fetching dummy data..

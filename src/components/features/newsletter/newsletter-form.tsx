@@ -1,7 +1,7 @@
 "use client";
 
+import React from "react";
 import {z} from "zod";
-import {useTransition, useState} from "react";
 import {Controller, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {newsletterSchema, NewsletterFormValues} from "@/actions/newsletter/schema";
@@ -12,12 +12,17 @@ import {ButtonGroup} from "@/components/ui/button-group";
 import {Input} from "@/components/ui/input";
 import {toast} from "sonner";
 import {Checkbox} from "@/components/ui/checkbox";
-import { Spinner } from "@/components/ui/spinner";
+import {Progress} from "@/components/ui/progress";
+import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
+import {MailPlus, CircleDashed} from "lucide-react";
 
 export default function NewsLetterForm() {
-    const [isPending, startTransition] = useTransition();
-    
-    const [isLoading, setIsLoading] = useState(false);
+    const [isPending, startTransition] = React.useTransition();
+    const [isLoading, setIsLoading] = React.useState(false);
+    //State for progress bar
+    const [progress, setProgress] = React.useState(10);
+    //State for dialog
+    const [isDialogOpen, setIsDialogOpen] = React.useState(false);
     
     const form  = useForm<z.infer<typeof newsletterSchema>>({
         resolver: zodResolver(newsletterSchema),
@@ -27,9 +32,25 @@ export default function NewsLetterForm() {
         },
     });
 
-    const handleSubmit = async (data: NewsletterFormValues) => {
-         setIsLoading(true);
+    React.useEffect(() => {
+        if (isLoading) {
+            const timer = setInterval(() => {
+                setProgress((prev) => Math.min(prev + 20, 90));
+            }, 500);
+            
+            return () => clearInterval(timer);
+        }
+        else {
+            const timer = setTimeout(() => {
+                setProgress(10);
+            }, 1000);   
+        }
+    },[isLoading, progress]);
 
+
+    const handleSubmit = async (data: NewsletterFormValues) => {
+        setIsLoading(true);
+        setIsDialogOpen(true);
         //Simulating API call by adding delay
         setTimeout(() => {
             startTransition(async () => {
@@ -41,7 +62,9 @@ export default function NewsLetterForm() {
                 }else{
                     toast.error(response.message)
                 }
+                setProgress(100);
                 setIsLoading(false);
+                setIsDialogOpen(false);
             });
         }, 3000)
     };
@@ -49,13 +72,20 @@ export default function NewsLetterForm() {
     return(
         <div className="flex flex-col gap-2">
              {
-                isLoading && 
-                    <span className="text-center">
-                        <Button variant="ghost" size="lg">
-                            <Spinner data-icon="inline-start"/>
-                            Processing...
-                        </Button>
-                    </span>         
+                <Dialog open={isDialogOpen}>
+                    <DialogContent className="sm:max-w-sm" showCloseButton={false}>
+                        <DialogHeader>
+                            <DialogTitle className="flex items-center gap-2 font-bold uppercase"><MailPlus className="inline text-primary" size={22}/>Subscription request</DialogTitle>
+                            <DialogDescription className="flex items-center gap-2 font-medium capitalize mt-1">
+                                 <CircleDashed className="inline text-muted-foreground animate-spin" size={16}/>
+                                Processing your request...</DialogDescription>
+                            <Progress value={progress} className="w-full h-2 mt-2"/>
+                            <DialogDescription className="italic">
+                                Please wait while we submit your request.
+                            </DialogDescription>
+                        </DialogHeader>
+                    </DialogContent>
+                </Dialog>
             }
             <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
                 <FieldGroup>
