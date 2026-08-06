@@ -3,7 +3,7 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { buttonVariants } from "@/components/ui/button";
 import NewsletterPromo from "@/components/shared/card/card-newsletter-promo";
-import { FaShieldHalved, FaShield } from "react-icons/fa6";
+import { FaShieldHalved } from "react-icons/fa6";
 import PrivacyPolicy from "@/data/privacy";
 
 export default function Privacy() {
@@ -16,10 +16,9 @@ export default function Privacy() {
                         <div className="privacy-policy-page-banner-section-content w-full flex flex-col md:flex-row gap-6 justify-center items-center">
                             <div className="privacy-policy-page-banner-section-content-image w-full h-auto flex flex-1 justify-center">
                                 <Image
-                                className=""
                                 src="/images/privacy.svg"
-                                width={600}
-                                height={600}
+                                width={800}
+                                height={800}
                                 alt="privacy-policy"
                                 preload
                                 />
