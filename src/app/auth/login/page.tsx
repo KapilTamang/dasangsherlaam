@@ -6,13 +6,13 @@ import { House } from "lucide-react";
 
 export default function Login() {
         return( 
-            <main className="h-screen bg-accent">
+            <main className="w-full h-screen bg-accent relative">
                 <Image
-                    className="object-cover"
-                    src="/images/login-bg.png"
-                    alt=""
-                    fill
-                    preload/>
+                className="object-cover"
+                src="/images/login-bg.png"
+                alt="login-bg"
+                fill
+                preload/>
                 <div className="login-page">
                     <div className="about-navigation fixed top-4 md:top-6 right-4 md:right-10 flex gap-6 items-center">
                         <Link href="/" className="flex gap-1 items-center text-[1rem] md:text-[1.1rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={18}/> home</Link>
