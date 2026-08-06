@@ -36,7 +36,7 @@ export default function Contact() {
                   <section className="contact-page-section-author-newsletter section-base-style">
                     <div className="contact-page-section-author-newsletter-container container-base-style">
                         <div className="contact-page-section-author-newsletter-content flex flex-col md:flex-row gap-10 md:gap-6 lg:gap-12">
-                            <div className="contact-page-section-author relative w-full flex flex-3 flex-col gap-8 lg:gap-10 px-4 lg:px-8 py-8 lg:py-10 shadow-lg bg-accent">
+                            <div className="contact-page-section-author relative w-full flex flex-3 flex-col gap-8 lg:gap-10 px-4 lg:px-8 py-8 lg:py-10 shadow-sm bg-accent">
                                 <div className="contact-page-section-author-section-title absolute -top-5 md:-top-5 lg:-top-8 left-3 md:left-4 lg:left-5 bg-primary max-w-64 px-4 md:px-5 lg:px-8 py-2 md:py-2 lg:py-4 text-card-featured-foreground text-[1rem] md:text-[1.2rem] lg:text-[1.6rem] font-extrabold uppercase rounded-full">
                                     about me
                                 </div>
@@ -70,7 +70,7 @@ export default function Contact() {
                                     <Link href="/about" className={`ml-2 max-w-25 ${buttonVariants()}`}>About me</Link>
                                 </div>
                             </div>
-                            <div className="contact-page-section-newsletter flex-2">
+                            <div className="contact-page-section-newsletter flex-2 sticky top-20 h-full mt-0 md:-mt-6">
                                 <NewsletterPromoCard/>
                             </div>
                         </div>

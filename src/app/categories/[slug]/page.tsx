@@ -164,7 +164,7 @@ export default function Category() {
                                 )
                             }
                         </section>
-                        <section className="category-page-newsletter flex flex-3 mt-2 sticky top-20 h-full">
+                        <section className="category-page-newsletter flex flex-3 sticky top-20 h-full mt-4 md:-mt-6">
                             <NewsletterPromoCard/>
                         </section>
                     </div>
