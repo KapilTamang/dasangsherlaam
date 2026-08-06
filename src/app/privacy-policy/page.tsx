@@ -29,7 +29,11 @@ export default function Privacy() {
                                     privacy policy
                                 </div>
                                 <div className="privacy-policy-page-banner-section-content-description">
-                                    <p>How we collect, use and protect your data</p>
+                                    <p>Welcome to <span className="font-extrabold capitalize">dasangsherlaam</span>. This Privacy Policy
+                                    explains how we collect, use, disclose, and safeguard your personal
+                                    data when you use our website. By using our website, you consent to
+                                    the practices described in this policy.
+                                    </p>
                                 </div>
                                 <div className="privacy-policy-page-banner-section-content-navigation">
                                     <a href="#privacy-policy-details" className={`${buttonVariants()} capitalize`}>learn more</a>
