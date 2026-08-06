@@ -84,7 +84,7 @@ export default function Category() {
                                 preload
                                 />
                         </div>
-                        <div className="category-page-banner-section-details bg-background static md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full md:min-w-[550px] lg:min-w-[650px] md:max-w-[580px] lg:max-w-[650px] flex flex-col gap-4 md:gap-6 px-4 md:px-10 py-4 md:py-6 rounded-sm shadow-2xl">
+                        <div className="category-page-banner-section-details bg-background static md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full md:min-w-137.5 lg:min-w-162.5 md:max-w-145 lg:max-w-162.5 flex flex-col gap-4 md:gap-6 px-4 md:px-10 py-4 md:py-6 rounded-sm shadow-2xl">
                             <div className="category-page-banner-section-details-title text-[1rem] lg:text-[1.1rem] font-medium capitalize">
                                 explore more...
                                 <h1 className="flex items-center text-[1rem] md:text-[1.6rem] lg:text-[2rem] font-extrabold uppercase mt-3 md:mt-5 bg-accent p-2 md:p-4 lg:p-5  border-l-2 border-l-primary">

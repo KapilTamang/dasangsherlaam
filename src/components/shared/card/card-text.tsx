@@ -18,7 +18,7 @@ interface cardItemProps {
 
 export default function CardText({data} : cardItemProps) {
     return(
-        <Link className="py-0 md:py-2 first-of-type:border-t-0 last-of-type:border-b-0 md:border-b md:border-foreground/20" href={`/blog/${data.slug}`}>
+        <Link className="py-0 md:py-2 first-of-type:border-t-0 last-of-type:border-b-0 md:border-b md:border-foreground/20" href={`/blogs/${data.slug}`}>
             <article className="card group flex items-start bg-primary md:bg-transparent">
                 <div className="card-content flex flex-2 md:flex-3 flex-col items-start gap-2 md:gap-1 text-card-featured-foreground md:text-card-thumbnail-foreground p-4 md:p-0">
                     <header className="card-header text-xl font-bold">

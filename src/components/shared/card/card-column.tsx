@@ -22,7 +22,7 @@ interface cardItemProps {
 
 export default function Card({data, width}: cardItemProps) {
     return (
-        <Link href={`/blog/${data.slug}`}>
+        <Link href={`/blogs/${data.slug}`}>
             {/* Using inline style for dynamic width */}
             <article className={`card group relative bg-primary md:bg-accent flex flex-col gap-0 md:gap-2 shadow-sm transition-shadow duration-500 ease-in-out`} style={{width: `${width}`}}>
                 <figure className="card-image overflow-hidden">

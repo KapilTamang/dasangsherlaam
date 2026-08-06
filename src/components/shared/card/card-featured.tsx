@@ -20,7 +20,7 @@ interface cardItemProps {
 
 export default function FeaturedCard({data}: cardItemProps) {
     return (
-        <Link href={`/blog/${data.slug}`}>
+        <Link href={`/blogs/${data.slug}`}>
             <article className="card group relative">
                     {/* Card image */}
                     <figure className="card-image overflow-hidden">

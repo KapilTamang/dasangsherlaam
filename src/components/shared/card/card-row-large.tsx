@@ -18,7 +18,7 @@ interface cardItemProps {
 
 export default function CardRowLarge ({data}: cardItemProps){
     return (
-        <Link href={`/blog/${data.slug}`}>
+        <Link href={`/blogs/${data.slug}`}>
             <article className="card group flex flex-col md:flex-row md:min-h-[55vh]">
                 <figure className="card-image flex flex-1 overflow-hidden">
                     <Image className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" 
