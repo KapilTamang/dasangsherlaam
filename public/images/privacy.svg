@@ -1,0 +1,46 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a9c6fc"/>
+      <stop offset="100%" stop-color="#3c83f6"/>
+    </linearGradient>
+
+    <radialGradient id="ringGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="55%" stop-color="#3c83f6" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3c83f6" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ambient glow -->
+  <circle cx="200" cy="200" r="175" fill="url(#ringGlow2)"/>
+
+  <!-- orbiting data rings, suggesting protected information -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#dbe8fe" stroke-width="2" stroke-dasharray="2 10"/>
+  <circle cx="55" cy="200" r="5" fill="#3c83f6" opacity="0.55"/>
+  <circle cx="345" cy="200" r="4" fill="#3c83f6" opacity="0.4"/>
+  <circle cx="200" cy="52" r="4" fill="#3c83f6" opacity="0.4"/>
+
+  <!-- Shield -->
+  <path d="M200 84
+           L285 116
+           C285 200, 265 260, 200 300
+           C135 260, 115 200, 115 116
+           Z"
+        fill="url(#shieldFill)" stroke="#1d4fb8" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- inner shield facet for depth -->
+  <path d="M200 84
+           L285 116
+           C285 200, 265 260, 200 300
+           Z"
+        fill="#1d4fb8" opacity="0.18"/>
+
+  <!-- Lock body -->
+  <rect x="168" y="182" width="64" height="52" rx="10" fill="#123a8c"/>
+  <!-- Lock shackle -->
+  <path d="M180 182 V162 a20 20 0 0 1 40 0 V182"
+        fill="none" stroke="#123a8c" stroke-width="10" stroke-linecap="round"/>
+  <!-- Keyhole -->
+  <circle cx="200" cy="200" r="7" fill="#dbe8fe"/>
+  <rect x="196" y="203" width="8" height="14" rx="2" fill="#dbe8fe"/>
+</svg>

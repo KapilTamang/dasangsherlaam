@@ -1,0 +1,39 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cookieFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a9c6fc"/>
+      <stop offset="100%" stop-color="#3c83f6"/>
+    </linearGradient>
+
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#3c83f6" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3c83f6" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+
+  <!-- soft ambient ring behind the cookie -->
+  <circle cx="200" cy="200" r="170" fill="url(#ringGlow)"/>
+
+  <!-- floating crumb dots for rhythm -->
+  <circle cx="375" cy="95" r="5" fill="#3c83f6" opacity="0.5"/>
+  <circle cx="397" cy="150" r="3.5" fill="#3c83f6" opacity="0.35"/>
+  <circle cx="25" cy="300" r="4" fill="#3c83f6" opacity="0.3"/>
+  <circle cx="60" cy="90" r="3" fill="#3c83f6" opacity="0.3"/>
+
+  <!-- Cookie body with a bite taken out (compound arc path) -->
+  <path d="M247.64 92.04 A118 118 0 1 0 314.49 171.43 A55 55 0 0 1 247.64 92.04 Z"
+        fill="url(#cookieFill)" stroke="#1d4fb8" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- chocolate-chip dots, monochrome in brand color -->
+  <circle cx="165" cy="160" r="11" fill="#123a8c"/>
+  <circle cx="235" cy="175" r="8" fill="#123a8c"/>
+  <circle cx="175" cy="225" r="9" fill="#123a8c"/>
+  <circle cx="225" cy="245" r="7" fill="#123a8c"/>
+  <circle cx="145" cy="215" r="6" fill="#1d4fb8" opacity="0.8"/>
+  <circle cx="255" cy="215" r="6" fill="#1d4fb8" opacity="0.8"/>
+  <circle cx="200" cy="150" r="5" fill="#1d4fb8" opacity="0.8"/>
+
+  <!-- crumbs escaping the bite -->
+  <circle cx="317" cy="98" r="6" fill="#3c83f6" opacity="0.6"/>
+  <circle cx="337" cy="70" r="4" fill="#3c83f6" opacity="0.45"/>
+</svg>
