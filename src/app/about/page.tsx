@@ -8,7 +8,7 @@ import { FaSquareFacebook, FaSquareInstagram, FaLinkedin, FaXTwitter} from "reac
 export default function About() {
     return (
         <main>
-            <div className="about-navigation fixed top-4 md:top-6 right-4 md:right-10 flex gap-4 md:gap-6 items-center">
+            <div className="about-navigation fixed top-4 md:top-6 right-4 md:right-5 flex gap-4 items-center">
                 <Link href="/" className="flex gap-1 items-center text-[1rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={18}/> home</Link>
                 <ModeToggle/>
             </div>

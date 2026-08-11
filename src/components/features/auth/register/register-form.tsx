@@ -90,7 +90,7 @@ export function RegisterForm() {
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
-                <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
+            <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
                 <span className="contact-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">sign up</span>
                 <span className="bg-accent py-2.5 flex gap-2 justify-center items-center text-[1rem] md:text-[1.1rem] font-bold rounded-sm">
                     <ShieldUser className="w-6 h-6 text-primary"/>Create your account
@@ -136,48 +136,50 @@ export function RegisterForm() {
                             </Field>
                         )}
                     />
-                    <Controller 
-                        name="password"
-                        control={form.control}
-                        render={({field, fieldState}) => (
-                            <Field>
-                                <FieldLabel htmlFor="name">Password</FieldLabel>
-                                <InputGroup className="h-auto group">
-                                    <InputGroupInput
-                                    {...field}
-                                        id={field.name}
-                                        name={field.name}
-                                        type="password"
-                                        placeholder="Enter your password"
-                                        aria-invalid={fieldState.invalid}
-                                        disabled={isLoading}
-                                    />
-                                </InputGroup>
-                                <FieldError>{form.formState.errors.password?.message}</FieldError>
-                            </Field>
-                        )}
-                    />
-                    <Controller 
-                        name="confirmPassword"
-                        control={form.control}
-                        render={({field, fieldState}) => (
-                            <Field>
-                                <FieldLabel htmlFor="name">Confirm password</FieldLabel>
-                                <InputGroup className="h-auto group relative">
-                                    <InputGroupInput
-                                    {...field}
-                                        id={field.name}
-                                        name={field.name}
-                                        type="password"
-                                        placeholder="Confirm your password"
-                                        aria-invalid={fieldState.invalid}
-                                        disabled={isLoading}
-                                    />
-                                </InputGroup>
-                                <FieldError>{form.formState.errors.confirmPassword?.message}</FieldError>
-                            </Field>
-                        )}
-                    />
+                    <Field className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <Controller 
+                            name="password"
+                            control={form.control}
+                            render={({field, fieldState}) => (
+                                <Field>
+                                    <FieldLabel htmlFor="name">Password</FieldLabel>
+                                    <InputGroup className="h-auto group">
+                                        <InputGroupInput
+                                        {...field}
+                                            id={field.name}
+                                            name={field.name}
+                                            type="password"
+                                            placeholder="Password"
+                                            aria-invalid={fieldState.invalid}
+                                            disabled={isLoading}
+                                        />
+                                    </InputGroup>
+                                    <FieldError>{form.formState.errors.password?.message}</FieldError>
+                                </Field>
+                            )}
+                        />
+                        <Controller 
+                            name="confirmPassword"
+                            control={form.control}
+                            render={({field, fieldState}) => (
+                                <Field>
+                                    <FieldLabel htmlFor="name">Confirm password</FieldLabel>
+                                    <InputGroup className="h-auto group relative">
+                                        <InputGroupInput
+                                        {...field}
+                                            id={field.name}
+                                            name={field.name}
+                                            type="password"
+                                            placeholder="Confirm Password"
+                                            aria-invalid={fieldState.invalid}
+                                            disabled={isLoading}
+                                        />
+                                    </InputGroup>
+                                    <FieldError>{form.formState.errors.confirmPassword?.message}</FieldError>
+                                </Field>
+                            )}
+                        />
+                    </Field>
                     <Field className="flex flex-col gap-5 mt-1">
                         <Button variant="default" className="uppercase cursor-pointer" type="submit" disabled={isLoading}>
                             <Send className="w-6 h-6 mr-0.5"/>create account

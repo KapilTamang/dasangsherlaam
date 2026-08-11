@@ -9,8 +9,6 @@ export async function submitRegisterForm(data: RegisterFormValues) : Promise<Act
     //Re-validate incoming client payloads on the server
     const validateFields = registerSchema.safeParse(data);
 
-    console.log(data);
-
     if(!validateFields) {
         return {
             success: false,
