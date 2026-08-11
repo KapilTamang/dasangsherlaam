@@ -107,13 +107,12 @@ export function RegisterForm() {
                                     {...field}
                                         id={field.name}
                                         name={field.name}
-                                        type="text"
                                         aria-invalid={fieldState.invalid}
                                         placeholder="Enter your name"
                                         disabled={isLoading}
                                         />
                                 </InputGroup>
-                                <FieldError>{form.formState.errors.email?.message}</FieldError>
+                                <FieldError>{form.formState.errors.name?.message}</FieldError>
                             </Field>
                         )}
                     />
@@ -128,7 +127,6 @@ export function RegisterForm() {
                                     {...field}
                                         id={field.name}
                                         name={field.name}
-                                        type={field.name}
                                         aria-invalid={fieldState.invalid}
                                         placeholder="Enter your email"
                                         disabled={isLoading}
