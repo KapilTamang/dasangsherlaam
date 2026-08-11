@@ -6,7 +6,7 @@ import {Controller, useForm} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, LoginFormValues } from "@/actions/auth/login/schema";
 import {Field, FieldGroup,FieldDescription, FieldError, FieldSeparator} from "@/components/ui/field"
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { submitLoginForm } from "@/actions/auth/login/action";
 import {toast} from "sonner";
 import { InputGroup, InputGroupInput } from "@/components/ui/input-group";

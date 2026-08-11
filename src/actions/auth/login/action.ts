@@ -9,8 +9,6 @@ export async function submitLoginForm(data: LoginFormValues): Promise<ActionResp
     //Re-validate incoming client payloads on the server
     const validateFields = loginSchema.safeParse(data);
 
-    console.log(data);
-
     if(!validateFields) {
         return {
             success: false,
