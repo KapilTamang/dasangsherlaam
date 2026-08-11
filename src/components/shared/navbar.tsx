@@ -112,7 +112,7 @@ export default function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
                     {/* Using anchor tag to navigate to section ID */}
-                    <a href="/#newsletter-section" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
+                    <a href="/#newsletter-section" className={`${buttonVariants()}`}>
                         <CalendarCheck data-icon="inline" /> Subscribe
                     </a>
                 </NavigationMenuItem>
@@ -152,7 +152,7 @@ export default function Navbar() {
                         <ModeToggle/>
                     </span>
                     {/* Using anchor tag to navigate to section ID */}
-                    <a href="/#newsletter-section" onClick={() => setIsSheetOpen(false)} className={`px-4 py-5 text-[1rem] ${buttonVariants()}`}>
+                    <a href="/#newsletter-section" onClick={() => setIsSheetOpen(false)} className={`${buttonVariants()}`}>
                          <CalendarCheck data-icon="inline-start" /> Subscribe
                     </a>
                 </nav>

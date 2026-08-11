@@ -12,7 +12,7 @@ export default function NewsletterPromo () {
            </div>
            <div className="newsletter-promo-subscription-btn flex flex-col gap-4 items-center">
                 <p className="text-[1.2rem] lg:text-[1.3rem] uppercase font-bold animate-pulse">Subscribe now !!!</p>
-                 <a href="/#newsletter-section" className={`px-3 py-4.5 text-[0.9rem] ${buttonVariants()}`}>
+                 <a href="/#newsletter-section" className={`${buttonVariants()}`}>
                     <CalendarCheck data-icon="inline" /> Subscribe
                 </a>
            </div>

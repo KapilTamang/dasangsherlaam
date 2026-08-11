@@ -82,7 +82,7 @@ export default function Home() {
 									(
 										<>
 											{featured && <CardFeatured data={featured} />}
-											<Link href="/categories/featured" className={`self-end capitalize px-2 text-[0.9rem] ${buttonVariants()}`}>
+											<Link href="/categories/featured" className={`self-end capitalize ${buttonVariants()}`}>
 												featured...
 											</Link>
 										</>
@@ -189,7 +189,7 @@ export default function Home() {
 														</div>
 														{
 															!isLoading && 
-															<Link href={`/categories/${category.slug}`} className={`self-end capitalize px-3 py-5 text-[1rem] ${buttonVariants()}`}>
+															<Link href={`/categories/${category.slug}`} className={`self-end capitalize ${buttonVariants()}`}>
 																{category.title}...
 															</Link>
 														}
