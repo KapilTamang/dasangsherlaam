@@ -22,7 +22,7 @@ export async function submitRegisterForm(data: RegisterFormValues) : Promise<Act
         //Process your data API call here
         return {
             success: true,
-            message: "Email verification link send. Please check your email to verify."
+            message: "Email verification code sent."
         }
     }catch(error) {
         return {
