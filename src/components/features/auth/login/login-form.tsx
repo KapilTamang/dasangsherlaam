@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {z} from "zod";
 import {Controller, useForm} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -125,6 +126,7 @@ export function LoginForm () {
                                          className="pl-10"
                                         id={field.name}
                                         name={field.name}
+                                        type={field.name}
                                         aria-invalid={fieldState.invalid}
                                         placeholder="Password"
                                         disabled={isLoading}
@@ -132,9 +134,9 @@ export function LoginForm () {
                                     <Key className="inline absolute left-3 top-[50%] translate-y-[-50%] w-5 h-5 text-muted-foreground group-focus-within:text-primary duration-300"/>
                                 </InputGroup>
                                 <FieldError>{form.formState.errors.password?.message}</FieldError>
-                                <a href="#" className="text-end text-[0.9rem] underline-offset-4 hover:underline hover:text-primary mt-1 duration-300">
+                                <Link href="#" className="text-end text-[0.9rem] underline-offset-4 hover:underline hover:text-primary mt-1 duration-300">
                                     Forgot your password?
-                                </a>
+                                </Link>
                             </Field>
                         )}
                     />
@@ -155,9 +157,9 @@ export function LoginForm () {
                         </Button>
                         <FieldDescription className="text-center">
                             Don&apos;t have an account?{" "}
-                            <a href="#" className="underline underline-offset-4">
+                            <Link href="/auth/register" className="underline underline-offset-4">
                             Sign up
-                            </a>
+                            </Link>
                         </FieldDescription>
                     </Field>
                 </FieldGroup>
