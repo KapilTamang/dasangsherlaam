@@ -17,6 +17,7 @@ import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
 import { ModeToggle } from "./theme-toggle";
 import categories from "@/data/category";
 import navlinks from "@/data/navlinks";
+import UserDropdown from "./user-dropdown";
 
 export default function Navbar() {
 
@@ -75,7 +76,7 @@ export default function Navbar() {
         <Link className="text-xl font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
         <NavigationMenu className="hidden md:flex text-[1rem]">
-            <NavigationMenuList className="space-x-6">
+            <NavigationMenuList className="space-x-4">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
@@ -109,6 +110,9 @@ export default function Navbar() {
                 }
                 <NavigationMenuItem>
                     <ModeToggle/>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="opacity-100">
+                    <UserDropdown/>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="hover:opacity-100">
                     {/* Using anchor tag to navigate to section ID */}
