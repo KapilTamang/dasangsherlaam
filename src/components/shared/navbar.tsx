@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {Rss, Menu, ChevronDown, Search, Library, CalendarCheck, ArrowUpToLine} from "lucide-react";
+import Image from "next/image";
+import {Menu, ChevronDown, Search, Library, CalendarCheck, ArrowUpToLine, MailCheckIcon, CalendarCheck2Icon, UserKeyIcon, LogOutIcon} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -33,7 +34,8 @@ export default function Navbar() {
     //Define state to toggle scroll top
     const [isScrollTop, setIsScrollTop] = React.useState(false);
 
-    const categoryIcon = <Rss className="text-primary mr-1 shrink-0 inline" size={12}/>;
+    //Define state for user login state
+    const [isUserLogged, setIsUserLogged] = React.useState(true);
 
     React.useEffect(() => {
         //Close dropdown sub menu on sheet close
@@ -111,9 +113,12 @@ export default function Navbar() {
                 <NavigationMenuItem>
                     <ModeToggle/>
                 </NavigationMenuItem>
-                <NavigationMenuItem className="opacity-100">
-                    <UserDropdown/>
-                </NavigationMenuItem>
+                {
+                    isUserLogged && 
+                    <NavigationMenuItem className="opacity-100">
+                        <UserDropdown/>
+                    </NavigationMenuItem>
+                }
                 <NavigationMenuItem className="hover:opacity-100">
                     {/* Using anchor tag to navigate to section ID */}
                     <a href="/#newsletter-section" className={`${buttonVariants()}`}>
@@ -130,10 +135,40 @@ export default function Navbar() {
                 </Button>
             </SheetTrigger>
             <SheetContent side="left">
-                <nav className="flex flex-col px-6 text-[1rem] font-semibold mt-4 gap-4">
+                <nav className="flex flex-col px-6 text-[1rem] font-semibold mt-4 gap-4 no-scrollbar overflow-y-auto">
                     <header className="text-[1.125rem] font-bold py-3 rounded">
                         <Link href="/" onClick={() => setIsSheetOpen(false)}> Dasangsherlaam</Link>
                     </header>
+                    <main>
+                        
+                    </main>
+                    <div className="user-dropdown-sm flex flex-col gap-4 items-center bg-accent py-5 mb-4">
+                        <Image
+                            className="rounded-full"
+                            src="/images/author.jpg"
+                            alt="user-img"
+                            width={90}
+                            height={90}
+                        />
+                        <div className="user-dropdown-links flex flex-col gap-2 text-[0.9rem]">
+                           <span className="flex gap-2 items-center h-10">
+                                <MailCheckIcon className="w-5 h-5"/>
+                                Verify Email
+                            </span>
+                            <span className="flex gap-2 items-center h-10">
+                                <CalendarCheck2Icon className="w-5 h-5"/>
+                                Subscribe
+                            </span>
+                            <span className="flex gap-2 items-center h-10">
+                                <UserKeyIcon className="w-5 h-5"/>
+                                Change Password
+                            </span>
+                            <span className="flex gap-2 items-center h-10">
+                                <LogOutIcon className="w-5 h-5"/>
+                                Log out
+                            </span>
+                        </div>
+                    </div>
                     <span>
                          <span className="relative flex gap-2 items-center  mb-1" onClick={(toggleDropdown)}>
                             <Library className="text-primary" size={18} />Read More <ChevronDown className={isDropdownOpen ? 'rotate-180 inline duration-300' : 'inline duration-300'} size={12}/>
