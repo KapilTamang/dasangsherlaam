@@ -47,7 +47,7 @@ export default function UserDropdown() {
                         )
                         :(
                             <span>
-                                <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                                <Link href="/auth/email-verification" className="w-full flex gap-2 items-center capitalize">
                                     <MailCheckIcon/>
                                     Verify Email
                                 </Link>
