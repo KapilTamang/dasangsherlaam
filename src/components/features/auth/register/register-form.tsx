@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import {useRouter} from "next/navigation"
 import {z} from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {Controller, useForm} from "react-hook-form";
@@ -17,6 +18,8 @@ import {UserPlus, Send, Key, ShieldUser, Mail, CircleDashed} from "lucide-react"
 import { FaGoogle, FaFacebookF } from "react-icons/fa6";
 
 export function RegisterForm() {
+    const router = useRouter();
+
     //Loading state
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
     //Dialog state
@@ -70,6 +73,7 @@ export function RegisterForm() {
                 setProgress(100);
                 setIsLoading(false);
                 setIsDialogOpen(false);
+                router.push('/auth/email-verification');
             })
         }, 3000)
         

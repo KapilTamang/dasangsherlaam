@@ -94,7 +94,7 @@ export default function EmailVerificationForm() {
                 setProgress(100);
                 setIsLoading(false);
                 setIsVerifyDialogOpen(false);
-                router.push('/')
+                router.push('/auth/login')
             })
         }, 3000)
     }

@@ -21,7 +21,7 @@ export async function submitEmailVerificationForm(data: EmailVerificationFormVal
         //Proces your data or API call here
         return {
             success: true,
-            message: "Email verification successful"
+            message: "Email verification successful. Please login to continue"
         }
     }
     catch(error) {
