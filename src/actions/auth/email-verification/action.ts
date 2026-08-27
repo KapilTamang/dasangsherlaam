@@ -31,3 +31,20 @@ export async function submitEmailVerificationForm(data: EmailVerificationFormVal
         }
     }
 }
+
+export async function resendCode() : Promise<ActionResponse> {
+
+    try{
+        //Porcess your data or API call
+        return {
+            success: true,
+            message: "Email verification code sent. Please check your email."
+        }
+    }
+    catch(error) {
+        return {
+            success: false,
+            message: "An error occured"
+        }
+    }
+}

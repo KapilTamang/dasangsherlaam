@@ -72,6 +72,7 @@ export function RegisterForm() {
                 setIsDialogOpen(false);
             })
         }, 3000)
+        
     }
 
      return(
