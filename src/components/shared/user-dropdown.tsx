@@ -1,14 +1,21 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import {Avatar, AvatarImage} from "@/components/ui/avatar"
-import { MailCheckIcon, CalendarCheck2Icon, UserKey, LogOutIcon, ChevronDown} from "lucide-react"
+import { MailCheckIcon, CalendarCheck2Icon, UserKey, LogOutIcon, ChevronDown, CircleCheckBig} from "lucide-react"
 import {DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuSeparator,DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
 export default function UserDropdown() {
     //Dropdown open/close state
     const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
+
+    //User email verification status
+    const [isEmailVerified, setIsEmailVerified] = React.useState<boolean>(false);
+
+    //User subscription status
+    const [isSubscribed, setIsSubscribed] = React.useState<boolean>(true);
 
     return(
         
@@ -27,16 +34,54 @@ export default function UserDropdown() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem>
-                    <MailCheckIcon />
-                    Verify Email
+                    {
+                        isEmailVerified ? 
+                        (
+                            <span className="w-full flex justify-between items-center">
+                                <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">
+                                    <MailCheckIcon/>
+                                    Email Verified
+                                </Link>
+                                <CircleCheckBig className="text-primary"/>
+                            </span>
+                        )
+                        :(
+                            <span>
+                                <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                                    <MailCheckIcon/>
+                                    Verify Email
+                                </Link>
+                            </span>
+                        )
+                    }
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <CalendarCheck2Icon />
-                    Subscribe
+                     {
+                        isSubscribed ? 
+                        (
+                            <span className="w-full flex justify-between items-center">
+                                <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">
+                                    <CalendarCheck2Icon/>
+                                    Subscribed
+                                </Link>
+                                <CircleCheckBig className="text-primary"/>
+                            </span>
+                        )
+                        :(
+                            <span>
+                                <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                                    <CalendarCheck2Icon/>
+                                    Subscribe
+                                </Link>
+                            </span>
+                        )
+                    }
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <UserKey />
-                    Change Password
+                    <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                        <UserKey />
+                        Change Password
+                    </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
