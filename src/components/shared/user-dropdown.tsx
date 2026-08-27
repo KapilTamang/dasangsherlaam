@@ -11,9 +11,6 @@ export default function UserDropdown() {
     //Dropdown open/close state
     const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
 
-    //User email verification status
-    const [isEmailVerified, setIsEmailVerified] = React.useState<boolean>(false);
-
     //User subscription status
     const [isSubscribed, setIsSubscribed] = React.useState<boolean>(true);
 
@@ -34,26 +31,13 @@ export default function UserDropdown() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem>
-                    {
-                        isEmailVerified ? 
-                        (
-                            <span className="w-full flex justify-between items-center">
-                                <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">
-                                    <MailCheckIcon/>
-                                    Email Verified
-                                </Link>
-                                <CircleCheckBig className="text-primary"/>
-                            </span>
-                        )
-                        :(
-                            <span>
-                                <Link href="/auth/email-verification" className="w-full flex gap-2 items-center capitalize">
-                                    <MailCheckIcon/>
-                                    Verify Email
-                                </Link>
-                            </span>
-                        )
-                    }
+                    <span className="w-full flex justify-between items-center">
+                        <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">
+                            <MailCheckIcon/>
+                            Email Verified
+                        </Link>
+                        <CircleCheckBig className="text-primary"/>
+                    </span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                      {
