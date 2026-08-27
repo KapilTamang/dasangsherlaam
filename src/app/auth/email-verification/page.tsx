@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import EmailVerificationForm from "@/components/features/auth/email-verification/email-verification-form"
 import { ModeToggle } from "@/components/shared/theme-toggle"
 import {House} from "lucide-react"
 
@@ -18,7 +19,7 @@ export default function EmailVerification() {
                         <ModeToggle/>
                     </div>
                     <div className="login-form static md:fixed md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
-                        {/* Email verification form here */}
+                        <EmailVerificationForm/>
                     </div>
                 </div>
             </main>
