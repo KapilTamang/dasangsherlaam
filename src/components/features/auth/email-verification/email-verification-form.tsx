@@ -15,6 +15,7 @@ import { MailCheck, CircleDashed, RectangleEllipsis } from "lucide-react"
 import { Field, FieldError } from "@/components/ui/field"
 import { REGEXP_ONLY_DIGITS } from "input-otp"
 import {InputOTP,InputOTPGroup,InputOTPSlot} from "@/components/ui/input-otp"
+import { formatTime } from "@/lib/utils"
 
 export default function EmailVerificationForm() {
     const router = useRouter();
@@ -30,7 +31,7 @@ export default function EmailVerificationForm() {
     //Code expiry time
     const code_expiry_time = 300; //300 seconds = 5minutes
     //Expiry time tracking state
-    const [timeLeft, setTimeLeft] = React.useState<number>(0);
+    const [timeLeft, setTimeLeft] = React.useState<number>(code_expiry_time);
     //Verification code state
     const [isCodeExpired, setIsCodeExpired] = React.useState<boolean>(false);
     //Email verification state
@@ -196,7 +197,7 @@ export default function EmailVerificationForm() {
                                <span className="text-muted-foreground">code expired! Please request a new one.</span>
                             ):
                             (
-                                <span>Your code expires in: {timeLeft}</span>
+                                <span>Your code expires in: <span className="font-bold">{formatTime(timeLeft)}</span></span>
                             )
                         }
                     </div>
