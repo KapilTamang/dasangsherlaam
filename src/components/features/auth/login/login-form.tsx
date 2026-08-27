@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {z} from "zod";
 import {Controller, useForm} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,6 +18,8 @@ import {LogIn, Send, Key, ShieldUser, Mail, CircleDashed} from "lucide-react";
 import { FaGoogle, FaFacebookF } from "react-icons/fa6";
 
 export function LoginForm () {
+    const router = useRouter();
+
     //Loading state
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
     //Dialog state
@@ -68,6 +71,7 @@ export function LoginForm () {
                 setProgress(100);
                 setIsLoading(false);
                 setIsDialogOpen(false);
+                router.push('/');
             })
         }, 3000)
     }
