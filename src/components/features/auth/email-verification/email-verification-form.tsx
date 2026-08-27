@@ -157,40 +157,42 @@ export default function EmailVerificationForm() {
             </Dialog>
             <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
                 <span className="email-verification-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">Email Verification</span>
-                <span className="bg-accent py-2.5 flex gap-4 justify-center items-center text-[1rem] font-normal capitalize rounded-sm">
+                <span className="bg-accent px-2 py-2.5 flex gap-2 md:gap-4 justify-center items-start md:items-center text-[0.9rem] md:text-[1rem] font-normal capitalize rounded-sm">
                     <MailCheck className="w-6 h-6 text-primary"/>Enter 6 digits code to verify your email
                 </span>
-                <div className="w-full flex flex-col gap-4 justify-center items-center ">
-                    <Controller 
-                        name="verificationCode"
-                        control={form.control}
-                        render={({field, fieldState}) => (
-                            <>
+                <div className="w-full flex flex-col gap-5 justify-center items-center ">
+                    <div>
+                        <Controller 
+                            name="verificationCode"
+                            control={form.control}
+                            render={({field, fieldState}) => (
                                 <Field>
-                                    <InputOTP 
-                                    {...field}
-                                    maxLength={6} 
-                                    pattern={REGEXP_ONLY_DIGITS}
-                                    id={field.name}
-                                    name={field.name}
-                                    aria-invalid={fieldState.invalid}
-                                    disabled={isCodeExpired || isEmailVerified}
-                                    >
-                                        <InputOTPGroup>
-                                            <InputOTPSlot index={0} />
-                                            <InputOTPSlot index={1} />
-                                            <InputOTPSlot index={2} />
-                                            <InputOTPSlot index={3} />
-                                            <InputOTPSlot index={4} />
-                                            <InputOTPSlot index={5} />
-                                        </InputOTPGroup>
-                                    </InputOTP>
+                                    <Field>
+                                        <InputOTP 
+                                        {...field}
+                                        maxLength={6} 
+                                        pattern={REGEXP_ONLY_DIGITS}
+                                        id={field.name}
+                                        name={field.name}
+                                        aria-invalid={fieldState.invalid}
+                                        disabled={isCodeExpired || isEmailVerified}
+                                        >
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={0} />
+                                                <InputOTPSlot index={1} />
+                                                <InputOTPSlot index={2} />
+                                                <InputOTPSlot index={3} />
+                                                <InputOTPSlot index={4} />
+                                                <InputOTPSlot index={5} />
+                                            </InputOTPGroup>
+                                        </InputOTP>
+                                    </Field>
+                                    <FieldError>{form.formState.errors.verificationCode?.message}</FieldError>
                                 </Field>
-                                <FieldError>{form.formState.errors.verificationCode?.message}</FieldError>
-                            </>
-                        )}
-                    />
-                    <div className={`verification-code-expiry-timer ${isEmailVerified ? 'hidden' : 'flex'} capitalize`}>
+                            )}
+                        />
+                    </div>
+                    <div className={`verification-code-expiry-timer ${isEmailVerified ? 'hidden' : 'flex'} text-[0.9rem] md:text-[1rem] capitalize`}>
                         {
                             isCodeExpired && !isEmailVerified ? 
                             (

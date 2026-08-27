@@ -12,7 +12,7 @@ export default function UserDropdown() {
     const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
 
     //User subscription status
-    const [isSubscribed, setIsSubscribed] = React.useState<boolean>(true);
+    const [isSubscribed, setIsSubscribed] = React.useState<boolean>(false);
 
     return(
         
