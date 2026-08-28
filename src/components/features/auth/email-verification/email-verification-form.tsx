@@ -84,6 +84,7 @@ export default function EmailVerificationForm() {
                 const response = await submitEmailVerificationForm(data);
 
                 if(response.success) {
+                    router.push('/auth/login')
                     form.reset();
                     setIsEmailVerified(true);
                     toast.success(response.message);
@@ -94,7 +95,6 @@ export default function EmailVerificationForm() {
                 setProgress(100);
                 setIsLoading(false);
                 setIsVerifyDialogOpen(false);
-                router.push('/auth/login')
             })
         }, 3000)
     }

@@ -64,6 +64,7 @@ export function RegisterForm() {
                 const response = await submitRegisterForm(data);
 
                 if(response.success) {
+                    router.push('/auth/email-verification');
                     form.reset();
                     toast.success(response.message);
                 }
@@ -73,7 +74,6 @@ export function RegisterForm() {
                 setProgress(100);
                 setIsLoading(false);
                 setIsDialogOpen(false);
-                router.push('/auth/email-verification');
             })
         }, 3000)
         

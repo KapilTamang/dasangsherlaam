@@ -62,6 +62,7 @@ export function LoginForm () {
                 const response = await submitLoginForm(data);
 
                 if(response.success) {
+                    router.push('/');
                     form.reset();
                     toast.success(response.message);
                 }
@@ -71,7 +72,6 @@ export function LoginForm () {
                 setProgress(100);
                 setIsLoading(false);
                 setIsDialogOpen(false);
-                router.push('/');
             })
         }, 3000)
     }
