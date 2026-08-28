@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Avatar, AvatarImage} from "@/components/ui/avatar"
-import { MailCheckIcon, CalendarCheck2Icon, UserKey, LogOutIcon, ChevronDown, CircleCheckBig} from "lucide-react"
+import { MailCheckIcon, CalendarCheck, UserKey, LogOutIcon, ChevronDown, CircleCheckBig, CalendarX} from "lucide-react"
 import {DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuSeparator,DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -12,7 +12,7 @@ export default function UserDropdown() {
     const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
 
     //User subscription status
-    const [isSubscribed, setIsSubscribed] = React.useState<boolean>(false);
+    const [isSubscribed, setIsSubscribed] = React.useState<boolean>(true);
 
     return(
         
@@ -45,7 +45,7 @@ export default function UserDropdown() {
                         (
                             <span className="w-full flex justify-between items-center">
                                 <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">
-                                    <CalendarCheck2Icon/>
+                                    <CalendarCheck/>
                                     Subscribed
                                 </Link>
                                 <CircleCheckBig className="text-primary"/>
@@ -54,7 +54,7 @@ export default function UserDropdown() {
                         :(
                             <span>
                                 <Link href="#" className="w-full flex gap-2 items-center capitalize">
-                                    <CalendarCheck2Icon/>
+                                    <CalendarCheck/>
                                     Subscribe
                                 </Link>
                             </span>
@@ -66,6 +66,17 @@ export default function UserDropdown() {
                         <UserKey />
                         Change Password
                     </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">
+                    {
+                        isSubscribed && 
+                            <span className="w-full flex justify-between items-center">
+                                <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                                    <CalendarX/>
+                                    unsunscribe
+                                </Link>
+                            </span>
+                    }
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
