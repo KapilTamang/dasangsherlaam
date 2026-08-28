@@ -23,6 +23,10 @@ export default function NewsLetterForm() {
     const [progress, setProgress] = React.useState(10);
     //State for dialog
     const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+
+    //User subscription state
+    const isSubscribed = false;
+    const isLoggedIn = false;
     
     const form  = useForm<z.infer<typeof newsletterSchema>>({
         resolver: zodResolver(newsletterSchema),
@@ -95,8 +99,8 @@ export default function NewsLetterForm() {
                     render={({field, fieldState}) => (
                         <Field>
                             <ButtonGroup>
-                                <Input {...field} id={field.name} type={field.name} aria-invalid={fieldState.invalid} placeholder="Enter your email" disabled={isLoading} className="border border-foreground/20"/>
-                                <Button type="submit" disabled={isPending || isLoading} className="h-11 lg:h-12 text-[0.9rem] md:text-[1rem]">
+                                <Input {...field} id={field.name} type={field.name} aria-invalid={fieldState.invalid} placeholder="Enter your email" disabled={isLoading || (isLoggedIn && isSubscribed)} className="border border-foreground/20"/>
+                                <Button type="submit" disabled={(isPending || isLoading) || (isLoggedIn && isSubscribed)} className="h-11 lg:h-12 text-[0.9rem] md:text-[1rem]">
                                     Subscribe 
                                 </Button>
                             </ButtonGroup>
@@ -120,7 +124,7 @@ export default function NewsLetterForm() {
                                     checked={!!field.value}
                                     onCheckedChange={(v) => field.onChange(!!v)}
                                     ref={field.ref}
-                                    disabled={isLoading}
+                                    disabled={isLoading || (isLoggedIn && isSubscribed)}
                                     className="border border-foreground/30"
                                 />
                                 <FieldLabel htmlFor={field.name} className="text-muted-foreground">
