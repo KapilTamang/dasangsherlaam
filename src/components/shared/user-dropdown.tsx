@@ -29,7 +29,7 @@ export default function UserDropdown() {
                     <ChevronDown className={`w-4 h-4 duration-300 ${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`}/>
                 </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent collisionPadding={40}>
                 <DropdownMenuItem>
                     <span className="w-full flex justify-between items-center">
                         <Link href="#" className="w-full flex gap-2 items-center capitalize pointer-events-none opacity-50">

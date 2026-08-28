@@ -119,12 +119,15 @@ export default function Navbar() {
                         <UserDropdown/>
                     </NavigationMenuItem>
                 }
-                <NavigationMenuItem className="hover:opacity-100">
-                    {/* Using anchor tag to navigate to section ID */}
-                    <a href="/#newsletter-section" className={`${buttonVariants()}`}>
-                        <CalendarCheck data-icon="inline" /> Subscribe
-                    </a>
-                </NavigationMenuItem>
+                {
+                    !isUserLogged && 
+                    <NavigationMenuItem className="hover:opacity-100">
+                        {/* Using anchor tag to navigate to section ID */}
+                        <a href="/#newsletter-section" className={`${buttonVariants()}`}>
+                            <CalendarCheck data-icon="inline" /> Subscribe
+                        </a>
+                    </NavigationMenuItem>
+                }
             </NavigationMenuList>
         </NavigationMenu>
          {/* Mobile: Sheet (hidden on desktop) */}
