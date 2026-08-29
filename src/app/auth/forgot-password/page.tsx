@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ModeToggle } from "@/components/shared/theme-toggle"
 import {House} from "lucide-react"
+import ForgotPasswordForm from "@/components/features/auth/forgot-password/forgot-password-form"
 
 
 export default function ForgotPassword () {
@@ -19,7 +20,7 @@ export default function ForgotPassword () {
                     <ModeToggle/>
                 </div>
                 <div className="login-form fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
-                    {/* <EmailVerificationForm/> */}
+                    <ForgotPasswordForm/>
                 </div>
             </div>
         </main>
