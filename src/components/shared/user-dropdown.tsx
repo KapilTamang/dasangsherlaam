@@ -80,8 +80,12 @@ export default function UserDropdown() {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
-                    <LogOutIcon />
-                    Log out
+                    <span className="w-full flex justify-between items-center">
+                        <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                            <LogOutIcon />
+                              Log out
+                        </Link>
+                    </span>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
