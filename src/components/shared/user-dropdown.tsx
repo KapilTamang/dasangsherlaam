@@ -83,7 +83,7 @@ export default function UserDropdown() {
                     <span className="w-full flex justify-between items-center">
                         <Link href="#" className="w-full flex gap-2 items-center capitalize">
                             <LogOutIcon />
-                              Log out
+                            Log out
                         </Link>
                     </span>
                 </DropdownMenuItem>

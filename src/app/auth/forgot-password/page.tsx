@@ -1,12 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
-import EmailVerificationForm from "@/components/features/auth/email-verification/email-verification-form"
 import { ModeToggle } from "@/components/shared/theme-toggle"
 import {House} from "lucide-react"
 
-export default function EmailVerification() {
-    return(
-       <main className="w-full min-h-screen pb-10 md:pb-0 bg-accent relative">
+
+export default function ForgotPassword () {
+    return (
+        <main className="w-full min-h-screen pb-10 md:pb-0 bg-accent relative">
             <Image
             className="object-cover"
             src="/images/login-bg.png"
@@ -19,7 +19,7 @@ export default function EmailVerification() {
                     <ModeToggle/>
                 </div>
                 <div className="login-form fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
-                    <EmailVerificationForm/>
+                    {/* <EmailVerificationForm/> */}
                 </div>
             </div>
         </main>
