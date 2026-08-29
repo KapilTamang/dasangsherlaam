@@ -15,19 +15,20 @@ export async function submitEmailVerificationForm(data: EmailVerificationFormVal
             message: "Invalid verification code"
         }
     }
-
-    //Process the valid data from here
-    try {
-        //Proces your data or API call here
-        return {
-            success: true,
-            message: "Email verification successful. Please login to continue"
+    else {
+        //Process the valid data from here
+        try {
+            //Proces your data or API call here
+            return {
+                success: true,
+                message: "Email verification successful. Please login to continue"
+            }
         }
-    }
-    catch(error) {
-        return {
-            success: false,
-            message: "An error occured while processing email verification"
+        catch(error) {
+            return {
+                success: false,
+                message: "An error occured while processing email verification"
+            }
         }
     }
 }

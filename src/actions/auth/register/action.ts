@@ -15,17 +15,19 @@ export async function submitRegisterForm(data: RegisterFormValues) : Promise<Act
             message: 'Invalid form data'
         }
     }
-    //Process the validated data from here
-    try{
-        //Process your data API call here
-        return {
-            success: true,
-            message: "Email verification code sent. Please check your email."
-        }
-    }catch(error) {
-        return {
-            success: false,
-            message: 'An error occured while processing the form.'
+    else{
+        //Process the validated data from here
+        try{
+            //Process your data API call here
+            return {
+                success: true,
+                message: "Email verification code sent. Please check your email."
+            }
+        }catch(error) {
+            return {
+                success: false,
+                message: 'An error occured while processing the form.'
+            }
         }
     }
 }
