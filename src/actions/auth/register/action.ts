@@ -18,7 +18,7 @@ export async function submitRegisterForm(data: RegisterFormValues) : Promise<Act
     else{
         //Process the validated data from here
         try{
-            //Process your data API call here
+            //Process your database or API call here
             return {
                 success: true,
                 message: "Email verification code sent. Please check your email."
