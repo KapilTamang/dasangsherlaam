@@ -14,7 +14,7 @@ export default function Login() {
                 fill
                 preload/>
                 <div className="login-page flex flex-col gap-6 md:gap-0">
-                    <div className="about-navigation static justify-end p-4 md:fixed top-2 right-1 flex gap-4 items-center z-20">
+                    <div className="static justify-end p-4 md:fixed top-2 right-1 flex gap-4 items-center z-20">
                         <Link href="/" className="flex gap-1 items-center text-[1rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={18}/> home</Link>
                         <ModeToggle/>
                     </div>
