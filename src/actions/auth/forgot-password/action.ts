@@ -21,7 +21,7 @@ export async function submitForgotPasswordForm(data: ForgotPasswordFormValues): 
             //Process your database or API call here
             return {
                 success: true,
-                message: "Request sent. Please check your email for verification code."
+                message: "Confirmation success! Please check your email for verification code."
             }
         }
         catch(error) {
