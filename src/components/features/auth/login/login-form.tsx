@@ -94,7 +94,7 @@ export function LoginForm () {
             </Dialog>
              <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
                 <span className="login-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">login</span>
-                <span className="bg-accent py-2.5 flex gap-2 justify-center items-center text-[1rem] md:text-[1.1rem] font-bold rounded-sm">
+                <span className="bg-accent py-2.5 flex gap-2 justify-center items-center text-[1rem] md:text-[1.1rem] font-bold capitalize rounded-sm">
                     <ShieldUser className="w-6 h-6 text-primary"/>Login into your account
                 </span>
                 <FieldGroup>

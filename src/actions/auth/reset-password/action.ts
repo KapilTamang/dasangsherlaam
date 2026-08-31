@@ -9,6 +9,8 @@ export async function submitResetPasswordForm(data: ResetPasswordFormValues) : P
     //Re-validate incoming client payloads on the server
     const validateFields = resetPasswordSchema.safeParse(data);
 
+    console.log(data);
+
     if(!validateFields) {
         return {
             success: false,
@@ -21,13 +23,13 @@ export async function submitResetPasswordForm(data: ResetPasswordFormValues) : P
             //Process your database or API call here
             return {
                 success: true,
-                message: "Password reset success! Please login to continue"
+                message: "Password reset success! Please login to continue."
             }
         }
         catch(error) {
             return {
                 success: false,
-                message: "An error occured while processing the form"
+                message: "An error occured while processing the form."
             }
         }
     }

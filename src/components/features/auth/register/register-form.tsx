@@ -7,23 +7,24 @@ import {z} from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {Controller, useForm} from "react-hook-form";
 import {registerSchema, RegisterFormValues} from '@/actions/auth/register/schema';
-import {Field,FieldLabel, FieldGroup,FieldDescription, FieldError, FieldSeparator} from "@/components/ui/field"
+import {Field,FieldLabel, FieldGroup,FieldDescription, FieldError} from "@/components/ui/field"
 import { Button } from "@/components/ui/button";
 import { submitRegisterForm } from "@/actions/auth/register/action";
 import {toast} from "sonner";
 import { InputGroup, InputGroupInput } from "@/components/ui/input-group";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
 import {Progress} from "@/components/ui/progress";
-import {UserPlus, Send, Key, ShieldUser, Mail, CircleDashed} from "lucide-react";
-import { FaGoogle, FaFacebookF } from "react-icons/fa6";
+import {UserPlus, Send, Key, ShieldUser, CircleDashed} from "lucide-react";
 
 export function RegisterForm() {
     const router = useRouter();
 
     //Loading state
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
     //Dialog state
     const [isDialogOpen, setIsDialogOpen] = React.useState<boolean>(false);
+    
     //Progress state
     const [progress, setProgress] = React.useState<number>(10);
 
@@ -86,7 +87,7 @@ export function RegisterForm() {
                     <DialogHeader>
                         <DialogTitle className="flex items-center gap-2 font-bold uppercase"><UserPlus className="inline text-primary" size={20}/>registration processing</DialogTitle>
                         <DialogDescription className="flex items-center gap-2 font-medium capitalize mt-1">
-                                <CircleDashed className="inline text-muted-foreground animate-spin" size={16}/>
+                            <CircleDashed className="inline text-muted-foreground animate-spin" size={16}/>
                             Submitting form request..</DialogDescription>
                         <Progress value={progress} className="w-full h-2 mt-2"/>
                         <DialogDescription className="italic">
@@ -97,7 +98,7 @@ export function RegisterForm() {
             </Dialog>
             <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
                 <span className="register-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">register</span>
-                <span className="bg-accent py-2.5 flex gap-2 justify-center items-center text-[1rem] md:text-[1.1rem] font-bold rounded-sm">
+                <span className="bg-accent py-2.5 flex gap-2 justify-center items-center text-[1rem] md:text-[1.1rem] font-bold capitalize rounded-sm">
                     <ShieldUser className="w-6 h-6 text-primary"/>Create your account
                 </span>
                 <FieldGroup>
