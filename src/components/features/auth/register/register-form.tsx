@@ -66,7 +66,6 @@ export function RegisterForm() {
 
                 if(response.success) {
                     router.push('/auth/email-verification');
-                    form.reset();
                     toast.success(response.message);
                 }
                 else {

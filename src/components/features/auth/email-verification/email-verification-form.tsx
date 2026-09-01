@@ -94,7 +94,6 @@ export default function EmailVerificationForm() {
                         router.push('/auth/login');
                     }
 
-                    form.reset();
                     setIsEmailVerified(true);
                     toast.success(response.message);
                 }
@@ -220,7 +219,7 @@ export default function EmailVerificationForm() {
                         </span>
                         <span>
                             <Button variant="default" type="submit" className="capitalize cursor-pointer" disabled={isCodeExpired || isEmailVerified}>
-                                verify
+                                verify email
                             </Button>
                         </span>
                     </div>

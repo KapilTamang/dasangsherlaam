@@ -63,7 +63,6 @@ export default function ResetPasswordForm() {
 
                 if(response.success) {
                     router.push('/auth/login');
-                    form.reset();
                     toast.success(response.message);
                 }
                 else {
@@ -148,7 +147,7 @@ export default function ResetPasswordForm() {
                     </Field>
                     <Field>
                         <Button variant="default" className="uppercase cursor-pointer" type="submit" disabled={isLoading}>
-                            <RotateCcw className="w-6 h-6 mr-0.5"/>Reset
+                            <RotateCcw className="w-6 h-6 mr-0.5"/>Reset password
                         </Button>
                     </Field>
                 </FieldGroup>

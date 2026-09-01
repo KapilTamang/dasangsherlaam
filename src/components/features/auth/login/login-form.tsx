@@ -63,7 +63,6 @@ export function LoginForm () {
 
                 if(response.success) {
                     router.push('/');
-                    form.reset();
                     toast.success(response.message);
                 }
                 else {

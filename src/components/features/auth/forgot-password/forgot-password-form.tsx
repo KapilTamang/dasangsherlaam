@@ -60,7 +60,6 @@ export default function ForgotPasswordForm () {
 
                 if(response.success) {
                     router.push('/auth/email-verification?flow=forgot-password');
-                    form.reset();
                     toast.success(response.message);
                 }
                 else{
