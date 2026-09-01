@@ -62,7 +62,7 @@ export default function UserDropdown() {
                     }
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                    <Link href="/auth/change-password" className="w-full flex gap-2 items-center capitalize">
                         <UserKey />
                         Change Password
                     </Link>
