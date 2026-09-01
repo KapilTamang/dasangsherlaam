@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import {z} from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {Controller, useForm} from "react-hook-form"
@@ -19,6 +19,9 @@ import { formatTime } from "@/lib/utils"
 
 export default function EmailVerificationForm() {
     const router = useRouter();
+    //Get the flow from the query parameters to determine if it's a registration or forgot-password flow
+    const searchParams = useSearchParams();
+    const flow = searchParams.get('flow') || 'registration'; // Default to 'registration' if no flow is provided
 
     //Loading state
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -84,7 +87,13 @@ export default function EmailVerificationForm() {
                 const response = await submitEmailVerificationForm(data);
 
                 if(response.success) {
-                    router.push('/auth/login')
+                    if(flow === 'forgot-password') {
+                        router.push('/auth/reset-password');
+                    }
+                    else {
+                        router.push('/auth/login');
+                    }
+
                     form.reset();
                     setIsEmailVerified(true);
                     toast.success(response.message);

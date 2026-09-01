@@ -59,7 +59,7 @@ export default function ForgotPasswordForm () {
                 const response = await submitForgotPasswordForm(data);
 
                 if(response.success) {
-                    router.push('/auth/email-verification');
+                    router.push('/auth/email-verification?flow=forgot-password');
                     form.reset();
                     toast.success(response.message);
                 }
