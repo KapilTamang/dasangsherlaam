@@ -9,8 +9,6 @@ export async function submitResetPasswordForm(data: ResetPasswordFormValues) : P
     //Re-validate incoming client payloads on the server
     const validateFields = resetPasswordSchema.safeParse(data);
 
-    console.log(data);
-
     if(!validateFields) {
         return {
             success: false,
