@@ -192,7 +192,7 @@ export default function Navbar() {
                                         )
                                     }
                                     <span className="w-full flex gap-4 justify-around items-center">
-                                        <Link href="#" className="w-full flex gap-2 items-center capitalize">
+                                        <Link href="/auth/change-password" className="w-full flex gap-2 items-center capitalize">
                                             <UserKeyIcon className="w-5 h-5"/>
                                             Change Password
                                         </Link>

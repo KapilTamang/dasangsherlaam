@@ -18,7 +18,7 @@ export default function Login() {
                         <Link href="/" className="flex gap-1 items-center text-[1rem] font-medium capitalize hover:opacity-50 duration-300 cursor-pointer"><House className="inline" size={18}/> home</Link>
                         <ModeToggle/>
                     </div>
-                    <div className="login-form static md:fixed md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
+                    <div className="login-form static md:fixed mt-[10%] md:mt-0 md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
                         <LoginForm/>
                     </div>
                 </div>
