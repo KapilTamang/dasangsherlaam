@@ -6,7 +6,7 @@ import {z} from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {Controller, useForm} from "react-hook-form";
 import { resetPasswordSchema, ResetPasswordFormValues } from '@/actions/auth/reset-password/schema';
-import {Field, FieldLabel, FieldError, FieldGroup } from "@/components/ui/field";
+import {Field, FieldError, FieldGroup } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
 import { submitResetPasswordForm } from "@/actions/auth/reset-password/action";
 import {toast} from "sonner";

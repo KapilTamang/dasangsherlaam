@@ -9,6 +9,7 @@ export const changePasswordSchema = z.object({
     z.string().min(1, "Please confirm your new password")
 }).refine((data) => data.newPassword === data.confirmNewPassword, {
     message: "New password do not match",   
+    path: ["confirmNewPassword"]
 });
 
 export type ChangePasswordFormValues = z.infer<typeof changePasswordSchema>;

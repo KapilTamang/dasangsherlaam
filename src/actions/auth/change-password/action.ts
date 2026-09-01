@@ -7,7 +7,7 @@ export type ActionResponse = {
 
 export async function submitChangePasswordForm(data: ChangePasswordFormValues) : Promise<ActionResponse> {
     //Re-validate incoming client payloads on the server
-    const validateFields = changePasswordSchema.safeParse(data);    
+    const validateFields = changePasswordSchema.safeParse(data); 
 
     if(!validateFields) {   
         return {

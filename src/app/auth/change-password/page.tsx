@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ModeToggle } from "@/components/shared/theme-toggle"
 import {House} from "lucide-react"
-import ResetPasswordForm from "@/components/features/auth/reset-password/reset-password-form"
+import ChangePasswordForm from "@/components/features/auth/change-password/change-password-form"
 
 
 export default function ChangePassword () {
@@ -20,7 +20,7 @@ export default function ChangePassword () {
                     <ModeToggle/>
                 </div>
                 <div className="reset-password-form fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full sm:w-120 px-6 md:px-0 mx-auto md:mx-0">
-                    {/* <ResetPasswordForm/> */}
+                    <ChangePasswordForm/>
                 </div>
             </div>
         </main>
