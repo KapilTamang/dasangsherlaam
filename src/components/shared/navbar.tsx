@@ -78,15 +78,15 @@ export default function Navbar() {
     }
 
   return (
-    <header className={`navbar-wrapper flex justify-between items-center px-[5%] md:px-[3%] py-4 md:py-5 sticky top-0 z-50 ${isScrolled ? "bg-background shadow-xs" : "bg-transparent shadow-none"}`}>
+    <nav className={`navbar-wrapper flex justify-between items-center px-[5%] md:px-[3%] py-4 md:py-5 sticky top-0 z-50 ${isScrolled ? "bg-background shadow-xs" : "bg-transparent shadow-none"}`}>
         <Link className="text-xl font-bold" href="/">Dasangsherlaam</Link>
         {/* Desktop: NavigationMenu (hidden on mobile) */}
-        <NavigationMenu className="hidden md:flex text-[1rem]">
+        <NavigationMenu viewport={true} className="hidden md:flex text-[1rem]">
             <NavigationMenuList className="space-x-4">
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Read More</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="cursor-pointer">Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
-                        <ul className="grid gap-2 md:w-125 md:grid-cols-2 lg:w-130">
+                        <ul className="grid gap-2 w-200 md:grid-cols-3">
                             {
                                 categories && categories.map((category, index) => (
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
@@ -246,7 +246,7 @@ export default function Navbar() {
         </Sheet>
         {/* Scroll to top Icon */}
         <span onClick={scrollTop} className={`fixed ${isScrollTop ? 'bottom-5 right-5' : '-bottom-20 right-5'}  bg-foreground p-3 rounded-xl text-background duration-700 ease-in-out shadow-3xl`}><ArrowUpToLine className="animate-bounce" size={22}/></span>
-    </header>
+    </nav>
   )
 }
 
