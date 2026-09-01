@@ -138,7 +138,7 @@ export function LoginForm () {
                                     <Key className="inline absolute left-3 top-[50%] translate-y-[-50%] w-5 h-5 text-muted-foreground group-focus-within:text-primary duration-300"/>
                                 </InputGroup>
                                 <FieldError>{form.formState.errors.password?.message}</FieldError>
-                                <Link href="#" className="text-end text-[0.9rem] underline-offset-4 hover:underline hover:text-primary mt-1 duration-300">
+                                <Link href="/auth/forgot-password" className="text-end text-[0.9rem] underline-offset-4 hover:underline hover:text-primary mt-1 duration-300">
                                     Forgot your password?
                                 </Link>
                             </Field>

@@ -90,10 +90,10 @@ export default function ForgotPasswordForm () {
                 </DialogContent>
             </Dialog>
             <form onSubmit={form.handleSubmit(handleSubmit)} className="relative flex flex-col px-6 lg:px-10 py-8 lg:py-12 w-full space-y-6 bg-background rounded-xl shadow-lg">
-                 <span className="bg-accent px-4 py-2.5 flex gap-2 md:gap-4 items-start md:items-center text-[0.9rem] md:text-[1rem] font-normal capitalize rounded-sm">
-                    <MailCheck className="w-6 h-6 text-primary"/>Submit your email for confirmation
+                 <span className="bg-accent px-4 py-2.5 flex gap-2 md:gap-4 justify-center items-start md:items-center text-[0.9rem] md:text-[1rem] font-normal capitalize rounded-sm">
+                    <MailCheck className="w-6 h-6 text-primary"/>Submit your email
                 </span>
-                <span className="forgot-password-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">forgot password</span>
+                <span className="forgot-password-form-title absolute -top-5 left-5 md:left-8 bg-primary text-[0.9rem] lg:text-[1rem] font-bold text-card-featured-foreground uppercase px-4 py-1.5 rounded-md">forgot password ?</span>
                 <div className="w-full flex flex-col gap-5">
                     <div>
                         <Controller 
