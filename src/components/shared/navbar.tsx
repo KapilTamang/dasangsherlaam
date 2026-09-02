@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image";
 import {Menu, ChevronDown, Search, Library, CalendarCheck, ArrowUpToLine, MailCheckIcon,
- UserKeyIcon, LogOutIcon, CircleCheckBig, CalendarX, X} from "lucide-react";
+ UserKeyIcon, LogOutIcon, CircleCheckBig, CalendarX, X,} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -36,7 +36,7 @@ export default function Navbar() {
     const [isScrollTop, setIsScrollTop] = React.useState(false);
 
     //Define state for user login state
-    const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(true);
+    const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(false);
 
     //Define subscription state
     const isSubscribed = true;
@@ -86,7 +86,7 @@ export default function Navbar() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="cursor-pointer">Read More</NavigationMenuTrigger>
                     <NavigationMenuContent className="pt-2 pb-2">
-                        <ul className="grid gap-2 w-200 md:grid-cols-3">
+                        <ul className="grid gap-2 w-140 xl:w-200 grid-cols-2 xl:grid-cols-3">
                             {
                                 categories && categories.map((category, index) => (
                                     <ListItem key={index} href={`/categories/${category.slug}`} title={category.title}>
@@ -125,11 +125,29 @@ export default function Navbar() {
                 }
                 {
                     !isUserLoggedIn && 
-                    <NavigationMenuItem className="hover:opacity-100">
+                    <NavigationMenuItem className="opacity-100">
                         {/* Using anchor tag to navigate to section ID */}
                         <a href="/#newsletter-section" className={`${buttonVariants()}`}>
                             <CalendarCheck data-icon="inline" /> Subscribe
                         </a>
+                    </NavigationMenuItem>
+                }
+                {
+                    !isUserLoggedIn && 
+                    <NavigationMenuItem>
+                        {/* Using anchor tag to navigate to section ID */}
+                        <Link href="/auth/login" className={`${buttonVariants()}`}>
+                            <UserKeyIcon data-icon="inline" /> login
+                        </Link>
+                    </NavigationMenuItem>
+                }
+                {
+                    isUserLoggedIn && 
+                    <NavigationMenuItem>
+                        {/* Using anchor tag to navigate to section ID */}
+                        <Link href="/auth/logout" className={`${buttonVariants({variant: "destructive"})}`}>
+                            <LogOutIcon data-icon="inline" /> logout
+                        </Link>
                     </NavigationMenuItem>
                 }
             </NavigationMenuList>
@@ -236,9 +254,14 @@ export default function Navbar() {
                         {/* Using anchor tag to navigate to section ID */}
                         {
                             !isUserLoggedIn &&
-                            <a href="/#newsletter-section" onClick={() => setIsSheetOpen(false)} className={`${buttonVariants()}`}>
-                                <CalendarCheck data-icon="inline-start" /> Subscribe
-                            </a>
+                            <div className="flex gap-4">
+                                <a href="/#newsletter-section" onClick={() => setIsSheetOpen(false)} className={`${buttonVariants()}`}>
+                                    <CalendarCheck data-icon="inline-start" /> Subscribe
+                                </a>
+                                <Link href="/auth/login" className={`${buttonVariants()}`}>
+                                    <UserKeyIcon data-icon="inline-start" /> login
+                                </Link>
+                            </div>
                         }
                     </main>
                 </nav>
