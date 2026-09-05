@@ -18,16 +18,16 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 
-import analytics from "@/data/dashboard/analytics"
+import contents from "@/data/dashboard/content"
 
-export function NavAnalytic() 
+export function NavContent() 
 
 {
   return (
     <SidebarGroup>
-         <SidebarGroupLabel>Analytics</SidebarGroupLabel>
+         <SidebarGroupLabel>Manage Content</SidebarGroupLabel>
         <SidebarMenu>
-            {analytics.map((item) => (
+            {contents.map((item) => (
             <Collapsible
                 key={item.title}
                 asChild

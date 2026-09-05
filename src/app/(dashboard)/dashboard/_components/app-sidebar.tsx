@@ -10,6 +10,7 @@ import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, Side
 import { NavMain } from "./nav-main"
 import { NavUser } from "./nav-user"
 import { NavAnalytic } from "./nav-analytic"
+import { NavContent } from "./nav-content"
 
 // This is sample data.
 const data = {
@@ -122,6 +123,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 			<SidebarContent>
 				<NavAnalytic/>
+				<NavContent/>
 				<NavMain items={data.navMain} />
 			</SidebarContent>
 			<SidebarFooter> 
