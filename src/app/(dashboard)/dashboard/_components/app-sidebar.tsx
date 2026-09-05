@@ -7,6 +7,8 @@ import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, useS
 import { NavUser } from "./nav-user"
 import { NavAnalytic } from "./nav-analytic"
 import { NavContent } from "./nav-content"
+import { NavPage } from './nav-page';
+import { NavSetting } from "./nav-setting"
 
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -29,6 +31,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			<SidebarContent>
 				<NavAnalytic/>
 				<NavContent/>
+				<NavPage/>
+				<NavSetting/>
 			</SidebarContent>
 			<SidebarFooter> 
 				<NavUser/>
