@@ -13,7 +13,7 @@ export default function DashboardLayout({
         <AppSidebar />
         <SidebarInset>
 			<TopNav/>
-			<main>
+			<main className="p-4">
 				{children}
 			</main>
         </SidebarInset>
