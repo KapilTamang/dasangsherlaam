@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import {
-  BookOpen, PieChart, LayoutGrid, Users, Target, Mails,
+  BookOpen, PieChart, LayoutGrid, Users, Mails,
   Settings} from "lucide-react"
 
 import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarMenuButton, SidebarMenu, useSidebar,} from "@/components/ui/sidebar"
 
 import { NavMain } from "./nav-main"
 import { NavUser } from "./nav-user"
+import { NavAnalytic } from "./nav-analytic"
 
 // This is sample data.
 const data = {
@@ -120,6 +121,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				</div>
 			</SidebarHeader>
 			<SidebarContent>
+				<NavAnalytic/>
 				<NavMain items={data.navMain} />
 			</SidebarContent>
 			<SidebarFooter> 
