@@ -1,23 +1,13 @@
 "use client"
 
 import * as React from "react"
-import {
-  BookOpen, PieChart, LayoutGrid, Users, Mails,
-  Settings} from "lucide-react"
 
-import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarMenuButton, SidebarMenu, useSidebar,} from "@/components/ui/sidebar"
+import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, useSidebar,} from "@/components/ui/sidebar"
 
 import { NavUser } from "./nav-user"
 import { NavAnalytic } from "./nav-analytic"
 import { NavContent } from "./nav-content"
 
-const data = {
-  user: {
-    name: "Dasangsherlaam",
-    email: "dasangsherlaam@gmail.com",
-    avatar: "/images/author.jpg",
-  },
-}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	//Sidebar open/close state
@@ -41,7 +31,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				<NavContent/>
 			</SidebarContent>
 			<SidebarFooter> 
-				<NavUser user={data.user} />
+				<NavUser/>
 			</SidebarFooter>
 			<SidebarRail />
 		</Sidebar>

@@ -1,5 +1,6 @@
 interface AuthorDetails {
     name: string;
+    email: string;
     title: string;
     description: string;
     imageURL: string;
@@ -10,7 +11,8 @@ interface AuthorDetails {
 }
 
 const Author: AuthorDetails = {
-    name: 'dasang',
+    name: 'Dasang',
+    email:'dasangsherlaam@gmail.com',
     title: 'content writer',
     description: `I loving writing contents. I've been blogging for past five years on different categories. Entertainig, awarness and educating people through digital platform has always been my priority. I have been putting on lots of effortinto research to present incredible contents for my readers.`,
     imageURL: '/images/author.jpg',
