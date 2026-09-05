@@ -7,102 +7,17 @@ import {
 
 import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarMenuButton, SidebarMenu, useSidebar,} from "@/components/ui/sidebar"
 
-import { NavMain } from "./nav-main"
 import { NavUser } from "./nav-user"
 import { NavAnalytic } from "./nav-analytic"
 import { NavContent } from "./nav-content"
 
-// This is sample data.
 const data = {
   user: {
     name: "Dasangsherlaam",
     email: "dasangsherlaam@gmail.com",
     avatar: "/images/author.jpg",
   },
-
-  navMain: [
-    {
-      title: "Analytics",
-      url: "#",
-      icon: PieChart,
-      items: [
-        {
-          title: "Posts",
-          url: "#",
-        },
-        {
-          title: "Users",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Posts",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Create New",
-          url: "#",
-        },
-        {
-          title: "All Posts",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Categories",
-      url: "#",
-      icon: LayoutGrid,
-      items: [
-        {
-          title: "Create New",
-          url: "#",
-        },
-        {
-          title: "All Categories",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Users",
-      url: "#",
-      icon: Users,
-	   items: [
-        {
-          title: "All Users",
-          url: "#",
-        },
-      ],
-    },
-	{
-      title: "Messages",
-      url: "#",
-      icon: Mails,
-      items: [
-        {
-          title: "All Messages",
-          url: "#",
-        }
-      ],
-    },
-	{
-      title: "Settings",
-      url: "#",
-      icon: Settings,
-      items: [
-        {
-          title: "All Settings",
-          url: "#",
-        }
-      ],
-    },
-  ],
 }
-
-
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	//Sidebar open/close state
@@ -124,7 +39,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			<SidebarContent>
 				<NavAnalytic/>
 				<NavContent/>
-				<NavMain items={data.navMain} />
 			</SidebarContent>
 			<SidebarFooter> 
 				<NavUser user={data.user} />
