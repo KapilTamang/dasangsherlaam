@@ -29,7 +29,7 @@ export function NavAnalytic()
         <SidebarMenu>
             {analytics.map((item) => (
             <Collapsible
-                key={item.title}
+                key={item.id}
                 asChild
                 defaultOpen={item.isActive}
                 className="group/collapsible"
@@ -45,7 +45,7 @@ export function NavAnalytic()
                     <CollapsibleContent>
                         <SidebarMenuSub>
                         {item.items?.map((subItem) => (
-                            <SidebarMenuSubItem key={subItem.title}>
+                            <SidebarMenuSubItem key={subItem.id}>
 								<SidebarMenuSubButton asChild>
 									<a href={subItem.url}>
 										<span>{subItem.title}</span>

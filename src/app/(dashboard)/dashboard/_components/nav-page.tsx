@@ -19,7 +19,7 @@ export function NavPage()
         <SidebarMenu>
             {pages.map((item) => (
            
-            <SidebarMenuItem>
+            <SidebarMenuItem key={item.id}>
                 <SidebarMenuButton tooltip={item.title}>
                     {item.icon && <item.icon />}
                     <span>{item.title}</span>
