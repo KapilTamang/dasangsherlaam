@@ -29,7 +29,7 @@ const TC: TermsAndConditionsDetails[] = [
                 point: 'Introduces viruses, malware, or other harmful material.'
             },
             {
-                point: 'Interferes with the normal operaion or security of the website.'
+                point: 'Interferes with the normal operaion or security of the website. Interferes with the normal operaion or security of the website.'
             }
         ]
     },

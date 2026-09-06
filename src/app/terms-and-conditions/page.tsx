@@ -4,7 +4,7 @@ import Footer from "@/components/shared/footer";
 import { buttonVariants } from "@/components/ui/button";
 import NewsletterPromo from "@/components/shared/card/card-newsletter-promo";
 import TC from "@/data/terms-and-conditions";
-import { FaShieldHalved, FaCircleCheck } from "react-icons/fa6";
+import { FaShieldHalved } from "react-icons/fa6";
 import { ArrowBigRightDash } from "lucide-react";
 
 export default function TermsAndConditions() {
@@ -69,7 +69,10 @@ export default function TermsAndConditions() {
                                                     {
                                                         term.bullets && 
                                                         term.bullets.map((bullet, _index) => (
-                                                            <span key={_index} className="flex gap-2 items-start md:items-center"><FaCircleCheck className="w-4 h-4 text-primary"/> <p>{bullet.point}</p></span>
+                                                            <div key={_index} className="flex gap-2  shrink-0">
+                                                                <span><ArrowBigRightDash className="inline w-5 h-5 text-primary fill-primary mt-0 md:mt-1.5"/></span> 
+                                                                <p>{bullet.point}</p>
+                                                            </div>
                                                         ))
                                                     }
                                                 </div>
