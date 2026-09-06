@@ -9,7 +9,7 @@ interface TermsAndConditionsDetails {
     bullets: Item[]
 }
 
-const TermsAndConditions: TermsAndConditionsDetails[] = [
+const TC: TermsAndConditionsDetails[] = [
     {
         id: 1,
         title: 'use of the website',
@@ -109,4 +109,4 @@ const TermsAndConditions: TermsAndConditionsDetails[] = [
     }
 ]
 
-export default TermsAndConditions;
+export default TC;
