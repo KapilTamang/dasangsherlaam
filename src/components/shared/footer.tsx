@@ -70,7 +70,7 @@ export default function Footer() {
                                 <div className="footer-section-content-links-legalinfo-links flex flex-col gap-3 items-center md:items-start text-[1rem] text-muted-foreground font-medium capitalize">
                                 <Link href="/privacy-policy" className="hover:text-primary duration-300">privacy policy</Link>
                                 <Link href="/cookie-policy" className="hover:text-primary duration-300">cookie policy</Link>
-                                <Link href="/terms-condition" className="hover:text-primary duration-300">terms & condition</Link>
+                                <Link href="/terms-and-conditions" className="hover:text-primary duration-300">terms & condition</Link>
                                 </div>
                             </nav>
                         </section>

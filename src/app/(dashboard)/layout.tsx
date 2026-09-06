@@ -12,10 +12,10 @@ export default function DashboardLayout({
     <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
-			<TopNav/>
-			<main className="p-4">
-				{children}
-			</main>
+          <TopNav/>
+          <main className="p-4">
+            {children}
+          </main>
         </SidebarInset>
     </SidebarProvider>
   );
