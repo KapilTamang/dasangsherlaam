@@ -33,9 +33,9 @@ export default function CardRowLarge ({data}: cardItemProps){
                     <header className="card-header">
                         <h1 className="w-full md:w-sm lg:w-lg text-[1.3rem] md:text-[2rem] lg:text-[2.8rem] leading-8 md:leading-11 lg:leading-14 font-extrabold group-hover:underline underline md:no-underline">{data.title}</h1>
                     </header>
-                    <p className="line-clamp-3 w-full md:w-sm lg:w-lg font-light">
+                    <span className="line-clamp-3 w-full md:w-sm lg:w-lg font-light text-[0.9rem] md:text-[1rem] leading-6 md:leading-7">
                         {data.description}
-                    </p>
+                    </span>
                     <p className="text-left capitalize font-semibold text-muted-foreground">by {data.author} </p>
                 </div>
             </article>

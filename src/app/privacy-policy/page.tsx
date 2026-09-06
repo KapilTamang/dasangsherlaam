@@ -63,7 +63,7 @@ export default function Privacy() {
                                                     {policy.title}
                                                 </span>
                                                 <div className="privacy-policy-term-text-description border-l border-l-primary/80 px-2">
-                                                     {policy.description}
+                                                    <p>{policy.description}</p>
                                                 </div>
                                             </div>
                                         </div>

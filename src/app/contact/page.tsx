@@ -59,11 +59,11 @@ export default function Contact() {
                                     <p className="text-[1.1rem] md:text-[1.125rem] lg:text-[1.3rem] capitalize">I'm a <span className="uppercase font-extrabold">{Author.title}</span></p>
                                 </div>
                                 <div className="contact-page-section-author-description px-4 text-[1rem] -mt-2 lg:-mt-4 border-l border-l-primary">
-                                    {Author.description} 
+                                    <p>{Author.description}</p> 
                                 </div>
                                 <div className="flex gap-2">
-                                    <span> <Megaphone className="inline text-primary" size={18}/> </span>
-                                    <span> If you do like my work, Please <span className="capitalize font-bold">subscribe</span> for the latest events and blogs. I would appriciate your love and support. </span>
+                                    <span> <Megaphone className="inline text-primary mt-1" size={18}/> </span>
+                                    <p> If you do like my work, Please <span className="capitalize font-bold">subscribe</span> for the latest events and blogs. I would appriciate your love and support. </p>
                                 </div>
                                 <div className="contact-page-section-author-link flex flex-col gap-4 italic">
                                     To know more about me 

@@ -34,7 +34,7 @@ export default function Card({data, width}: cardItemProps) {
                         preload
                     />
                 </figure>
-                <div className="card-content flex flex-col gap-2 p-4 md:p-4 text-card-featured-foreground md:text-foreground">
+                <div className="card-content flex flex-col gap-3 p-4 md:p-4 text-card-featured-foreground md:text-foreground">
                     <div className="card-category-tag absolute left-2 top-3">
                         <CategoryTag title={data.category}/>
                     </div>
@@ -42,9 +42,9 @@ export default function Card({data, width}: cardItemProps) {
                         <h1 className="line-clamp-3 underline md:no-underline group-hover:underline duration-300">{data.title}</h1>
                     </header>
                     <div className="card-body">
-                        <p className="line-clamp-2">
+                        <span className="line-clamp-2 text-[0.9rem] md:text-[1rem] leading-6 md:leading-7">
                             {data.description}
-                        </p>
+                        </span>
                     </div>
                     <footer className="card-footer flex gap-8 mt-2 text-[0.9rem] md:text-[1rem] md:text-muted-foreground">
                         <div className="card-footer-date flex items-center gap-1">

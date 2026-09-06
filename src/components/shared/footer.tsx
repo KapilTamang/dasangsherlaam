@@ -20,7 +20,7 @@ export default function Footer() {
                                     <span className="bg-primary text-card-featured-foreground px-2 py-2 rounded-md">dasang blogs</span>
                                 </div>
                                 <div className="footer-section-content-info-company-description text-[1rem] text-center md:text-left">
-                                Websites that provides you the most interesting & educational blogs.
+                                    Websites that provides you the most interesting & educational blogs.
                                 </div>
                             </div>
                             <nav className="footer-section-content-info-sociallinks flex flex-col gap-3 items-center md:items-start">
