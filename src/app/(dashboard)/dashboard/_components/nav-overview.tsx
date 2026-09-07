@@ -20,7 +20,7 @@ export function NavOverview()
 		<SidebarMenu>
 			<SidebarMenuItem>
 				<Link href="/dashboard">
-					<SidebarMenuButton tooltip="Overview">
+					<SidebarMenuButton tooltip="Overview" className="cursor-pointer">
 						<Summary />
 						<span>Summary</span>
 					</SidebarMenuButton>

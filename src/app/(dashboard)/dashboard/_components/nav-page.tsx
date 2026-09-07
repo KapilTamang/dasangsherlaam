@@ -21,9 +21,9 @@ export function NavPage()
             {pages.map((item) => (
 				<SidebarMenuItem key={item.id}>
 					<Link href={item.url}>
-						<SidebarMenuButton tooltip={item.title}>
-							{item.icon && <item.icon />}
-							<span>{item.title}</span>
+						<SidebarMenuButton tooltip={item.title} className="cursor-pointer">
+								{item.icon && <item.icon />}
+								<span>{item.title}</span>
 						</SidebarMenuButton>
 					</Link>
 				</SidebarMenuItem>

@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, useSidebar,} from "@/components/ui/sidebar"
-
+import Link from "next/link"
 import {NavOverview} from "./nav-overview"
 import { NavUser } from "./nav-user"
 import { NavAnalytic } from "./nav-analytic"
@@ -19,7 +19,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
 		<Sidebar collapsible="icon" {...props}>
 			<SidebarHeader>
-				<div className={`flex items-center gap-2 ${open ? 'ml-2' : ''} duration-200`}>
+				<Link href="/dashboard" className={`flex items-center gap-2 ${open ? 'ml-2' : ''} duration-200`}>
 					<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
 						<span className="uppercase font-extrabold text-[1.2rem]">d</span>
 					</div>
@@ -27,7 +27,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 						<span className="truncate font-bold">DasangSherlaam</span>
 						<span className="truncate text-xs">Dashboard</span>
 					</div>
-				</div>
+				</Link>
 			</SidebarHeader>
 			<SidebarContent>
 				<NavOverview/>
