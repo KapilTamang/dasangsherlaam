@@ -98,7 +98,7 @@ export default function Category() {
                                             </h1>
                                         </div>
                                         <div className="category-page-banner-section-details-description text-[0.9rem] md:text-[1rem] lg:text-[1.125rem]">
-                                            {currentCategory?.description} 
+                                            <p> {currentCategory?.description} </p>
                                         </div>
                                     </div>
                                 </div>

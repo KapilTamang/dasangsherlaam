@@ -193,8 +193,8 @@ export function RegisterForm() {
                             Already have an account? <Link href="/auth/login">Login</Link>
                         </FieldDescription>
                         <FieldDescription className="px-6 text-center">
-                            By clicking continue, you agree to our <Link href="#">Terms of Service</Link>{" "}
-                            and <Link href="/privacy-policy">Privacy Policy</Link>.
+                            By clicking continue, you agree to our <Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms and Conditions</Link>{" "}
+                            and <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
                         </FieldDescription>
                     </Field>
                 </FieldGroup>
