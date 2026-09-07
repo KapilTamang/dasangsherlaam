@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -18,12 +19,13 @@ export function NavSetting()
          <SidebarGroupLabel>Settings</SidebarGroupLabel>
         <SidebarMenu>
             {settings.map((item) => (
-           
             <SidebarMenuItem key={item.id}>
+              <Link href={item.url}>
                 <SidebarMenuButton tooltip={item.title}>
                     {item.icon && <item.icon />}
                     <span>{item.title}</span>
                 </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
             ))}
         </SidebarMenu>

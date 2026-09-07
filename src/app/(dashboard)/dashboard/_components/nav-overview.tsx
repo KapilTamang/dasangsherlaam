@@ -16,17 +16,17 @@ export function NavOverview()
 {
   return (
     <SidebarGroup>
-        <SidebarGroupLabel>Overview</SidebarGroupLabel>
-		<Link href="/dashboard">
-			<SidebarMenu>
-				<SidebarMenuItem>
+      	<SidebarGroupLabel>Overview</SidebarGroupLabel>
+		<SidebarMenu>
+			<SidebarMenuItem>
+				<Link href="/dashboard">
 					<SidebarMenuButton tooltip="Overview">
 						<Summary />
 						<span>Summary</span>
 					</SidebarMenuButton>
-				</SidebarMenuItem>
-			</SidebarMenu>
-		</Link>
+				</Link>
+			</SidebarMenuItem>
+		</SidebarMenu>
     </SidebarGroup>
   )
 }

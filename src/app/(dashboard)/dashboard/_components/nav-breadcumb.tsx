@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { usePathname, useParams } from "next/navigation"
 import { resolveBreadcrumbs } from "@/utils/breadcrumb-utils"
