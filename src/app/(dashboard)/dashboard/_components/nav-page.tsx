@@ -15,7 +15,7 @@ export function NavPage()
 {
   return (
     <SidebarGroup>
-         <SidebarGroupLabel>Manage Pages</SidebarGroupLabel>
+        <SidebarGroupLabel className="w-auto">Manage Pages</SidebarGroupLabel>
         <SidebarMenu>
             {pages.map((item) => (
            

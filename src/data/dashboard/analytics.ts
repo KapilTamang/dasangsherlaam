@@ -25,27 +25,27 @@ const analytics: Analytic[] = [
             {
                 id: 1,
                 title: 'Reader Traffic',
-                url: '#',
+                url: '/dashboard/analytics/reader-traffic',
             },
             {
                 id: 2,
                 title: 'Performance',
-                url: '#',
+                url: '/dashboard/analytics/performance',
             },
             {
                 id: 3,
                 title: 'Traffic Sources',
-                url: '#',
+                url: '/dashboard/analytics/traffic-sources',
             },
             {
                 id: 4,
                 title: 'Audience & Devices',
-                url: '#',
+                url: '/dashboard/analytics/audience-and-devices',
             },
             {
                 id: 5,
                 title: 'Growth & Engagement',
-                url: ''
+                url: '/dashboard/analytics/growth-and-engagement'
             }
         ],
     },
