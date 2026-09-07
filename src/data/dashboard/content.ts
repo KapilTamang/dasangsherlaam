@@ -25,12 +25,12 @@ const contents: Content[] = [
             {
                 id:1,
                 title: 'All Posts',
-                url: '#',
+                url: '/dashboard/posts',
             },
             {
                 id: 2,
                 title: 'Create New',
-                url: '#',
+                url: '/dashboard/posts/create',
             },
         ],
     },
