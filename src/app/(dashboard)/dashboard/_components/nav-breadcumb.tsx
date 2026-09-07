@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useParams } from "next/navigation"
 import { resolveBreadcrumbs } from "@/utils/breadcrumb-utils"
 
 import {
@@ -12,8 +12,10 @@ import {
 } from "@/components/ui/breadcrumb"
 
 export function NavBreadcumb() {
+    const params = useParams();
+    const slug = params.slug?.toString();
     const pathname = usePathname();
-    const items = resolveBreadcrumbs(pathname);
+    const items = resolveBreadcrumbs(pathname, slug ?? "");
 
     return (
         <Breadcrumb>
