@@ -44,12 +44,12 @@ const contents: Content[] = [
             {
                 id: 1,
                 title: 'All Categories',
-                url: '#',
+                url: '/dashboard/categories',
             },
             {
                 id: 2,
                 title: 'Create New',
-                url: '#',
+                url: '/dashboard/categories/create',
             },
         ],
     },
