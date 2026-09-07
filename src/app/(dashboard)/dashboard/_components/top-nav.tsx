@@ -1,20 +1,12 @@
 "use client"
 
 import { SidebarTrigger } from "@/components/ui/sidebar"
-
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-
 import {Separator} from "@/components/ui/separator"
 import { ModeToggle } from "@/components/shared/theme-toggle"
+import {NavBreadcumb} from "./nav-breadcumb"
 
 export default function TopNav () {
+
     return(
         <header className="sticky top-0 bg-background flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 shadow-xs">
             <div className="flex items-center gap-2 px-4">
@@ -23,19 +15,7 @@ export default function TopNav () {
                 orientation="vertical"
                 className="mr-2 data-[orientation=vertical]:h-4 my-auto"
                 />
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem className="hidden md:block">
-                            <BreadcrumbLink href="#">
-                                Build Your Application
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator className="hidden md:block" />
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
+                <NavBreadcumb/>
             </div>
             <div className="fixed top-4 right-5">
                 <ModeToggle/>

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -15,15 +16,17 @@ export function NavOverview()
 {
   return (
     <SidebarGroup>
-         <SidebarGroupLabel>Overview</SidebarGroupLabel>
-        <SidebarMenu>
-            <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Overview">
-                    <Summary />
-                    <span>Summary</span>
-                </SidebarMenuButton>
-            </SidebarMenuItem>
-        </SidebarMenu>
+        <SidebarGroupLabel>Overview</SidebarGroupLabel>
+		<Link href="/dashboard">
+			<SidebarMenu>
+				<SidebarMenuItem>
+					<SidebarMenuButton tooltip="Overview">
+						<Summary />
+						<span>Summary</span>
+					</SidebarMenuButton>
+				</SidebarMenuItem>
+			</SidebarMenu>
+		</Link>
     </SidebarGroup>
   )
 }
