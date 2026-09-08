@@ -16,6 +16,8 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
   type ChartConfig,
 } from "@/components/ui/chart"
 import {
@@ -132,11 +134,11 @@ const chartConfig = {
   },
   desktop: {
     label: "Desktop",
-    color: "var(--primary)",
+    color: "var(--chart-1)",
   },
   mobile: {
     label: "Mobile",
-    color: "var(--primary)",
+    color: "var(--chart-2)",
   },
 } satisfies ChartConfig
 
@@ -283,6 +285,7 @@ export function ChartAreaInteractive() {
 					stroke="var(--color-desktop)"
 					stackId="a"
 					/>
+          	<ChartLegend content={<ChartLegendContent />} />
 				</AreaChart>
 			</ChartContainer>
 		</CardContent>
