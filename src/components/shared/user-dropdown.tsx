@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Avatar, AvatarImage} from "@/components/ui/avatar"
-import { MailCheckIcon, CalendarCheck, UserKey, LogOutIcon, ChevronDown, CircleCheckBig, CalendarX, CircleGauge} from "lucide-react"
+import { MailCheckIcon, CalendarCheck, UserKey, LogOutIcon, ChevronDown, CircleCheckBig, CalendarX, LayoutDashboard} from "lucide-react"
 import {DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuSeparator,DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -63,7 +63,7 @@ export default function UserDropdown() {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                     <Link href="/dashboard" className="w-full flex gap-2 items-center capitalize">
-                        <CircleGauge />
+                        <LayoutDashboard/>
                         dashboard
                     </Link>
                 </DropdownMenuItem>

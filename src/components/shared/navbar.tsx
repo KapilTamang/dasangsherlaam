@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image";
 import {Menu, ChevronDown, Search, Library, CalendarCheck, ArrowUpToLine, MailCheckIcon,
- UserKeyIcon, LogOutIcon, CircleCheckBig, CalendarX, X, CircleGauge} from "lucide-react";
+ UserKeyIcon, LogOutIcon, CircleCheckBig, CalendarX, X, LayoutDashboard} from "lucide-react";
 import Dropdown from "./dropdown";
 import {
   NavigationMenu,
@@ -212,7 +212,7 @@ export default function Navbar() {
                                     }
                                     <span className="w-full flex gap-4 justify-around items-center">
                                         <Link href="/dashboard" className="w-full flex gap-2 items-center capitalize">
-                                            <CircleGauge className="w-5 h-5"/>
+                                            <LayoutDashboard className="w-5 h-5"/>
                                             Dashboard
                                         </Link>
                                     </span>
