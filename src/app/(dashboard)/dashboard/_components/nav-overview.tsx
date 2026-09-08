@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-import { Summary } from "lucide-react"
+import { LayoutDashboard } from "lucide-react"
 
 export function NavOverview() 
 
@@ -21,8 +21,8 @@ export function NavOverview()
 			<SidebarMenuItem>
 				<Link href="/dashboard">
 					<SidebarMenuButton tooltip="Overview" className="cursor-pointer">
-						<Summary />
-						<span>Summary</span>
+						<LayoutDashboard />
+						<span>Dashboard</span>
 					</SidebarMenuButton>
 				</Link>
 			</SidebarMenuItem>
