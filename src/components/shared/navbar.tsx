@@ -36,7 +36,7 @@ export default function Navbar() {
     const [isScrollTop, setIsScrollTop] = React.useState(false);
 
     //Define state for user login state
-    const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(false);
+    const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(true);
 
     //Define subscription state
     const isSubscribed = true;
