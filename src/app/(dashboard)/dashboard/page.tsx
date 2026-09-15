@@ -15,8 +15,6 @@ export default function Dashboard() {
 		duration: ""
 	});
 
-	console.log(selectedPeriod?.duration);
-
     return(
 		<div className="dashboard-home">
 			<div className="flex flex-1 flex-col">
@@ -24,8 +22,8 @@ export default function Dashboard() {
 					<div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
 						<PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
 						<SectionCards selectedPeriod={selectedPeriod}/>
-						<div className="px-4 lg:px-6">
-							<ChartAreaInteractive />
+						<div className="lg:px-6">
+							<ChartAreaInteractive/>
 						</div>
 					</div>
 				</div>
