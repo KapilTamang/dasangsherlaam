@@ -1,4 +1,4 @@
-import {LucideIcon, BookOpen, LayoutGrid} from "lucide-react"
+import {LucideIcon, BookOpen, List} from "lucide-react"
 
 interface Content {
     id: number,
@@ -39,7 +39,7 @@ const contents: Content[] = [
         title: 'Categories',
         url: '#',
         isActive: false,
-        icon: LayoutGrid,
+        icon: List,
         items: [
             {
                 id: 1,
