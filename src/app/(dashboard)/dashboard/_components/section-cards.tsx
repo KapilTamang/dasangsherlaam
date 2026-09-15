@@ -10,14 +10,23 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export function SectionCards() {
+interface SelectedPeriodProps {
+    selectedPeriod: {
+        id: string,
+        title: string,
+        value: string,
+        duration: string,
+    }
+}
+
+export function SectionCards({ selectedPeriod }: SelectedPeriodProps) {
 
     const visitors = {
         title: '5.34K',
         description: 'visitors',
         badgeTitle: 12.5,
         trending: 'positive',
-        duration: '1 month'
+        remark: 'Visitors for the last'
     }
 
     const pageViews = {
@@ -25,7 +34,7 @@ export function SectionCards() {
         description: 'page views',
         badgeTitle: 20,
         trending: 'negative',
-        duration: '1 month'
+        remarks: 'Declining audience interests'
     }
 
     const registered = {
@@ -33,7 +42,7 @@ export function SectionCards() {
         description: 'registered',
         badgeTitle: 5.2,
         trending: 'positive',
-        duration: '1 month'
+        remarks: 'Decent increment on leads'
     }
 
     const subscribers = {
@@ -41,7 +50,7 @@ export function SectionCards() {
         description: 'subscribers',
         badgeTitle: 17,
         trending: 'positive',
-        duration: '1 month'
+        remarks: 'Strong user acquitision'
     }
 
   return (
@@ -75,20 +84,20 @@ export function SectionCards() {
                         visitors.trending === 'negative' ? 
                         (   
                             <>
-                                <span>Trending down this month </span>
+                                <span>Trending down this {selectedPeriod.duration} </span>
                                 <TrendingDown className="size-4"/>
                             </>
                         )
                         :(
                             <>
-                                <span>Trending up this month </span>
+                                <span>Trending up this {selectedPeriod.duration} </span>
                                 <TrendingUp className="size-4"/>
                             </>
                         )
                     }
                 </div>
                 <div className="text-muted-foreground">
-                    Visitors for the last {visitors.duration}
+                    Visitors for the last {selectedPeriod.duration}
                 </div>
             </CardFooter>
         </Card>
@@ -121,20 +130,20 @@ export function SectionCards() {
                         pageViews.trending === 'negative' ? 
                         (   
                             <>
-                                <span>Down {pageViews.badgeTitle}% this month</span>
+                                <span>Down {pageViews.badgeTitle}% this {selectedPeriod.duration}</span>
                                 <TrendingDown className="size-4"/>
                             </>
                         )
                         :(
                            <>
-                                <span>Up {pageViews.badgeTitle}% this month</span>
+                                <span>Up {pageViews.badgeTitle}% this {selectedPeriod.duration}</span>
                                 <TrendingUp className="size-4"/>
                             </>
                         )
                     }
                 </div>
                 <div className="text-muted-foreground">
-                   sfasdfsd
+                   {pageViews.remarks}
                 </div>
             </CardFooter>
         </Card>
@@ -167,20 +176,20 @@ export function SectionCards() {
                         registered.trending === 'negative' ? 
                         (   
                             <>
-                                <span>Down {registered.badgeTitle}% this month</span>
+                                <span>Down {registered.badgeTitle}% this {selectedPeriod.duration} </span>
                                 <TrendingDown className="size-4"/>
                             </>
                         )
                         :(
                            <>
-                                <span>Up {registered.badgeTitle}% this month</span>
+                                <span>Up {registered.badgeTitle}% this {selectedPeriod.duration}</span>
                                 <TrendingUp className="size-4"/>
                             </>
                         )
                     }
                 </div>
                 <div className="text-muted-foreground">
-                   Strong user retention
+                  {registered.remarks}
                 </div>
             </CardFooter>
         </Card>
@@ -213,20 +222,20 @@ export function SectionCards() {
                         subscribers.trending === 'negative' ? 
                         (   
                             <>
-                                <span>Down {subscribers.badgeTitle}% this month</span>
+                                <span>Down {subscribers.badgeTitle}% this {selectedPeriod.duration}</span>
                                 <TrendingDown className="size-4"/>
                             </>
                         )
                         :(
                            <>
-                                <span>Up {subscribers.badgeTitle}% this month</span>
+                                <span>Up {subscribers.badgeTitle}% this {selectedPeriod.duration}</span>
                                 <TrendingUp className="size-4"/>
                             </>
                         )
                     }
                 </div>
                 <div className="text-muted-foreground">
-                   Strong user retention
+                   {subscribers.remarks}
                 </div>
             </CardFooter>
         </Card>
