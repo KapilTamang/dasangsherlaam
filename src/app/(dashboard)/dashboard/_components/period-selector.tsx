@@ -5,41 +5,56 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup,
     SelectLabel, SelectItem
  } from '@/components/ui/select';
 
+type Period = {
+    id: string
+    title: string
+    value: string
+    duration: string
+}
+
+const periods: Period[] = [
+    {
+        id:'1',
+        title: 'last 7 days',
+        value: '7',
+        duration: 'week'
+    },
+    {
+        id: '2',
+        title: 'last 30 days',
+        value: '30',
+        duration: 'month'
+    },
+    {
+        id: '3',
+        title: 'last 90 days',
+        value: '90',
+        duration: 'quarter'
+    },
+    {
+        id: '4',
+        title: 'last 12 months',
+        value: '365',
+        duration: 'year'
+    }
+]
+
 export function PeriodSelector() {
     //Define state for selected value
-    const [selectedValue, setSelectedValue] = React.useState<string>('7');
+    const [selectedPeriod, setSelectedPeriod] = React.useState<Period>(periods[1]);
 
-    const periods = [
-        {
-            id: 1,
-            title: 'last 7 days',
-            value: '7'
-        },
-        {
-            id: 2,
-            title: 'last 30 days',
-            value: '30'
-        },
-        {
-            id: 3,
-            title: 'last 90 days',
-            value: '90'
-        },
-        {
-            id: 4,
-            title: 'last 12 months',
-            value: '365'
-        }
-    ]
 
     //Callback function to hanlde select input change for period
     const handlePeriodChange = (newValue: string) => {
-        setSelectedValue(newValue);
+        const period = periods.find((period) => period.value === newValue);
+        if(period) {
+            setSelectedPeriod(period);
+        }
     }
 
     return (
         <div className="period-container w-full flex justify-end px-4 lg:px-6">
-            <Select defaultValue={selectedValue} onValueChange={handlePeriodChange}>
+            <Select defaultValue={selectedPeriod.value} onValueChange={handlePeriodChange}>
                 <SelectTrigger className="w-full sm:w-50 md:w-64">
                     <SelectValue/>
                 </SelectTrigger>
