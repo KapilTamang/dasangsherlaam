@@ -94,7 +94,7 @@ export default function Search() {
         }
     };
 
-    //Callback function to hand select input change for category
+    //Callback function to handle select input change for category
     const handleCategoryChange = (value: string) => {
         setFormValues((prev) => ({
             ...prev,

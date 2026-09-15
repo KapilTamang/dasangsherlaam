@@ -11,90 +11,223 @@ import {
 } from "@/components/ui/card"
 
 export function SectionCards() {
+
+    const visitors = {
+        title: '5.34K',
+        description: 'visitors',
+        badgeTitle: 12.5,
+        trending: 'positive',
+        duration: '1 month'
+    }
+
+    const pageViews = {
+        title: '32.345K',
+        description: 'page views',
+        badgeTitle: 20,
+        trending: 'negative',
+        duration: '1 month'
+    }
+
+    const registered = {
+        title: '3.2K',
+        description: 'registered',
+        badgeTitle: 5.2,
+        trending: 'positive',
+        duration: '1 month'
+    }
+
+    const subscribers = {
+        title: '2.6K',
+        description: 'subscribers',
+        badgeTitle: 17,
+        trending: 'positive',
+        duration: '1 month'
+    }
+
   return (
-    <div className="grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4 dark:*:data-[slot=card]:bg-card">
+    <div className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4 dark:*:data-[slot=card]:bg-card">
+        {/* Card for visitors */}
         <Card className="@container/card">
             <CardHeader>
-                <CardDescription>Total Revenue</CardDescription>
+                <CardDescription className="capitalize">{visitors.description}</CardDescription>
                 <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                    $1,250.00
+                    {visitors.title}
                 </CardTitle>
                 <CardAction>
-                    <Badge variant="outline">
-                        <TrendingUp />
-                        +12.5%
+                    <Badge variant="outline" className={`${visitors.trending === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>
+                        {
+                            visitors.trending === 'negative' ? 
+                            (
+                                <><TrendingDown/> -</>
+                            )
+                            :
+                            (
+                                <><TrendingUp/> +</>
+                            )
+                        }
+                        {visitors.badgeTitle}%
                     </Badge>
                 </CardAction>
             </CardHeader>
             <CardFooter className="flex-col items-start gap-1.5 text-sm">
                 <div className="line-clamp-1 flex gap-2 font-medium">
-                    Trending up this month <TrendingUp className="size-4" />
+                    {
+                        visitors.trending === 'negative' ? 
+                        (   
+                            <>
+                                <span>Trending down this month </span>
+                                <TrendingDown className="size-4"/>
+                            </>
+                        )
+                        :(
+                            <>
+                                <span>Trending up this month </span>
+                                <TrendingUp className="size-4"/>
+                            </>
+                        )
+                    }
                 </div>
                 <div className="text-muted-foreground">
-                    Visitors for the last 6 months
+                    Visitors for the last {visitors.duration}
                 </div>
             </CardFooter>
         </Card>
+        {/* Card for pageviews */}
         <Card className="@container/card">
             <CardHeader>
-                <CardDescription>New Customers</CardDescription>
+                <CardDescription className="capitalize">{pageViews.description}</CardDescription>
                 <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                    1,234
+                    {pageViews.title}
                 </CardTitle>
                 <CardAction>
-                    <Badge variant="outline">
-                        <TrendingDown />
-                        -20%
+                   <Badge variant="outline" className={`${pageViews.trending === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>
+                        {
+                            pageViews.trending === 'negative' ? 
+                            (
+                                <><TrendingDown/> -</>
+                            )
+                            :
+                            (
+                                <><TrendingUp/> +</>
+                            )
+                        }
+                        {pageViews.badgeTitle}%
                     </Badge>
                 </CardAction>
             </CardHeader>
             <CardFooter className="flex-col items-start gap-1.5 text-sm">
                 <div className="line-clamp-1 flex gap-2 font-medium">
-                    Down 20% this period <TrendingDown className="size-4" />
+                    {
+                        pageViews.trending === 'negative' ? 
+                        (   
+                            <>
+                                <span>Down {pageViews.badgeTitle}% this month</span>
+                                <TrendingDown className="size-4"/>
+                            </>
+                        )
+                        :(
+                           <>
+                                <span>Up {pageViews.badgeTitle}% this month</span>
+                                <TrendingUp className="size-4"/>
+                            </>
+                        )
+                    }
                 </div>
                 <div className="text-muted-foreground">
-                    Acquisition needs attention
+                   sfasdfsd
                 </div>
             </CardFooter>
         </Card>
+        {/* Card for registered */}
         <Card className="@container/card">
             <CardHeader>
-                <CardDescription>Active Accounts</CardDescription>
+                <CardDescription className="capitalize">{registered.description}</CardDescription>
                 <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                    45,678
+                    {registered.title}
                 </CardTitle>
                 <CardAction>
-                    <Badge variant="outline">
-                        <TrendingUp />
-                        +12.5%
+                    <Badge variant="outline" className={`${registered.trending === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>
+                        {
+                            registered.trending === 'negative' ? 
+                            (
+                                <><TrendingDown/> -</>
+                            )
+                            :
+                            (
+                                <><TrendingUp/> +</>
+                            )
+                        }
+                        {registered.badgeTitle}%
                     </Badge>
                 </CardAction>
             </CardHeader>
             <CardFooter className="flex-col items-start gap-1.5 text-sm">
                 <div className="line-clamp-1 flex gap-2 font-medium">
-                    Strong user retention <TrendingUp className="size-4" />
+                    {
+                        registered.trending === 'negative' ? 
+                        (   
+                            <>
+                                <span>Down {registered.badgeTitle}% this month</span>
+                                <TrendingDown className="size-4"/>
+                            </>
+                        )
+                        :(
+                           <>
+                                <span>Up {registered.badgeTitle}% this month</span>
+                                <TrendingUp className="size-4"/>
+                            </>
+                        )
+                    }
                 </div>
-                <div className="text-muted-foreground">Engagement exceed targets</div>
+                <div className="text-muted-foreground">
+                   Strong user retention
+                </div>
             </CardFooter>
         </Card>
+        {/* Card for subscribers */}
         <Card className="@container/card">
             <CardHeader>
-                <CardDescription>Growth Rate</CardDescription>
+                <CardDescription className="capitalize">{subscribers.description}</CardDescription>
                 <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                    4.5%
+                    {subscribers.title}
                 </CardTitle>
                 <CardAction>
-                    <Badge variant="outline">
-                        <TrendingUp />
-                        +4.5%
+                    <Badge variant="outline" className={`${subscribers.trending === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>
+                        {
+                            subscribers.trending === 'negative' ? 
+                            (
+                                <><TrendingDown/> -</>
+                            )
+                            :
+                            (
+                                <><TrendingUp/> +</>
+                            )
+                        }
+                        {subscribers.badgeTitle}%
                     </Badge>
                 </CardAction>
             </CardHeader>
             <CardFooter className="flex-col items-start gap-1.5 text-sm">
                 <div className="line-clamp-1 flex gap-2 font-medium">
-                    Steady performance increase <TrendingUp className="size-4" />
+                    {
+                        subscribers.trending === 'negative' ? 
+                        (   
+                            <>
+                                <span>Down {subscribers.badgeTitle}% this month</span>
+                                <TrendingDown className="size-4"/>
+                            </>
+                        )
+                        :(
+                           <>
+                                <span>Up {subscribers.badgeTitle}% this month</span>
+                                <TrendingUp className="size-4"/>
+                            </>
+                        )
+                    }
                 </div>
-                <div className="text-muted-foreground">Meets growth projections</div>
+                <div className="text-muted-foreground">
+                   Strong user retention
+                </div>
             </CardFooter>
         </Card>
     </div>
