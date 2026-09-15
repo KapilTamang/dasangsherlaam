@@ -135,39 +135,24 @@ const chartConfig = {
 
 export function ChartAreaInteractive() {
 const isMobile = useIsMobile();
-const [timeRange, setTimeRange] = React.useState("7d")
-const [chartDuration,setChartDuration] = React.useState("week")
+const [timeRange, setTimeRange] = React.useState("30")
 
 
   //Only weekly chart for mobile devices
     React.useEffect(() => {
     if (isMobile) {
-      setTimeRange("7d")
-	  setChartDuration("week")
+      setTimeRange("7")
     }
   }, [isMobile])
 
   const filteredData = chartData.filter((item) => {
     const date = new Date(item.date)
     const referenceDate = new Date("2024-06-30")
-    let daysToSubtract = 7
-	setChartDuration("week")
+    const daysToSubtract = Number(timeRange);
 
-    if (timeRange === "365d") {
-      	daysToSubtract = 365
-		setChartDuration("year")
-    } 
-	else if (timeRange === "90d") {
-		daysToSubtract = 90
-		setChartDuration("quarter")
-    }	
-	else if (timeRange === "30d") {
-		daysToSubtract = 30
-		setChartDuration("month")
-    }
-    const startDate = new Date(referenceDate)
-    startDate.setDate(startDate.getDate() - daysToSubtract)
-    return date >= startDate
+	const startDate = new Date(referenceDate)
+	startDate.setDate(startDate.getDate() - daysToSubtract)
+	return date >= startDate
   });
 
   return (
@@ -176,7 +161,7 @@ const [chartDuration,setChartDuration] = React.useState("week")
         <div className="grid flex-1 gap-1">
           <CardTitle>Traffic And Audience Trend</CardTitle>
           <CardDescription>
-            Showing visitor's acquisition for the last {chartDuration}
+            Showing visitor acquisition for the last {timeRange === '7' ? 'week' : timeRange === '30' ? 'month' : timeRange === '90' ? 'quarter' : 'year'} 
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
@@ -184,19 +169,19 @@ const [chartDuration,setChartDuration] = React.useState("week")
             className="hidden w-40 rounded-lg sm:ml-auto sm:flex"
             aria-label="Select a value"
           >
-            <SelectValue placeholder="Last 3 months" />
+            <SelectValue/>
           </SelectTrigger>
           <SelectContent className="rounded-xl">
-			  <SelectItem value="7d" className="rounded-lg">
+			  <SelectItem value="7" className="rounded-lg">
               Last 7 days
             </SelectItem>
-			 <SelectItem value="30d" className="rounded-lg">
+			 <SelectItem value="30" className="rounded-lg">
               Last 30 days
             </SelectItem>
-			 <SelectItem value="90d" className="rounded-lg">
+			 <SelectItem value="90" className="rounded-lg">
               Last 3 months
             </SelectItem>
-            <SelectItem value="365d" className="rounded-lg">
+            <SelectItem value="365" className="rounded-lg">
               Last 12 months
             </SelectItem>
           </SelectContent>
@@ -254,7 +239,7 @@ const [chartDuration,setChartDuration] = React.useState("week")
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                    return new Date(String(value)).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                     })

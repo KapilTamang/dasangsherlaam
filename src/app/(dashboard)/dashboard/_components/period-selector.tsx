@@ -27,7 +27,7 @@ const periods: Period[] = [
     },
     {
         id: '3',
-        title: 'last 90 days',
+        title: 'last 3 months',
         value: '90',
         duration: 'quarter'
     },
