@@ -39,16 +39,29 @@ const periods: Period[] = [
     }
 ]
 
-export function PeriodSelector() {
-    //Define state for selected value
-    const [selectedPeriod, setSelectedPeriod] = React.useState<Period>(periods[1]);
+//Define period setter props interface
+interface PeriodSetter {
+    //setter function
+    getSelectedPeriod: React.Dispatch<React.SetStateAction<Period>>;
+}
 
+export function PeriodSelector({getSelectedPeriod}: PeriodSetter) {
+    //Define state for selected value
+    const [selectedPeriod, setSelectedPeriod] = React.useState<Period>(periods[0]);
+
+    //Set the default select value to setter props function
+    React.useEffect(() => {
+        getSelectedPeriod(selectedPeriod)
+    });
 
     //Callback function to hanlde select input change for period
     const handlePeriodChange = (newValue: string) => {
         const period = periods.find((period) => period.value === newValue);
         if(period) {
+            //For local scope
             setSelectedPeriod(period);
+            //setter for props
+            getSelectedPeriod(period);
         }
     }
 
