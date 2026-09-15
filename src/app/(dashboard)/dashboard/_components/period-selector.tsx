@@ -38,7 +38,7 @@ export function PeriodSelector() {
     }
 
     return (
-        <div className="period-container w-full flex justify-end px-5">
+        <div className="period-container w-full flex justify-end px-4 lg:px-6">
             <Select defaultValue={selectedValue} onValueChange={handlePeriodChange}>
                 <SelectTrigger className="w-full sm:w-50 md:w-64">
                     <SelectValue/>

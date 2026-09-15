@@ -10,13 +10,8 @@ export default function Dashboard() {
 				<div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
 					<PeriodSelector/>
 					<SectionCards />
-					<div className="grid grid-cols-4 gap-4 px-4 lg:px-6">
-						<div className="col-span-3">
-							<ChartAreaInteractive/>
-						</div>
-						<div className="col-span-1">
-							<ChartAreaInteractive/>
-						</div>
+					 <div className="px-4 lg:px-6">
+						<ChartAreaInteractive />
 					</div>
 				</div>
 			</div>
