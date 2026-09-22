@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis} from "recharts"
 
 import {
   Card,
@@ -20,9 +20,10 @@ import {
 import { TrendingUp, ArrowBigDown } from "lucide-react"
 
 const chartData = [
-	{user: 'visitors', total: 700, percentage: '100%', fill: 'var(--color-visitors)'},
-	{user: 'registrants', total: 320, percentage: '62%', fill: 'var(--color-registrants)'},
-	{user: 'subscribers', total: 120, percentage: '12%', fill: 'var(--color-subscribers)'},
+	{user: 'visitors', total: 7000, percentage: 100, fill: 'var(--color-visitors)'},
+	{user: 'registrants', total: 320, percentage: 62, fill: 'var(--color-registrants)'},
+	{user: 'subscribers', total: 120, percentage: 12, fill: 'var(--color-subscribers)'},
+	{user: 'unconverted', total: 260, percentage: 26, fill: 'var(--color-unconverted)'},
 ]
 
 const chartConfig = {
@@ -37,6 +38,10 @@ const chartConfig = {
 	subscribers: {
 		label: "Subscribers",
 		color: "var(--chart-3)",
+	},
+	unconverted: {
+		label: "Unconverted",
+		color: "var(--chart-4)",
 	},
 } satisfies ChartConfig
 
@@ -63,7 +68,8 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 					data={chartData}
 					layout="vertical"
 					margin={{
-					left: 24
+					left: 30,
+					right: 30
 					}}
 				>
 					<CartesianGrid horizontal={false} />
@@ -78,35 +84,26 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 						chartConfig[value as keyof typeof chartConfig]?.label
 					}
 					/>
-					<XAxis dataKey="total" type="number" hide />
+					<XAxis dataKey="percentage" type="number" hide />
 					<ChartTooltip
 					cursor={false}
 					content={<ChartTooltipContent indicator="line" />}
 					/>
-					<Bar dataKey="total" fill="var(--color-fill)" radius={4}/>
+					<Bar dataKey="percentage" fill="var(--color-fill)" radius={4}>
+						 <LabelList
+							dataKey="total"
+							position="right"
+							offset={8}
+							className="fill-foreground"
+							fontSize={12}
+						/>
+					</Bar>
 				</BarChart>
 			</ChartContainer>
 		</CardContent>
-		<div className="conversion w-full flex flex-col gap-2 items-center">
-			<span className="capitalize font-medium">
-				visitors ({chartData[0].total})
-			</span>
-			<span className="icon flex gap-1 items-center">
-				<ArrowBigDown className="w-5 h-5 text-primary"/>{chartData[1].percentage}
-			</span>
-			<div className="capitalize font-medium">
-				registrants ({chartData[1].total})
-			</div>
-			<span className="icon flex gap-1 items-center">
-				<ArrowBigDown className="w-5 h-5 text-primary"/>{chartData[2].percentage}
-			</span>
-			<div className="capitalize font-medium">
-				subscribers ({chartData[2].total})
-			</div>
-		</div>
 		<CardFooter className="flex-col items-start gap-2 text-sm">
 			<div className="flex gap-2 leading-none font-medium">
-				Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+				Conversion up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
 			</div>
 			<div className="leading-none text-muted-foreground">
 				Showing total visitors for the {selectedPeriod.title}
