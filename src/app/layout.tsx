@@ -35,7 +35,6 @@ export default function RootLayout({
         defaultTheme="light"
         enableSystem
         disableTransitionOnChange
-        scriptProps={{ type: 'application/json' }}
         >
           <TooltipProvider>
             {children}

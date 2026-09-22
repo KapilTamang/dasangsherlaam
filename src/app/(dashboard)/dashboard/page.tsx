@@ -4,7 +4,10 @@ import React from 'react'
 import { SectionCards } from "./_components/section-cards"
 import { ChartAreaInteractive } from "./_components/chat-area-interactive"
 import { PeriodSelector } from "./_components/period-selector"
-
+import { ConversionFunnelChart } from './_components/conversion-funnel-chart'
+import { TrafficSourceChart } from './_components/traffic-source-chart'
+import { AudienceChart } from './_components/audience-chart'
+ 
 
 export default function Dashboard() {
 	//Set state for selected period
@@ -24,6 +27,12 @@ export default function Dashboard() {
 						<SectionCards selectedPeriod={selectedPeriod}/>
 						<div className="lg:px-6">
 							<ChartAreaInteractive/>
+						</div>
+						<div className="conversion-traffic-audience-container grid grid-cols-4 gap-4 lg:px-6 items-stretch">
+							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>
+							<AudienceChart/>
+							<AudienceChart/>
+							<TrafficSourceChart/>
 						</div>
 					</div>
 				</div>
