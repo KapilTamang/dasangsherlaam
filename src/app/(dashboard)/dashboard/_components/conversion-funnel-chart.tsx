@@ -106,7 +106,7 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 				Conversion up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
 			</div>
 			<div className="leading-none text-muted-foreground">
-				Showing total visitors for the {selectedPeriod.title}
+				Showing converted visitors for the {selectedPeriod.title}
 			</div>
 		</CardFooter>
     </Card>

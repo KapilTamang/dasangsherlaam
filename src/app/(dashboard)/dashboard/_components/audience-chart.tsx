@@ -18,69 +18,74 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
-export const description = "A bar chart with a custom label"
+interface SelectedPeriodProps {
+    selectedPeriod: {
+        id: string,
+        title: string,
+        value: string,
+        duration: string
+    }
+}
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
+  { visitor: "overall", total: 1000, percentage: 100, fill: "var(--color-overall)" },
+  { visitor: "new", total: 750, percentage: 75, fill: "var(--color-new)" },
+  { visitor: "returning", total: 250, percentage: 25, fill: "var(--color-returning)"}
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  overall: {
+    label: "Total Visitors",
+    color: "var(--chart-1)",
+  },
+  new: {
+    label: "New Visitors",
     color: "var(--chart-2)",
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
-  },
-  label: {
-    color: "var(--background)",
-  },
+ returning: {
+    label: "Returning Visitors",
+    color: "var(--chart-3)"
+ },
 } satisfies ChartConfig
 
-export function AudienceChart() {
+export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Bar Chart - Custom Label</CardTitle>
+        <CardTitle>Audience</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-70 w-full">
+        <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
             data={chartData}
             layout="vertical"
             margin={{
-              right: 16,
+                left: 10,
+                right: 36
             }}
           >
             <CartesianGrid horizontal={false} />
             <YAxis
-              dataKey="month"
-              type="category"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-              hide
+            dataKey="visitor"
+            type="category"
+            tick={{fill: 'var(--color-foreground)'}}
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+            tickFormatter={(value) =>
+                chartConfig[value as keyof typeof chartConfig]?.label
+            }
             />
-            <XAxis dataKey="desktop" type="number" hide />
+            <XAxis dataKey="percentage" type="number" hide/>
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent indicator="line" />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4}>
+            <Bar dataKey="percentage" fill="var(--color-fill)" radius={4}>
               <LabelList
-                dataKey="month"
-                position="insideLeft"
-                offset={8}
-                className="fill-(--color-label)"
-                fontSize={12}
-              />
-              <LabelList
-                dataKey="desktop"
+                dataKey="total"
                 position="right"
                 offset={8}
                 className="fill-foreground"
@@ -92,10 +97,10 @@ export function AudienceChart() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Showing total visitors for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>

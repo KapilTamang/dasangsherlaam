@@ -32,8 +32,8 @@ export default function Dashboard() {
 						</section>
 						<section className="conversion-traffic-audience-cards grid grid-cols-4 gap-4 lg:px-6 items-stretch">
 							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>
-							<AudienceChart/>
-							<AudienceChart/>
+							<AudienceChart selectedPeriod={selectedPeriod}/>
+							<AudienceChart selectedPeriod={selectedPeriod}/>
 							<TrafficSourceChart/>
 						</section>
 					</div>
