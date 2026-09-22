@@ -24,16 +24,18 @@ export default function Dashboard() {
 				<div className="@container/main flex flex-1 flex-col gap-2">
 					<div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
 						<PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
-						<SectionCards selectedPeriod={selectedPeriod}/>
-						<div className="lg:px-6">
+						<section className="anlaytics-cards flex flex-col gap-4 md:gap-6">
+							<SectionCards selectedPeriod={selectedPeriod}/>
+						</section>
+						<section className="traffic-audience-trend lg:px-6">
 							<ChartAreaInteractive/>
-						</div>
-						<div className="conversion-traffic-audience-container grid grid-cols-4 gap-4 lg:px-6 items-stretch">
+						</section>
+						<section className="conversion-traffic-audience-cards grid grid-cols-4 gap-4 lg:px-6 items-stretch">
 							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>
 							<AudienceChart/>
 							<AudienceChart/>
 							<TrafficSourceChart/>
-						</div>
+						</section>
 					</div>
 				</div>
 			</div>

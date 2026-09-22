@@ -17,7 +17,7 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
-import { TrendingUp, ArrowBigDown } from "lucide-react"
+import { TrendingUp} from "lucide-react"
 
 const chartData = [
 	{user: 'visitors', total: 7000, percentage: 100, fill: 'var(--color-visitors)'},
