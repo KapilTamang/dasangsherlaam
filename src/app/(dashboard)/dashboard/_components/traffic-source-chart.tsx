@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart } from "recharts"
+import { Label, Pie, PieChart} from "recharts"
 
 import {
   Card,
@@ -16,46 +16,50 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+ChartLegend, 
+ChartLegendContent,
   type ChartConfig,
 } from "@/components/ui/chart"
 
-export const description = "A donut chart with text"
+interface SelectedPeriodProps {
+    selectedPeriod: {
+        id: string,
+        title: string,
+        value: string,
+        duration: string
+    }
+}
 
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
+  {source: "organic", visitors: 275, fill: "var(--color-organic)" },
+  {source: "direct", visitors: 200, fill: "var(--color-direct)" },
+  {source: "social", visitors: 287, fill: "var(--color-social)" },
+  {source: "referral", visitors: 173, fill: "var(--color-referral)" },
 ]
 
 const chartConfig = {
   visitors: {
     label: "Visitors",
   },
-  chrome: {
-    label: "Chrome",
+  organic: {
+    label: "Organic",
     color: "var(--chart-1)",
   },
-  safari: {
-    label: "Safari",
+  direct: {
+    label: "Direct",
     color: "var(--chart-2)",
   },
-  firefox: {
-    label: "Firefox",
+  social: {
+    label: "Social",
     color: "var(--chart-3)",
   },
-  edge: {
-    label: "Edge",
+  referral: {
+    label: "Referral",
     color: "var(--chart-4)",
-  },
-  other: {
-    label: "Other",
-    color: "var(--chart-5)",
   },
 } satisfies ChartConfig
 
-export function TrafficSourceChart() {
+export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
   const totalVisitors = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
   }, [])
@@ -66,22 +70,39 @@ export function TrafficSourceChart() {
         <CardTitle>Traffic Sources</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent>
         <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-62.5"
+        config={chartConfig}
+        className="mx-auto aspect-square max-h-50 w-full"
         >
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent hideLabel/>}
             />
             <Pie
-              data={chartData}
-              dataKey="visitors"
-              nameKey="browser"
-              innerRadius={60}
-              strokeWidth={5}
+            data={chartData}
+            dataKey="visitors"
+            nameKey="source"
+            labelLine={true}
+            label={({ payload, ...props }) => {
+                return (
+                <text
+                    className="capitalize"
+                    cx={props.cx}
+                    cy={props.cy}
+                    x={props.x}
+                    y={props.y}
+                    textAnchor={props.textAnchor}
+                    dominantBaseline={props.dominantBaseline}
+                    fill="var(--foreground)"
+                >
+                    {payload.source}
+                </text>
+                )
+            }}
+            innerRadius={45}
+            strokeWidth={1}
             >
               <Label
                 content={({ viewBox }) => {
@@ -116,12 +137,12 @@ export function TrafficSourceChart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
+      <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Traffic sources for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>

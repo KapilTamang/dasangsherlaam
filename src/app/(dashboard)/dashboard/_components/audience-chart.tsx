@@ -56,7 +56,7 @@ export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="aspect-square max-h-50 w-full">
           <BarChart
             accessibilityLayer
             data={chartData}
@@ -100,7 +100,7 @@ export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
           Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the {selectedPeriod.title}
+          total visitors for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>
