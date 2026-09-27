@@ -7,6 +7,7 @@ import { PeriodSelector } from "./_components/period-selector"
 import { ConversionFunnelChart } from './_components/conversion-funnel-chart'
 import { TrafficSourceChart } from './_components/traffic-source-chart'
 import { AudienceChart } from './_components/audience-chart'
+import { UserEngagement } from './_components/user-engagement'
  
 
 export default function Dashboard() {
@@ -33,7 +34,7 @@ export default function Dashboard() {
 						<section className="conversion-traffic-audience-cards grid grid-cols-1 @xl/main:grid-cols-2 @6xl/main:grid-cols-4 gap-4 lg:px-6 items-stretch">
 							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>
 							<AudienceChart selectedPeriod={selectedPeriod}/>
-							<AudienceChart selectedPeriod={selectedPeriod}/>
+							<UserEngagement/>
 							<TrafficSourceChart selectedPeriod={selectedPeriod}/>
 						</section>
 					</div>

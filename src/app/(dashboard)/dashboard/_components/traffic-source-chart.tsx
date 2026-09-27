@@ -16,8 +16,6 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-ChartLegend, 
-ChartLegendContent,
   type ChartConfig,
 } from "@/components/ui/chart"
 
@@ -31,11 +29,12 @@ interface SelectedPeriodProps {
 }
 
 const chartData = [
-  {source: "organic", visitors: 275, fill: "var(--color-organic)" },
-  {source: "direct", visitors: 200, fill: "var(--color-direct)" },
   {source: "social", visitors: 287, fill: "var(--color-social)" },
-  {source: "referral", visitors: 173, fill: "var(--color-referral)" },
+  {source: "direct", visitors: 200, fill: "var(--color-direct)" },
+  {source: "organic", visitors: 275, fill: "var(--color-organic)" },
   {source: "ads", visitors: 433, fill: "var(--color-ads)" },
+  {source: "referral", visitors: 173, fill: "var(--color-referral)" },
+  {source: "email", visitors: 433, fill: "var(--color-email)" },
 ]
 
 const chartConfig = {
@@ -61,6 +60,10 @@ const chartConfig = {
   ads: {
     label: "Paid Ads",
     color: "var(--chart-5)",
+  },
+  email: {
+    label: "Email Campaign",
+    color: "var(--chart-6)",
   },
 } satisfies ChartConfig
 
