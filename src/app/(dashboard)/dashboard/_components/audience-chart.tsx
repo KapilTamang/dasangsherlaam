@@ -97,10 +97,10 @@ export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+          Returning vistors 25% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          total visitors for the {selectedPeriod.title}
+          Showinig visitors for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>
