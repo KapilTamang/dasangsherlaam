@@ -34,7 +34,7 @@ const chartData = [
   {source: "organic", visitors: 275, fill: "var(--color-organic)" },
   {source: "ads", visitors: 433, fill: "var(--color-ads)" },
   {source: "referral", visitors: 173, fill: "var(--color-referral)" },
-  {source: "email", visitors: 433, fill: "var(--color-email)" },
+  {source: "email", visitors: 500, fill: "var(--color-email)" },
 ]
 
 const chartConfig = {
@@ -81,7 +81,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
       <CardContent>
         <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-60 w-full"
+        className="mx-auto aspect-square max-h-55 w-full"
         >
           <PieChart>
             <ChartTooltip
@@ -146,8 +146,9 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+        <div className="flex items-center gap-2 font-medium">
+          Email Campaign as the most effective traffic source with
+          overall 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
           Traffic sources for the {selectedPeriod.title}

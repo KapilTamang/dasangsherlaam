@@ -46,7 +46,7 @@ export function UserEngagement() {
         <CardDescription>Tooltip with custom formatter .</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="max-h-50">
           <BarChart accessibilityLayer data={chartData} layout="vertical">
             <XAxis
               dataKey="date"
@@ -76,7 +76,7 @@ export function UserEngagement() {
                 <ChartTooltipContent
                   hideLabel
                   formatter={(value, name) => (
-                    <div className="flex min-w-[130px] items-center text-xs text-muted-foreground">
+                    <div className="flex min-w-32.5 items-center text-xs text-muted-foreground">
                       {chartConfig[name as keyof typeof chartConfig]?.label ||
                         name}
                       <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium text-foreground tabular-nums">
