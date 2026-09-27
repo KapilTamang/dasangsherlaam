@@ -35,6 +35,7 @@ const chartData = [
   {source: "direct", visitors: 200, fill: "var(--color-direct)" },
   {source: "social", visitors: 287, fill: "var(--color-social)" },
   {source: "referral", visitors: 173, fill: "var(--color-referral)" },
+  {source: "ads", visitors: 433, fill: "var(--color-ads)" },
 ]
 
 const chartConfig = {
@@ -57,6 +58,10 @@ const chartConfig = {
     label: "Referral",
     color: "var(--chart-4)",
   },
+  ads: {
+    label: "Paid Ads",
+    color: "var(--chart-5)",
+  },
 } satisfies ChartConfig
 
 export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
@@ -73,7 +78,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
       <CardContent>
         <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-50 w-full"
+        className="mx-auto aspect-square max-h-60 w-full"
         >
           <PieChart>
             <ChartTooltip
@@ -101,7 +106,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
                 </text>
                 )
             }}
-            innerRadius={45}
+            innerRadius={55}
             strokeWidth={1}
             >
               <Label

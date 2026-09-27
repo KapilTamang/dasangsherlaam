@@ -62,7 +62,7 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 			<CardDescription> January - March 2026 </CardDescription>
 		</CardHeader>
 		<CardContent>
-			<ChartContainer config={chartConfig} className="aspect-square max-h-50 w-full">
+			<ChartContainer config={chartConfig} className="aspect-square max-h-60 w-full">
 				<BarChart
 					accessibilityLayer
 					data={chartData}
