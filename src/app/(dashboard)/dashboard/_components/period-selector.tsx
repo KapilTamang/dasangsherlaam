@@ -66,7 +66,7 @@ export function PeriodSelector({getSelectedPeriod}: PeriodSetter) {
     }
 
     return (
-        <div className="period-container sticky top-16 w-full flex justify-end lg:px-6">
+        <div className="z-50 period-container sticky top-16 group-has-data-[collapsible=icon]/sidebar-wrapper:top-12 duration-200 ease-linear w-full flex justify-end lg:px-6">
             <Select defaultValue={selectedPeriod.value} onValueChange={handlePeriodChange}>
                 <SelectTrigger className="w-full sm:w-50 md:w-64 bg-background">
                     <SelectValue/>
