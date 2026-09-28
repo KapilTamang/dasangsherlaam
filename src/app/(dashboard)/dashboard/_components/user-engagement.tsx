@@ -1,11 +1,13 @@
 "use client"
 
-import { Bar, BarChart, XAxis } from "recharts"
+import { TrendingUp } from "lucide-react"
+import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
 
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -16,85 +18,92 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
-export const description = "A stacked bar chart with a legend"
+interface SelectedPeriodProps {
+  selectedPeriod: {
+    id: string,
+    title: string,
+    value: string,
+    duration: string
+  }
+}
 
 const chartData = [
-  { date: "2024-07-15", running: 450, swimming: 300 },
-  { date: "2024-07-16", running: 380, swimming: 420 },
-  { date: "2024-07-17", running: 520, swimming: 120 },
-  { date: "2024-07-18", running: 140, swimming: 550 },
-  { date: "2024-07-19", running: 600, swimming: 350 },
-  { date: "2024-07-20", running: 480, swimming: 400 },
+  { source: "organic", session: 186},
+  { source: "direct", session: 305},
+  { source: "social", session: 237},
+  { source: "ads", session: 73},
+  { source: "referral", session: 209},
+  { source: "email", session: 214},
 ]
 
 const chartConfig = {
-  running: {
-    label: "Running",
-    color: "var(--chart-1)",
-  },
-  swimming: {
-    label: "Swimming",
-    color: "var(--chart-2)",
-  },
+  session: {
+    color: "var(--chart-1)"
+  }
+ 
 } satisfies ChartConfig
 
-export function UserEngagement() {
+export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Tooltip - Formatter</CardTitle>
-        <CardDescription>Tooltip with custom formatter .</CardDescription>
+        <CardTitle>User Enagement vs Different Traffic Sources</CardTitle>
+        <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="max-h-50">
-          <BarChart accessibilityLayer data={chartData} layout="vertical">
+        <ChartContainer config={chartConfig} className="w-full max-h-50">
+          <LineChart
+            accessibilityLayer
+            data={chartData}
+            margin={{
+              top: 20,
+              left: 12,
+              right: 12,
+            }}
+          >
+            <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="date"
+              dataKey="source"
               tickLine={false}
-              tickMargin={10}
+              tick={{fill: 'var(--color-foreground)'}}
               axisLine={false}
-              tickFormatter={(value) => {
-                return new Date(value).toLocaleDateString("en-US", {
-                  weekday: "short",
-                })
-              }}
-            />
-            <Bar
-              dataKey="running"
-              stackId="a"
-              fill="var(--color-running)"
-              radius={[0, 0, 4, 4]}
-            />
-            <Bar
-              dataKey="swimming"
-              stackId="a"
-              fill="var(--color-swimming)"
-              radius={[4, 4, 0, 0]}
+              tickMargin={8}
+              tickFormatter={(value) => value.slice(0, 3)}
             />
             <ChartTooltip
-              content={
-                <ChartTooltipContent
-                  hideLabel
-                  formatter={(value, name) => (
-                    <div className="flex min-w-32.5 items-center text-xs text-muted-foreground">
-                      {chartConfig[name as keyof typeof chartConfig]?.label ||
-                        name}
-                      <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium text-foreground tabular-nums">
-                        {value}
-                        <span className="font-normal text-muted-foreground">
-                          kcal
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                />
-              }
               cursor={false}
-              defaultIndex={1}
+              content={<ChartTooltipContent indicator="line" />}
             />
-          </BarChart>
+            <Line
+              dataKey="session"
+              type="natural"
+              stroke="var(--color-session)"
+              strokeWidth={2}
+              dot={{
+                fill: "var(--color-session)",
+              }}
+              activeDot={{
+                r: 6,
+              }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground capitalize"
+                fontSize={12}
+              />
+            </Line> 
+          </LineChart>
         </ChartContainer>
       </CardContent>
+      <CardFooter className="flex-col items-start gap-2 text-sm">
+        <div className="flex gap-2 font-medium">
+         Direct vistors with highest engagement of 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+        </div>
+        <div className="text-muted-foreground">
+         (Comparison here***) for the {selectedPeriod.title}
+        </div>
+      </CardFooter>
     </Card>
   )
 }
