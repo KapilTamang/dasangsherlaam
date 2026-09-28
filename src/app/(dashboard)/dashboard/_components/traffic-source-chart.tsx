@@ -147,11 +147,10 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex items-center gap-2 font-medium">
-          Email Campaign as the most effective traffic source with
-          overall 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+          Email Campaign with the highest 5.2% contribution for traffic this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Traffic sources for the {selectedPeriod.title}
+         (Comparision here***) {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>

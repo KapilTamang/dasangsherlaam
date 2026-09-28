@@ -51,7 +51,7 @@ export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="w-full max-h-50">
+        <ChartContainer config={chartConfig} className="aspect-square w-full max-h-50">
           <LineChart
             accessibilityLayer
             data={chartData}
