@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { SectionCards } from "./_components/section-cards"
-import { ChartAreaInteractive } from "./_components/chat-area-interactive"
+import { TrafficAudienceTrend } from "./_components/traffic-audience-trend.tsx"
 import { PeriodSelector } from "./_components/period-selector"
 import { ConversionFunnelChart } from './_components/conversion-funnel-chart'
 import { TrafficSourceChart } from './_components/traffic-source-chart'
@@ -29,7 +29,7 @@ export default function Dashboard() {
 							<SectionCards selectedPeriod={selectedPeriod}/>
 						</section>
 						<section className="traffic-audience-trend lg:px-6">
-							<ChartAreaInteractive/>
+							<TrafficAudienceTrend/>
 						</section>
 						<section className="conversion-traffic-audience-cards grid grid-cols-1 @xl/main:grid-cols-2 @6xl/main:grid-cols-4 gap-4 lg:px-6 items-stretch">
 							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>

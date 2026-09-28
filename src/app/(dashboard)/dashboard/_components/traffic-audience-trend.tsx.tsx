@@ -133,7 +133,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartAreaInteractive() {
+export function TrafficAudienceTrend() {
 const isMobile = useIsMobile();
 const [timeRange, setTimeRange] = React.useState("30")
 
