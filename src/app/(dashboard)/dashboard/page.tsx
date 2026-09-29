@@ -8,6 +8,7 @@ import { ConversionFunnelChart } from './_components/conversion-funnel-chart'
 import { TrafficSourceChart } from './_components/traffic-source-chart'
 import { AudienceChart } from './_components/audience-chart'
 import { UserEngagement } from './_components/user-engagement'
+import { TopContentTable } from './_components/top-content-table'
  
 
 export default function Dashboard() {
@@ -36,6 +37,10 @@ export default function Dashboard() {
 							<AudienceChart selectedPeriod={selectedPeriod}/>
 							<UserEngagement selectedPeriod={selectedPeriod}/>
 							<TrafficSourceChart selectedPeriod={selectedPeriod}/>
+						</section>
+						<section className="top-content-table flex flex-col gap-4 lg:px-6">
+							<span>Top Content</span>
+							<TopContentTable/>
 						</section>
 					</div>
 				</div>
