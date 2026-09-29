@@ -7,7 +7,11 @@
     imageURL: string;
     date: string;
     author: string; 
-}
+    views: string;
+    visitors: string;
+    shares: string;
+    likes: string;
+}   
 
 const blogs: Blog[] = [
     {
@@ -25,7 +29,11 @@ const blogs: Blog[] = [
         category: 'featured',
         imageURL: '/images/featured.jpg',
         date: 'Aug 12, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '10.2K',
+        visitors: '9.5K',
+        shares: '1.2K',
+        likes: '5.4K'
     },
     {
         id: 2,
@@ -42,7 +50,11 @@ const blogs: Blog[] = [
         category: 'science and technology',
         imageURL: '/images/blog1.jpg',
         date: 'Aug 25, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '9.7K',
+        visitors: '7.5K',
+        shares: '1.2K',
+        likes: '4.4K'
     },
     {
         id: 3,
@@ -59,7 +71,11 @@ const blogs: Blog[] = [
         category: 'amazing facts',
         imageURL: '/images/blog2.jpg',
         date: 'Aug 26, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '8.7K',
+        visitors: '3.5K',
+        shares: '1.1K',
+        likes: '4.1K'
     },
     {
         id: 4,
@@ -76,7 +92,11 @@ const blogs: Blog[] = [
         category: 'science and technology',
         imageURL: '/images/blog3.jpg',
         date: 'Aug 29, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '7.3K',
+        visitors: '4.5K',
+        shares: '0.9K',
+        likes: '3.6K'
     },
     {
         id: 5,
@@ -93,7 +113,11 @@ const blogs: Blog[] = [
         category: 'travel and tourism',
         imageURL: '/images/blog4.jpg',
         date: 'Aug 30, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.3K',
+        visitors: '6.5K',
+        shares: '0.65K',
+        likes: '3.4K'
     },
     {
         id: 6,
@@ -110,7 +134,11 @@ const blogs: Blog[] = [
         category: 'science and technology',
         imageURL: '/images/blog5.jpg',
         date: 'Sept 01, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     {
         id: 7,
@@ -127,7 +155,11 @@ const blogs: Blog[] = [
         category: 'amazing facts',
         imageURL: '/images/blog6.jpg',
         date: 'Sept 05, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     {
         id: 8,
@@ -144,7 +176,11 @@ const blogs: Blog[] = [
         category: 'exclusive',
         imageURL: '/images/exclusive.jpg',
         date: 'Sept 05, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     {
         id: 9,
@@ -161,7 +197,11 @@ const blogs: Blog[] = [
         category: 'exclusive',
         imageURL: '/images/exclusive1.jpg',
         date: 'Oct 05, 2026',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     {
         id: 10,
@@ -178,7 +218,11 @@ const blogs: Blog[] = [
         category: 'exclusive',
         imageURL: '/images/exclusive2.jpg',
         date: 'Jan 05, 2025',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     {
         id: 11,
@@ -195,7 +239,11 @@ const blogs: Blog[] = [
         category: 'exclusive',
         imageURL: '/images/exclusive3.jpg',
         date: 'Aug 05, 2025',
-        author: 'Dasang'
+        author: 'Dasang',
+        views: '6.1K',
+        visitors: '5.4K',
+        shares: '1.65K',
+        likes: '5.4K'
     },
     
 ];
