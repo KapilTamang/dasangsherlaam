@@ -35,8 +35,8 @@ export default function Dashboard() {
 						<section className="conversion-traffic-audience-cards grid grid-cols-1 @xl/main:grid-cols-2 @6xl/main:grid-cols-4 gap-4 lg:px-6 items-stretch">
 							<ConversionFunnelChart selectedPeriod={selectedPeriod}/>
 							<AudienceChart selectedPeriod={selectedPeriod}/>
-							<UserEngagement selectedPeriod={selectedPeriod}/>
 							<TrafficSourceChart selectedPeriod={selectedPeriod}/>
+							<UserEngagement selectedPeriod={selectedPeriod}/>
 						</section>
 						<section className="top-content-table flex flex-col gap-4 lg:px-6">
 							<span>Top Content</span>
