@@ -68,7 +68,7 @@ export function KPICard({ selectedPeriod, data }: KPICardProps) {
                 }
             </div>
             <div className="text-muted-foreground">
-                {data.description} for the last {selectedPeriod.duration}
+                Total {data.description} for the last {selectedPeriod.duration}
             </div>
         </CardFooter>
     </Card>
