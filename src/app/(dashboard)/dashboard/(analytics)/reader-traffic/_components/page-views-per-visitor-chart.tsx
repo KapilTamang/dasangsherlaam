@@ -198,6 +198,7 @@ return date >= startDate
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="date"
+               tick={{fill: 'var(--color-foreground)'}}
               tickLine={false}
               axisLine={false}
               tickMargin={8}
