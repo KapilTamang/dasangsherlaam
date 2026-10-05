@@ -7,6 +7,7 @@ import {PageViewsUniqueVisitorsChart} from './_components/page-views-unique-visi
 import { PageViewsPerVisitorChart } from './_components/page-views-per-visitor-chart';
 import { AverageTimeOnPagesChart } from './_components/average-time-on-pages-chart';
 import { BounceRateOnPagesChart } from './_components/bounce-rate-on-pages-chart';
+import { PageViewsOnPagesChart } from './_components/page-views-on-pages-chart';
 
 export default function ReaderTraffic() {
     //Set state for selected period
@@ -70,6 +71,7 @@ export default function ReaderTraffic() {
                             <PageViewsPerVisitorChart/>
                         </section>
                         <section className="pages-category-analytics-cards grid grid-cols-1 @xl/main:grid-cols-2 @6xl/main:grid-cols-4 gap-4 lg:px-6 items-stretch">
+                           <PageViewsOnPagesChart selectedPeriod={selectedPeriod}/>
                            <AverageTimeOnPagesChart selectedPeriod={selectedPeriod}/>
                            <BounceRateOnPagesChart selectedPeriod={selectedPeriod}/>
                         </section>
