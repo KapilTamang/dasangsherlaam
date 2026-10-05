@@ -4,6 +4,7 @@ import React from 'react';
 import { PeriodSelector } from "../../_components/period-selector"
 import { KPICard } from '../../_components/KPICard';
 import {PageViewsUniqueVisitorsChart} from './_components/page-views-unique-visitors-chart'
+import { PageViewsPerVisitorChart } from './_components/page-views-per-visitor-chart';
 
 export default function ReaderTraffic() {
     //Set state for selected period
@@ -62,6 +63,9 @@ export default function ReaderTraffic() {
                         </section>
                         <section className="page-views-chart lg:px-6">
                             <PageViewsUniqueVisitorsChart/>
+                        </section>
+                        <section className="page-views-per-visitor-chart lg:px-6">
+                            <PageViewsPerVisitorChart/>
                         </section>
                     </div>
                 </div>
