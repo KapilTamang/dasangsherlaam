@@ -133,7 +133,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function PageViewsChart() {
+export function PageViewsUniqueVisitorsChart() {
 const isMobile = useIsMobile();
 const [timeRange, setTimeRange] = React.useState("30")
 
@@ -161,7 +161,7 @@ const [timeRange, setTimeRange] = React.useState("30")
         <div className="grid flex-1 gap-1">
           <CardTitle>Page Views and Unique Visitors Trend</CardTitle>
           <CardDescription>
-            Showing visitor acquisition for the last {timeRange === '7' ? 'week' : timeRange === '30' ? 'month' : timeRange === '90' ? 'quarter' : 'year'} 
+            Showing page views vs unique visitors for the last {timeRange === '7' ? 'week' : timeRange === '30' ? 'month' : timeRange === '90' ? 'quarter' : 'year'} 
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
