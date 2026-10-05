@@ -154,7 +154,7 @@ return date >= startDate
     <Card className="pt-0">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
-          <CardTitle>Page Views per visitor</CardTitle>
+          <CardTitle>Page Views Per Visitor</CardTitle>
           <CardDescription>
             Showing average page views per visitor for the last {timeRange === '7' ? 'week' : timeRange === '30' ? 'month' : timeRange === '90' ? 'quarter' : 'year'} 
           </CardDescription>
