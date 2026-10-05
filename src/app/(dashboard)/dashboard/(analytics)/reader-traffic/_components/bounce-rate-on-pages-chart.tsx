@@ -75,7 +75,7 @@ export function BounceRateOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Average Bounce Rate on Pages</CardTitle>
+        <CardTitle>Average Bounce Rate On Pages</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>

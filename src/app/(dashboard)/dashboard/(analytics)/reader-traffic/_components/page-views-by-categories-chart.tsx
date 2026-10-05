@@ -28,54 +28,49 @@ interface SelectedPeriodProps {
 }
 
 const chartData = [
-  {page: "home", averageTime: 186, fill: 'var(--color-home)'},
-  {page: "blog", averageTime: 305, fill: 'var(--color-blog)'},
-  {page: "category", averageTime: 237, fill: 'var(--color-category)'},
-  {page: "contact", averageTime: 73, fill: 'var(--color-contact)'},
-  {page: "search", averageTime: 209, fill: 'var(--color-search)'},
-  {page: "about", averageTime: 214, fill: 'var(--color-about)'},
-  {page: "policy", averageTime: 104, fill: 'var(--color-policy)'},
+  {category: "featured", pageViews: 456, fill: 'var(--color-featured)'},
+  {category: "scienceAndTechnology", pageViews: 305, fill: 'var(--color-scienceAndTechnology)'},
+  {category: "amazingFacts", pageViews: 137, fill: 'var(--color-amazingFacts)'},
+  {category: "historyAndCulture", pageViews: 173, fill: 'var(--color-historyAndCulture)'},
+  {category: "travelAndTourism", pageViews: 109, fill: 'var(--color-travelAndTourism)'},
+  {category: "exclusive", pageViews: 514, fill: 'var(--color-exclusive)'},
 ]
 
 const chartConfig = {
-    averageTime: {
-        label: "Average Time"
+    pageViews: {
+        label: "Page Views"
     },
-  home: {
-    label: "Home",
+  featured: {
+    label: "Featured",
     color: "var(--chart-1)",
   },
-  blog: {
-    label: "Blog",
+  scienceAndTechnology: {
+    label: "Science and Technology",
     color: "var(--chart-2)",
   },
-  category: {
-    label: "Category",
+  amazingFacts: {
+    label: "Amazing Facts",
     color: "var(--chart-3)",
   },
-  contact: {
-    label: "Contact",
+  historyAndCulture: {
+    label: "History and Culture",
     color: "var(--chart-4)",
   },
-  search: {
-    label: "Search",
+  travelAndTourism: {
+    label: "Travel and Tourism",
     color: "var(--chart-5)",
   },
-  about: {
-    label: "About",
+  exclusive: {
+    label: "Exclusive",
     color: "var(--chart-6)"
-  },
-  policy: {
-    label: "Policy",
-    color: "var(--chart-7)"
   },
 } satisfies ChartConfig
 
-export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
+export function PageViewsByCategoriesChart({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Average Time On Pages</CardTitle>
+        <CardTitle>Page Views By Categories</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -89,7 +84,7 @@ export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="page"
+              dataKey="category"
               tick={{fill: 'var(--color-foreground)'}}
               tickLine={false}
               tickMargin={10}
@@ -100,7 +95,7 @@ export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
               cursor={false}
               content={<ChartTooltipContent/>}
             />
-            <Bar dataKey="averageTime" fill="fill" radius={8}>
+            <Bar dataKey="pageViews" fill="fill" radius={8}>
               <LabelList
                 position="top"
                 offset={12}
@@ -116,7 +111,7 @@ export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
           Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-muted-foreground">
-          Showing average time spent on pages for the {selectedPeriod.title}
+          Showing total page views by categories for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>

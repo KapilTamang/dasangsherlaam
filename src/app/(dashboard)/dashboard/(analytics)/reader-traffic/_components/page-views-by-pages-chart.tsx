@@ -71,11 +71,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function PageViewsOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
+export function PageViewsByPagesChart({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Page Views on Pages</CardTitle>
+        <CardTitle>Page Views By Pages</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -116,7 +116,7 @@ export function PageViewsOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
           Trending up by 5.2% this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-muted-foreground">
-          Showing total Page Views on pages for the {selectedPeriod.title}
+          Showing total page views by pages for the {selectedPeriod.title}
         </div>
       </CardFooter>
     </Card>
