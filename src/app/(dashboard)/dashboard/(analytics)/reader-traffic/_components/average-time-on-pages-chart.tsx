@@ -71,7 +71,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function AverageTimeByPagesChart({selectedPeriod}: SelectedPeriodProps) {
+export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>

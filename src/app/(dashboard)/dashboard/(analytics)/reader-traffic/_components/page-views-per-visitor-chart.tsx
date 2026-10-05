@@ -123,7 +123,7 @@ const chartData = [
 
 const chartConfig = {
   pageViews: {
-    label: "Page Views",
+    label: "PageViews/Visitor",
     color: "var(--chart-1)",
   },
 

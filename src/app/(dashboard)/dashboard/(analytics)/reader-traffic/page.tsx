@@ -5,7 +5,8 @@ import { PeriodSelector } from "../../_components/period-selector"
 import { KPICard } from '../../_components/KPICard';
 import {PageViewsUniqueVisitorsChart} from './_components/page-views-unique-visitors-chart'
 import { PageViewsPerVisitorChart } from './_components/page-views-per-visitor-chart';
-import { AverageTimeByPagesChart } from './_components/average-time-by-pages-chart';
+import { AverageTimeOnPagesChart } from './_components/average-time-on-pages-chart';
+import { BounceRateOnPagesChart } from './_components/bounce-rate-on-pages-chart';
 
 export default function ReaderTraffic() {
     //Set state for selected period
@@ -69,7 +70,8 @@ export default function ReaderTraffic() {
                             <PageViewsPerVisitorChart/>
                         </section>
                         <section className="pages-category-analytics-cards grid grid-cols-1 @xl/main:grid-cols-2 @6xl/main:grid-cols-4 gap-4 lg:px-6 items-stretch">
-                           <AverageTimeByPagesChart selectedPeriod={selectedPeriod}/>
+                           <AverageTimeOnPagesChart selectedPeriod={selectedPeriod}/>
+                           <BounceRateOnPagesChart selectedPeriod={selectedPeriod}/>
                         </section>
                     </div>
                 </div>
