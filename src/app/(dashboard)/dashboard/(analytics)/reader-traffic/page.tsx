@@ -22,7 +22,7 @@ export default function ReaderTraffic() {
     const KPICardsData = [
         {
 			title: '32.345K',
-			description: 'Page Views',
+			description: 'Total Visitors',
 			badgeTitle: 20,
 			trending: 'negative',
 			remarks: 'Declining audience interests'
