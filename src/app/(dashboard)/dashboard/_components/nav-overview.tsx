@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import {
   SidebarGroup,
@@ -11,22 +12,23 @@ import {
 
 import { LayoutDashboard } from "lucide-react"
 
-export function NavOverview() 
-
+export function NavOverview()
 {
-  return (
-    <SidebarGroup>
-      	<SidebarGroupLabel>Overview</SidebarGroupLabel>
-		<SidebarMenu>
-			<SidebarMenuItem>
-				<Link href="/dashboard">
-					<SidebarMenuButton tooltip="Overview" className="cursor-pointer">
-						<LayoutDashboard />
-						<span>Dashboard</span>
-					</SidebarMenuButton>
-				</Link>
-			</SidebarMenuItem>
-		</SidebarMenu>
-    </SidebarGroup>
-  )
+	const pathname = usePathname();
+	
+	return (
+		<SidebarGroup>
+			<SidebarGroupLabel>Overview</SidebarGroupLabel>
+			<SidebarMenu>
+				<SidebarMenuItem>
+					<Link href="/dashboard">
+						<SidebarMenuButton tooltip="Overview" className="cursor-pointer" isActive={pathname === '/dashboard' ? true : false}>
+							<LayoutDashboard />
+							<span>Dashboard</span>
+						</SidebarMenuButton>
+					</Link>
+				</SidebarMenuItem>
+			</SidebarMenu>
+		</SidebarGroup>
+	)
 }

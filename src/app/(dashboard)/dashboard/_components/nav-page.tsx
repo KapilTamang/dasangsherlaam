@@ -1,5 +1,6 @@
 "use client"
 
+import {usePathname} from 'next/navigation'
 import Link from "next/link"
 import {
   SidebarGroup,
@@ -12,23 +13,24 @@ import {
 import pages from "@/data/dashboard/page"
 
 export function NavPage() 
-
 {
-  return (
-    <SidebarGroup>
-        <SidebarGroupLabel className="w-auto">Manage Pages</SidebarGroupLabel>
-        <SidebarMenu>
-            {pages.map((item) => (
-				<SidebarMenuItem key={item.id}>
-					<Link href={item.url}>
-						<SidebarMenuButton tooltip={item.title} className="cursor-pointer">
-								{item.icon && <item.icon />}
-								<span>{item.title}</span>
-						</SidebarMenuButton>
-					</Link>
-				</SidebarMenuItem>
-            ))}
-        </SidebarMenu>
-    </SidebarGroup>
-  )
+    const pathname = usePathname();
+
+    return (
+        <SidebarGroup>
+            <SidebarGroupLabel className="w-auto">Manage Pages</SidebarGroupLabel>
+            <SidebarMenu>
+                {pages.map((item) => (
+                    <SidebarMenuItem key={item.id}>
+                        <Link href={item.url}>
+                            <SidebarMenuButton tooltip={item.title} className="cursor-pointer" isActive={pathname === item.url ? true : false}>
+                                {item.icon && <item.icon />}
+                                <span>{item.title}</span>
+                            </SidebarMenuButton>
+                        </Link>
+                    </SidebarMenuItem>
+                ))}
+            </SidebarMenu>
+        </SidebarGroup>
+    )
 }
