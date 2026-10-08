@@ -28,19 +28,19 @@ interface SelectedPeriodProps {
 }
 
 const chartData = [
-  {page: "home", averageBounceRate: 3.4, fill: 'var(--color-home)'},
-  {page: "blog", averageBounceRate: 1.5, fill: 'var(--color-blog)'},
-  {page: "category", averageBounceRate: 2.3, fill: 'var(--color-category)'},
-  {page: "contact", averageBounceRate: 5.5, fill: 'var(--color-contact)'},
-  {page: "search", averageBounceRate: 3.4, fill: 'var(--color-search)'},
-  {page: "about", averageBounceRate: 2.3, fill: 'var(--color-about)'},
-  {page: "policy", averageBounceRate: 4.5, fill: 'var(--color-policy)'},
+  {page: "home", averageScrollDepth: 45, fill: 'var(--color-home)'},
+  {page: "blog", averageScrollDepth: 80, fill: 'var(--color-blog)'},
+  {page: "category", averageScrollDepth: 55, fill: 'var(--color-category)'},
+  {page: "contact", averageScrollDepth: 78, fill: 'var(--color-contact)'},
+  {page: "search", averageScrollDepth: 35, fill: 'var(--color-search)'},
+  {page: "about", averageScrollDepth: 67, fill: 'var(--color-about)'},
+  {page: "policy", averageScrollDepth: 88, fill: 'var(--color-policy)'},
 ]
 
 const chartConfig = {
-    averageBounceRate: {
-        label: "Average Bounce Rate"
-    },
+  averageScrollDepth: {
+      label: "Average Scroll Depth"
+  },
   home: {
     label: "Home",
     color: "var(--chart-1)",
@@ -71,11 +71,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function BounceRateOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
+export function AverageScrollDepthOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Average Bounce Rate On Pages</CardTitle>
+        <CardTitle>Average Scroll Depth On Pages</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -100,12 +100,13 @@ export function BounceRateOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
               cursor={false}
               content={<ChartTooltipContent/>}
             />
-            <Bar dataKey="averageBounceRate" fill="fill" radius={8}>
+            <Bar dataKey="averageScrollDepth" fill="fill" radius={8}>
               <LabelList
                 position="top"
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value) => `${value?.toLocaleString()}%`}
               />
             </Bar>
           </BarChart>

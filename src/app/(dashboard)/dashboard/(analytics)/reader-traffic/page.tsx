@@ -6,7 +6,7 @@ import { KPICard } from '../../_components/KPICard';
 import {PageViewsUniqueVisitorsChart} from './_components/page-views-unique-visitors-chart'
 import { PageViewsPerVisitorChart } from './_components/page-views-per-visitor-chart';
 import { AverageTimeOnPagesChart } from './_components/average-time-on-pages-chart';
-import { BounceRateOnPagesChart } from './_components/bounce-rate-on-pages-chart';
+import { AverageScrollDepthOnPagesChart } from './_components/average-scroll-depth-on-pages-chart';
 import { PageViewsByPagesChart } from './_components/page-views-by-pages-chart';
 import { PageViewsByCategoriesChart } from './_components/page-views-by-categories-chart';
 
@@ -36,7 +36,7 @@ export default function ReaderTraffic() {
 		},
 		{
 			title: '3.22s',
-			description: 'Average Time',
+			description: 'Average Session',
 			badgeTitle: 8.4,
 			trending: 'positive',
 			remarks: 'Decent increment on engagement'
@@ -75,7 +75,7 @@ export default function ReaderTraffic() {
                             <PageViewsByPagesChart selectedPeriod={selectedPeriod}/>
                             <PageViewsByCategoriesChart selectedPeriod={selectedPeriod}/>
                             <AverageTimeOnPagesChart selectedPeriod={selectedPeriod}/>
-                            <BounceRateOnPagesChart selectedPeriod={selectedPeriod}/>
+                            <AverageScrollDepthOnPagesChart selectedPeriod={selectedPeriod}/>
                         </section>
                     </div>
                 </div>
