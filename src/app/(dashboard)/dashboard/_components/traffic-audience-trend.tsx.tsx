@@ -222,7 +222,7 @@ const [timeRange, setTimeRange] = React.useState("30")
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="date"
-               tick={{fill: 'var(--color-foreground)'}}
+              tick={{fill: 'var(--color-foreground)'}}
               tickLine={false}
               axisLine={false}
               tickMargin={8}
