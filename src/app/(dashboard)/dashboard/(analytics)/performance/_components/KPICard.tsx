@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import IndicatorButton from "./indicator-button"
 
 interface KPICardProps {
      data: {
@@ -48,7 +49,8 @@ export function KPICard({data}: KPICardProps) {
                 </Badge>
             </CardAction>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex gap-2 items-center">
+            <IndicatorButton status={data.indicator}/>
             <div className="capitalize">
                 {data.indicator}
             </div>
