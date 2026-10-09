@@ -48,7 +48,7 @@ export function LCPChart() {
             accessibilityLayer
             data={chartData}
             margin={{
-              top: 20,
+              top: 24,
               left: 20,
               right: 12,
             }}
