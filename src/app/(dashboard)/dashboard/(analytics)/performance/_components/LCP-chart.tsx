@@ -40,7 +40,7 @@ export function LCPChart() {
     <Card>
       <CardHeader>
         <CardTitle>LCP Performance Trend</CardTitle>
-        <CardDescription>Sept 01 - Sept 07 2026</CardDescription>
+        <CardDescription>Duration to become content visible</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="aspect-square w-full max-h-50">
