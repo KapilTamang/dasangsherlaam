@@ -19,28 +19,28 @@ import {
 } from "@/components/ui/chart"
 
 const chartData = [
-  { date: "2026-09-01", performance: 2.5},
-  { date: "2026-09-02", performance: 2.7},
-  { date: "2026-09-03", performance: 1.5},
-  { date: "2026-09-04", performance: 1.8},
-  { date: "2026-09-05", performance: 2.9},
-  { date: "2026-09-06", performance: 2.1},
-  { date: "2026-09-07", performance: 3.6}
+  { date: "2026-09-01", performance: 200},
+  { date: "2026-09-02", performance: 140},
+  { date: "2026-09-03", performance: 180},
+  { date: "2026-09-04", performance: 100},
+  { date: "2026-09-05", performance: 200},
+  { date: "2026-09-06", performance: 280},
+  { date: "2026-09-07", performance: 220}
 ]
 
 const chartConfig = {
   performance: {
-    color: "var(--chart-1)"
+    color: "var(--chart-2)"
   }
  
 } satisfies ChartConfig
 
-export function LCPChart() {
+export function INPChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>LCP Performance Trend</CardTitle>
-        <CardDescription>Duration to become content visible</CardDescription>
+        <CardTitle>INP Performance Trend</CardTitle>
+        <CardDescription>Page response time on user interaction</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="aspect-square w-full max-h-50">
@@ -50,7 +50,7 @@ export function LCPChart() {
             margin={{
               top: 20,
               left: 20,
-              right: 12,
+              right: 20,
             }}
           >
             <CartesianGrid vertical={false} />
@@ -96,7 +96,7 @@ export function LCPChart() {
                 offset={12}
                 className="fill-foreground capitalize"
                 fontSize={12}
-                formatter={(value) => `${value?.toLocaleString()}s`}
+                formatter={(value) => `${value?.toLocaleString()}ms`}
               />
             </Line> 
           </LineChart>
@@ -104,10 +104,10 @@ export function LCPChart() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium">
-          LCU performance this week<TrendingUp className="h-4 w-4" />
+          INP performance this week<TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-muted-foreground">
-         (Remarks here***) for the
+         (Remarks here***) 
         </div>
       </CardFooter>
     </Card>
