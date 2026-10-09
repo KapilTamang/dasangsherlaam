@@ -76,7 +76,7 @@ export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
             />
             <Line
               dataKey="session"
-              type="natural"
+              type="linear"
               stroke="var(--color-session)"
               strokeWidth={2}
               dot={{
