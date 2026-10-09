@@ -76,7 +76,7 @@ export default function Dashboard() {
 							<UserEngagement selectedPeriod={selectedPeriod}/>
 						</section>
 						<section className="top-content-table flex flex-col gap-4 lg:px-6">
-							<span>Top Content</span>
+							<div className="font-medium">Top Content <span className='text-muted-foreground capitalize'>({selectedPeriod.title})</span></div>
 							<TopContentTable/>
 						</section>
 					</div>
