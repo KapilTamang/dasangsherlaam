@@ -14,7 +14,7 @@ import IndicatorButton from "./indicator-button"
 
 interface KPICardProps {
      data: {
-        title: string,
+        title: number,
         description: string,
         performance: string,
         badgeTitle: number,

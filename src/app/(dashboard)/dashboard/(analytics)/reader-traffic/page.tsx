@@ -21,28 +21,28 @@ export default function ReaderTraffic() {
 
     const KPICardData = [
         {
-			title: '32.345K',
+			title: 32345,
 			description: 'Total Visitors',
 			badgeTitle: 20,
 			trending: 'negative',
 			remarks: 'Declining audience interests'
 		},
 		{
-			title: '4.34K',
+			title: 43400,
 			description: 'Unique Visitors',
 			badgeTitle: 9.5,
 			trending: 'positive',
 			remarks: 'Unique visitors trending up'
 		},
 		{
-			title: '3.22s',
+			title: 3.22,
 			description: 'Average Session',
 			badgeTitle: 8.4,
 			trending: 'positive',
 			remarks: 'Decent increment on engagement'
 		},
 		{
-			title: '2.3pp',
+			title: 2.3,
 			description: 'Bounce Rate',
 			badgeTitle: 17,
 			trending: 'positive',

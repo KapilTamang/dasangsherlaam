@@ -5,12 +5,12 @@
     description: string;
     category: string;
     imageURL: string;
-    date: string;
+    date: Date;
     author: string; 
-    views: string;
-    visitors: string;
-    shares: string;
-    likes: string;
+    views: number;
+    visitors: number;
+    shares: number;
+    likes: number;
 }   
 
 const blogs: Blog[] = [
@@ -28,12 +28,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'featured',
         imageURL: '/images/featured.jpg',
-        date: 'Aug 12, 2026',
+        date: new Date("2025-06-21"),
         author: 'Dasang',
-        views: '10.2K',
-        visitors: '9.5K',
-        shares: '1.2K',
-        likes: '5.4K'
+        views: 10200,
+        visitors: 9500,
+        shares: 1200,
+        likes: 5400
     },
     {
         id: 2,
@@ -49,12 +49,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'science and technology',
         imageURL: '/images/blog1.jpg',
-        date: 'Aug 25, 2026',
+        date: new Date("2025-06-26"),
         author: 'Dasang',
-        views: '9.7K',
-        visitors: '7.5K',
-        shares: '1.2K',
-        likes: '4.4K'
+        views: 9700,
+        visitors: 7500,
+        shares: 1200,
+        likes: 4400
     },
     {
         id: 3,
@@ -70,12 +70,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'amazing facts',
         imageURL: '/images/blog2.jpg',
-        date: 'Aug 26, 2026',
+        date: new Date("2025-07-02"),
         author: 'Dasang',
-        views: '8.7K',
-        visitors: '3.5K',
-        shares: '1.1K',
-        likes: '4.1K'
+        views: 8700,
+        visitors: 3500,
+        shares: 1100,
+        likes: 4100
     },
     {
         id: 4,
@@ -91,12 +91,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'science and technology',
         imageURL: '/images/blog3.jpg',
-        date: 'Aug 29, 2026',
+        date: new Date("2025-07-10"),
         author: 'Dasang',
-        views: '7.3K',
-        visitors: '4.5K',
-        shares: '0.9K',
-        likes: '3.6K'
+        views: 7300,
+        visitors: 4500,
+        shares: 900,
+        likes: 3600
     },
     {
         id: 5,
@@ -112,12 +112,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'travel and tourism',
         imageURL: '/images/blog4.jpg',
-        date: 'Aug 30, 2026',
+        date: new Date("2025-07-29"),
         author: 'Dasang',
-        views: '6.3K',
-        visitors: '6.5K',
-        shares: '0.65K',
-        likes: '3.4K'
+        views: 6300,
+        visitors: 6500,
+        shares: 650,
+        likes: 3400
     },
     {
         id: 6,
@@ -133,12 +133,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'science and technology',
         imageURL: '/images/blog5.jpg',
-        date: 'Sept 01, 2026',
+        date: new Date("2025-08-01"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares: 1650,
+        likes: 5400
     },
     {
         id: 7,
@@ -154,12 +154,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'amazing facts',
         imageURL: '/images/blog6.jpg',
-        date: 'Sept 05, 2026',
+        date: new Date("2025-08-13"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares: 1650,
+        likes: 5400
     },
     {
         id: 8,
@@ -175,12 +175,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'exclusive',
         imageURL: '/images/exclusive.jpg',
-        date: 'Sept 05, 2026',
+        date: new Date("2025-08-25"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares: 1600,
+        likes: 5400
     },
     {
         id: 9,
@@ -196,12 +196,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'exclusive',
         imageURL: '/images/exclusive1.jpg',
-        date: 'Oct 05, 2026',
+        date: new Date("2025-09-04"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares: 1650,
+        likes: 5400
     },
     {
         id: 10,
@@ -217,12 +217,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'exclusive',
         imageURL: '/images/exclusive2.jpg',
-        date: 'Jan 05, 2025',
+        date: new Date("2025-09-13"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares:  1650,
+        likes: 5400
     },
     {
         id: 11,
@@ -238,12 +238,12 @@ const blogs: Blog[] = [
         animals with humans, and more. It paints an ugly, yet somehow powerfully seductive, materialist picture of men and women as unexceptional accidents of evolution.`,
         category: 'exclusive',
         imageURL: '/images/exclusive3.jpg',
-        date: 'Aug 05, 2025',
+        date: new Date("2026-01-15"),
         author: 'Dasang',
-        views: '6.1K',
-        visitors: '5.4K',
-        shares: '1.65K',
-        likes: '5.4K'
+        views: 6100,
+        visitors: 5400,
+        shares: 1650,
+        likes: 5400
     },
     
 ];

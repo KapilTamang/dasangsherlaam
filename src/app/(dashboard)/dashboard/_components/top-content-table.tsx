@@ -40,7 +40,7 @@ export function TopContentTable() {
                       {content.title}
                     </span>
                     <span className="text-muted-foreground text-xs">
-                      {content.date}
+                      {content.date.toLocaleDateString()}
                     </span>
                   </div>
               </TableCell>

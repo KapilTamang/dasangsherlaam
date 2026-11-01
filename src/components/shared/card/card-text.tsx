@@ -8,7 +8,7 @@ interface cardItem {
     description: string;
     category: string;
     imageURL: string;
-    date: string;
+    date: Date;
     author: string; 
 }
 
@@ -34,7 +34,7 @@ export default function CardText({data} : cardItemProps) {
                             by {data.author}
                     </div>
                         <div className="card-footer-date">
-                            {data.date}
+                            {data.date.toLocaleDateString()}
                         </div>
                     </footer>
                 </div>

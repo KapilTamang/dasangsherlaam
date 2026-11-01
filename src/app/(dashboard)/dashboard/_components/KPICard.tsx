@@ -18,7 +18,7 @@ interface KPICardProps {
         duration: string,
     },
      data: {
-        title: string,
+        title: number,
         description: string,
         badgeTitle: number,
         trending: string,

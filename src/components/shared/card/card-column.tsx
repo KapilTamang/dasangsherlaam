@@ -10,7 +10,7 @@ interface cardItem {
     description: string;
     category: string;
     imageURL: string;
-    date: string;
+    date: Date;
     author: string; 
 }
 
@@ -49,7 +49,7 @@ export default function Card({data, width}: cardItemProps) {
                     <footer className="card-footer flex gap-8 mt-2 text-[0.9rem] md:text-[1rem] md:text-muted-foreground">
                         <div className="card-footer-date flex items-center gap-1">
                             <CalendarClock size={20}/>
-                            {data.date}
+                            {data.date.toLocaleDateString()}
                         </div>
                         <div className="card-footer-author flex items-center gap-1">
                             <UserPen size={20}/> 

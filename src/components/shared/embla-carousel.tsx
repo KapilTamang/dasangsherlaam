@@ -13,7 +13,7 @@ interface carouselProps {
     description: string;
     category: string;
     imageURL: string;
-    date: string;
+    date: Date;
     author: string; 
 }
 

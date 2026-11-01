@@ -17,6 +17,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart"
+import {formatAnalyticsTime } from "@/lib/utils"
 
 interface SelectedPeriodProps {
   selectedPeriod: {
@@ -31,13 +32,14 @@ const chartData = [
   { source: "organic", session: 186},
   { source: "direct", session: 305},
   { source: "social", session: 237},
-  { source: "ads", session: 73},
+  { source: "ads", session: 734},
   { source: "referral", session: 209},
   { source: "email", session: 214},
 ]
 
 const chartConfig = {
   session: {
+    label: "Average Session",
     color: "var(--chart-1)"
   }
  
@@ -72,7 +74,9 @@ export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
+              content={<ChartTooltipContent indicator="line" 
+              />}
+              
             />
             <Line
               dataKey="session"

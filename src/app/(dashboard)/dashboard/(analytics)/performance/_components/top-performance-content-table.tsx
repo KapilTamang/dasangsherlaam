@@ -1,7 +1,6 @@
 
-
 export function TopPerformanceContentTable() {
   return  (
-    <h1>Performance Table</h1>
+    <h1>Table</h1>
   )
 }

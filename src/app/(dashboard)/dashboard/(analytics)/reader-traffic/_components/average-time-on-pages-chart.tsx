@@ -38,9 +38,9 @@ const chartData = [
 ]
 
 const chartConfig = {
-    averageTime: {
-        label: "Average Time"
-    },
+  averageTime: {
+      label: "Average Time"
+  },
   home: {
     label: "Home",
     color: "var(--chart-1)",

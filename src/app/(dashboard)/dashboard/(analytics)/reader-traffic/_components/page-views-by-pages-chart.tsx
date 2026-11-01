@@ -38,9 +38,9 @@ const chartData = [
 ]
 
 const chartConfig = {
-    pageViews: {
-        label: "Page Views"
-    },
+  pageViews: {
+      label: "Page Views"
+  },
   home: {
     label: "Home",
     color: "var(--chart-1)",

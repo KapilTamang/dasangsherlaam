@@ -90,7 +90,7 @@ export default function Blog() {
                                                             </div>
                                                             <div className="flex gap-2 items-center">
                                                                 <CalendarClock className="inline" size={20}/>
-                                                                {currentBlog.date}
+                                                                {currentBlog.date.toDateString()}
                                                             </div>
                                                         </div>
                                                     </div>

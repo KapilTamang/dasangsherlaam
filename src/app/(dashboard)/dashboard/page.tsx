@@ -22,28 +22,28 @@ export default function Dashboard() {
 
 	const KPICardsData = [
 		{
-			title: '5.34K',
+			title: 53400,
 			description: 'Visitors',
 			badgeTitle: 12.5,
 			trending: 'positive',
 			remarks: 'Visitors trending up'
 		},
 		{
-			title: '32.345K',
+			title: 32345,
 			description: 'Page Views',
 			badgeTitle: 20,
 			trending: 'negative',
 			remarks: 'Declining audience interests'
 		},
 		{
-			title: '3.2K',
+			title: 3200,
 			description: 'Regitered',
 			badgeTitle: 5.2,
 			trending: 'positive',
 			remarks: 'Decent increment on leads'
 		},
 		{
-			title: '2.6K',
+			title: 2600,
 			description: 'Subscribed',
 			badgeTitle: 17,
 			trending: 'positive',
