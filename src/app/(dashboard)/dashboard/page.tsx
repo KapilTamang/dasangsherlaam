@@ -75,8 +75,7 @@ export default function Dashboard() {
 							<TrafficSourceChart selectedPeriod={selectedPeriod}/>
 							<UserEngagement selectedPeriod={selectedPeriod}/>
 						</section>
-						<section className="top-content-table flex flex-col gap-4 lg:px-6">
-							<div className="font-medium">Top Content <span className='text-muted-foreground capitalize'>({selectedPeriod.title})</span></div>
+						<section className="top-content-table lg:px-6">
 							<TopContentTable/>
 						</section>
 					</div>
