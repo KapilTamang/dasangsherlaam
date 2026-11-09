@@ -82,7 +82,7 @@ export function DataTable<TData extends Record<string, any>>({
   const pageCount = table.getPageCount()
 
   return (
-    <div className="space-y-4 p-">
+    <div className="space-y-4 p-4 md:p-6 bg-secondary rounded-xl">
         <div className="font-medium pl-2 border-l-2 border-l-primary/80">Top Performing Contents</div>
       {/* Toolbar */}
       <div className="flex flex-col gap-4 justify-between sm:flex-row sm:items-center">
@@ -92,7 +92,7 @@ export function DataTable<TData extends Record<string, any>>({
             placeholder={searchPlaceholder}
             value={globalFilter ?? ""}
             onChange={(e) => table.setGlobalFilter(e.target.value)}
-            className="pl-8"
+            className="pl-8 bg-background"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -103,7 +103,7 @@ export function DataTable<TData extends Record<string, any>>({
                 filterColumn.setFilterValue(v === "all" ? undefined : v)
                 }
             >
-                <SelectTrigger className="w-full sm:w-60">
+                <SelectTrigger className="w-full sm:w-60 bg-background">
                 <SelectValue placeholder={filterLabel} />
                 </SelectTrigger>
                 <SelectContent>
