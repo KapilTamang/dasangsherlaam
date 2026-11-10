@@ -76,7 +76,7 @@ export default function Dashboard() {
 							<UserEngagement selectedPeriod={selectedPeriod}/>
 						</section>
 						<section className="top-content-table lg:px-6">
-							<TopContentTable/>
+							<TopContentTable selectedPeriod={selectedPeriod}/>
 						</section>
 					</div>
 				</div>

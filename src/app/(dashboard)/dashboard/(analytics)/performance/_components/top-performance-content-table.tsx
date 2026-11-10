@@ -4,9 +4,21 @@ import blogs from "@/data/blogs"
 
 const data: Blog[] = blogs
 
-export  function TopPerformanceContentTable() {
+interface SelectedPeriodProps {
+    selectedPeriod : {
+        id: string,
+        title: string,
+        value: string,
+        duration: string
+    }
+}
+
+export  function TopPerformanceContentTable({selectedPeriod} : SelectedPeriodProps) {
     return(
-        <div className="container mx-auto py-5">
+        <div className="w-full flex flex-col gap-4 bg-secondary p-4 md:p-6 rounded-xl">
+            <div className="font-medium">Top Performing Contents 
+                <span className="font-normal"> (last {selectedPeriod.duration})</span>
+            </div>
             <DataTable
                 columns={columns}
                 data={data}

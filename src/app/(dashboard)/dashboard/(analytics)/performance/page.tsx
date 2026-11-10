@@ -74,7 +74,7 @@ export default function Performance() {
                              </div>
                         </section>
                         <section className="top-performance-content-table lg:px-6">
-                            <TopPerformanceContentTable/>
+                            <TopPerformanceContentTable selectedPeriod={selectedPeriod}/>
                         </section>
                     </div>
                 </div>
