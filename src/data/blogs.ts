@@ -11,6 +11,8 @@
     visitors: number;
     shares: number;
     likes: number;
+    averageTime: number;
+    averageScrollDepth: number;
 }   
 
 const blogs: Blog[] = [
@@ -33,7 +35,9 @@ const blogs: Blog[] = [
         views: 10200,
         visitors: 9500,
         shares: 1200,
-        likes: 5400
+        likes: 5400,
+        averageTime: 160000,
+        averageScrollDepth: 75
     },
     {
         id: 2,
@@ -54,7 +58,9 @@ const blogs: Blog[] = [
         views: 9700,
         visitors: 7500,
         shares: 1200,
-        likes: 4400
+        likes: 4400,
+        averageTime: 180456,
+        averageScrollDepth: 55
     },
     {
         id: 3,
@@ -75,7 +81,9 @@ const blogs: Blog[] = [
         views: 8700,
         visitors: 3500,
         shares: 1100,
-        likes: 4100
+        likes: 4100,
+        averageTime: 456045,
+        averageScrollDepth: 88
     },
     {
         id: 4,
@@ -96,7 +104,9 @@ const blogs: Blog[] = [
         views: 7300,
         visitors: 4500,
         shares: 900,
-        likes: 3600
+        likes: 3600,
+        averageTime: 345876,
+        averageScrollDepth: 65
     },
     {
         id: 5,
@@ -117,7 +127,9 @@ const blogs: Blog[] = [
         views: 6300,
         visitors: 6500,
         shares: 650,
-        likes: 3400
+        likes: 3400,
+        averageTime: 350776,
+        averageScrollDepth: 67
     },
     {
         id: 6,
@@ -138,7 +150,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares: 1650,
-        likes: 5400
+        likes: 5400,
+        averageTime: 150660,
+        averageScrollDepth: 90
     },
     {
         id: 7,
@@ -159,7 +173,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares: 1650,
-        likes: 5400
+        likes: 5400,
+        averageTime: 200654,
+        averageScrollDepth: 56
     },
     {
         id: 8,
@@ -180,7 +196,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares: 1600,
-        likes: 5400
+        likes: 5400,
+        averageTime: 120000,
+        averageScrollDepth: 45
     },
     {
         id: 9,
@@ -201,7 +219,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares: 1650,
-        likes: 5400
+        likes: 5400,
+        averageTime: 230000,
+        averageScrollDepth: 70
     },
     {
         id: 10,
@@ -222,7 +242,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares:  1650,
-        likes: 5400
+        likes: 5400,
+        averageTime: 180800,
+        averageScrollDepth: 64
     },
     {
         id: 11,
@@ -243,7 +265,9 @@ const blogs: Blog[] = [
         views: 6100,
         visitors: 5400,
         shares: 1650,
-        likes: 5400
+        likes: 5400,
+        averageTime: 210600,
+        averageScrollDepth: 65
     },
     
 ];

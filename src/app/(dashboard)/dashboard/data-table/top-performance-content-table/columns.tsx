@@ -3,8 +3,6 @@
 import {
   createColumnHelper,
   sortFn_basic,
-  ColumnDef,
-  type Column,
 } from "@tanstack/react-table"
 import { ArrowDown, ArrowUp, ArrowUpDown, Medal } from "lucide-react"
 
@@ -12,14 +10,16 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { features } from "./features"
+import { formatAnalyticsTime, formatNumber } from "@/lib/utils"
 
 export type Blog = {
   id: number
   title: string
-  category: string
   views: number
   shares: number
   likes: number
+  averageTime: number
+  averageScrollDepth: number
 }
 
 type Props = {
@@ -94,16 +94,32 @@ export const columns = columnHelper.columns([
     header: ({ column }) => <SortableHeader column={column} title="Blog" sorted={false}/>,
     enableSorting: false
   }),
-  columnHelper.accessor("category", {
-    header: ({ column }) => <SortableHeader column={column} title="Category" sorted={false}/>,
-    enableSorting: false
-  }),
   columnHelper.accessor("views", {
     header: ({ column }) => <SortableHeader column={column} title="Views" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        return formatNumber(getValue() as number)
+    },
     sortFn: sortFn_basic,
   }),
   columnHelper.accessor("shares", {
     header: ({ column }) => <SortableHeader column={column} title="Shares" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        return formatNumber(getValue() as number)
+    },
+    sortFn: sortFn_basic,
+  }),
+  columnHelper.accessor("averageTime", {
+    header: ({ column }) => <SortableHeader column={column} title="Average Time" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        return formatAnalyticsTime(getValue() as number) 
+    },
+    sortFn: sortFn_basic,
+  }),
+  columnHelper.accessor("averageScrollDepth", {
+    header: ({ column }) => <SortableHeader column={column} title="Average Scroll Depth" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        return getValue() as number + '%'
+    },
     sortFn: sortFn_basic,
   }),
 ])
