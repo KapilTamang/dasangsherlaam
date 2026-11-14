@@ -29,12 +29,12 @@ interface SelectedPeriodProps {
 }
 
 const chartData = [
-  { source: "organic", session: 186},
-  { source: "direct", session: 305},
-  { source: "social", session: 237},
-  { source: "ads", session: 734},
-  { source: "referral", session: 209},
-  { source: "email", session: 214},
+  { source: "organic", session: 186000},
+  { source: "direct", session: 305000},
+  { source: "social", session: 237000},
+  { source: "ads", session: 734000},
+  { source: "referral", session: 209000},
+  { source: "email", session: 214000},
 ]
 
 const chartConfig = {
@@ -74,9 +74,10 @@ export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent indicator="line" 
+              content={<ChartTooltipContent 
+                indicator="line" 
+                valueFormatter={(value) => formatAnalyticsTime(Number(value))}
               />}
-              
             />
             <Line
               dataKey="session"
@@ -95,6 +96,9 @@ export function UserEngagement({selectedPeriod}: SelectedPeriodProps) {
                 offset={12}
                 className="fill-foreground capitalize"
                 fontSize={12}
+                formatter={(value) => {
+                    return formatAnalyticsTime(Number(value))
+                }}
               />
             </Line> 
           </LineChart>
