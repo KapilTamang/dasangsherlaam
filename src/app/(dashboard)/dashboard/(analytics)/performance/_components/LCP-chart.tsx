@@ -18,14 +18,16 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatAnalyticsTime } from "@/lib/utils"
+
 const chartData = [
-  { date: "2026-09-01", performance: 2.5},
-  { date: "2026-09-02", performance: 2.7},
-  { date: "2026-09-03", performance: 1.5},
-  { date: "2026-09-04", performance: 1.8},
-  { date: "2026-09-05", performance: 2.9},
-  { date: "2026-09-06", performance: 2.1},
-  { date: "2026-09-07", performance: 3.6}
+  { date: "2026-09-01", performance: 2500},
+  { date: "2026-09-02", performance: 2700},
+  { date: "2026-09-03", performance: 1500},
+  { date: "2026-09-04", performance: 1800},
+  { date: "2026-09-05", performance: 2900},
+  { date: "2026-09-06", performance: 2100},
+  { date: "2026-09-07", performance: 3600}
 ]
 
 const chartConfig = {
@@ -77,6 +79,7 @@ export function LCPChart() {
                       day: "numeric",
                     })
                   }}
+                valueFormatter={(value) => formatAnalyticsTime(Number(value))}
                 indicator="line" />}
             />
             <Line
@@ -96,7 +99,7 @@ export function LCPChart() {
                 offset={12}
                 className="fill-foreground capitalize"
                 fontSize={12}
-                formatter={(value) => `${value?.toLocaleString()}s`}
+                formatter={(value) => formatAnalyticsTime(Number(value))}
               />
             </Line> 
           </LineChart>
