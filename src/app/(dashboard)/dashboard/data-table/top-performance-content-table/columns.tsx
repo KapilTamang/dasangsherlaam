@@ -15,6 +15,7 @@ import { formatAnalyticsTime, formatNumber } from "@/lib/utils"
 export type Blog = {
   id: number
   title: string
+  category: string
   views: number
   shares: number
   likes: number
@@ -92,6 +93,10 @@ export const columns = columnHelper.columns([
   }),
   columnHelper.accessor("title", {
     header: ({ column }) => <SortableHeader column={column} title="Blog" sorted={false}/>,
+    enableSorting: false
+  }),
+  columnHelper.accessor("category", {
+    header: ({ column }) => <SortableHeader column={column} title="Category" sorted={false}/>,
     enableSorting: false
   }),
   columnHelper.accessor("views", {

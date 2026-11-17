@@ -40,7 +40,6 @@ interface DataTableProps<TData extends Record<string, any>> {
   filterColumnId?: string
   filterLabel?: string
   searchPlaceholder?: string
-  selectedPeriod?: []
 }
 
 export function DataTable<TData extends Record<string, any>>({
@@ -49,7 +48,6 @@ export function DataTable<TData extends Record<string, any>>({
   filterColumnId,
   filterLabel = "Filter",
   searchPlaceholder = "Search by title...",
-  selectedPeriod
 }: DataTableProps<TData>) {
 
   const table = useTable({
@@ -154,7 +152,7 @@ export function DataTable<TData extends Record<string, any>>({
                 <TableRow key={row.id}>
                   {row.getAllCells().map((cell) => (
                     <TableCell key={cell.id} className="capitalize">
-                      <table.FlexRender cell={cell} />
+                      <table.FlexRender cell={cell}/>
                     </TableCell>
                   ))}
                 </TableRow>
