@@ -23,7 +23,8 @@ interface KPICardProps {
         description: string,
         badgeTitle: number,
         trending: string,
-        remarks: string
+        remarks: string,
+        format: string
     }
 }
 
@@ -35,7 +36,7 @@ export function KPICard({ selectedPeriod, data }: KPICardProps) {
         <CardHeader>
             <CardDescription className="capitalize">{data.description}</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                {data.description === 'Average Session' ? formatAnalyticsTime(data.title) : formatNumber(data.title)}
+                {data.format === 'time' ? formatAnalyticsTime(data.title) : formatNumber(data.title)}
             </CardTitle>
             <CardAction>
                 <Badge variant="outline" className={`${data.trending === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>

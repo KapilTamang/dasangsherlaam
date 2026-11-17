@@ -26,28 +26,32 @@ export default function Dashboard() {
 			description: 'Visitors',
 			badgeTitle: 12.5,
 			trending: 'positive',
-			remarks: 'Visitors trending up'
+			remarks: 'Visitors trending up',
+            format: 'count'
 		},
 		{
 			title: 32345,
 			description: 'Page Views',
 			badgeTitle: 20,
 			trending: 'negative',
-			remarks: 'Declining audience interests'
+			remarks: 'Declining audience interests',
+            format: 'count'
 		},
 		{
 			title: 3200,
 			description: 'Regitered',
 			badgeTitle: 5.2,
 			trending: 'positive',
-			remarks: 'Decent increment on leads'
+			remarks: 'Decent increment on leads',
+            format: 'count'
 		},
 		{
 			title: 2600,
 			description: 'Subscribed',
 			badgeTitle: 17,
 			trending: 'positive',
-			remarks: 'Strong user acquitision'
+			remarks: 'Strong user acquitision',
+            format: 'count'
 		}
 	]
 

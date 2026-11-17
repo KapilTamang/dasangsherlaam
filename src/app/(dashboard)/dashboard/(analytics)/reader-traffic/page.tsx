@@ -25,28 +25,32 @@ export default function ReaderTraffic() {
 			description: 'Total Visitors',
 			badgeTitle: 20,
 			trending: 'negative',
-			remarks: 'Declining audience interests'
+			remarks: 'Declining audience interests',
+            format: 'count'
 		},
 		{
 			title: 43400,
 			description: 'Unique Visitors',
 			badgeTitle: 9.5,
 			trending: 'positive',
-			remarks: 'Unique visitors trending up'
+			remarks: 'Unique visitors trending up',
+            format: 'count'
 		},
 		{
 			title: 285000,
 			description: 'Average Session',
 			badgeTitle: 8.4,
 			trending: 'positive',
-			remarks: 'Decent increment on engagement'
+			remarks: 'Decent increment on engagement',
+            format: 'time'
 		},
 		{
 			title: 2.3,
 			description: 'Bounce Rate',
 			badgeTitle: 17,
 			trending: 'positive',
-			remarks: 'Strong user acquitision'
+			remarks: 'Strong user acquitision',
+            format: 'count'
 		}
 	]
 

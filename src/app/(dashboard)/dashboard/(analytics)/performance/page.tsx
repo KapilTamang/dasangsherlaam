@@ -19,20 +19,20 @@ export default function Performance() {
 
     const KPICardData = [
         {
-            title: 1.75,
+            title: 1700,
             description: 'Average Page Load',
             performance: 'positive',
             badgeTitle: 2.2,
             remarks: 'Overall good performance. Slight improvement',
-            indicator: 'good'
+            indicator: 'good',
         },
         {
-            title: 2.1,
+            title: 2340,
             description: 'LCP (Largest Contentful Paint)',
             performance: 'positive',
             badgeTitle: 2.3,
             remarks: 'Decent loading performance. Improving performance',
-            indicator: 'good'
+            indicator: 'good',
         },
         {
             title: 300,
@@ -40,7 +40,7 @@ export default function Performance() {
             performance: 'negative',
             badgeTitle: 1.3,
             remarks: 'Need improvement for better performance, slight declination',
-            indicator: 'moderate'
+            indicator: 'moderate',
         },
         {
             title: 0.35,
@@ -48,7 +48,7 @@ export default function Performance() {
             performance: 'negative',
             badgeTitle: 0.3,
             remarks: 'Poor visual stability, need immediate attention!',
-            indicator: 'poor'
+            indicator: 'poor',
         },
     ]
     return (

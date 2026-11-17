@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/card"
 import IndicatorButton from "./indicator-button"
 
+import { formatAnalyticsTime } from "@/lib/utils"
+
 interface KPICardProps {
      data: {
         title: number,
@@ -31,7 +33,7 @@ export function KPICard({data}: KPICardProps) {
         <CardHeader>
             <CardDescription className="capitalize">{data.description}</CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-                {data.title}
+                {formatAnalyticsTime(data.title)}
             </CardTitle>
               <CardAction>
                 <Badge variant="outline" className={`${data.performance === 'negative' ? 'bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300' : 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300' }`}>
