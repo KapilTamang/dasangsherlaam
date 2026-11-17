@@ -35,7 +35,7 @@ export default function ReaderTraffic() {
 			remarks: 'Unique visitors trending up'
 		},
 		{
-			title: 3.22,
+			title: 285000,
 			description: 'Average Session',
 			badgeTitle: 8.4,
 			trending: 'positive',
