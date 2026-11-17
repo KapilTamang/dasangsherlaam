@@ -18,6 +18,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatAnalyticsTime } from "@/lib/utils"
+
 const chartData = [
   { date: "2026-09-01", performance: 200},
   { date: "2026-09-02", performance: 140},
@@ -77,6 +79,7 @@ export function INPChart() {
                       day: "numeric",
                     })
                   }}
+                valueFormatter={(value) => formatAnalyticsTime(Number(value))}
                 indicator="line" />}
             />
             <Line
@@ -96,7 +99,7 @@ export function INPChart() {
                 offset={12}
                 className="fill-foreground capitalize"
                 fontSize={12}
-                formatter={(value) => `${value?.toLocaleString()}ms`}
+                formatter={(value) => formatAnalyticsTime(Number(value))}
               />
             </Line> 
           </LineChart>
