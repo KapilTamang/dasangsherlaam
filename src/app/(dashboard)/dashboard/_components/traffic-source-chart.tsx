@@ -19,6 +19,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatNumber } from "@/lib/utils"
+
 interface SelectedPeriodProps {
     selectedPeriod: {
         id: string,
@@ -86,7 +88,9 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel/>}
+              content={<ChartTooltipContent 
+                valueFormatter={(value) => formatNumber(Number(value))}
+                />}
             />
             <Pie
             data={chartData}
@@ -127,7 +131,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
                           y={viewBox.cy}
                           className="fill-foreground text-3xl font-bold"
                         >
-                          {totalVisitors.toLocaleString()}
+                          {formatNumber(totalVisitors)} 
                         </tspan>
                         <tspan
                           x={viewBox.cx}
