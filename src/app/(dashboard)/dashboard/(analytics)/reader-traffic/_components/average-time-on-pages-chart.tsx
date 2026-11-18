@@ -18,6 +18,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatAnalyticsTime } from "@/lib/utils"
+
 interface SelectedPeriodProps {
     selectedPeriod : {
         id: string,
@@ -28,13 +30,13 @@ interface SelectedPeriodProps {
 }
 
 const chartData = [
-  {page: "home", averageTime: 186, fill: 'var(--color-home)'},
-  {page: "blog", averageTime: 305, fill: 'var(--color-blog)'},
-  {page: "category", averageTime: 237, fill: 'var(--color-category)'},
-  {page: "contact", averageTime: 73, fill: 'var(--color-contact)'},
-  {page: "search", averageTime: 209, fill: 'var(--color-search)'},
-  {page: "about", averageTime: 214, fill: 'var(--color-about)'},
-  {page: "policy", averageTime: 104, fill: 'var(--color-policy)'},
+  {page: "home", averageTime: 156000, fill: 'var(--color-home)'},
+  {page: "blog", averageTime: 105000, fill: 'var(--color-blog)'},
+  {page: "category", averageTime: 237000, fill: 'var(--color-category)'},
+  {page: "contact", averageTime: 73000, fill: 'var(--color-contact)'},
+  {page: "search", averageTime: 209000, fill: 'var(--color-search)'},
+  {page: "about", averageTime: 214000, fill: 'var(--color-about)'},
+  {page: "policy", averageTime: 104000, fill: 'var(--color-policy)'},
 ]
 
 const chartConfig = {
@@ -98,7 +100,9 @@ export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent/>}
+              content={<ChartTooltipContent
+                valueFormatter={(value) => formatAnalyticsTime(Number(value))}
+              />}
             />
             <Bar dataKey="averageTime" fill="fill" radius={8}>
               <LabelList
@@ -106,6 +110,7 @@ export function AverageTimeOnPagesChart({selectedPeriod}: SelectedPeriodProps) {
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value) => formatAnalyticsTime(Number(value))}
               />
             </Bar>
           </BarChart>
