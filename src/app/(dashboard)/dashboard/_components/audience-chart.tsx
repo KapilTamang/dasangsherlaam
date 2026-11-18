@@ -18,6 +18,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatNumber } from "@/lib/utils"
+
 interface SelectedPeriodProps {
     selectedPeriod: {
         id: string,
@@ -81,7 +83,10 @@ export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
             <XAxis dataKey="percentage" type="number" hide/>
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
+              content={<ChartTooltipContent 
+                valueFormatter={(value) => `${value}%`}
+                indicator="line" 
+                />}
             />
             <Bar dataKey="percentage" fill="var(--color-fill)" radius={4}>
               <LabelList
@@ -90,6 +95,7 @@ export function AudienceChart({selectedPeriod} : SelectedPeriodProps) {
                 offset={8}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value) => formatNumber(Number(value))}
               />
             </Bar>
           </BarChart>
