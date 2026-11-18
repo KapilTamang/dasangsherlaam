@@ -28,6 +28,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatNumber } from "@/lib/utils"
+
 const chartData = [
   { date: "2024-04-01", pageViews: 222, uniqueVisitors: 150 },
   { date: "2024-04-02", pageViews: 97, uniqueVisitors: 180 },
@@ -245,6 +247,7 @@ const [timeRange, setTimeRange] = React.useState("30")
                       day: "numeric",
                     })
                   }}
+                  valueFormatter={(value) => formatNumber(Number(value))}
                   indicator="dot"
                 />
               }
