@@ -98,7 +98,9 @@ export function AverageScrollDepthOnPagesChart({selectedPeriod}: SelectedPeriodP
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent/>}
+              content={<ChartTooltipContent
+                valueFormatter={(value) => `${value}%`}
+              />}
             />
             <Bar dataKey="averageScrollDepth" fill="fill" radius={8}>
               <LabelList
@@ -106,7 +108,7 @@ export function AverageScrollDepthOnPagesChart({selectedPeriod}: SelectedPeriodP
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
-                formatter={(value) => `${value?.toLocaleString()}%`}
+                formatter={(value) => `${value}%`}
               />
             </Bar>
           </BarChart>
