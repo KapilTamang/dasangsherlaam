@@ -18,6 +18,8 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { formatNumber } from "@/lib/utils"
+
 interface SelectedPeriodProps {
     selectedPeriod : {
         id: string,
@@ -93,7 +95,9 @@ export function PageViewsByCategoriesChart({selectedPeriod}: SelectedPeriodProps
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent/>}
+              content={<ChartTooltipContent
+                valueFormatter={(value) => formatNumber(Number(value))}
+              />}
             />
             <Bar dataKey="pageViews" fill="fill" radius={8}>
               <LabelList
@@ -101,6 +105,7 @@ export function PageViewsByCategoriesChart({selectedPeriod}: SelectedPeriodProps
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value) => formatNumber(Number(value))}
               />
             </Bar>
           </BarChart>
