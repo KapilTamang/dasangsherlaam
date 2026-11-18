@@ -19,8 +19,10 @@ import {
 
 import { TrendingUp} from "lucide-react"
 
+import { formatNumber } from "@/lib/utils"
+
 const chartData = [
-	{user: 'visitors', total: 7000, percentage: 100, fill: 'var(--color-visitors)'},
+	{user: 'visitors', total: 700, percentage: 100, fill: 'var(--color-visitors)'},
 	{user: 'registrants', total: 320, percentage: 62, fill: 'var(--color-registrants)'},
 	{user: 'subscribers', total: 120, percentage: 12, fill: 'var(--color-subscribers)'},
 	{user: 'unconverted', total: 260, percentage: 26, fill: 'var(--color-unconverted)'},
@@ -87,7 +89,10 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 					<XAxis dataKey="percentage" type="number" hide />
 					<ChartTooltip
 					cursor={false}
-					content={<ChartTooltipContent indicator="line" />}
+					content={<ChartTooltipContent 
+                        valueFormatter={(value) => `${value}%`}
+                        indicator="line" 
+                        />}
 					/>
 					<Bar dataKey="percentage" fill="var(--color-fill)" radius={4}>
 						 <LabelList
@@ -96,6 +101,7 @@ export function ConversionFunnelChart({selectedPeriod}: SelectedPeriodProps) {
 							offset={8}
 							className="fill-foreground"
 							fontSize={12}
+                            formatter={(value) => formatNumber(Number(value))}
 						/>
 					</Bar>
 				</BarChart>
