@@ -15,7 +15,7 @@ import { formatAnalyticsTime, formatNumber } from "@/lib/utils"
 export type Category = {
   id: number
   title: string
-  slug: string
+  blogs: number
   views: number
   shares: number
   likes: number
@@ -94,6 +94,13 @@ export const columns = columnHelper.columns([
   columnHelper.accessor("title", {
     header: ({ column }) => <SortableHeader column={column} title="Category" sorted={false}/>,
     enableSorting: false
+  }),
+  columnHelper.accessor("blogs", {
+    header: ({ column }) => <SortableHeader column={column} title="Publications" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        return formatNumber(getValue() as number)
+    },
+    sortFn: sortFn_basic,
   }),
   columnHelper.accessor("views", {
     header: ({ column }) => <SortableHeader column={column} title="Views" sorted={column.getIsSorted()}/>,
