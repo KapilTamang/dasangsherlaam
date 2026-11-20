@@ -40,18 +40,19 @@ export function DataTable<TData extends Record<string, any>>({
 
   return (
     <div className="space-y-4 rounded-xl">
+        <div className="flex items-center">
+            <span className="text-muted-foreground">Category based data for insights</span>
+            <Button
+                variant="outline"
+                onClick={() => table.reset()}
+                disabled={!isDirty}
+                className="sm:ml-auto"
+                >
+                <RotateCcw className="mr-2 h-4 w-4" />
+                    Reset
+            </Button>
+        </div>
       {/* Table */}
-      <div className="flex items-end">
-        <Button
-            variant="outline"
-            onClick={() => table.reset()}
-            disabled={!isDirty}
-            className="sm:ml-auto"
-            >
-            <RotateCcw className="mr-2 h-4 w-4" />
-                Reset
-        </Button>
-      </div>
       <div className="rounded-md border bg-card text-card-foreground">
             <Table>
                 <TableHeader className="bg-accent">
