@@ -41,7 +41,7 @@ export function DataTable<TData extends Record<string, any>>({
   return (
     <div className="space-y-4 rounded-xl">
         <div className="flex items-center">
-            <span className="text-muted-foreground">Category based data for insights</span>
+            <span className="text-sm text-muted-foreground">Category based data for insights</span>
             <Button
                 variant="outline"
                 onClick={() => table.reset()}

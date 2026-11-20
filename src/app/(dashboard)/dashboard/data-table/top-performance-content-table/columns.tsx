@@ -16,6 +16,7 @@ export type Blog = {
   id: number
   title: string
   category: string
+  date: Date
   views: number
   shares: number
   likes: number
@@ -92,7 +93,7 @@ export const columns = columnHelper.columns([
     enableSorting: false
   }),
   columnHelper.accessor("title", {
-    header: ({ column }) => <SortableHeader column={column} title="Blog" sorted={false}/>,
+    header: ({ column }) => <SortableHeader column={column} title="Article" sorted={false}/>,
     enableSorting: false
   }),
   columnHelper.accessor("category", {
@@ -124,6 +125,18 @@ export const columns = columnHelper.columns([
     header: ({ column }) => <SortableHeader column={column} title="Average Scroll Depth" sorted={column.getIsSorted()}/>,
     cell: ({getValue}) => {
         return getValue() as number + '%'
+    },
+    sortFn: sortFn_basic,
+  }),
+  columnHelper.accessor("date", {
+    header: ({ column }) => <SortableHeader column={column} title="Published at" sorted={column.getIsSorted()}/>,
+    cell: ({getValue}) => {
+        const date = new Date(getValue())
+                return date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                })
     },
     sortFn: sortFn_basic,
   }),
