@@ -8,7 +8,7 @@ import { ConversionFunnelChart } from './_components/conversion-funnel-chart'
 import { TrafficSourceChart } from './_components/traffic-source-chart'
 import { AudienceChart } from './_components/audience-chart'
 import { UserEngagement } from './_components/user-engagement'
-import { TopContentTable } from './_components/top-content-table'
+import { TopContent } from './_components/top-content'
  
 
 export default function Dashboard() {
@@ -80,7 +80,7 @@ export default function Dashboard() {
 							<UserEngagement selectedPeriod={selectedPeriod}/>
 						</section>
 						<section className="top-content-table lg:px-6">
-							<TopContentTable selectedPeriod={selectedPeriod}/>
+							<TopContent selectedPeriod={selectedPeriod}/>
 						</section>
 					</div>
 				</div>

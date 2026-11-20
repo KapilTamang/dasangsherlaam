@@ -13,7 +13,7 @@ interface SelectedPeriodProps {
 
 const data: Blog[] = blogs
 
-export  function TopContentTable({selectedPeriod}: SelectedPeriodProps) {
+export  function TopContent({selectedPeriod}: SelectedPeriodProps) {
     return(
         <div className="w-full flex flex-col gap-4 bg-secondary p-4 md:p-6 rounded-xl">
              <div className="font-medium">Top Contents 

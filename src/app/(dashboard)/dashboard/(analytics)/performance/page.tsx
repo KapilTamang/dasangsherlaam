@@ -7,6 +7,7 @@ import { LCPChart } from './_components/LCP-chart';
 import { INPChart } from './_components/INP-chart';
 import { CLSChart } from './_components/CLS-chart';
 import { TopPerformanceContent } from './_components/top-performance-content';
+import { TopPerformanceCategory } from './_components/top-performance-category';
 
 export default function Performance() {
    //Set state for selected period
@@ -73,8 +74,11 @@ export default function Performance() {
                                 <CLSChart/>
                              </div>
                         </section>
-                        <section className="top-performance-content-table lg:px-6">
+                        <section className="top-performance-content lg:px-6">
                             <TopPerformanceContent selectedPeriod={selectedPeriod}/>
+                        </section>
+                        <section className="top-performance-content lg:px-6">
+                            <TopPerformanceCategory selectedPeriod={selectedPeriod}/>
                         </section>
                     </div>
                 </div>
