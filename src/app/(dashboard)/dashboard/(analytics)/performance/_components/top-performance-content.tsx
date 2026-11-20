@@ -13,7 +13,7 @@ interface SelectedPeriodProps {
     }
 }
 
-export  function TopPerformanceContentTable({selectedPeriod} : SelectedPeriodProps) {
+export  function TopPerformanceContent({selectedPeriod} : SelectedPeriodProps) {
     return(
         <div className="w-full flex flex-col gap-4 bg-secondary p-4 md:p-6 rounded-xl">
             <div className="font-medium">Top Performing Contents 

@@ -6,7 +6,7 @@ import { KPICard } from './_components/KPICard';
 import { LCPChart } from './_components/LCP-chart';
 import { INPChart } from './_components/INP-chart';
 import { CLSChart } from './_components/CLS-chart';
-import { TopPerformanceContentTable } from './_components/top-performance-content-table';
+import { TopPerformanceContent } from './_components/top-performance-content';
 
 export default function Performance() {
    //Set state for selected period
@@ -74,7 +74,7 @@ export default function Performance() {
                              </div>
                         </section>
                         <section className="top-performance-content-table lg:px-6">
-                            <TopPerformanceContentTable selectedPeriod={selectedPeriod}/>
+                            <TopPerformanceContent selectedPeriod={selectedPeriod}/>
                         </section>
                     </div>
                 </div>
