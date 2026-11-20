@@ -1,8 +1,8 @@
-import { DataTable } from "../../../data-table/top-performance-content-table/data-table"
-import { columns, type Blog } from "../../../data-table/top-performance-content-table/columns"
-import blogs from "@/data/blogs"
+import { DataTable } from "../../../data-table/top-performance-category-table/data-table"
+import { columns, type Category } from "../../../data-table/top-performance-category-table/columns"
+import categories from "@/data/category"
 
-const data: Blog[] = blogs
+const data: Category[] = categories
 
 interface SelectedPeriodProps {
     selectedPeriod : {
@@ -22,8 +22,6 @@ export  function TopPerformanceCategory({selectedPeriod} : SelectedPeriodProps) 
             <DataTable
                 columns={columns}
                 data={data}
-                filterColumnId="category"
-                filterLabel="Categories"
             />
         </div>
     )
