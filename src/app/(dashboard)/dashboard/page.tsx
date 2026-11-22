@@ -60,7 +60,15 @@ export default function Dashboard() {
 			<div className="flex flex-1 flex-col">
 				<div className="@container/main flex flex-1 flex-col gap-2">
 					<div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-						<PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
+                        <div className="page-top mb-2 lg:px-6">
+                            <div className="page-top-title w-full flex flex-col gap-2">
+                               <span className='text-[1.4rem] md:text-[1.5rem] text-foreground font-bold capitalize'>analytics overview</span>
+                               <span className="border-l-[1.5px] border-l-primary pl-2 text-sm text-muted-foreground capitalize">
+                                    Key metrics and performance trends at a glance
+                                </span>
+                            </div>
+                        </div>
+                        <PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
 						<section className="anlaytics-cards">
 							<div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4 dark:*:data-[slot=card]:bg-card">
 								{
