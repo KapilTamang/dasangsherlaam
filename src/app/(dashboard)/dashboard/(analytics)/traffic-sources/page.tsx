@@ -7,6 +7,7 @@ import { UserRoundGroup, Search, Link, Share2 } from 'lucide-react';
 import { TrafficSourcesTrendChart } from './_components/traffic-sources-trend-chart';
 import { TrafficSourceChart } from '../../_components/traffic-source-chart';
 import { TrafficChannelPerformance } from './_components/traffic-channel-performance';
+import { TopReferralWebsites } from './_components/top-referral-websites';
 
 export default function TrafficSources() {
     //Set state for selected period
@@ -86,6 +87,7 @@ export default function TrafficSources() {
                             <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-3 dark:*:data-[slot=card]:bg-card">
                                 <TrafficSourceChart selectedPeriod={selectedPeriod}/>
                                 <TrafficChannelPerformance selectedPeriod={selectedPeriod}/>
+                                <TopReferralWebsites selectedPeriod={selectedPeriod}/>
                             </div>
                         </section>
                     </div>
