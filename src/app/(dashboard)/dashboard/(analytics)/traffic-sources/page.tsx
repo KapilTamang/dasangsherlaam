@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { KPICard } from '../../_components/KPICard';
 import { PeriodSelector } from '../../_components/period-selector';
 
 export default function TrafficSources() {
@@ -12,6 +13,41 @@ export default function TrafficSources() {
         duration: ""
     });
 
+    const KPICardsData = [
+		{
+			title: 53400,
+			description: 'Total Visitors',
+			badgeTitle: 12.5,
+			trending: 'positive',
+			remarks: 'Visitors trending up',
+            format: 'count'
+		},
+		{
+			title: 30345,
+			description: 'Organic Traffic',
+			badgeTitle: 10,
+			trending: 'negative',
+			remarks: 'Organic visitors declining',
+            format: 'count'
+		},
+		{
+			title: 15300,
+			description: 'Referral Traffic',
+			badgeTitle: 5.2,
+			trending: 'positive',
+			remarks: 'Referral visitors trending up',
+            format: 'count'
+		},
+		{
+			title: 18340,
+			description: 'Social Traffic',
+			badgeTitle: 17,
+			trending: 'positive',
+			remarks: 'Strong traffic from social channles',
+            format: 'count'
+		}
+	]
+
     return (
         <div className="dashboard-analytics-traffic-sources">
             <div className="flex flex-1 flex-col">
@@ -22,10 +58,19 @@ export default function TrafficSources() {
                                 <span className='text-[1.4rem] md:text-[1.5rem] text-foreground font-bold capitalize'>traffic sources</span>
                                 <span className="border-l-[1.5px] border-l-primary pl-2 text-sm text-muted-foreground capitalize">
                                     where your visitors come from and how traffic channels are performing
-                                    <PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
                                 </span>
                             </div>
                         </div>
+                        <PeriodSelector getSelectedPeriod={setSelectedPeriod}/>
+                        <section className="anlaytics-cards">
+                            <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4 dark:*:data-[slot=card]:bg-card">
+                                {
+                                KPICardsData.map((cardData, _index) => (
+                                    <KPICard key={_index} selectedPeriod={selectedPeriod} data={cardData}/>
+                                ))
+                            }
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
