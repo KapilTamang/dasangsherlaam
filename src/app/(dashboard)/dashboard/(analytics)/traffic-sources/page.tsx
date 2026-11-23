@@ -3,6 +3,7 @@
 import React from 'react';
 import { KPICard } from '../../_components/KPICard';
 import { PeriodSelector } from '../../_components/period-selector';
+import { UserRoundGroup, Search, Link, Share2 } from 'lucide-react';
 
 export default function TrafficSources() {
     //Set state for selected period
@@ -20,7 +21,8 @@ export default function TrafficSources() {
 			badgeTitle: 12.5,
 			trending: 'positive',
 			remarks: 'Visitors trending up',
-            format: 'count'
+            format: 'count',
+            icon: UserRoundGroup
 		},
 		{
 			title: 30345,
@@ -28,7 +30,8 @@ export default function TrafficSources() {
 			badgeTitle: 10,
 			trending: 'negative',
 			remarks: 'Organic visitors declining',
-            format: 'count'
+            format: 'count',
+            icon: Search
 		},
 		{
 			title: 15300,
@@ -36,7 +39,8 @@ export default function TrafficSources() {
 			badgeTitle: 5.2,
 			trending: 'positive',
 			remarks: 'Referral visitors trending up',
-            format: 'count'
+            format: 'count',
+            icon: Link
 		},
 		{
 			title: 18340,
@@ -44,7 +48,8 @@ export default function TrafficSources() {
 			badgeTitle: 17,
 			trending: 'positive',
 			remarks: 'Strong traffic from social channles',
-            format: 'count'
+            format: 'count',
+            icon: Share2
 		}
 	]
 

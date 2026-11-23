@@ -9,6 +9,7 @@ import { TrafficSourceChart } from './_components/traffic-source-chart'
 import { AudienceChart } from './_components/audience-chart'
 import { UserEngagement } from './_components/user-engagement'
 import { TopContent } from './_components/top-content'
+import { UserRoundGroup, Binoculars, UserRoundCheck, CalendarDays } from 'lucide-react'
  
 
 export default function Dashboard() {
@@ -23,11 +24,12 @@ export default function Dashboard() {
 	const KPICardsData = [
 		{
 			title: 53400,
-			description: 'Visitors',
+			description: 'Total Visitors',
 			badgeTitle: 12.5,
 			trending: 'positive',
 			remarks: 'Visitors trending up',
-            format: 'count'
+            format: 'count',
+            icon: UserRoundGroup
 		},
 		{
 			title: 32345,
@@ -35,7 +37,8 @@ export default function Dashboard() {
 			badgeTitle: 20,
 			trending: 'negative',
 			remarks: 'Declining audience interests',
-            format: 'count'
+            format: 'count',
+            icon: Binoculars
 		},
 		{
 			title: 3200,
@@ -43,7 +46,8 @@ export default function Dashboard() {
 			badgeTitle: 5.2,
 			trending: 'positive',
 			remarks: 'Decent increment on leads',
-            format: 'count'
+            format: 'count',
+            icon: UserRoundCheck
 		},
 		{
 			title: 2600,
@@ -51,7 +55,8 @@ export default function Dashboard() {
 			badgeTitle: 17,
 			trending: 'positive',
 			remarks: 'Strong user acquitision',
-            format: 'count'
+            format: 'count',
+            icon: CalendarDays
 		}
 	]
 

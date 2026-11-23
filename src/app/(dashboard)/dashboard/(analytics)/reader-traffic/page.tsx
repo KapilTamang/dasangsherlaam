@@ -9,6 +9,7 @@ import { AverageTimeOnPagesChart } from './_components/average-time-on-pages-cha
 import { AverageScrollDepthOnPagesChart } from './_components/average-scroll-depth-on-pages-chart';
 import { PageViewsByPagesChart } from './_components/page-views-by-pages-chart';
 import { PageViewsByCategoriesChart } from './_components/page-views-by-categories-chart';
+import { UserRoundGroup, UserRoundKey, ClockCheck, Waypoints } from 'lucide-react';
 
 export default function ReaderTraffic() {
     //Set state for selected period
@@ -26,7 +27,8 @@ export default function ReaderTraffic() {
 			badgeTitle: 20,
 			trending: 'negative',
 			remarks: 'Declining audience interests',
-            format: 'count'
+            format: 'count',
+            icon: UserRoundGroup
 		},
 		{
 			title: 43400,
@@ -34,7 +36,8 @@ export default function ReaderTraffic() {
 			badgeTitle: 9.5,
 			trending: 'positive',
 			remarks: 'Unique visitors trending up',
-            format: 'count'
+            format: 'count',
+            icon: UserRoundKey
 		},
 		{
 			title: 285000,
@@ -42,7 +45,8 @@ export default function ReaderTraffic() {
 			badgeTitle: 8.4,
 			trending: 'positive',
 			remarks: 'Decent increment on engagement',
-            format: 'time'
+            format: 'time',
+            icon: ClockCheck
 		},
 		{
 			title: 2.3,
@@ -50,7 +54,8 @@ export default function ReaderTraffic() {
 			badgeTitle: 17,
 			trending: 'positive',
 			remarks: 'Strong user acquitision',
-            format: 'count'
+            format: 'count',
+            icon: Waypoints
 		}
 	]
 
