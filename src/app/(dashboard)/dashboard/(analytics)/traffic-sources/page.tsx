@@ -5,6 +5,7 @@ import { KPICard } from '../../_components/KPICard';
 import { PeriodSelector } from '../../_components/period-selector';
 import { UserRoundGroup, Search, Link, Share2 } from 'lucide-react';
 import { TrafficSourcesTrendChart } from './_components/traffic-sources-trend-chart';
+import { TrafficSourceChart } from '../../_components/traffic-source-chart';
 
 export default function TrafficSources() {
     //Set state for selected period
@@ -77,8 +78,13 @@ export default function TrafficSources() {
                             }
                             </div>
                         </section>
-                        <section className="page-views-unique-visitors-chart lg:px-6">
+                        <section className="traffic-sources-trend-chart lg:px-6">
                             <TrafficSourcesTrendChart/>
+                        </section>
+                         <section className="traffic-source-performance">
+                            <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-3 dark:*:data-[slot=card]:bg-card">
+                                <TrafficSourceChart selectedPeriod={selectedPeriod}/>
+                            </div>
                         </section>
                     </div>
                 </div>
