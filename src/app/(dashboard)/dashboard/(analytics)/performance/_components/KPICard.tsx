@@ -1,4 +1,4 @@
-import { TrendingDown, TrendingUp} from "lucide-react"
+import { LucideIcon, TrendingDown, TrendingUp} from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import {
@@ -22,6 +22,7 @@ interface KPICardProps {
         badgeTitle: number,
         remarks: string,
         indicator: string,
+        icon: LucideIcon
     }
 }
 
@@ -31,7 +32,12 @@ export function KPICard({data}: KPICardProps) {
   return (
     <Card className="@container/card">
         <CardHeader>
-            <CardDescription className="capitalize">{data.description}</CardDescription>
+            <CardDescription className="capitalize flex gap-2 items-center">
+                <span className="bg-accent border border-primary rounded-full p-1.5">
+                    <data.icon className="text-foreground" style={{width: '16px', height: '16px'}}/> 
+                </span>
+               {data.description}
+            </CardDescription>
             <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
                 {formatAnalyticsTime(data.title)}
             </CardTitle>

@@ -8,6 +8,7 @@ import { INPChart } from './_components/INP-chart';
 import { CLSChart } from './_components/CLS-chart';
 import { TopPerformanceContent } from './_components/top-performance-content';
 import { TopPerformanceCategory } from './_components/top-performance-category';
+import {Loader, Timer, SquareMousePointer, PictureInPicture} from 'lucide-react'
 
 export default function Performance() {
    //Set state for selected period
@@ -26,6 +27,7 @@ export default function Performance() {
             badgeTitle: 2.2,
             remarks: 'Overall good performance. Slight improvement',
             indicator: 'good',
+            icon: Loader
         },
         {
             title: 2340,
@@ -34,6 +36,7 @@ export default function Performance() {
             badgeTitle: 2.3,
             remarks: 'Decent loading performance. Improving performance',
             indicator: 'good',
+            icon: Timer
         },
         {
             title: 300,
@@ -42,6 +45,7 @@ export default function Performance() {
             badgeTitle: 1.3,
             remarks: 'Need improvement for better performance, slight declination',
             indicator: 'moderate',
+             icon: SquareMousePointer
         },
         {
             title: 0.35,
@@ -50,6 +54,7 @@ export default function Performance() {
             badgeTitle: 0.3,
             remarks: 'Poor visual stability, need immediate attention!',
             indicator: 'poor',
+             icon: PictureInPicture
         },
     ]
     return (

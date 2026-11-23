@@ -37,7 +37,7 @@ export function KPICard({ selectedPeriod, data }: KPICardProps) {
         <CardHeader>
             <CardDescription className="capitalize flex gap-2 items-center">
                 <span className="bg-accent border border-primary rounded-full p-1.5">
-                    <data.icon className="text-foreground" style={{width: '18px', height: '18px'}}/> 
+                    <data.icon className="text-foreground" style={{width: '16px', height: '16px'}}/> 
                 </span>
                {data.description}
             </CardDescription>
