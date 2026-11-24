@@ -34,11 +34,11 @@ export function KPICard({data}: KPICardProps) {
         <CardHeader>
             <CardDescription className="capitalize flex gap-2 items-center">
                 <span className="bg-accent rounded-full p-2">
-                    <data.icon className="text-foreground" style={{width: '16px', height: '16px'}}/> 
+                    <data.icon className="text-foreground" style={{width: '24px', height: '24px'}}/> 
                 </span>
                {data.description}
             </CardDescription>
-            <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+            <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl mt-1">
                 {formatAnalyticsTime(data.title)}
             </CardTitle>
               <CardAction>
