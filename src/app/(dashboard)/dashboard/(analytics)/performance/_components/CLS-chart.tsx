@@ -32,7 +32,7 @@ const chartData = [
 
 const chartConfig = {
   performance: {
-    color: "var(--chart-1)"
+    color: "var(--chart-3)"
   }
  
 } satisfies ChartConfig
