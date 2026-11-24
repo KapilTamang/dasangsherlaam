@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart} from "recharts"
+import { Label, LabelList, Pie, PieChart} from "recharts"
 
 import {
   Card,
@@ -76,88 +76,97 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
 
   return (
     <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Traffic Sources</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer
-        config={chartConfig}
-        className="mx-auto aspect-square max-h-55 w-full"
-        >
-          <PieChart>
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent 
-                valueFormatter={(value) => formatNumber(Number(value))}
-                />}
-            />
-            <Pie
-            data={chartData}
-            dataKey="visitors"
-            nameKey="source"
-            labelLine={true}
-            label={({ payload, ...props }) => {
-                return (
-                <text
-                    className="capitalize"
-                    cx={props.cx}
-                    cy={props.cy}
-                    x={props.x}
-                    y={props.y}
-                    textAnchor={props.textAnchor}
-                    dominantBaseline={props.dominantBaseline}
-                    fill="var(--foreground)"
-                >
-                    {payload.source}
-                </text>
-                )
-            }}
-            innerRadius={55}
-            strokeWidth={1}
+        <CardHeader className="items-center pb-0">
+            <CardTitle>Traffic Sources</CardTitle>
+            <CardDescription>January - June 2024</CardDescription>
+        </CardHeader>
+        <CardContent>
+            <ChartContainer
+            config={chartConfig}
+            className="mx-auto aspect-square max-h-55 w-full"
             >
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+            <PieChart>
+                <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent 
+                    valueFormatter={(value) => formatNumber(Number(value))}
+                    />}
+                />
+                <Pie
+                data={chartData}
+                dataKey="visitors"
+                nameKey="source"
+                labelLine={true}
+                label={({ payload, ...props }) => {
                     return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                      >
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
-                        >
-                          {formatNumber(totalVisitors)} 
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        >
-                          Visitors
-                        </tspan>
-                      </text>
+                    <text
+                        className="capitalize"
+                        cx={props.cx}
+                        cy={props.cy}
+                        x={props.x}
+                        y={props.y}
+                        textAnchor={props.textAnchor}
+                        dominantBaseline={props.dominantBaseline}
+                        fill="var(--foreground)"
+                    >
+                        {payload.source}
+                    </text>
                     )
-                  }
                 }}
-              />
-            </Pie>
-          </PieChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium">
-          {/* comparision section */}
-          Email Campaign with the highest 5.2% contribution for traffic this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-         (Comparision here***) {selectedPeriod.title}
-        </div>
-      </CardFooter>
+                innerRadius={45}
+                strokeWidth={1}
+                >
+                    <LabelList
+                        dataKey="visitors"
+                        className="fill-card-featured-foreground"
+                        stroke="none"
+                        fontSize={12}
+                        formatter={(value) =>
+                        `${Math.round((Number(value)/totalVisitors)*100)}%`
+                        }
+                    />
+                    <Label
+                        content={({ viewBox }) => {
+                            if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                                return (
+                                <text
+                                    x={viewBox.cx}
+                                    y={viewBox.cy}
+                                    textAnchor="middle"
+                                    dominantBaseline="middle"
+                                >
+                                    <tspan
+                                    x={viewBox.cx}
+                                    y={viewBox.cy}
+                                    className="fill-foreground text-3xl font-bold"
+                                    >
+                                    {formatNumber(totalVisitors)} 
+                                    </tspan>
+                                    <tspan
+                                    x={viewBox.cx}
+                                    y={(viewBox.cy || 0) + 24}
+                                    className="fill-muted-foreground"
+                                    >
+                                    Visitors
+                                    </tspan>
+                                </text>
+                                )
+                            }
+                        }}
+                    />
+                </Pie>
+            </PieChart>
+            </ChartContainer>
+        </CardContent>
+        <CardFooter className="flex-col items-start gap-2 text-sm">
+            <div className="flex items-center gap-2 font-medium">
+            {/* comparision section */}
+            Email Campaign with the highest 5.2% contribution for traffic this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+            </div>
+            <div className="leading-none text-muted-foreground">
+            (Comparision here***) {selectedPeriod.title}
+            </div>
+        </CardFooter>
     </Card>
   )
 }
