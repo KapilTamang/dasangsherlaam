@@ -49,12 +49,12 @@ export default function ReaderTraffic() {
             icon: ClockCheck
 		},
 		{
-			title: 2.3,
+			title: 46.5,
 			description: 'Bounce Rate',
 			badgeTitle: 17,
 			trending: 'positive',
 			remarks: 'Strong user acquitision',
-            format: 'count',
+            format: 'percentage',
             icon: Waypoints
 		}
 	]
