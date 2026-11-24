@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils"
 import { features } from "./features"
 import { formatNumber } from "@/lib/utils"
 
+import { FaGoogle, FaFacebook, FaReddit, FaLinkedin, FaPinterest, FaGlobe } from "react-icons/fa6"
+
 export type Referral = {
     id: number
     title: string
@@ -88,6 +90,20 @@ export const columns = columnHelper.columns([
   }),
   columnHelper.accessor("title", {
     header: ({ column }) => <SortableHeader column={column} title="Website" sorted={false}/>,
+    cell: ({getValue}) => {
+        const website = getValue()
+         return (
+            <div className="flex items-center gap-2">
+            {website === 'google' && <FaGoogle className="h-4 w-4 text-[#34A853]" />}
+            {website === 'facebook' && <FaFacebook className="h-4 w-4 text-[#316FF6]" />}
+            {website === 'reddit' && <FaReddit className="h-4 w-4 text-[#FF4500]" />}
+            {website === 'linkedin' && <FaLinkedin className="h-4 w-4 text-[#0A66C2]" />}
+            {website === 'pininterest' && <FaPinterest className="h-4 w-4 text-[#E60023]" />}
+            {website === 'others' && <FaGlobe className="h-4 w-4 text-[#A9A9A9]" />}
+            <span className="capitalize">{website}</span>
+            </div>
+      );
+    },
     enableSorting: false
   }),
   columnHelper.accessor("visitors", {

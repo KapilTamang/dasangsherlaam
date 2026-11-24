@@ -4,32 +4,32 @@ import { columns, type Referral } from "../../../data-table/top-referral-website
 const data: Referral[] = [
     {
         id: 1,
-        title: 'google.com',
+        title: 'google',
         visitors: 42456,
     },
     {
         id: 2,
-        title: 'facebook.com',
+        title: 'facebook',
         visitors: 23780,
     },
     {
         id: 3,
-        title: 'reddit.com',
+        title: 'reddit',
         visitors: 19870,
     },
     {
         id: 4,
-        title: 'linkedin.com',
+        title: 'linkedin',
         visitors: 9456,
     },
     {
         id: 5,
-        title: 'pininterest.com',
+        title: 'pininterest',
         visitors: 5560,
     },
     {
         id: 6,
-        title: 'Others',
+        title: 'others',
         visitors: 1560,
     },
 ]
