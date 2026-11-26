@@ -6,6 +6,7 @@ import { PeriodSelector } from '../../_components/period-selector';
 import { UserRoundGroup, UserRoundKey, ClockCheck, Waypoints } from 'lucide-react';
 import { AudienceOverviewChart } from './_components/audience-overview-chart';
 import { DeviceTrendsChart } from './_components/device-trends-chart';
+import { DeviceBreakdownChart } from './_components/device-breakdown-chart';
 
 export default function AudienceAndDevices() {
     //Set state for selected period
@@ -83,6 +84,11 @@ export default function AudienceAndDevices() {
                             <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @5xl/main:grid-cols-2 dark:*:data-[slot=card]:bg-card">
                                 <AudienceOverviewChart/>
                                 <DeviceTrendsChart/>
+                            </div>
+                        </section>
+                        <section className="device-breakdown-audience-demographics lg:px-6">
+                            <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @5xl/main:grid-cols-3 dark:*:data-[slot=card]:bg-card">
+                               <DeviceBreakdownChart selectedPeriod={selectedPeriod}/>
                             </div>
                         </section>
                     </div>
