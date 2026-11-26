@@ -89,6 +89,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
                 <ChartTooltip
                 cursor={false}
                 content={<ChartTooltipContent 
+                    indicator="line"
                     valueFormatter={(value) => formatNumber(Number(value))}
                     />}
                 />
@@ -113,7 +114,7 @@ export function TrafficSourceChart({selectedPeriod} : SelectedPeriodProps) {
                     </text>
                     )
                 }}
-                innerRadius={45}
+                innerRadius={50}
                 strokeWidth={1}
                 >
                     <LabelList
