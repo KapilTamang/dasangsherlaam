@@ -5,6 +5,7 @@ import { KPICard } from '../../_components/KPICard';
 import { PeriodSelector } from '../../_components/period-selector';
 import { UserRoundGroup, UserRoundKey, ClockCheck, Waypoints } from 'lucide-react';
 import { AudienceOverviewChart } from './_components/audience-overview-chart';
+import { DeviceTrendsChart } from './_components/device-trends-chart';
 
 export default function AudienceAndDevices() {
     //Set state for selected period
@@ -81,6 +82,7 @@ export default function AudienceAndDevices() {
                         <section className="audience-overview-chart lg:px-6">
                             <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @5xl/main:grid-cols-2 dark:*:data-[slot=card]:bg-card">
                                 <AudienceOverviewChart/>
+                                <DeviceTrendsChart/>
                             </div>
                         </section>
                     </div>
