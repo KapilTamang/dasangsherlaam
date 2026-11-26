@@ -21,24 +21,15 @@ import {
 
 import { formatNumber } from "@/lib/utils"
 
-interface SelectedPeriodProps {
-    selectedPeriod: {
-        id: string,
-        title: string,
-        value: string,
-        duration: string
-    }
-}
-
 const chartData = [
-  {device: "desktop", visitors: 4500, fill: "var(--color-desktop)" },
-  {device: "mobile", visitors: 6500, fill: "var(--color-mobile)" },
-  {device: "tablet", visitors: 2300, fill: "var(--color-tablet)" },
+  {device: "desktop", users: 45000, fill: "var(--color-desktop)" },
+  {device: "mobile", users: 65300, fill: "var(--color-mobile)" },
+  {device: "tablet", users: 23100, fill: "var(--color-tablet)" },
 ]
 
 const chartConfig = {
-    visitors: {
-        label: "Visitors"
+    users: {
+        label: "Users"
     },
     desktop: {
         label: "Desktop",
@@ -54,16 +45,16 @@ const chartConfig = {
     },
 } satisfies ChartConfig
 
-export function DeviceBreakdownChart({selectedPeriod} : SelectedPeriodProps) {
+export function DeviceBreakdownChart() {
   const totalUsers = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
+    return chartData.reduce((acc, curr) => acc + curr.users, 0)
   }, [])
 
   return (
     <Card className="flex flex-col">
         <CardHeader className="items-center pb-0">
             <CardTitle>Device Breakdown</CardTitle>
-            <CardDescription>January - June 2024</CardDescription>
+            <CardDescription>Overall Traffic distribution by device category</CardDescription>
         </CardHeader>
         <CardContent>
             <ChartContainer
@@ -80,7 +71,7 @@ export function DeviceBreakdownChart({selectedPeriod} : SelectedPeriodProps) {
                 />
                 <Pie
                 data={chartData}
-                dataKey="visitors"
+                dataKey="users"
                 nameKey="device"
                 labelLine={true}
                 label={({ payload, ...props }) => {
@@ -99,11 +90,12 @@ export function DeviceBreakdownChart({selectedPeriod} : SelectedPeriodProps) {
                     </text>
                     )
                 }}
-                innerRadius={50}
+                innerRadius={60}
+                outerRadius={95}
                 strokeWidth={1}
                 >
                     <LabelList
-                        dataKey="visitors"
+                        dataKey="users"
                         className="fill-card-featured-foreground"
                         stroke="none"
                         fontSize={12}
@@ -133,7 +125,7 @@ export function DeviceBreakdownChart({selectedPeriod} : SelectedPeriodProps) {
                                     y={(viewBox.cy || 0) + 24}
                                     className="fill-muted-foreground"
                                     >
-                                    Visitors
+                                    Users
                                     </tspan>
                                 </text>
                                 )
@@ -147,10 +139,10 @@ export function DeviceBreakdownChart({selectedPeriod} : SelectedPeriodProps) {
         <CardFooter className="flex-col items-start gap-2 text-sm">
             <div className="flex items-center gap-2 font-medium">
             {/* comparision section */}
-            Visitor breakdown across mobile, desktop, and tablet this {selectedPeriod.duration} <TrendingUp className="h-4 w-4" />
+               Conclusion here
             </div>
             <div className="leading-none text-muted-foreground">
-            (Comparision here***) {selectedPeriod.title}
+            (Comparision here***)
             </div>
         </CardFooter>
     </Card>

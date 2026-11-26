@@ -88,7 +88,7 @@ export default function AudienceAndDevices() {
                         </section>
                         <section className="device-breakdown-audience-demographics lg:px-6">
                             <div  className="grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @5xl/main:grid-cols-3 dark:*:data-[slot=card]:bg-card">
-                               <DeviceBreakdownChart selectedPeriod={selectedPeriod}/>
+                               <DeviceBreakdownChart/>
                             </div>
                         </section>
                     </div>
